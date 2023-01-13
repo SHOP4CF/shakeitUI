@@ -41,7 +41,6 @@ class MainWindow:
             'Content-Type': 'application/json',
             'X-Auth-token': subjectToken
         }
-
         response = requests.request("POST", url, headers=headers, data=payload, verify=False)
 
         # Base 64 encoding client info
@@ -77,6 +76,7 @@ class MainWindow:
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
+        # Use KeyRock to authenticate user
         url = "https://localhost:443/oauth2/token"
         d = {'username': username,
              'password': password,
@@ -84,7 +84,6 @@ class MainWindow:
         h = {'Accept': 'application/json',
              'Authorization': 'Basic ' + self.clientInfoBase64,
              'Content-Type': 'application/x-www-form-urlencoded'}
-
         r = requests.post(url, data=d, headers=h, verify=False)
 
         if r.status_code == 200:
@@ -92,18 +91,18 @@ class MainWindow:
             aToken = json.loads(r.text)['access_token']
             print("access token: " + aToken)
 
+            # get userinfo from access token
             url = "https://localhost:443/user?access_token="+aToken
-            print(url)
-
             rUserInfo = requests.get(url, verify=False)
-
             self.ui.labelRole.setText(json.loads(rUserInfo.text)['sub'])
             self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username'])
 
+            # change to mainPage
             self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
             self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
             self.ui.radioAI.toggle()
 
+            # clear the login page
             self.ui.textPassword.clear()
             self.ui.textUsername.clear()
             self.ui.labelLoginError.hide()
