@@ -105,3 +105,9 @@ You should now have 2 repositories set up: "fiware-idm" and "shakeitUI".
    ```sh
    python main.py
    ```
+   
+To login to the application use the following credentials:
+
+Username: ```admin@test.com```
+
+Password: ```1234```
