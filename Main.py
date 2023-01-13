@@ -89,11 +89,21 @@ class MainWindow:
 
         if r.status_code == 200:
             # success
-            print("access token: " + json.loads(r.text)['access_token'])
+            aToken = json.loads(r.text)['access_token']
+            print("access token: " + aToken)
+
+            url = "https://localhost:443/user?access_token="+aToken
+            print(url)
+
+            rUserInfo = requests.get(url, verify=False)
+
+            self.ui.labelRole.setText(json.loads(rUserInfo.text)['sub'])
+            self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username'])
 
             self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
             self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
             self.ui.radioAI.toggle()
+
             self.ui.textPassword.clear()
             self.ui.textUsername.clear()
             self.ui.labelLoginError.hide()
