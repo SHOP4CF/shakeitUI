@@ -1,0 +1,2118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1106</width>
+    <height>701</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1106</width>
+    <height>701</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1106</width>
+    <height>701</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Nirmala UI</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedLogin">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1111</width>
+      <height>701</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="loginPage">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <widget class="QLabel" name="labelPassword">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>320</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Nirmala UI</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Password</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="textPassword">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>340</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">lineedit-password-character: 9679</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="maxLength">
+       <number>32766</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="backrgroundFrame">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>150</y>
+        <width>331</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 15px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="buddy">
+       <cstring>backrgroundFrame</cstring>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="buttonLogin">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>430</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 127);
+border-radius: 10px;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Log in</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelLogin">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>180</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Nirmala UI</family>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 170, 127)</string>
+      </property>
+      <property name="text">
+       <string>Log in</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="textUsername">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>270</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelUsername">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>250</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Nirmala UI</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Username</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="background">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1111</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>resources/backgroundlogin.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelLoginError">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>380</y>
+        <width>191</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Nirmala UI</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(206, 42, 42);</string>
+      </property>
+      <property name="text">
+       <string>Invalid username or password</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <zorder>background</zorder>
+     <zorder>backrgroundFrame</zorder>
+     <zorder>labelPassword</zorder>
+     <zorder>textPassword</zorder>
+     <zorder>buttonLogin</zorder>
+     <zorder>labelLogin</zorder>
+     <zorder>textUsername</zorder>
+     <zorder>labelUsername</zorder>
+     <zorder>labelLoginError</zorder>
+    </widget>
+    <widget class="QWidget" name="mainPage">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <widget class="QStackedWidget" name="stackedPages">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>0</y>
+        <width>911</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="pageAI">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>90</y>
+          <width>411</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="Layoutstartstop">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="buttonStart">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:  rgb(127, 178, 133);
+color: rgb(255, 255, 255);
+font: 16pt &quot;Nirmala UI&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonStop">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:rgb(199, 72, 72);
+color: white;
+font: 16pt &quot;Nirmala UI&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Stop</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="Titel">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>20</y>
+          <width>401</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 22pt &quot;Nirmala UI&quot;;
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>Shakeit AI Control Panel</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>871</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>260</y>
+          <width>601</width>
+          <height>421</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="graphlayout">
+         <item row="0" column="0">
+          <widget class="QGraphicsView" name="graph1"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QGraphicsView" name="graph2"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QGraphicsView" name="graph3"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QGraphicsView" name="graph4"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="statusBox">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>80</y>
+          <width>441</width>
+          <height>161</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 14pt &quot;Nirmala UI&quot;;
+color: white;</string>
+        </property>
+        <property name="title">
+         <string>Status</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="settingsBox">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>250</y>
+          <width>251</width>
+          <height>431</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 14pt &quot;Nirmala UI&quot;;
+color: white;</string>
+        </property>
+        <property name="title">
+         <string>Setttings</string>
+        </property>
+        <widget class="QPushButton" name="buttonSettings">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>370</y>
+           <width>121</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 10pt &quot;Nirmala UI&quot;;
+background-color: rgb(93, 112, 131);
+color: white;</string>
+         </property>
+         <property name="text">
+          <string>Change settings</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinIterations">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>60</y>
+           <width>41</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: black;
+</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="labelIterations">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>60</y>
+           <width>81</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Iterations:</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="backgroundAI">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>701</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #CE796B;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>backgroundAI</zorder>
+       <zorder>horizontalLayoutWidget</zorder>
+       <zorder>Titel</zorder>
+       <zorder>line</zorder>
+       <zorder>gridLayoutWidget</zorder>
+       <zorder>statusBox</zorder>
+       <zorder>settingsBox</zorder>
+      </widget>
+      <widget class="QWidget" name="pageManual">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+       </property>
+       <widget class="QLabel" name="Titel_2">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>20</y>
+          <width>401</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 22pt &quot;Nirmala UI&quot;;
+color: white;</string>
+        </property>
+        <property name="text">
+         <string>Shakeit Manual Control Panel</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>871</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>90</y>
+          <width>871</width>
+          <height>601</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="layoutButtons">
+         <item>
+          <layout class="QVBoxLayout" name="layoutForward" stretch="0,0,0,0,0,0,0,0,0,0,0">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="labelForward">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: bold 14pt &quot;Nirmala UI&quot;;
+color: white;</string>
+             </property>
+             <property name="text">
+              <string>Forward</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r1s2">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r3s2">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r1s4">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 4</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r3s4">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 4</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r1s6">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 6</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r3s6">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 6</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r1s8">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 8</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r3s8">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 8</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r1s10">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 10</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fw_r3s10">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 10</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0,0,0,0,0,0,0,0,0,0,0">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="labelBackward">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: bold 14pt &quot;Nirmala UI&quot;;
+color: white;</string>
+             </property>
+             <property name="text">
+              <string>Backward</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r1s2">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r3s2">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r1s4">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 4</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r3s4">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 4</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r1s6">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 6</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r3s6">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 6</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r1s8">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 8</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r3s8">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 8</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r1s10">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 10</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="b_r3s10">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 10</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="layoutFlip" stretch="0,0,0,0,0,0,0,0,0,0,0">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="labelFlip">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: bold 14pt &quot;Nirmala UI&quot;;
+color: white;</string>
+             </property>
+             <property name="text">
+              <string>Flip</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r1s2">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r3s2">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r1s4">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 4</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r3s4">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 4</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r1s6">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 6</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r3s6">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 6</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r1s8">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 8</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r3s8">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 8</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r1s10">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:1, Speed: 10</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="fp_r3s10">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: rgb(93, 112, 131);
+	border: none;
+	padding-top: 5px;
+	color: rgb(226, 234, 216);
+	border-left: 1px sold  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+	font: 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover {
+	background-color:rgb(112, 133, 153);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-bottom: 3px solid  rgb(73, 88, 103);
+}
+
+QPushButton:pressed{
+	background-color: rgb(76, 92, 107);
+	border-left: 1px solid  rgb(73, 88, 103);
+	border-right: 1px solid  rgb(73, 88, 103);
+	border-top: 3px solid  rgb(73, 88, 103);
+	padding-top: -5px;
+	border-bottom: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>Repetitions:3, Speed: 10</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="backgroundManual">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>911</width>
+          <height>701</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #CE796B;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>backgroundManual</zorder>
+       <zorder>Titel_2</zorder>
+       <zorder>line_2</zorder>
+       <zorder>horizontalLayoutWidget_2</zorder>
+      </widget>
+      <widget class="QWidget" name="pageVS">
+       <property name="styleSheet">
+        <string notr="true">background-color: white;</string>
+       </property>
+       <widget class="QLabel" name="backgroundVS">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>911</width>
+          <height>701</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #CE796B;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="buttonLogout">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>640</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Log out</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>250</y>
+        <width>168</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="buttonsLayout">
+       <item>
+        <widget class="QRadioButton" name="radioAI">
+         <property name="styleSheet">
+          <string notr="true">QRadioButton {
+	font: 12pt &quot;Nirmala UI&quot;;
+}
+
+QRadioButton::indicator {
+    width:                  40px;
+    height:                 40px;
+    border-radius:          22px;
+	image: url(resources/aiicon.png);
+}
+
+QRadioButton::indicator:checked {
+    background-color: rgb(206, 121, 107);
+    border: 2px solid rgb(206, 121, 107);
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: black;
+    border: 2px solid;
+}</string>
+         </property>
+         <property name="text">
+          <string> AI Control</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioManual">
+         <property name="styleSheet">
+          <string notr="true">QRadioButton {
+	font: 12pt &quot;Nirmala UI&quot;;
+}
+
+QRadioButton::indicator {
+    width:                  40px;
+    height:                 40px;
+    border-radius:          22px;
+	image: url(resources/maunalicon.png);
+}
+
+QRadioButton::indicator:checked {
+    background-color: rgb(206, 121, 107);
+    border: 2px solid rgb(206, 121, 107);
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: black;
+    border: 2px solid;
+}</string>
+         </property>
+         <property name="text">
+          <string>Manual Control</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioVS">
+         <property name="styleSheet">
+          <string notr="true">QRadioButton {
+	font: 12pt &quot;Nirmala UI&quot;;
+}
+
+QRadioButton::indicator {
+    width:                  40px;
+    height:                 40px;
+    border-radius:          22px;
+	image: url(resources/vsicon.png);
+}
+
+QRadioButton::indicator:checked {
+    background-color: rgb(206, 121, 107);
+    border: 2px solid rgb(206, 121, 107);
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: black;
+    border: 2px solid;
+}</string>
+         </property>
+         <property name="text">
+          <string>Manual vs AI</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>160</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="userInfoLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="labelRole">
+         <property name="styleSheet">
+          <string notr="true">font: 10pt &quot;Nirmala UI&quot;;
+color: rgb(93, 93, 93);</string>
+         </property>
+         <property name="text">
+          <string>Role</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelUsername_2">
+         <property name="styleSheet">
+          <string notr="true">font: 13pt &quot;Nirmala UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Username</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="sidebarBackground">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>201</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #E7AD99;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>121</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(resources/usericon.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>sidebarBackground</zorder>
+     <zorder>stackedPages</zorder>
+     <zorder>buttonLogout</zorder>
+     <zorder>verticalLayoutWidget_2</zorder>
+     <zorder>verticalLayoutWidget</zorder>
+     <zorder>label</zorder>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>textUsername</tabstop>
+  <tabstop>textPassword</tabstop>
+  <tabstop>buttonLogin</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
