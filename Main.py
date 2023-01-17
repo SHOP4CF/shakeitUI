@@ -8,48 +8,10 @@ import json
 
 class MainWindow:
     def __init__(self):
-        # setting up KeyRock #
-
-        # create subject token
-        url = "https://localhost:443/v1/auth/tokens"
-        data = {'name': 'admin@test.com', 'password': '1234'}
-        head = {'Content-Type': 'application/json'}
-        r = requests.post(url, json=data, headers=head, verify=False)
-        subjectToken = r.headers['X-Subject-Token']
-
-        # register application in keyrock
-        url = "https://localhost:443/v1/applications"
-        payload = json.dumps({
-            "application": {
-                "name": "Test_application 1",
-                "description": "description",
-                "redirect_uri": "http://localhost/login",
-                "redirect_sign_out_uri": "http://localhost/logout",
-                "url": "http://localhost",
-                "grant_type": [
-                    "authorization_code",
-                    "implicit",
-                    "password"
-                ],
-                "token_types": [
-                    "jwt",
-                    "permanent"
-                ]
-            }
-        })
-        headers = {
-            'Content-Type': 'application/json',
-            'X-Auth-token': subjectToken
-        }
-        #response = requests.request("POST", url, headers=headers, data=payload, verify=False)
+        application = json.loads(open('applicationInfo.json').read())
 
         # Base 64 encoding client info
-
-        #clientID = response.json()['application']['id']
-        #clientSecret = response.json()['application']['secret']
-        clientID = "b03ebda8-6fb8-4169-931e-4111e5feb590"
-        clientSecret = "7c5c67f6-63f7-4fc5-9d8c-ec5ff94a01d1";
-        clientInfo = clientID + ":" + clientSecret
+        clientInfo = application["clientID"] + ":" + application["clientSecret"]
         clientInfoBytes = clientInfo.encode("ascii")
         clientInfoBytesBase64 = base64.b64encode(clientInfoBytes)
         self.clientInfoBase64 = clientInfoBytesBase64.decode("ascii")
