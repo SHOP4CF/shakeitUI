@@ -19,9 +19,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <p align="middle">
-  <img src="https://user-images.githubusercontent.com/113982478/212876926-aca6b8bf-9550-4c45-84e0-7fec7657ed7c.png" width="32%" />
-  <img src="https://user-images.githubusercontent.com/113982478/212877103-0c37d9a8-5b25-4cdb-b522-336b29d5dbcb.png" width="32%" /> 
-  <img src="https://user-images.githubusercontent.com/113982478/212877160-96573ae7-e39c-4950-890c-1eb67b306f43.png" width="32%" />
+  <img src="https://user-images.githubusercontent.com/113982478/212876926-aca6b8bf-9550-4c45-84e0-7fec7657ed7c.png" width="33%" />
+  <img src="https://user-images.githubusercontent.com/113982478/212877103-0c37d9a8-5b25-4cdb-b522-336b29d5dbcb.png" width="33%" /> 
+  <img src="https://user-images.githubusercontent.com/113982478/212877160-96573ae7-e39c-4950-890c-1eb67b306f43.png" width="33%" />
 </p>
 
 This project contains the UI for the [shakeit component](https://github.com/SHOP4CF/shakeit). It uses KeyRock for authentication of users.
@@ -38,6 +38,14 @@ To get a local copy up and running follow these steps.
   npm install -g npm
   ```
 * node.js
+* pyqt5
+  ```sh
+  pip install pyqt5
+  ```
+* requests
+  ```sh
+  pip install requests
+  ```
 
 ### Installation
 Before installation of this project KeyRock should be set up. To do so follow the steps below.
@@ -106,8 +114,13 @@ You should now have 2 repositories set up: "fiware-idm" and "shakeitUI".
    sudo docker-compose up
    ```
    Go to localhost:3000 to see the KeyRock site running.
+   
+2. The first time the code is run an application should be generated in KeyRock. To do this run the file ```generateApplication.py``` (in shakeitUI repository). This should modify ```applicationInfo.json```. This step only needs to be done before the first time ```Main.py``` is run, and this step can therefore be skipped the subsequent times.
+    ```sh
+   python generateApplication.py
+   ```
 
-2. Run Main.py (in the shakeitUI repository)
+3. Run ```Main.py``` (in the shakeitUI repository)
    ```sh
    python main.py
    ```
