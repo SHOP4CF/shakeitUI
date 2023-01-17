@@ -41,11 +41,14 @@ class MainWindow:
             'Content-Type': 'application/json',
             'X-Auth-token': subjectToken
         }
-        response = requests.request("POST", url, headers=headers, data=payload, verify=False)
+        #response = requests.request("POST", url, headers=headers, data=payload, verify=False)
 
         # Base 64 encoding client info
-        clientID = response.json()['application']['id']
-        clientSecret = response.json()['application']['secret']
+
+        #clientID = response.json()['application']['id']
+        #clientSecret = response.json()['application']['secret']
+        clientID = "b03ebda8-6fb8-4169-931e-4111e5feb590"
+        clientSecret = "7c5c67f6-63f7-4fc5-9d8c-ec5ff94a01d1";
         clientInfo = clientID + ":" + clientSecret
         clientInfoBytes = clientInfo.encode("ascii")
         clientInfoBytesBase64 = base64.b64encode(clientInfoBytes)
