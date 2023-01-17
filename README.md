@@ -89,18 +89,18 @@ Before installation of this project KeyRock should be set up. To do so follow th
     };
     ```
 
-5.  Navigate to ```extras/docker``` directory and copy the Dockerfile into the root. Then replace the whole RUN statement on line 69-86 by the following COPY statement:
+5.  Navigate to ```extras/docker``` directory and copy the Dockerfile into the root. Then replace the whole RUN statement on line 69-86 with the following COPY statement:
     ```DockerFile
     COPY . /opt/fiware-idm
     ```
 
-6. Navigate to ```extras/docker``` directory and copy the docker-compose.yml file into the root. Remove the mailer (line 27-29 and 61-74) and add the following two lines under enviroment for the keyrock service.
+6. Navigate to ```extras/docker``` directory and copy the docker-compose.yml file into the root. Remove the mailer (line 27-29 and 61-74) and add the following two lines under enviroment for the keyrock service. After this keyrock is ready.
     ```docker-compose
           - IDM_HTTPS_ENABLED=true
           - IDM_HTTPS_PORT=443
     ```
 
-7. Now that KeyRock is ready clone this repository.
+7. Lastly clone this repository.
    ```sh
    git clone https://github.com/SHOP4CF/shakeitUI.git
    ```
@@ -109,18 +109,18 @@ You should now have 2 repositories set up: "fiware-idm" and "shakeitUI".
 
 ### Running
 
-1. Start KeyRock container using the dockercompose file (in the fiware-idm repository)
+1. Start KeyRock container using the dockercompose file (in the fiware-idm)
    ```sh
    sudo docker-compose up
    ```
    Go to localhost:3000 to see the KeyRock site running.
    
-2. The first time the code is run an application should be generated in KeyRock. To do this run the file ```generateApplication.py``` (in shakeitUI repository). This should modify ```applicationInfo.json```. This step only needs to be done before the first time ```Main.py``` is run, and this step can therefore be skipped the subsequent times.
+2. The first time the code is run an application should be generated in KeyRock. To do this run the file ```generateApplication.py``` (in shakeitUI). This should modify ```applicationInfo.json```. This step only needs to be done before the first time ```Main.py``` is run, and this step can therefore be skipped the subsequent times.
     ```sh
    python generateApplication.py
    ```
 
-3. Run ```Main.py``` (in the shakeitUI repository)
+3. Run ```Main.py``` (in the shakeitUI)
    ```sh
    python main.py
    ```
