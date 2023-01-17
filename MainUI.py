@@ -14,46 +14,38 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1106, 701)
-        MainWindow.setMinimumSize(QtCore.QSize(1106, 701))
-        MainWindow.setMaximumSize(QtCore.QSize(1106, 701))
+        MainWindow.resize(1920, 1080)
+        MainWindow.setMinimumSize(QtCore.QSize(1920, 1080))
+        MainWindow.setMaximumSize(QtCore.QSize(1920, 1080))
         font = QtGui.QFont()
         font.setFamily("Nirmala UI")
         MainWindow.setFont(font)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedLogin = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedLogin.setGeometry(QtCore.QRect(0, 0, 1111, 701))
+        self.stackedLogin.setGeometry(QtCore.QRect(0, 0, 1921, 1081))
         self.stackedLogin.setStyleSheet("")
         self.stackedLogin.setObjectName("stackedLogin")
         self.loginPage = QtWidgets.QWidget()
         self.loginPage.setStyleSheet("")
         self.loginPage.setObjectName("loginPage")
-        self.labelPassword = QtWidgets.QLabel(self.loginPage)
-        self.labelPassword.setGeometry(QtCore.QRect(420, 320, 81, 16))
-        font = QtGui.QFont()
-        font.setFamily("Nirmala UI")
-        font.setPointSize(12)
-        self.labelPassword.setFont(font)
-        self.labelPassword.setObjectName("labelPassword")
-        self.textPassword = QtWidgets.QLineEdit(self.loginPage)
-        self.textPassword.setGeometry(QtCore.QRect(420, 340, 271, 31))
-        self.textPassword.setStyleSheet("lineedit-password-character: 9679")
-        self.textPassword.setInputMethodHints(QtCore.Qt.ImhNone)
-        self.textPassword.setMaxLength(32766)
-        self.textPassword.setObjectName("textPassword")
-        self.backrgroundFrame = QtWidgets.QLabel(self.loginPage)
-        self.backrgroundFrame.setGeometry(QtCore.QRect(390, 150, 331, 351))
-        self.backrgroundFrame.setAutoFillBackground(False)
-        self.backrgroundFrame.setStyleSheet("background-color: white;\n"
-"border-radius: 15px;")
-        self.backrgroundFrame.setText("")
-        self.backrgroundFrame.setObjectName("backrgroundFrame")
-        self.buttonLogin = QtWidgets.QPushButton(self.loginPage)
-        self.buttonLogin.setGeometry(QtCore.QRect(420, 430, 271, 31))
+        self.background = QtWidgets.QLabel(self.loginPage)
+        self.background.setGeometry(QtCore.QRect(0, 0, 1921, 1091))
+        self.background.setText("")
+        self.background.setPixmap(QtGui.QPixmap("resources/backgroundlogin.jpg"))
+        self.background.setScaledContents(True)
+        self.background.setObjectName("background")
+        self.frame = QtWidgets.QFrame(self.loginPage)
+        self.frame.setGeometry(QtCore.QRect(700, 270, 531, 481))
+        self.frame.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.buttonLogin = QtWidgets.QPushButton(self.frame)
+        self.buttonLogin.setGeometry(QtCore.QRect(90, 390, 341, 51))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
-        font.setPointSize(10)
+        font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
         self.buttonLogin.setFont(font)
@@ -61,63 +53,76 @@ class Ui_MainWindow(object):
 "border-radius: 10px;\n"
 "color: white")
         self.buttonLogin.setObjectName("buttonLogin")
-        self.labelLogin = QtWidgets.QLabel(self.loginPage)
-        self.labelLogin.setGeometry(QtCore.QRect(510, 180, 91, 41))
+        self.textPassword = QtWidgets.QLineEdit(self.frame)
+        self.textPassword.setGeometry(QtCore.QRect(50, 280, 431, 41))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.textPassword.setFont(font)
+        self.textPassword.setStyleSheet("lineedit-password-character: 9679")
+        self.textPassword.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.textPassword.setMaxLength(32766)
+        self.textPassword.setFrame(True)
+        self.textPassword.setObjectName("textPassword")
+        self.labelPassword = QtWidgets.QLabel(self.frame)
+        self.labelPassword.setGeometry(QtCore.QRect(50, 240, 91, 31))
         font = QtGui.QFont()
         font.setFamily("Nirmala UI")
-        font.setPointSize(24)
+        font.setPointSize(16)
+        self.labelPassword.setFont(font)
+        self.labelPassword.setObjectName("labelPassword")
+        self.textUsername = QtWidgets.QLineEdit(self.frame)
+        self.textUsername.setGeometry(QtCore.QRect(50, 180, 431, 41))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.textUsername.setFont(font)
+        self.textUsername.setStyleSheet("")
+        self.textUsername.setObjectName("textUsername")
+        self.labelLoginError = QtWidgets.QLabel(self.frame)
+        self.labelLoginError.setGeometry(QtCore.QRect(140, 339, 221, 31))
+        font = QtGui.QFont()
+        font.setFamily("Nirmala UI")
+        font.setPointSize(12)
+        self.labelLoginError.setFont(font)
+        self.labelLoginError.setStyleSheet("color: rgb(206, 42, 42);")
+        self.labelLoginError.setAlignment(QtCore.Qt.AlignCenter)
+        self.labelLoginError.setObjectName("labelLoginError")
+        self.labelUsername = QtWidgets.QLabel(self.frame)
+        self.labelUsername.setGeometry(QtCore.QRect(50, 140, 101, 31))
+        font = QtGui.QFont()
+        font.setFamily("Nirmala UI")
+        font.setPointSize(16)
+        self.labelUsername.setFont(font)
+        self.labelUsername.setObjectName("labelUsername")
+        self.labelLogin = QtWidgets.QLabel(self.frame)
+        self.labelLogin.setGeometry(QtCore.QRect(190, 40, 151, 61))
+        font = QtGui.QFont()
+        font.setFamily("Nirmala UI")
+        font.setPointSize(36)
         font.setBold(True)
         font.setWeight(75)
         self.labelLogin.setFont(font)
         self.labelLogin.setStyleSheet("color: rgb(255, 170, 127)")
         self.labelLogin.setObjectName("labelLogin")
-        self.textUsername = QtWidgets.QLineEdit(self.loginPage)
-        self.textUsername.setGeometry(QtCore.QRect(420, 270, 271, 31))
-        self.textUsername.setObjectName("textUsername")
-        self.labelUsername = QtWidgets.QLabel(self.loginPage)
-        self.labelUsername.setGeometry(QtCore.QRect(420, 250, 81, 16))
-        font = QtGui.QFont()
-        font.setFamily("Nirmala UI")
-        font.setPointSize(12)
-        self.labelUsername.setFont(font)
-        self.labelUsername.setObjectName("labelUsername")
-        self.background = QtWidgets.QLabel(self.loginPage)
-        self.background.setGeometry(QtCore.QRect(0, 0, 1111, 701))
-        self.background.setText("")
-        self.background.setPixmap(QtGui.QPixmap("resources/backgroundlogin.jpg"))
-        self.background.setScaledContents(True)
-        self.background.setObjectName("background")
-        self.labelLoginError = QtWidgets.QLabel(self.loginPage)
-        self.labelLoginError.setGeometry(QtCore.QRect(460, 380, 191, 20))
-        font = QtGui.QFont()
-        font.setFamily("Nirmala UI")
-        font.setPointSize(10)
-        self.labelLoginError.setFont(font)
-        self.labelLoginError.setStyleSheet("color: rgb(206, 42, 42);")
-        self.labelLoginError.setAlignment(QtCore.Qt.AlignCenter)
-        self.labelLoginError.setObjectName("labelLoginError")
-        self.background.raise_()
-        self.backrgroundFrame.raise_()
-        self.labelPassword.raise_()
-        self.textPassword.raise_()
         self.buttonLogin.raise_()
+        self.labelPassword.raise_()
+        self.labelLoginError.raise_()
+        self.labelUsername.raise_()
         self.labelLogin.raise_()
         self.textUsername.raise_()
-        self.labelUsername.raise_()
-        self.labelLoginError.raise_()
+        self.textPassword.raise_()
         self.stackedLogin.addWidget(self.loginPage)
         self.mainPage = QtWidgets.QWidget()
         self.mainPage.setStyleSheet("")
         self.mainPage.setObjectName("mainPage")
         self.stackedPages = QtWidgets.QStackedWidget(self.mainPage)
-        self.stackedPages.setGeometry(QtCore.QRect(200, 0, 911, 701))
+        self.stackedPages.setGeometry(QtCore.QRect(310, 0, 1611, 1081))
         self.stackedPages.setStyleSheet("")
         self.stackedPages.setObjectName("stackedPages")
         self.pageAI = QtWidgets.QWidget()
         self.pageAI.setStyleSheet("")
         self.pageAI.setObjectName("pageAI")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.pageAI)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(480, 90, 411, 151))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(930, 150, 651, 211))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.Layoutstartstop = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.Layoutstartstop.setContentsMargins(0, 0, 0, 0)
@@ -128,70 +133,77 @@ class Ui_MainWindow(object):
         self.buttonStart.setBaseSize(QtCore.QSize(0, 0))
         self.buttonStart.setStyleSheet("background-color:  rgb(127, 178, 133);\n"
 "color: rgb(255, 255, 255);\n"
-"font: 16pt \"Nirmala UI\";")
+"font: 22pt \"Nirmala UI\";")
         self.buttonStart.setObjectName("buttonStart")
         self.Layoutstartstop.addWidget(self.buttonStart)
         self.buttonStop = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.buttonStop.setMaximumSize(QtCore.QSize(16777215, 200))
         self.buttonStop.setStyleSheet("background-color:rgb(199, 72, 72);\n"
 "color: white;\n"
-"font: 16pt \"Nirmala UI\";")
+"font: 22pt \"Nirmala UI\";")
         self.buttonStop.setObjectName("buttonStop")
         self.Layoutstartstop.addWidget(self.buttonStop)
         self.Titel = QtWidgets.QLabel(self.pageAI)
-        self.Titel.setGeometry(QtCore.QRect(30, 20, 401, 51))
-        self.Titel.setStyleSheet("font: 22pt \"Nirmala UI\";\n"
+        self.Titel.setGeometry(QtCore.QRect(40, 30, 511, 61))
+        font = QtGui.QFont()
+        font.setFamily("Nirmala UI")
+        font.setPointSize(36)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.Titel.setFont(font)
+        self.Titel.setStyleSheet("font: 36pt \"Nirmala UI\";\n"
 "color: white;")
         self.Titel.setObjectName("Titel")
         self.line = QtWidgets.QFrame(self.pageAI)
-        self.line.setGeometry(QtCore.QRect(20, 70, 871, 16))
+        self.line.setGeometry(QtCore.QRect(40, 100, 1541, 20))
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
         self.gridLayoutWidget = QtWidgets.QWidget(self.pageAI)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(290, 260, 601, 421))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(510, 380, 1071, 641))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.graphlayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.graphlayout.setContentsMargins(0, 0, 0, 0)
         self.graphlayout.setObjectName("graphlayout")
-        self.graph1 = QtWidgets.QGraphicsView(self.gridLayoutWidget)
-        self.graph1.setObjectName("graph1")
-        self.graphlayout.addWidget(self.graph1, 0, 0, 1, 1)
-        self.graph2 = QtWidgets.QGraphicsView(self.gridLayoutWidget)
-        self.graph2.setObjectName("graph2")
-        self.graphlayout.addWidget(self.graph2, 0, 1, 1, 1)
-        self.graph3 = QtWidgets.QGraphicsView(self.gridLayoutWidget)
-        self.graph3.setObjectName("graph3")
-        self.graphlayout.addWidget(self.graph3, 1, 0, 1, 1)
         self.graph4 = QtWidgets.QGraphicsView(self.gridLayoutWidget)
         self.graph4.setObjectName("graph4")
         self.graphlayout.addWidget(self.graph4, 1, 1, 1, 1)
+        self.graph1 = QtWidgets.QGraphicsView(self.gridLayoutWidget)
+        self.graph1.setObjectName("graph1")
+        self.graphlayout.addWidget(self.graph1, 0, 0, 1, 1)
+        self.graph3 = QtWidgets.QGraphicsView(self.gridLayoutWidget)
+        self.graph3.setObjectName("graph3")
+        self.graphlayout.addWidget(self.graph3, 1, 0, 1, 1)
+        self.graph2 = QtWidgets.QGraphicsView(self.gridLayoutWidget)
+        self.graph2.setObjectName("graph2")
+        self.graphlayout.addWidget(self.graph2, 0, 1, 1, 1)
         self.statusBox = QtWidgets.QGroupBox(self.pageAI)
-        self.statusBox.setGeometry(QtCore.QRect(20, 80, 441, 161))
-        self.statusBox.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
+        self.statusBox.setGeometry(QtCore.QRect(40, 140, 861, 211))
+        self.statusBox.setStyleSheet("font: 18pt \"Nirmala UI\";\n"
 "color: white;")
         self.statusBox.setObjectName("statusBox")
         self.settingsBox = QtWidgets.QGroupBox(self.pageAI)
-        self.settingsBox.setGeometry(QtCore.QRect(20, 250, 251, 431))
-        self.settingsBox.setStyleSheet("font: 75 14pt \"Nirmala UI\";\n"
+        self.settingsBox.setGeometry(QtCore.QRect(40, 370, 431, 651))
+        self.settingsBox.setStyleSheet("font: 75 18pt \"Nirmala UI\";\n"
 "color: white;")
         self.settingsBox.setObjectName("settingsBox")
         self.buttonSettings = QtWidgets.QPushButton(self.settingsBox)
-        self.buttonSettings.setGeometry(QtCore.QRect(70, 370, 121, 31))
-        self.buttonSettings.setStyleSheet("font: 10pt \"Nirmala UI\";\n"
+        self.buttonSettings.setGeometry(QtCore.QRect(110, 580, 211, 41))
+        self.buttonSettings.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
 "background-color: rgb(93, 112, 131);\n"
 "color: white;")
         self.buttonSettings.setObjectName("buttonSettings")
         self.spinIterations = QtWidgets.QSpinBox(self.settingsBox)
-        self.spinIterations.setGeometry(QtCore.QRect(140, 60, 41, 21))
+        self.spinIterations.setGeometry(QtCore.QRect(190, 60, 41, 31))
         self.spinIterations.setStyleSheet("color: black;\n"
 "")
         self.spinIterations.setObjectName("spinIterations")
         self.labelIterations = QtWidgets.QLabel(self.settingsBox)
-        self.labelIterations.setGeometry(QtCore.QRect(40, 60, 81, 21))
+        self.labelIterations.setGeometry(QtCore.QRect(50, 60, 111, 31))
         self.labelIterations.setObjectName("labelIterations")
         self.backgroundAI = QtWidgets.QLabel(self.pageAI)
-        self.backgroundAI.setGeometry(QtCore.QRect(0, 0, 901, 701))
+        self.backgroundAI.setGeometry(QtCore.QRect(0, 0, 1611, 1081))
         self.backgroundAI.setStyleSheet("background-color: #CE796B;")
         self.backgroundAI.setText("")
         self.backgroundAI.setObjectName("backgroundAI")
@@ -232,17 +244,17 @@ class Ui_MainWindow(object):
 "}")
         self.pageManual.setObjectName("pageManual")
         self.Titel_2 = QtWidgets.QLabel(self.pageManual)
-        self.Titel_2.setGeometry(QtCore.QRect(30, 20, 401, 51))
-        self.Titel_2.setStyleSheet("font: 22pt \"Nirmala UI\";\n"
+        self.Titel_2.setGeometry(QtCore.QRect(40, 30, 671, 61))
+        self.Titel_2.setStyleSheet("font: 36pt \"Nirmala UI\";\n"
 "color: white;")
         self.Titel_2.setObjectName("Titel_2")
         self.line_2 = QtWidgets.QFrame(self.pageManual)
-        self.line_2.setGeometry(QtCore.QRect(20, 70, 871, 16))
+        self.line_2.setGeometry(QtCore.QRect(40, 100, 1541, 16))
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.pageManual)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(20, 90, 871, 601))
+        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(40, 120, 1541, 901))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.layoutButtons = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.layoutButtons.setContentsMargins(0, 0, 0, 0)
@@ -251,8 +263,9 @@ class Ui_MainWindow(object):
         self.layoutForward.setSpacing(0)
         self.layoutForward.setObjectName("layoutForward")
         self.labelForward = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
+        self.labelForward.setMinimumSize(QtCore.QSize(0, 30))
         self.labelForward.setMaximumSize(QtCore.QSize(16777215, 20))
-        self.labelForward.setStyleSheet("font: bold 14pt \"Nirmala UI\";\n"
+        self.labelForward.setStyleSheet("font: bold 20pt \"Nirmala UI\";\n"
 "color: white;")
         self.labelForward.setAlignment(QtCore.Qt.AlignCenter)
         self.labelForward.setObjectName("labelForward")
@@ -260,6 +273,7 @@ class Ui_MainWindow(object):
         self.fw_r1s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r1s2.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r1s2.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -267,7 +281,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -290,6 +304,7 @@ class Ui_MainWindow(object):
         self.fw_r3s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r3s2.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r3s2.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -297,7 +312,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -320,6 +335,7 @@ class Ui_MainWindow(object):
         self.fw_r1s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r1s4.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r1s4.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -327,7 +343,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -350,6 +366,7 @@ class Ui_MainWindow(object):
         self.fw_r3s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r3s4.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r3s4.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -357,7 +374,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -380,6 +397,7 @@ class Ui_MainWindow(object):
         self.fw_r1s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r1s6.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r1s6.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -387,7 +405,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -410,6 +428,7 @@ class Ui_MainWindow(object):
         self.fw_r3s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r3s6.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r3s6.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -417,7 +436,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -440,6 +459,7 @@ class Ui_MainWindow(object):
         self.fw_r1s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r1s8.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r1s8.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -447,7 +467,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -470,6 +490,7 @@ class Ui_MainWindow(object):
         self.fw_r3s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r3s8.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r3s8.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -477,7 +498,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -500,6 +521,7 @@ class Ui_MainWindow(object):
         self.fw_r1s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r1s10.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r1s10.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -507,7 +529,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -530,6 +552,7 @@ class Ui_MainWindow(object):
         self.fw_r3s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fw_r3s10.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fw_r3s10.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -537,7 +560,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -562,8 +585,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.labelBackward = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
+        self.labelBackward.setMinimumSize(QtCore.QSize(0, 30))
         self.labelBackward.setMaximumSize(QtCore.QSize(16777215, 20))
-        self.labelBackward.setStyleSheet("font: bold 14pt \"Nirmala UI\";\n"
+        self.labelBackward.setStyleSheet("font: bold 20pt \"Nirmala UI\";\n"
 "color: white;")
         self.labelBackward.setAlignment(QtCore.Qt.AlignCenter)
         self.labelBackward.setObjectName("labelBackward")
@@ -571,6 +595,7 @@ class Ui_MainWindow(object):
         self.b_r1s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r1s2.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r1s2.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -578,7 +603,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -601,6 +626,7 @@ class Ui_MainWindow(object):
         self.b_r3s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r3s2.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r3s2.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -608,7 +634,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -631,6 +657,7 @@ class Ui_MainWindow(object):
         self.b_r1s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r1s4.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r1s4.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -638,7 +665,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -661,6 +688,7 @@ class Ui_MainWindow(object):
         self.b_r3s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r3s4.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r3s4.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -668,7 +696,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -691,6 +719,7 @@ class Ui_MainWindow(object):
         self.b_r1s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r1s6.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r1s6.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -698,7 +727,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -721,6 +750,7 @@ class Ui_MainWindow(object):
         self.b_r3s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r3s6.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r3s6.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -728,7 +758,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -751,6 +781,7 @@ class Ui_MainWindow(object):
         self.b_r1s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r1s8.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r1s8.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -758,7 +789,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -781,6 +812,7 @@ class Ui_MainWindow(object):
         self.b_r3s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r3s8.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r3s8.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -788,7 +820,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -811,6 +843,7 @@ class Ui_MainWindow(object):
         self.b_r1s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r1s10.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r1s10.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -818,7 +851,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -841,6 +874,7 @@ class Ui_MainWindow(object):
         self.b_r3s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.b_r3s10.setMaximumSize(QtCore.QSize(16777215, 50))
         self.b_r3s10.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -848,7 +882,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -873,8 +907,9 @@ class Ui_MainWindow(object):
         self.layoutFlip.setSpacing(0)
         self.layoutFlip.setObjectName("layoutFlip")
         self.labelFlip = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
+        self.labelFlip.setMinimumSize(QtCore.QSize(0, 30))
         self.labelFlip.setMaximumSize(QtCore.QSize(16777215, 20))
-        self.labelFlip.setStyleSheet("font: bold 14pt \"Nirmala UI\";\n"
+        self.labelFlip.setStyleSheet("font: bold 20pt \"Nirmala UI\";\n"
 "color: white;")
         self.labelFlip.setAlignment(QtCore.Qt.AlignCenter)
         self.labelFlip.setObjectName("labelFlip")
@@ -882,6 +917,7 @@ class Ui_MainWindow(object):
         self.fp_r1s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r1s2.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r1s2.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -889,7 +925,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -912,6 +948,7 @@ class Ui_MainWindow(object):
         self.fp_r3s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r3s2.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r3s2.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -919,7 +956,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -942,6 +979,7 @@ class Ui_MainWindow(object):
         self.fp_r1s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r1s4.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r1s4.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -949,7 +987,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -972,6 +1010,7 @@ class Ui_MainWindow(object):
         self.fp_r3s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r3s4.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r3s4.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -979,7 +1018,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -1002,6 +1041,7 @@ class Ui_MainWindow(object):
         self.fp_r1s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r1s6.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r1s6.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -1009,7 +1049,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -1032,6 +1072,7 @@ class Ui_MainWindow(object):
         self.fp_r3s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r3s6.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r3s6.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -1039,7 +1080,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -1062,6 +1103,7 @@ class Ui_MainWindow(object):
         self.fp_r1s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r1s8.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r1s8.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -1069,7 +1111,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -1092,6 +1134,7 @@ class Ui_MainWindow(object):
         self.fp_r3s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r3s8.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r3s8.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -1099,7 +1142,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -1122,6 +1165,7 @@ class Ui_MainWindow(object):
         self.fp_r1s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r1s10.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r1s10.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -1129,7 +1173,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -1152,6 +1196,7 @@ class Ui_MainWindow(object):
         self.fp_r3s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.fp_r3s10.setMaximumSize(QtCore.QSize(16777215, 50))
         self.fp_r3s10.setStyleSheet("QPushButton {\n"
+"    min-height: 60 px;\n"
 "    background-color: rgb(93, 112, 131);\n"
 "    border: none;\n"
 "    padding-top: 5px;\n"
@@ -1159,7 +1204,7 @@ class Ui_MainWindow(object):
 "    border-left: 1px sold  rgb(73, 88, 103);\n"
 "    border-right: 1px solid  rgb(73, 88, 103);\n"
 "    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+"    font: 14pt \"MS Shell Dlg 2\";\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -1181,7 +1226,7 @@ class Ui_MainWindow(object):
         self.layoutFlip.addWidget(self.fp_r3s10)
         self.layoutButtons.addLayout(self.layoutFlip)
         self.backgroundManual = QtWidgets.QLabel(self.pageManual)
-        self.backgroundManual.setGeometry(QtCore.QRect(0, 0, 911, 701))
+        self.backgroundManual.setGeometry(QtCore.QRect(0, 0, 1611, 1081))
         self.backgroundManual.setStyleSheet("background-color: #CE796B;")
         self.backgroundManual.setText("")
         self.backgroundManual.setObjectName("backgroundManual")
@@ -1194,30 +1239,33 @@ class Ui_MainWindow(object):
         self.pageVS.setStyleSheet("background-color: white;")
         self.pageVS.setObjectName("pageVS")
         self.backgroundVS = QtWidgets.QLabel(self.pageVS)
-        self.backgroundVS.setGeometry(QtCore.QRect(0, 0, 911, 701))
+        self.backgroundVS.setGeometry(QtCore.QRect(0, 0, 1611, 1081))
         self.backgroundVS.setStyleSheet("background-color: #CE796B;")
         self.backgroundVS.setText("")
         self.backgroundVS.setObjectName("backgroundVS")
         self.stackedPages.addWidget(self.pageVS)
         self.buttonLogout = QtWidgets.QPushButton(self.mainPage)
-        self.buttonLogout.setGeometry(QtCore.QRect(50, 640, 91, 31))
+        self.buttonLogout.setGeometry(QtCore.QRect(70, 960, 161, 61))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.buttonLogout.setFont(font)
         self.buttonLogout.setStyleSheet("")
         self.buttonLogout.setObjectName("buttonLogout")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.mainPage)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(20, 250, 168, 231))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(40, 360, 221, 271))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.buttonsLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.buttonsLayout.setContentsMargins(0, 0, 0, 0)
         self.buttonsLayout.setObjectName("buttonsLayout")
         self.radioAI = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
         self.radioAI.setStyleSheet("QRadioButton {\n"
-"    font: 12pt \"Nirmala UI\";\n"
+"    font: 16pt \"Nirmala UI\";\n"
 "}\n"
 "\n"
 "QRadioButton::indicator {\n"
-"    width:                  40px;\n"
-"    height:                 40px;\n"
-"    border-radius:          22px;\n"
+"    width:                  50px;\n"
+"    height:                 50px;\n"
+"    border-radius:          27px;\n"
 "    image: url(resources/aiicon.png);\n"
 "}\n"
 "\n"
@@ -1234,13 +1282,14 @@ class Ui_MainWindow(object):
         self.buttonsLayout.addWidget(self.radioAI)
         self.radioManual = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
         self.radioManual.setStyleSheet("QRadioButton {\n"
-"    font: 12pt \"Nirmala UI\";\n"
+"    font: 16pt \"Nirmala UI\";\n"
 "}\n"
 "\n"
+"\n"
 "QRadioButton::indicator {\n"
-"    width:                  40px;\n"
-"    height:                 40px;\n"
-"    border-radius:          22px;\n"
+"    width:                  50px;\n"
+"    height:                 50px;\n"
+"    border-radius:          27px;\n"
 "    image: url(resources/maunalicon.png);\n"
 "}\n"
 "\n"
@@ -1257,13 +1306,13 @@ class Ui_MainWindow(object):
         self.buttonsLayout.addWidget(self.radioManual)
         self.radioVS = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
         self.radioVS.setStyleSheet("QRadioButton {\n"
-"    font: 12pt \"Nirmala UI\";\n"
+"    font: 16pt \"Nirmala UI\";\n"
 "}\n"
 "\n"
 "QRadioButton::indicator {\n"
-"    width:                  40px;\n"
-"    height:                 40px;\n"
-"    border-radius:          22px;\n"
+"    width:                  50px;\n"
+"    height:                 50px;\n"
+"    border-radius:          27px;\n"
 "    image: url(resources/vsicon.png);\n"
 "}\n"
 "\n"
@@ -1279,31 +1328,31 @@ class Ui_MainWindow(object):
         self.radioVS.setObjectName("radioVS")
         self.buttonsLayout.addWidget(self.radioVS)
         self.verticalLayoutWidget = QtWidgets.QWidget(self.mainPage)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 170, 160, 42))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 220, 221, 59))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.userInfoLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.userInfoLayout.setContentsMargins(0, 0, 0, 0)
         self.userInfoLayout.setSpacing(0)
         self.userInfoLayout.setObjectName("userInfoLayout")
         self.labelRole = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelRole.setStyleSheet("font: 10pt \"Nirmala UI\";\n"
+        self.labelRole.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
 "color: rgb(93, 93, 93);")
         self.labelRole.setAlignment(QtCore.Qt.AlignCenter)
         self.labelRole.setObjectName("labelRole")
         self.userInfoLayout.addWidget(self.labelRole)
         self.labelUsername_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelUsername_2.setStyleSheet("font: 13pt \"Nirmala UI\";")
+        self.labelUsername_2.setStyleSheet("font: 18pt \"Nirmala UI\";")
         self.labelUsername_2.setAlignment(QtCore.Qt.AlignCenter)
         self.labelUsername_2.setObjectName("labelUsername_2")
         self.userInfoLayout.addWidget(self.labelUsername_2)
         self.sidebarBackground = QtWidgets.QLabel(self.mainPage)
-        self.sidebarBackground.setGeometry(QtCore.QRect(0, 0, 201, 701))
+        self.sidebarBackground.setGeometry(QtCore.QRect(0, 0, 311, 1081))
         self.sidebarBackground.setStyleSheet("background-color: #E7AD99;")
         self.sidebarBackground.setText("")
         self.sidebarBackground.setScaledContents(False)
         self.sidebarBackground.setObjectName("sidebarBackground")
         self.label = QtWidgets.QLabel(self.mainPage)
-        self.label.setGeometry(QtCore.QRect(40, 60, 121, 101))
+        self.label.setGeometry(QtCore.QRect(80, 80, 151, 121))
         self.label.setStyleSheet("image: url(resources/usericon.png);")
         self.label.setText("")
         self.label.setObjectName("label")
@@ -1315,11 +1364,10 @@ class Ui_MainWindow(object):
         self.label.raise_()
         self.stackedLogin.addWidget(self.mainPage)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.backrgroundFrame.setBuddy(self.backrgroundFrame)
 
         self.retranslateUi(MainWindow)
-        self.stackedLogin.setCurrentIndex(0)
-        self.stackedPages.setCurrentIndex(0)
+        self.stackedLogin.setCurrentIndex(1)
+        self.stackedPages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textUsername, self.textPassword)
         MainWindow.setTabOrder(self.textPassword, self.buttonLogin)
@@ -1327,11 +1375,11 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.labelPassword.setText(_translate("MainWindow", "Password"))
         self.buttonLogin.setText(_translate("MainWindow", "Log in"))
-        self.labelLogin.setText(_translate("MainWindow", "Log in"))
-        self.labelUsername.setText(_translate("MainWindow", "Username"))
+        self.labelPassword.setText(_translate("MainWindow", "Password"))
         self.labelLoginError.setText(_translate("MainWindow", "Invalid username or password"))
+        self.labelUsername.setText(_translate("MainWindow", "Username"))
+        self.labelLogin.setText(_translate("MainWindow", "Log in"))
         self.buttonStart.setText(_translate("MainWindow", "Start"))
         self.buttonStop.setText(_translate("MainWindow", "Stop"))
         self.Titel.setText(_translate("MainWindow", "Shakeit AI Control Panel"))

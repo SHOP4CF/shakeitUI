@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1106</width>
-    <height>701</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1106</width>
-    <height>701</height>
+    <width>1920</width>
+    <height>1080</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1106</width>
-    <height>701</height>
+    <width>1920</width>
+    <height>1080</height>
    </size>
   </property>
   <property name="font">
@@ -36,167 +36,27 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1111</width>
-      <height>701</height>
+      <width>1921</width>
+      <height>1081</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="loginPage">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
-     <widget class="QLabel" name="labelPassword">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>320</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Nirmala UI</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Password</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="textPassword">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>340</y>
-        <width>271</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">lineedit-password-character: 9679</string>
-      </property>
-      <property name="inputMethodHints">
-       <set>Qt::ImhNone</set>
-      </property>
-      <property name="maxLength">
-       <number>32766</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="backrgroundFrame">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>150</y>
-        <width>331</width>
-        <height>351</height>
-       </rect>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-border-radius: 15px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="buddy">
-       <cstring>backrgroundFrame</cstring>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="buttonLogin">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>430</y>
-        <width>271</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>MS Shell Dlg 2</family>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 170, 127);
-border-radius: 10px;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Log in</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="labelLogin">
-      <property name="geometry">
-       <rect>
-        <x>510</x>
-        <y>180</y>
-        <width>91</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Nirmala UI</family>
-        <pointsize>24</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 170, 127)</string>
-      </property>
-      <property name="text">
-       <string>Log in</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="textUsername">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>270</y>
-        <width>271</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="labelUsername">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>250</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Nirmala UI</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Username</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="background">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1111</width>
-        <height>701</height>
+        <width>1921</width>
+        <height>1091</height>
        </rect>
       </property>
       <property name="text">
@@ -209,40 +69,190 @@ color: white</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="labelLoginError">
+     <widget class="QFrame" name="frame">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>380</y>
-        <width>191</width>
-        <height>20</height>
+        <x>700</x>
+        <y>270</y>
+        <width>531</width>
+        <height>481</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Nirmala UI</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(206, 42, 42);</string>
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
-      <property name="text">
-       <string>Invalid username or password</string>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
+      <widget class="QPushButton" name="buttonLogin">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>390</y>
+         <width>341</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MS Shell Dlg 2</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 127);
+border-radius: 10px;
+color: white</string>
+       </property>
+       <property name="text">
+        <string>Log in</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="textPassword">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>280</y>
+         <width>431</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">lineedit-password-character: 9679</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::ImhNone</set>
+       </property>
+       <property name="maxLength">
+        <number>32766</number>
+       </property>
+       <property name="frame">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelPassword">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>240</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Password</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="textUsername">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>180</y>
+         <width>431</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelLoginError">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>339</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(206, 42, 42);</string>
+       </property>
+       <property name="text">
+        <string>Invalid username or password</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelUsername">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>140</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Username</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelLogin">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>40</y>
+         <width>151</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Nirmala UI</family>
+         <pointsize>36</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 170, 127)</string>
+       </property>
+       <property name="text">
+        <string>Log in</string>
+       </property>
+      </widget>
+      <zorder>buttonLogin</zorder>
+      <zorder>labelPassword</zorder>
+      <zorder>labelLoginError</zorder>
+      <zorder>labelUsername</zorder>
+      <zorder>labelLogin</zorder>
+      <zorder>textUsername</zorder>
+      <zorder>textPassword</zorder>
      </widget>
-     <zorder>background</zorder>
-     <zorder>backrgroundFrame</zorder>
-     <zorder>labelPassword</zorder>
-     <zorder>textPassword</zorder>
-     <zorder>buttonLogin</zorder>
-     <zorder>labelLogin</zorder>
-     <zorder>textUsername</zorder>
-     <zorder>labelUsername</zorder>
-     <zorder>labelLoginError</zorder>
     </widget>
     <widget class="QWidget" name="mainPage">
      <property name="styleSheet">
@@ -251,17 +261,17 @@ color: white</string>
      <widget class="QStackedWidget" name="stackedPages">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>310</x>
         <y>0</y>
-        <width>911</width>
-        <height>701</height>
+        <width>1611</width>
+        <height>1081</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -270,10 +280,10 @@ color: white</string>
        <widget class="QWidget" name="horizontalLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>480</x>
-          <y>90</y>
-          <width>411</width>
-          <height>151</height>
+          <x>930</x>
+          <y>150</y>
+          <width>651</width>
+          <height>211</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="Layoutstartstop">
@@ -297,7 +307,7 @@ color: white</string>
            <property name="styleSheet">
             <string notr="true">background-color:  rgb(127, 178, 133);
 color: rgb(255, 255, 255);
-font: 16pt &quot;Nirmala UI&quot;;</string>
+font: 22pt &quot;Nirmala UI&quot;;</string>
            </property>
            <property name="text">
             <string>Start</string>
@@ -315,7 +325,7 @@ font: 16pt &quot;Nirmala UI&quot;;</string>
            <property name="styleSheet">
             <string notr="true">background-color:rgb(199, 72, 72);
 color: white;
-font: 16pt &quot;Nirmala UI&quot;;</string>
+font: 22pt &quot;Nirmala UI&quot;;</string>
            </property>
            <property name="text">
             <string>Stop</string>
@@ -327,14 +337,23 @@ font: 16pt &quot;Nirmala UI&quot;;</string>
        <widget class="QLabel" name="Titel">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>20</y>
-          <width>401</width>
-          <height>51</height>
+          <x>40</x>
+          <y>30</y>
+          <width>511</width>
+          <height>61</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>Nirmala UI</family>
+          <pointsize>36</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
-         <string notr="true">font: 22pt &quot;Nirmala UI&quot;;
+         <string notr="true">font: 36pt &quot;Nirmala UI&quot;;
 color: white;</string>
         </property>
         <property name="text">
@@ -344,10 +363,10 @@ color: white;</string>
        <widget class="Line" name="line">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>871</width>
-          <height>16</height>
+          <x>40</x>
+          <y>100</y>
+          <width>1541</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="orientation">
@@ -357,38 +376,38 @@ color: white;</string>
        <widget class="QWidget" name="gridLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>290</x>
-          <y>260</y>
-          <width>601</width>
-          <height>421</height>
+          <x>510</x>
+          <y>380</y>
+          <width>1071</width>
+          <height>641</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="graphlayout">
+         <item row="1" column="1">
+          <widget class="QGraphicsView" name="graph4"/>
+         </item>
          <item row="0" column="0">
           <widget class="QGraphicsView" name="graph1"/>
-         </item>
-         <item row="0" column="1">
-          <widget class="QGraphicsView" name="graph2"/>
          </item>
          <item row="1" column="0">
           <widget class="QGraphicsView" name="graph3"/>
          </item>
-         <item row="1" column="1">
-          <widget class="QGraphicsView" name="graph4"/>
+         <item row="0" column="1">
+          <widget class="QGraphicsView" name="graph2"/>
          </item>
         </layout>
        </widget>
        <widget class="QGroupBox" name="statusBox">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>80</y>
-          <width>441</width>
-          <height>161</height>
+          <x>40</x>
+          <y>140</y>
+          <width>861</width>
+          <height>211</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 14pt &quot;Nirmala UI&quot;;
+         <string notr="true">font: 18pt &quot;Nirmala UI&quot;;
 color: white;</string>
         </property>
         <property name="title">
@@ -398,14 +417,14 @@ color: white;</string>
        <widget class="QGroupBox" name="settingsBox">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>250</y>
-          <width>251</width>
-          <height>431</height>
+          <x>40</x>
+          <y>370</y>
+          <width>431</width>
+          <height>651</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 14pt &quot;Nirmala UI&quot;;
+         <string notr="true">font: 75 18pt &quot;Nirmala UI&quot;;
 color: white;</string>
         </property>
         <property name="title">
@@ -414,14 +433,14 @@ color: white;</string>
         <widget class="QPushButton" name="buttonSettings">
          <property name="geometry">
           <rect>
-           <x>70</x>
-           <y>370</y>
-           <width>121</width>
-           <height>31</height>
+           <x>110</x>
+           <y>580</y>
+           <width>211</width>
+           <height>41</height>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 10pt &quot;Nirmala UI&quot;;
+          <string notr="true">font: 14pt &quot;Nirmala UI&quot;;
 background-color: rgb(93, 112, 131);
 color: white;</string>
          </property>
@@ -432,10 +451,10 @@ color: white;</string>
         <widget class="QSpinBox" name="spinIterations">
          <property name="geometry">
           <rect>
-           <x>140</x>
+           <x>190</x>
            <y>60</y>
            <width>41</width>
-           <height>21</height>
+           <height>31</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -446,10 +465,10 @@ color: white;</string>
         <widget class="QLabel" name="labelIterations">
          <property name="geometry">
           <rect>
-           <x>40</x>
+           <x>50</x>
            <y>60</y>
-           <width>81</width>
-           <height>21</height>
+           <width>111</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="text">
@@ -462,8 +481,8 @@ color: white;</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
-          <height>701</height>
+          <width>1611</width>
+          <height>1081</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -513,14 +532,14 @@ QPushButton:pressed{
        <widget class="QLabel" name="Titel_2">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>20</y>
-          <width>401</width>
-          <height>51</height>
+          <x>40</x>
+          <y>30</y>
+          <width>671</width>
+          <height>61</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 22pt &quot;Nirmala UI&quot;;
+         <string notr="true">font: 36pt &quot;Nirmala UI&quot;;
 color: white;</string>
         </property>
         <property name="text">
@@ -530,9 +549,9 @@ color: white;</string>
        <widget class="Line" name="line_2">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>70</y>
-          <width>871</width>
+          <x>40</x>
+          <y>100</y>
+          <width>1541</width>
           <height>16</height>
          </rect>
         </property>
@@ -543,10 +562,10 @@ color: white;</string>
        <widget class="QWidget" name="horizontalLayoutWidget_2">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>90</y>
-          <width>871</width>
-          <height>601</height>
+          <x>40</x>
+          <y>120</y>
+          <width>1541</width>
+          <height>901</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="layoutButtons">
@@ -557,6 +576,12 @@ color: white;</string>
            </property>
            <item>
             <widget class="QLabel" name="labelForward">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -564,7 +589,7 @@ color: white;</string>
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">font: bold 14pt &quot;Nirmala UI&quot;;
+              <string notr="true">font: bold 20pt &quot;Nirmala UI&quot;;
 color: white;</string>
              </property>
              <property name="text">
@@ -585,6 +610,7 @@ color: white;</string>
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -592,7 +618,7 @@ color: white;</string>
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -626,6 +652,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -633,7 +660,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -667,6 +694,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -674,7 +702,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -708,6 +736,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -715,7 +744,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -749,6 +778,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -756,7 +786,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -790,6 +820,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -797,7 +828,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -831,6 +862,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -838,7 +870,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -872,6 +904,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -879,7 +912,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -913,6 +946,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -920,7 +954,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -954,6 +988,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -961,7 +996,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -994,6 +1029,12 @@ QPushButton:pressed{
            </property>
            <item>
             <widget class="QLabel" name="labelBackward">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -1001,7 +1042,7 @@ QPushButton:pressed{
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">font: bold 14pt &quot;Nirmala UI&quot;;
+              <string notr="true">font: bold 20pt &quot;Nirmala UI&quot;;
 color: white;</string>
              </property>
              <property name="text">
@@ -1022,6 +1063,7 @@ color: white;</string>
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1029,7 +1071,7 @@ color: white;</string>
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1063,6 +1105,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1070,7 +1113,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1104,6 +1147,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1111,7 +1155,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1145,6 +1189,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1152,7 +1197,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1186,6 +1231,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1193,7 +1239,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1227,6 +1273,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1234,7 +1281,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1268,6 +1315,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1275,7 +1323,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1309,6 +1357,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1316,7 +1365,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1350,6 +1399,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1357,7 +1407,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1391,6 +1441,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1398,7 +1449,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1431,6 +1482,12 @@ QPushButton:pressed{
            </property>
            <item>
             <widget class="QLabel" name="labelFlip">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -1438,7 +1495,7 @@ QPushButton:pressed{
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">font: bold 14pt &quot;Nirmala UI&quot;;
+              <string notr="true">font: bold 20pt &quot;Nirmala UI&quot;;
 color: white;</string>
              </property>
              <property name="text">
@@ -1459,6 +1516,7 @@ color: white;</string>
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1466,7 +1524,7 @@ color: white;</string>
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1500,6 +1558,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1507,7 +1566,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1541,6 +1600,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1548,7 +1608,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1582,6 +1642,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1589,7 +1650,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1623,6 +1684,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1630,7 +1692,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1664,6 +1726,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1671,7 +1734,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1705,6 +1768,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1712,7 +1776,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1746,6 +1810,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1753,7 +1818,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1787,6 +1852,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1794,7 +1860,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1828,6 +1894,7 @@ QPushButton:pressed{
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton {
+	min-height: 60 px;
 	background-color: rgb(93, 112, 131);
 	border: none;
 	padding-top: 5px;
@@ -1835,7 +1902,7 @@ QPushButton:pressed{
 	border-left: 1px sold  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
-	font: 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 14pt &quot;MS Shell Dlg 2&quot;;
 }
 
 QPushButton:hover {
@@ -1868,8 +1935,8 @@ QPushButton:pressed{
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>911</width>
-          <height>701</height>
+          <width>1611</width>
+          <height>1081</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1893,8 +1960,8 @@ QPushButton:pressed{
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>911</width>
-          <height>701</height>
+          <width>1611</width>
+          <height>1081</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1909,11 +1976,16 @@ QPushButton:pressed{
      <widget class="QPushButton" name="buttonLogout">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>640</y>
-        <width>91</width>
-        <height>31</height>
+        <x>70</x>
+        <y>960</y>
+        <width>161</width>
+        <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -1925,10 +1997,10 @@ QPushButton:pressed{
      <widget class="QWidget" name="verticalLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>250</y>
-        <width>168</width>
-        <height>231</height>
+        <x>40</x>
+        <y>360</y>
+        <width>221</width>
+        <height>271</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="buttonsLayout">
@@ -1936,13 +2008,13 @@ QPushButton:pressed{
         <widget class="QRadioButton" name="radioAI">
          <property name="styleSheet">
           <string notr="true">QRadioButton {
-	font: 12pt &quot;Nirmala UI&quot;;
+	font: 16pt &quot;Nirmala UI&quot;;
 }
 
 QRadioButton::indicator {
-    width:                  40px;
-    height:                 40px;
-    border-radius:          22px;
+    width:                  50px;
+    height:                 50px;
+    border-radius:          27px;
 	image: url(resources/aiicon.png);
 }
 
@@ -1965,13 +2037,14 @@ QRadioButton::indicator:unchecked {
         <widget class="QRadioButton" name="radioManual">
          <property name="styleSheet">
           <string notr="true">QRadioButton {
-	font: 12pt &quot;Nirmala UI&quot;;
+	font: 16pt &quot;Nirmala UI&quot;;
 }
 
+
 QRadioButton::indicator {
-    width:                  40px;
-    height:                 40px;
-    border-radius:          22px;
+    width:                  50px;
+    height:                 50px;
+    border-radius:          27px;
 	image: url(resources/maunalicon.png);
 }
 
@@ -1994,13 +2067,13 @@ QRadioButton::indicator:unchecked {
         <widget class="QRadioButton" name="radioVS">
          <property name="styleSheet">
           <string notr="true">QRadioButton {
-	font: 12pt &quot;Nirmala UI&quot;;
+	font: 16pt &quot;Nirmala UI&quot;;
 }
 
 QRadioButton::indicator {
-    width:                  40px;
-    height:                 40px;
-    border-radius:          22px;
+    width:                  50px;
+    height:                 50px;
+    border-radius:          27px;
 	image: url(resources/vsicon.png);
 }
 
@@ -2024,10 +2097,10 @@ QRadioButton::indicator:unchecked {
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>170</y>
-        <width>160</width>
-        <height>42</height>
+        <x>40</x>
+        <y>220</y>
+        <width>221</width>
+        <height>59</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="userInfoLayout">
@@ -2037,7 +2110,7 @@ QRadioButton::indicator:unchecked {
        <item>
         <widget class="QLabel" name="labelRole">
          <property name="styleSheet">
-          <string notr="true">font: 10pt &quot;Nirmala UI&quot;;
+          <string notr="true">font: 14pt &quot;Nirmala UI&quot;;
 color: rgb(93, 93, 93);</string>
          </property>
          <property name="text">
@@ -2051,7 +2124,7 @@ color: rgb(93, 93, 93);</string>
        <item>
         <widget class="QLabel" name="labelUsername_2">
          <property name="styleSheet">
-          <string notr="true">font: 13pt &quot;Nirmala UI&quot;;</string>
+          <string notr="true">font: 18pt &quot;Nirmala UI&quot;;</string>
          </property>
          <property name="text">
           <string>Username</string>
@@ -2068,8 +2141,8 @@ color: rgb(93, 93, 93);</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>201</width>
-        <height>701</height>
+        <width>311</width>
+        <height>1081</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2085,10 +2158,10 @@ color: rgb(93, 93, 93);</string>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>60</y>
-        <width>121</width>
-        <height>101</height>
+        <x>80</x>
+        <y>80</y>
+        <width>151</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="styleSheet">
