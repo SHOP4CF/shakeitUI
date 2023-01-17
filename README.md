@@ -18,6 +18,12 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<p align="middle">
+  <img src="https://user-images.githubusercontent.com/113982478/212876926-aca6b8bf-9550-4c45-84e0-7fec7657ed7c.png" width="32%" />
+  <img src="https://user-images.githubusercontent.com/113982478/212877103-0c37d9a8-5b25-4cdb-b522-336b29d5dbcb.png" width="32%" /> 
+  <img src="https://user-images.githubusercontent.com/113982478/212877160-96573ae7-e39c-4950-890c-1eb67b306f43.png" width="32%" />
+</p>
+
 This project contains the UI for the [shakeit component](https://github.com/SHOP4CF/shakeit). It uses KeyRock for authentication of users.
 
 <!-- GETTING STARTED -->
