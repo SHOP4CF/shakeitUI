@@ -145,7 +145,7 @@ color: white</string>
         <rect>
          <x>50</x>
          <y>240</y>
-         <width>91</width>
+         <width>131</width>
          <height>31</height>
         </rect>
        </property>
@@ -180,9 +180,9 @@ color: white</string>
       <widget class="QLabel" name="labelLoginError">
        <property name="geometry">
         <rect>
-         <x>140</x>
-         <y>339</y>
-         <width>221</width>
+         <x>130</x>
+         <y>340</y>
+         <width>271</width>
          <height>31</height>
         </rect>
        </property>
@@ -207,7 +207,7 @@ color: white</string>
         <rect>
          <x>50</x>
          <y>140</y>
-         <width>101</width>
+         <width>151</width>
          <height>31</height>
         </rect>
        </property>
@@ -224,9 +224,9 @@ color: white</string>
       <widget class="QLabel" name="labelLogin">
        <property name="geometry">
         <rect>
-         <x>190</x>
+         <x>180</x>
          <y>40</y>
-         <width>151</width>
+         <width>171</width>
          <height>61</height>
         </rect>
        </property>
@@ -271,7 +271,7 @@ color: white</string>
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -339,7 +339,7 @@ font: 22pt &quot;Nirmala UI&quot;;</string>
          <rect>
           <x>40</x>
           <y>30</y>
-          <width>511</width>
+          <width>641</width>
           <height>61</height>
          </rect>
         </property>
@@ -467,7 +467,7 @@ color: white;</string>
           <rect>
            <x>50</x>
            <y>60</y>
-           <width>111</width>
+           <width>131</width>
            <height>31</height>
           </rect>
          </property>
@@ -534,7 +534,7 @@ QPushButton:pressed{
          <rect>
           <x>40</x>
           <y>30</y>
-          <width>671</width>
+          <width>711</width>
           <height>61</height>
          </rect>
         </property>
@@ -1984,6 +1984,7 @@ QPushButton:pressed{
       </property>
       <property name="font">
        <font>
+        <family>Nirmala UI</family>
         <pointsize>12</pointsize>
        </font>
       </property>
@@ -1999,7 +2000,7 @@ QPushButton:pressed{
        <rect>
         <x>40</x>
         <y>360</y>
-        <width>221</width>
+        <width>222</width>
         <height>271</height>
        </rect>
       </property>
