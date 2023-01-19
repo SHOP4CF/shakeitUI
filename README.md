@@ -161,6 +161,11 @@ Password: ```1234```
 ### Using QtDesigner
 The projects visual component is designed and set up using QtDesigner. If it is desired to make changes to the visual of the UI, it is recommended to use QtDesigner. QtDesigner comes with most installtions of pyqt5.
 
+If you are using Linux and QtDesigner is not installed it can be installed by using the following command.
+```sh
+sudo apt install qttools5-dev-tools 
+```
+
 The file ```MainUI.ui``` in this project is a qt file, and can be opened in QtDesigner. Use QtDesigner to open the file and make changes to it. Before changes from this file can be seen in the code a python file should be genereated based on the changed ```MainUI.ui```. Run the following command in the directory where ```MainUI.ui``` is located to do so:
 
 * **Windows**
