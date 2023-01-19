@@ -74,12 +74,14 @@ Before installation of this project KeyRock should be set up. To do so follow th
     };
     ```
 
-4.  Configure the server to listen HTTPS requestsb by generating certificates OpenSSL and configuring config.js:
+4.  Configure the server to listen HTTPS requests by generating certificates OpenSSL:
 
     ```console
     ./generate_openssl_keys.sh
     ```
-
+    
+    and configuring config.js:
+    
     ```javascript
     config.https = {
         enabled: true, //default: 'false'
