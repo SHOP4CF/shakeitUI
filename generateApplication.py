@@ -37,7 +37,6 @@ headers = {
     'X-Auth-token': subjectToken
 }
 response = requests.request("POST", url, headers=headers, data=payload, verify=False)
-print(response.text)
 
 # Save application id and secret
 application["clientID"] = response.json()['application']['id']

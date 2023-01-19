@@ -49,17 +49,16 @@ class MainWindow:
         h = {'Accept': 'application/json',
              'Authorization': 'Basic ' + self.clientInfoBase64,
              'Content-Type': 'application/x-www-form-urlencoded'}
-        r = requests.post(url, data=d, headers=h, verify=False)
+        rAuth = requests.post(url, data=d, headers=h, verify=False)
 
-        if r.status_code == 200:
+        if rAuth.status_code == 200:
             # success
-            aToken = json.loads(r.text)['access_token']
+            aToken = json.loads(rAuth.text)['access_token']
             print("access token: " + aToken)
 
             # get userinfo from access token
             url = "https://localhost:443/user?access_token="+aToken
             rUserInfo = requests.get(url, verify=False)
-            self.ui.labelRole.setText(json.loads(rUserInfo.text)['sub'])
             self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username'])
 
             # change to mainPage
@@ -72,7 +71,7 @@ class MainWindow:
             self.ui.textUsername.clear()
             self.ui.labelLoginError.hide()
 
-        elif r.status_code == 400:
+        elif rAuth.status_code == 400:
             # failure
             self.ui.labelLoginError.show()
             self.ui.textPassword.clear()
