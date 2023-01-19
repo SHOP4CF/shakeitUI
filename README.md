@@ -13,6 +13,12 @@
         <li><a href="#running">Running</a></li>
       </ul>
     </li>
+    <li>
+      <a href="usage-notes">Usage Notes</a>
+      <ul>
+        <li> <a href="#using-qtdesigner">Using QtDesigner</a> </li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -132,3 +138,18 @@ To login to the application use the following credentials:
 Username: ```admin@test.com```
 
 Password: ```1234```
+
+<!-- USAGE NOTES -->
+## Usage Notes
+
+### Using QtDesigner
+The projects visual component is designed and set up using QtDesigner. If it is desired to make changes to the visual of the UI, it is recommended to use QtDesigner. QtDesigner comes with most installtions of pyqt5.
+
+The file ```MainUI.ui``` in this project is a qt file, and can be opened in QtDesigner. Use QtDesigner to open the file and make changes to it. Before changes from this file can be seen in the code a python file should be genereated based on the changed ```MainUI.ui```. Run the following command in the directory where ```MainUI.ui``` is located to do so:
+
+* **Windows**
+    ```sh
+    python -m PyQt5.uic.pyuic -x MainUI.ui -o MainUI.py
+    ```
+
+This command overwrites the old ```MainUI.py```, so as a general rule changes should never be made to ```MainUI.py```. Instead visual changes should be made by QtDesigner and functunality should be in ```Main.py```.
