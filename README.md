@@ -38,20 +38,36 @@ To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
-* Docker ([Installing docker desktop on windows](https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows))
-* npm
-  ```sh
-  npm install -g npm
-  ```
-* node.js
-* pyqt5
-  ```sh
-  pip install pyqt5
-  ```
-* requests
-  ```sh
-  pip install requests
-  ```
+* **Docker**
+  * Windows: [Installing docker desktop on windows](https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows)
+* **npm and node.js**
+  * Windows:
+    ```sh
+    npm install -g npm
+    ```
+  * Linux:
+    ```sh
+    sudo apt install nodejs npm
+    ```
+* **pyqt5**
+  * Windows:
+    ```sh
+    pip install pyqt5
+    ```
+  * Linux: 
+    ```sh
+    sudo apt install python3-pyqt5
+    ```
+* **Python requests**
+  * Windows:
+    ```sh
+    pip install requests
+    ```
+  * Linux:
+    ```sh
+    sudo apt-get install python3-requests
+    ```
+
 
 ### Installation
 Before installation of this project KeyRock should be set up. To do so follow the steps below.
@@ -80,7 +96,7 @@ Before installation of this project KeyRock should be set up. To do so follow th
     };
     ```
 
-4.  Configure the server to listen HTTPS requests by generating certificates OpenSSL:
+4.  Configure the server to listen HTTPS requests by generating certificates OpenSSL. You may be asked to enter information that will be incorporated into your certificate request (mostly happens for linux users). If this happens make sure to fill out at least one of the fields, if you dont the request wont go through.
 
     ```console
     ./generate_openssl_keys.sh
@@ -119,7 +135,7 @@ You should now have 2 repositories set up: "fiware-idm" and "shakeitUI".
 
 1. Start KeyRock container using the dockercompose file (in the fiware-idm)
    ```sh
-   sudo docker-compose up
+   docker-compose up
    ```
    Go to localhost:3000 to see the KeyRock site running.
    
