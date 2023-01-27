@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Interaction</class>
+ <widget class="QWidget" name="Interaction">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedpages">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1921</width>
+     <height>1081</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="page1welcome">
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>240</y>
+       <width>751</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>72</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>page 1 Welcome</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonStart">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>480</y>
+       <width>321</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page2try">
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>240</y>
+       <width>531</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>72</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>page 2 Try</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonReady">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>520</y>
+       <width>291</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Ready to shake</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page3play">
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>200</y>
+       <width>571</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>72</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>page 3 play</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonEnd">
+     <property name="geometry">
+      <rect>
+       <x>770</x>
+       <y>500</y>
+       <width>271</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Times up</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page4board">
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>270</y>
+       <width>681</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>72</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string> Player 4 board</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonExit">
+     <property name="geometry">
+      <rect>
+       <x>1700</x>
+       <y>40</y>
+       <width>161</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

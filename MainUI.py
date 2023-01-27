@@ -1253,7 +1253,7 @@ class Ui_MainWindow(object):
         self.buttonLogout.setStyleSheet("")
         self.buttonLogout.setObjectName("buttonLogout")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.mainPage)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(40, 360, 222, 271))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(40, 340, 222, 411))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.buttonsLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.buttonsLayout.setContentsMargins(0, 0, 0, 0)
@@ -1328,6 +1328,28 @@ class Ui_MainWindow(object):
 "}")
         self.radioVS.setObjectName("radioVS")
         self.buttonsLayout.addWidget(self.radioVS)
+        self.radioInteraction = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
+        self.radioInteraction.setStyleSheet("QRadioButton {\n"
+"    font: 16pt \"Nirmala UI\";\n"
+"}\n"
+"\n"
+"QRadioButton::indicator {\n"
+"    width:                  50px;\n"
+"    height:                 50px;\n"
+"    border-radius:          27px;\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:checked {\n"
+"    background-color: rgb(206, 121, 107);\n"
+"    border: 2px solid rgb(206, 121, 107);\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:unchecked {\n"
+"    background-color: black;\n"
+"    border: 2px solid;\n"
+"}")
+        self.radioInteraction.setObjectName("radioInteraction")
+        self.buttonsLayout.addWidget(self.radioInteraction)
         self.verticalLayoutWidget = QtWidgets.QWidget(self.mainPage)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 220, 221, 59))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
@@ -1368,7 +1390,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.stackedLogin.setCurrentIndex(1)
-        self.stackedPages.setCurrentIndex(2)
+        self.stackedPages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textUsername, self.textPassword)
         MainWindow.setTabOrder(self.textPassword, self.buttonLogin)
@@ -1426,6 +1448,7 @@ class Ui_MainWindow(object):
         self.radioAI.setText(_translate("MainWindow", " AI Control"))
         self.radioManual.setText(_translate("MainWindow", "Manual Control"))
         self.radioVS.setText(_translate("MainWindow", "Leaderboard"))
+        self.radioInteraction.setText(_translate("MainWindow", "Interaction"))
         self.labelRole.setText(_translate("MainWindow", "Role"))
         self.labelUsername_2.setText(_translate("MainWindow", "Username"))
 

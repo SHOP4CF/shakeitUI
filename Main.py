@@ -1,6 +1,8 @@
 import sys
+
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
 from MainUI import Ui_MainWindow
+from Interaction import InteractionWindow
 import requests
 import base64
 import json
@@ -25,6 +27,10 @@ class MainWindow:
         self.ui.textPassword.setEchoMode(QLineEdit.Password)
         self.ui.labelLoginError.hide()
 
+        # set up UI for interaction component
+        self.interactionui = InteractionWindow(self)
+        self.ui.stackedLogin.addWidget(self.interactionui.getWidget())
+
         # connecting buttons
         self.ui.buttonLogin.clicked.connect(self.login)
         self.ui.buttonLogout.clicked.connect(self.logout)
@@ -33,6 +39,7 @@ class MainWindow:
         self.ui.radioAI.toggled.connect(self.ai)
         self.ui.radioManual.toggled.connect(self.manual)
         self.ui.radioVS.toggled.connect(self.vs)
+        self.ui.radioInteraction.toggled.connect(self.startInteraction)
 
     def show(self):
         self.main_win.show()
@@ -59,7 +66,6 @@ class MainWindow:
             # get userinfo from access token
             url = "https://localhost:443/user?access_token=" + aToken
             rUserInfo = requests.get(url, verify=False)
-            print(rUserInfo.text)
 
             try:
                 self.ui.labelRole.setText(json.loads(rUserInfo.text)['roles'][0]['name'])
@@ -94,6 +100,15 @@ class MainWindow:
         self.ui.stackedPages.setCurrentWidget(self.ui.pageManual)
 
     def vs(self):
+        self.ui.stackedPages.setCurrentWidget(self.ui.pageVS)
+
+    def startInteraction(self):
+        self.ui.stackedLogin.setCurrentWidget(self.interactionui.getWidget())
+        self.interactionui.startup()
+
+    def endInteraction(self):
+        self.ui.radioVS.toggle()
+        self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
         self.ui.stackedPages.setCurrentWidget(self.ui.pageVS)
 
 

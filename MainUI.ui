@@ -271,7 +271,7 @@ color: white</string>
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -1999,9 +1999,9 @@ QPushButton:pressed{
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>360</y>
+        <y>340</y>
         <width>222</width>
-        <height>271</height>
+        <height>411</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="buttonsLayout">
@@ -2090,6 +2090,34 @@ QRadioButton::indicator:unchecked {
          </property>
          <property name="text">
           <string>Leaderboard</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioInteraction">
+         <property name="styleSheet">
+          <string notr="true">QRadioButton {
+	font: 16pt &quot;Nirmala UI&quot;;
+}
+
+QRadioButton::indicator {
+    width:                  50px;
+    height:                 50px;
+    border-radius:          27px;
+}
+
+QRadioButton::indicator:checked {
+    background-color: rgb(206, 121, 107);
+    border: 2px solid rgb(206, 121, 107);
+}
+
+QRadioButton::indicator:unchecked {
+    background-color: black;
+    border: 2px solid;
+}</string>
+         </property>
+         <property name="text">
+          <string>Interaction</string>
          </property>
         </widget>
        </item>
