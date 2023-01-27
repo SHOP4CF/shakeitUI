@@ -271,7 +271,7 @@ color: white</string>
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -1194,7 +1194,7 @@ QPushButton:pressed{
 	border: none;
 	padding-top: 5px;
 	color: rgb(226, 234, 216);
-	border-left: 1px sold  rgb(73, 88, 103);
+	border-left: 1px solid  rgb(73, 88, 103);
 	border-right: 1px solid  rgb(73, 88, 103);
 	border-bottom: 3px solid  rgb(73, 88, 103);
 	font: 14pt &quot;MS Shell Dlg 2&quot;;

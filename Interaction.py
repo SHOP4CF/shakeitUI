@@ -26,6 +26,7 @@ class InteractionWindow:
 
     def start(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page2try)
+        self.ui.textName.clear()
 
     def ready(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
