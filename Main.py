@@ -57,8 +57,15 @@ class MainWindow:
             print("access token: " + aToken)
 
             # get userinfo from access token
-            url = "https://localhost:443/user?access_token="+aToken
+            url = "https://localhost:443/user?access_token=" + aToken
             rUserInfo = requests.get(url, verify=False)
+            print(rUserInfo.text)
+
+            try:
+                self.ui.labelRole.setText(json.loads(rUserInfo.text)['roles'][0]['name'])
+            except:
+                self.ui.labelRole.setText("")
+
             self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username'])
 
             # change to mainPage

@@ -1425,7 +1425,7 @@ class Ui_MainWindow(object):
         self.buttonLogout.setText(_translate("MainWindow", "Log out"))
         self.radioAI.setText(_translate("MainWindow", " AI Control"))
         self.radioManual.setText(_translate("MainWindow", "Manual Control"))
-        self.radioVS.setText(_translate("MainWindow", "Manual vs AI"))
+        self.radioVS.setText(_translate("MainWindow", "Leaderboard"))
         self.labelRole.setText(_translate("MainWindow", "Role"))
         self.labelUsername_2.setText(_translate("MainWindow", "Username"))
 

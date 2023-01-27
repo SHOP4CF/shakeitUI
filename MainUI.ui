@@ -2089,7 +2089,7 @@ QRadioButton::indicator:unchecked {
 }</string>
          </property>
          <property name="text">
-          <string>Manual vs AI</string>
+          <string>Leaderboard</string>
          </property>
         </widget>
        </item>
