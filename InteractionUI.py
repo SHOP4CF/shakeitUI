@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Interaction(object):
     def setupUi(self, Interaction):
         Interaction.setObjectName("Interaction")
-        Interaction.resize(1920, 1080)
-        Interaction.setMinimumSize(QtCore.QSize(1920, 1080))
-        Interaction.setMaximumSize(QtCore.QSize(1920, 1080))
+        Interaction.resize(1920, 1050)
+        Interaction.setMinimumSize(QtCore.QSize(1920, 1050))
+        Interaction.setMaximumSize(QtCore.QSize(1920, 1050))
         Interaction.setStyleSheet(".background{\n"
 "    background-color: rgb(255, 255, 255);\n"
 "}")
@@ -27,7 +27,7 @@ class Ui_Interaction(object):
         self.page1welcome.setStyleSheet("")
         self.page1welcome.setObjectName("page1welcome")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.page1welcome)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 90, 1921, 971))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 90, 1921, 941))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -191,7 +191,7 @@ class Ui_Interaction(object):
 " }")
         self.page2try.setObjectName("page2try")
         self.horizontalLayoutWidget_4 = QtWidgets.QWidget(self.page2try)
-        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(0, 130, 1921, 951))
+        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(0, 120, 1921, 931))
         self.horizontalLayoutWidget_4.setObjectName("horizontalLayoutWidget_4")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_4)
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -210,6 +210,15 @@ class Ui_Interaction(object):
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
         self.verticalLayout_2.addWidget(self.line)
+        self.label = QtWidgets.QLabel(self.horizontalLayoutWidget_4)
+        font = QtGui.QFont()
+        font.setFamily("Open Sans")
+        font.setPointSize(16)
+        font.setItalic(False)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.verticalLayout_2.addWidget(self.label)
         spacerItem13 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem13)
         self.horizontalLayout_10 = QtWidgets.QHBoxLayout()
@@ -450,7 +459,7 @@ class Ui_Interaction(object):
 "}")
         self.page3play.setObjectName("page3play")
         self.layoutWidget_2 = QtWidgets.QWidget(self.page3play)
-        self.layoutWidget_2.setGeometry(QtCore.QRect(0, 140, 1921, 891))
+        self.layoutWidget_2.setGeometry(QtCore.QRect(0, 140, 1921, 871))
         self.layoutWidget_2.setObjectName("layoutWidget_2")
         self.horizontalLayout_buttons = QtWidgets.QHBoxLayout(self.layoutWidget_2)
         self.horizontalLayout_buttons.setContentsMargins(0, 0, 0, 0)
@@ -1208,7 +1217,7 @@ class Ui_Interaction(object):
         self.stackedpages.addWidget(self.page4board)
 
         self.retranslateUi(Interaction)
-        self.stackedpages.setCurrentIndex(0)
+        self.stackedpages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(Interaction)
 
     def retranslateUi(self, Interaction):
@@ -1221,6 +1230,7 @@ class Ui_Interaction(object):
         self.label_27.setText(_translate("Interaction", "Start screen"))
         self.page2try.setProperty("class", _translate("Interaction", "background"))
         self.label_19.setText(_translate("Interaction", "Try ShakeIt"))
+        self.label.setText(_translate("Interaction", "Try holding down one of the buttons below"))
         self.buttonforward.setProperty("class", _translate("Interaction", "testbutton"))
         self.label_16.setText(_translate("Interaction", "Shake Forward"))
         self.buttonFlip.setProperty("class", _translate("Interaction", "testbutton"))

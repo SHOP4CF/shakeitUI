@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1920, 1080)
-        MainWindow.setMinimumSize(QtCore.QSize(1920, 1080))
-        MainWindow.setMaximumSize(QtCore.QSize(1920, 1080))
+        MainWindow.resize(1920, 1050)
+        MainWindow.setMinimumSize(QtCore.QSize(1920, 1050))
+        MainWindow.setMaximumSize(QtCore.QSize(1920, 1050))
         font = QtGui.QFont()
         font.setFamily("Nirmala UI")
         MainWindow.setFont(font)
@@ -1783,7 +1783,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.stackedLogin.setCurrentIndex(1)
-        self.stackedPages.setCurrentIndex(0)
+        self.stackedPages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textUsername, self.textPassword)
         MainWindow.setTabOrder(self.textPassword, self.buttonLogin)
