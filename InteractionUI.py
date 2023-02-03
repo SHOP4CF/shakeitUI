@@ -27,7 +27,7 @@ class Ui_Interaction(object):
         self.page1welcome.setStyleSheet("")
         self.page1welcome.setObjectName("page1welcome")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.page1welcome)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 90, 1921, 991))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 90, 1921, 971))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -90,10 +90,21 @@ class Ui_Interaction(object):
         self.buttonStart.setSizePolicy(sizePolicy)
         self.buttonStart.setMinimumSize(QtCore.QSize(600, 150))
         self.buttonStart.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.buttonStart.setStyleSheet("font: 42pt \"Calibri\";\n"
-"color: white;\n"
-"background-color: rgb(237, 26, 59);\n"
-"border-radius: 20px;")
+        self.buttonStart.setStyleSheet("QPushButton{\n"
+"    font: 42pt \"Calibri\";\n"
+"    color: white;\n"
+"\n"
+"    border-radius: 20px;\n"
+"    background-color: rgb(237, 26, 59);\n"
+"    border-top: 1.5px solid  rgb(191, 21, 49);\n"
+"    border-left: 3px solid  rgb(191, 21, 49);\n"
+"    border-right: 3px solid  rgb(191, 21, 49);\n"
+"    border-bottom: 4px solid  rgb(191, 21, 49);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color:rgb(237, 52, 83)\n"
+"}")
         self.buttonStart.setObjectName("buttonStart")
         self.horizontalLayout_2.addWidget(self.buttonStart)
         spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -158,7 +169,26 @@ class Ui_Interaction(object):
         self.buttonExit_4.setObjectName("buttonExit_4")
         self.stackedpages.addWidget(self.page1welcome)
         self.page2try = QtWidgets.QWidget()
-        self.page2try.setStyleSheet("")
+        self.page2try.setStyleSheet(".testbutton{\n"
+"    background-color: rgb(102, 102, 102);\n"
+"    border-radius: 20px;\n"
+"    border-top: 1.5px solid  rgb(80, 80, 80);\n"
+"    border-left: 3px solid  rgb(80, 80, 80);\n"
+"    border-right: 3px solid  rgb(80, 80, 80);\n"
+"    border-bottom: 4px solid  rgb(80, 80, 80);\n"
+"\n"
+"    width: 125px;\n"
+"    height: 125px;\n"
+"    padding: 20px;\n"
+"}\n"
+"\n"
+".testbutton:pressed{\n"
+"    background-color: rgb(85, 85, 85);\n"
+"    border-bottom:1.5px solid  rgb(62, 62, 62);\n"
+"    border-left: 3px solid   rgb(62, 62, 62);\n"
+"    border-right: 3px solid  rgb(62, 62, 62);\n"
+"    border-top: 4px solid rgb(62, 62, 62);\n"
+" }")
         self.page2try.setObjectName("page2try")
         self.horizontalLayoutWidget_4 = QtWidgets.QWidget(self.page2try)
         self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(0, 130, 1921, 951))
@@ -189,13 +219,7 @@ class Ui_Interaction(object):
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.buttonforward = QtWidgets.QPushButton(self.horizontalLayoutWidget_4)
-        self.buttonforward.setStyleSheet("background-color: rgb(102, 102, 102);\n"
-"border-radius: 20px;\n"
-"\n"
-"image: url(resources/forwardicon.png);\n"
-"width: 125px;\n"
-"height: 125px;\n"
-"padding: 20px;")
+        self.buttonforward.setStyleSheet("image: url(resources/forwardicon.png);")
         self.buttonforward.setText("")
         self.buttonforward.setObjectName("buttonforward")
         self.verticalLayout_5.addWidget(self.buttonforward)
@@ -213,13 +237,8 @@ class Ui_Interaction(object):
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.buttonFlip = QtWidgets.QPushButton(self.horizontalLayoutWidget_4)
         self.buttonFlip.setMinimumSize(QtCore.QSize(0, 0))
-        self.buttonFlip.setStyleSheet("background-color: rgb(102, 102, 102);\n"
-"border-radius: 20px;\n"
-"\n"
-"image: url(resources/flipicon.png);\n"
-"width: 125px;\n"
-"height: 125px;\n"
-"padding: 20px;")
+        self.buttonFlip.setStyleSheet("image: url(resources/flipicon.png);\n"
+"")
         self.buttonFlip.setText("")
         self.buttonFlip.setObjectName("buttonFlip")
         self.verticalLayout_4.addWidget(self.buttonFlip)
@@ -235,13 +254,8 @@ class Ui_Interaction(object):
         self.verticalLayout_3.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.buttonback = QtWidgets.QPushButton(self.horizontalLayoutWidget_4)
-        self.buttonback.setStyleSheet("background-color: rgb(102, 102, 102);\n"
-"border-radius: 20px;\n"
-"\n"
-"image: url(resources/backicon.png);\n"
-"width: 125px;\n"
-"height: 125px;\n"
-"padding: 20px;")
+        self.buttonback.setStyleSheet("image: url(resources/backicon.png);\n"
+"")
         self.buttonback.setText("")
         self.buttonback.setObjectName("buttonback")
         self.verticalLayout_3.addWidget(self.buttonback)
@@ -351,12 +365,27 @@ class Ui_Interaction(object):
         font.setFamily("Open Sans")
         font.setPointSize(36)
         self.buttonReady.setFont(font)
-        self.buttonReady.setStyleSheet("margin: 70 px;\n"
-"height: 113px;\n"
-"width: 491;\n"
-"background-color: rgb(0, 176, 80);\n"
-"color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+        self.buttonReady.setStyleSheet("QPushButton{\n"
+"    margin: 70 px;\n"
+"    height: 113px;\n"
+"    width: 491;\n"
+"\n"
+"    background-color: rgb(0, 176, 80);\n"
+"    color: rgb(255, 255, 255);\n"
+"    border-radius: 15px;\n"
+"    border-top: 1.5px solid rgb(0, 165, 74);\n"
+"    border-left: 3px solid  rgb(0, 165, 74);\n"
+"    border-right: 3px solid  rgb(0, 165, 74);\n"
+"    border-bottom: 4px solid  rgb(0, 165, 74);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(0, 152, 68);\n"
+"    border-bottom:1.5px solid rgb(0, 131, 59);\n"
+"    border-left: 3px solid rgb(0, 131, 59);\n"
+"    border-right: 3px solid rgb(0, 131, 59);\n"
+"    border-top: 4px solid rgb(0, 131, 59);\n"
+"}")
         self.buttonReady.setObjectName("buttonReady")
         self.horizontalLayout_6.addWidget(self.buttonReady)
         spacerItem21 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -399,14 +428,26 @@ class Ui_Interaction(object):
         self.label_18.setObjectName("label_18")
         self.stackedpages.addWidget(self.page2try)
         self.page3play = QtWidgets.QWidget()
-        self.page3play.setStyleSheet("QPushButton{\n"
-"    background-color:rgb(127, 127, 127);\n"
+        self.page3play.setStyleSheet(".playbutton{\n"
 "    color: rgb(255, 255, 255);\n"
 "    font: bold 12pt \"Open Sans\";\n"
-"    border-radius: 15px;\n"
 "    margin: 2px;\n"
+"\n"
+"    border-radius: 15px;\n"
+"    background-color:rgb(127, 127, 127);\n"
+"    border-top: 1.5px solid rgb(105, 105, 105);\n"
+"    border-left: 2.5px solid  rgb(105, 105, 105);\n"
+"    border-right: 2.5px solid rgb(105, 105, 105);\n"
+"    border-bottom: 4px solid rgb(105, 105, 105);\n"
 "}\n"
-"")
+"\n"
+".playbutton:pressed{\n"
+"    background-color: rgb(100, 100, 100);\n"
+"    border-bottom:1.5px solid  rgb(80, 80, 80);\n"
+"    border-left: 3px solid   rgb(80, 80, 80);\n"
+"    border-right: 3px solid  rgb(80, 80, 80);\n"
+"    border-top: 4px solid rgb(80, 80, 80);\n"
+"}")
         self.page3play.setObjectName("page3play")
         self.layoutWidget_2 = QtWidgets.QWidget(self.page3play)
         self.layoutWidget_2.setGeometry(QtCore.QRect(0, 140, 1921, 891))
@@ -674,8 +715,7 @@ class Ui_Interaction(object):
         self.buttonExit_2.setMaximumSize(QtCore.QSize(100, 100))
         self.buttonExit_2.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
-"image: url(\"resources/exiticon.png\");\n"
-"margin: 0px;")
+"image: url(\"resources/exiticon.png\");")
         self.buttonExit_2.setText("")
         self.buttonExit_2.setObjectName("buttonExit_2")
         self.stackedpages.addWidget(self.page3play)
@@ -1181,50 +1221,82 @@ class Ui_Interaction(object):
         self.label_27.setText(_translate("Interaction", "Start screen"))
         self.page2try.setProperty("class", _translate("Interaction", "background"))
         self.label_19.setText(_translate("Interaction", "Try ShakeIt"))
+        self.buttonforward.setProperty("class", _translate("Interaction", "testbutton"))
         self.label_16.setText(_translate("Interaction", "Shake Forward"))
+        self.buttonFlip.setProperty("class", _translate("Interaction", "testbutton"))
         self.label_15.setText(_translate("Interaction", "Flip"))
+        self.buttonback.setProperty("class", _translate("Interaction", "testbutton"))
         self.label_14.setText(_translate("Interaction", "Shake Backward"))
         self.label_9.setText(_translate("Interaction", "Speed"))
         self.label_10.setText(_translate("Interaction", "Force applied to move the pieces"))
         self.label_12.setText(_translate("Interaction", "Repetition"))
-        self.label_13.setText(_translate("Interaction", "The number of repetitions to move the pieces\n"
-""))
+        self.label_13.setText(_translate("Interaction", "The number of times the shake is repeated"))
         self.buttonReady.setText(_translate("Interaction", "Ready to shake"))
         self.label_18.setText(_translate("Interaction", "Training mode"))
         self.page3play.setProperty("class", _translate("Interaction", "background"))
         self.label_2.setText(_translate("Interaction", "Shake Forward"))
         self.pushButton_7.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_7.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_5.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_5.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_2.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_2.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_4.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_4.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_8.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_8.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_6.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_6.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_11.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_11.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_9.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_9.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_10.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_10.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_3.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_3.setProperty("class", _translate("Interaction", "playbutton"))
         self.label_20.setText(_translate("Interaction", "Flip"))
         self.pushButton_13.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_13.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_14.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_14.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_15.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_15.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_16.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_16.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_17.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_17.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_18.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_18.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_19.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_19.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_20.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_20.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_21.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_21.setProperty("class", _translate("Interaction", "playbutton"))
         self.buttonEnd.setText(_translate("Interaction", "Continue"))
+        self.buttonEnd.setProperty("class", _translate("Interaction", "playbutton"))
         self.label_22.setText(_translate("Interaction", "Shake Backward"))
         self.pushButton_23.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_23.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_24.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_24.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_25.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_25.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_26.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_26.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_27.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_27.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_28.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_28.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_29.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_29.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_30.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_30.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_31.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_31.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_32.setText(_translate("Interaction", "PushButton"))
+        self.pushButton_32.setProperty("class", _translate("Interaction", "playbutton"))
         self.label_6.setText(_translate("Interaction", "Score:"))
         self.label_7.setText(_translate("Interaction", "No pickups"))
         self.label_3.setText(_translate("Interaction", "ShakeIt"))

@@ -55,7 +55,7 @@
        <x>0</x>
        <y>90</y>
        <width>1921</width>
-       <height>991</height>
+       <height>971</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -270,10 +270,21 @@ padding: 20px;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 42pt &quot;Calibri&quot;;
-color: white;
-background-color: rgb(237, 26, 59);
-border-radius: 20px;</string>
+             <string notr="true">QPushButton{
+	font: 42pt &quot;Calibri&quot;;
+	color: white;
+
+	border-radius: 20px;
+	background-color: rgb(237, 26, 59);
+	border-top: 1.5px solid  rgb(191, 21, 49);
+	border-left: 3px solid  rgb(191, 21, 49);
+	border-right: 3px solid  rgb(191, 21, 49);
+	border-bottom: 4px solid  rgb(191, 21, 49);
+}
+
+QPushButton:hover{
+	background-color:rgb(237, 52, 83)
+}</string>
             </property>
             <property name="text">
              <string>Start</string>
@@ -473,7 +484,26 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
    </widget>
    <widget class="QWidget" name="page2try">
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">.testbutton{
+	background-color: rgb(102, 102, 102);
+	border-radius: 20px;
+	border-top: 1.5px solid  rgb(80, 80, 80);
+	border-left: 3px solid  rgb(80, 80, 80);
+	border-right: 3px solid  rgb(80, 80, 80);
+	border-bottom: 4px solid  rgb(80, 80, 80);
+
+	width: 125px;
+	height: 125px;
+	padding: 20px;
+}
+
+.testbutton:pressed{
+	background-color: rgb(85, 85, 85);
+	border-bottom:1.5px solid  rgb(62, 62, 62);
+	border-left: 3px solid   rgb(62, 62, 62);
+	border-right: 3px solid  rgb(62, 62, 62);
+	border-top: 4px solid rgb(62, 62, 62);
+ }</string>
     </property>
     <property name="class" stdset="0">
      <string>background</string>
@@ -556,16 +586,13 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
             <item>
              <widget class="QPushButton" name="buttonforward">
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(102, 102, 102);
-border-radius: 20px;
-
-image: url(resources/forwardicon.png);
-width: 125px;
-height: 125px;
-padding: 20px;</string>
+               <string notr="true">image: url(resources/forwardicon.png);</string>
               </property>
               <property name="text">
                <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>testbutton</string>
               </property>
              </widget>
             </item>
@@ -615,16 +642,14 @@ qproperty-alignment: AlignCenter;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(102, 102, 102);
-border-radius: 20px;
-
-image: url(resources/flipicon.png);
-width: 125px;
-height: 125px;
-padding: 20px;</string>
+               <string notr="true">image: url(resources/flipicon.png);
+</string>
               </property>
               <property name="text">
                <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>testbutton</string>
               </property>
              </widget>
             </item>
@@ -662,16 +687,14 @@ qproperty-alignment: AlignCenter;</string>
             <item>
              <widget class="QPushButton" name="buttonback">
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(102, 102, 102);
-border-radius: 20px;
-
-image: url(resources/backicon.png);
-width: 125px;
-height: 125px;
-padding: 20px;</string>
+               <string notr="true">image: url(resources/backicon.png);
+</string>
               </property>
               <property name="text">
                <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>testbutton</string>
               </property>
              </widget>
             </item>
@@ -932,8 +955,7 @@ border-radius: 20px;</string>
               <string notr="true">color: rgb(255, 255, 255);</string>
              </property>
              <property name="text">
-              <string>The number of repetitions to move the pieces
-</string>
+              <string>The number of times the shake is repeated</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -976,12 +998,27 @@ border-radius: 20px;</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">margin: 70 px;
-height: 113px;
-width: 491;
-background-color: rgb(0, 176, 80);
-color: rgb(255, 255, 255);
-border-radius: 15px;</string>
+             <string notr="true">QPushButton{
+	margin: 70 px;
+	height: 113px;
+	width: 491;
+
+	background-color: rgb(0, 176, 80);
+	color: rgb(255, 255, 255);
+	border-radius: 15px;
+	border-top: 1.5px solid rgb(0, 165, 74);
+	border-left: 3px solid  rgb(0, 165, 74);
+	border-right: 3px solid  rgb(0, 165, 74);
+	border-bottom: 4px solid  rgb(0, 165, 74);
+}
+
+QPushButton:pressed{
+	background-color: rgb(0, 152, 68);
+	border-bottom:1.5px solid rgb(0, 131, 59);
+	border-left: 3px solid rgb(0, 131, 59);
+	border-right: 3px solid rgb(0, 131, 59);
+	border-top: 4px solid rgb(0, 131, 59);
+}</string>
             </property>
             <property name="text">
              <string>Ready to shake</string>
@@ -1093,14 +1130,26 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
    </widget>
    <widget class="QWidget" name="page3play">
     <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-color:rgb(127, 127, 127);
+     <string notr="true">.playbutton{
 	color: rgb(255, 255, 255);
 	font: bold 12pt &quot;Open Sans&quot;;
-	border-radius: 15px;
 	margin: 2px;
+
+	border-radius: 15px;
+	background-color:rgb(127, 127, 127);
+	border-top: 1.5px solid rgb(105, 105, 105);
+	border-left: 2.5px solid  rgb(105, 105, 105);
+	border-right: 2.5px solid rgb(105, 105, 105);
+	border-bottom: 4px solid rgb(105, 105, 105);
 }
-</string>
+
+.playbutton:pressed{
+	background-color: rgb(100, 100, 100);
+	border-bottom:1.5px solid  rgb(80, 80, 80);
+	border-left: 3px solid   rgb(80, 80, 80);
+	border-right: 3px solid  rgb(80, 80, 80);
+	border-top: 4px solid rgb(80, 80, 80);
+}</string>
     </property>
     <property name="class" stdset="0">
      <string>background</string>
@@ -1182,6 +1231,9 @@ image: url(resources/forwardicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="1">
@@ -1194,6 +1246,9 @@ image: url(resources/forwardicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1208,6 +1263,9 @@ image: url(resources/forwardicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="0" column="1">
@@ -1220,6 +1278,9 @@ image: url(resources/forwardicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1234,6 +1295,9 @@ image: url(resources/forwardicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="2" column="0">
@@ -1246,6 +1310,9 @@ image: url(resources/forwardicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1260,6 +1327,9 @@ image: url(resources/forwardicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="2" column="1">
@@ -1272,6 +1342,9 @@ image: url(resources/forwardicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1286,6 +1359,9 @@ image: url(resources/forwardicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="0" column="0">
@@ -1298,6 +1374,9 @@ image: url(resources/forwardicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1356,6 +1435,9 @@ image: url(resources/flipicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="1">
@@ -1368,6 +1450,9 @@ image: url(resources/flipicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1382,6 +1467,9 @@ image: url(resources/flipicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="0" column="1">
@@ -1394,6 +1482,9 @@ image: url(resources/flipicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1408,6 +1499,9 @@ image: url(resources/flipicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="2" column="0">
@@ -1420,6 +1514,9 @@ image: url(resources/flipicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1434,6 +1531,9 @@ image: url(resources/flipicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="2" column="1">
@@ -1446,6 +1546,9 @@ image: url(resources/flipicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1460,6 +1563,9 @@ image: url(resources/flipicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="0" column="0">
@@ -1472,6 +1578,9 @@ image: url(resources/flipicon.png);</string>
             </property>
             <property name="text">
              <string>Continue</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1530,6 +1639,9 @@ image: url(resources/backicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="1">
@@ -1542,6 +1654,9 @@ image: url(resources/backicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1556,6 +1671,9 @@ image: url(resources/backicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="0" column="1">
@@ -1568,6 +1686,9 @@ image: url(resources/backicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1582,6 +1703,9 @@ image: url(resources/backicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="2" column="0">
@@ -1594,6 +1718,9 @@ image: url(resources/backicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1608,6 +1735,9 @@ image: url(resources/backicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="2" column="1">
@@ -1620,6 +1750,9 @@ image: url(resources/backicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1634,6 +1767,9 @@ image: url(resources/backicon.png);</string>
             <property name="text">
              <string>PushButton</string>
             </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
+            </property>
            </widget>
           </item>
           <item row="0" column="0">
@@ -1646,6 +1782,9 @@ image: url(resources/backicon.png);</string>
             </property>
             <property name="text">
              <string>PushButton</string>
+            </property>
+            <property name="class" stdset="0">
+             <string>playbutton</string>
             </property>
            </widget>
           </item>
@@ -1844,8 +1983,7 @@ border-radius: 15px;
      <property name="styleSheet">
       <string notr="true">background-color: rgb(102, 102, 102);
 border-radius: 15px;
-image: url(&quot;resources/exiticon.png&quot;);
-margin: 0px;</string>
+image: url(&quot;resources/exiticon.png&quot;);</string>
      </property>
      <property name="text">
       <string/>
