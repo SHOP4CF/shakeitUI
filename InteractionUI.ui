@@ -1177,7 +1177,7 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
        <x>0</x>
        <y>140</y>
        <width>1921</width>
-       <height>871</height>
+       <height>891</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_buttons">

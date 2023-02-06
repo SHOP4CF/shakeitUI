@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Exit</class>
+ <widget class="QDialog" name="Exit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>496</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background-color: rgb(77, 77, 77);
+}
+
+QLabel{
+	color: rgb(255, 255, 255);
+	font: bold 30pt &quot;Open Sans&quot;;
+}
+
+QPushButton{
+	color: rgb(255, 255, 255);
+	font: bold 30pt &quot;Open Sans&quot;;
+
+	background-color: rgb(218, 28, 58);
+	min-height: 200px;
+	min-width: 200px;
+
+	border-radius: 30px;
+	border-top: 1.5px solid  rgb(191, 21, 49);
+	border-left: 3px solid  rgb(191, 21, 49);
+	border-right: 3px solid  rgb(191, 21, 49);
+	border-bottom: 4px solid  rgb(191, 21, 49);
+}
+
+QPushButton:pressed{
+	background-color:rgb(193, 21, 50);
+	border-bottom:1.5px solid  rgb(136, 14, 35);
+	border-left: 3px solid   rgb(136, 14, 35);
+	border-right: 3px solid rgb(136, 14, 35);
+	border-top: 4px solid rgb(136, 14, 35);
+ }</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>90</y>
+     <width>1021</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>​Are you sure you want to quit ShakeIt?​</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>210</y>
+     <width>1021</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">margin-left: 60px;
+margin-right: 60px;</string>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::No|QDialogButtonBox::Yes</set>
+   </property>
+   <property name="centerButtons">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

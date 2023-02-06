@@ -1,5 +1,6 @@
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtWidgets import QWidget, QDialog
 from InteractionUI import Ui_Interaction
+from ExitDialog import ExitDialogWindow
 
 
 class InteractionWindow:
@@ -40,7 +41,9 @@ class InteractionWindow:
 
     def exit(self):
         # before interaction completed
-        self.mainWindow.endInteraction()
+        result = ExitDialogWindow.launch(self.mainWindow.main_win)
+        if result == 1:
+            self.mainWindow.endInteraction()
 
     def done(self):
         # after interaction completed
