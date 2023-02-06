@@ -503,7 +503,13 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
 	border-left: 3px solid   rgb(62, 62, 62);
 	border-right: 3px solid  rgb(62, 62, 62);
 	border-top: 4px solid rgb(62, 62, 62);
- }</string>
+ }
+
+
+
+
+
+</string>
     </property>
     <property name="class" stdset="0">
      <string>background</string>
@@ -788,8 +794,17 @@ qproperty-alignment: AlignCenter;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(172, 172, 172);
-border-radius: 20px;</string>
+             <string notr="true">QFrame{
+	background-color: rgb(172, 172, 172);
+	border-radius: 20px;
+}
+
+.icons{
+	padding: 15px;
+	margin: 10px;
+	background-color: rgb(102, 102, 102);
+	border-radius: 15px;
+}</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -814,6 +829,9 @@ border-radius: 20px;</string>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
+             </property>
+             <property name="class" stdset="0">
+              <string>icons</string>
              </property>
             </widget>
             <widget class="QLabel" name="label_9">
@@ -895,8 +913,17 @@ border-radius: 20px;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(172, 172, 172);
-border-radius: 20px;</string>
+             <string notr="true">QFrame{
+	background-color: rgb(172, 172, 172);
+	border-radius: 20px;
+}
+
+.icons{
+	padding: 15px;
+	margin: 10px;
+	background-color: rgb(102, 102, 102);
+	border-radius: 15px;
+}</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -921,6 +948,9 @@ border-radius: 20px;</string>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
+             </property>
+             <property name="class" stdset="0">
+              <string>icons</string>
              </property>
             </widget>
             <widget class="QLabel" name="label_12">

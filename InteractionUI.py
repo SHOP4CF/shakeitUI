@@ -188,7 +188,13 @@ class Ui_Interaction(object):
 "    border-left: 3px solid   rgb(62, 62, 62);\n"
 "    border-right: 3px solid  rgb(62, 62, 62);\n"
 "    border-top: 4px solid rgb(62, 62, 62);\n"
-" }")
+" }\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"")
         self.page2try.setObjectName("page2try")
         self.horizontalLayoutWidget_4 = QtWidgets.QWidget(self.page2try)
         self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(0, 120, 1921, 931))
@@ -288,8 +294,17 @@ class Ui_Interaction(object):
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
         self.frame_3 = QtWidgets.QFrame(self.horizontalLayoutWidget_4)
         self.frame_3.setMinimumSize(QtCore.QSize(541, 109))
-        self.frame_3.setStyleSheet("background-color: rgb(172, 172, 172);\n"
-"border-radius: 20px;")
+        self.frame_3.setStyleSheet("QFrame{\n"
+"    background-color: rgb(172, 172, 172);\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+".icons{\n"
+"    padding: 15px;\n"
+"    margin: 10px;\n"
+"    background-color: rgb(102, 102, 102);\n"
+"    border-radius: 15px;\n"
+"}")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
@@ -327,8 +342,17 @@ class Ui_Interaction(object):
         self.horizontalLayout_9.addItem(spacerItem19)
         self.frame_4 = QtWidgets.QFrame(self.horizontalLayoutWidget_4)
         self.frame_4.setMinimumSize(QtCore.QSize(541, 109))
-        self.frame_4.setStyleSheet("background-color: rgb(172, 172, 172);\n"
-"border-radius: 20px;")
+        self.frame_4.setStyleSheet("QFrame{\n"
+"    background-color: rgb(172, 172, 172);\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+".icons{\n"
+"    padding: 15px;\n"
+"    margin: 10px;\n"
+"    background-color: rgb(102, 102, 102);\n"
+"    border-radius: 15px;\n"
+"}")
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
@@ -459,7 +483,7 @@ class Ui_Interaction(object):
 "}")
         self.page3play.setObjectName("page3play")
         self.layoutWidget_2 = QtWidgets.QWidget(self.page3play)
-        self.layoutWidget_2.setGeometry(QtCore.QRect(0, 140, 1921, 871))
+        self.layoutWidget_2.setGeometry(QtCore.QRect(0, 140, 1921, 891))
         self.layoutWidget_2.setObjectName("layoutWidget_2")
         self.horizontalLayout_buttons = QtWidgets.QHBoxLayout(self.layoutWidget_2)
         self.horizontalLayout_buttons.setContentsMargins(0, 0, 0, 0)
@@ -1237,8 +1261,10 @@ class Ui_Interaction(object):
         self.label_15.setText(_translate("Interaction", "Flip"))
         self.buttonback.setProperty("class", _translate("Interaction", "testbutton"))
         self.label_14.setText(_translate("Interaction", "Shake Backward"))
+        self.label_8.setProperty("class", _translate("Interaction", "icons"))
         self.label_9.setText(_translate("Interaction", "Speed"))
         self.label_10.setText(_translate("Interaction", "Force applied to move the pieces"))
+        self.label_11.setProperty("class", _translate("Interaction", "icons"))
         self.label_12.setText(_translate("Interaction", "Repetition"))
         self.label_13.setText(_translate("Interaction", "The number of times the shake is repeated"))
         self.buttonReady.setText(_translate("Interaction", "Ready to shake"))
