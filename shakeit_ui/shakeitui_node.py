@@ -21,6 +21,8 @@ class ShakeituiNode(Node):
         self.init_feeder_client = create_client_wait_for_service(
             self, StandardInput, 'anyfeeder_node/init')
         
+        self.init_anyfeeder()
+        
     def init_anyfeeder(self):
         future = self.init_feeder_client.call_async(StandardInput.Request())
         rclpy.spin_until_future_complete(self, future)
@@ -30,9 +32,6 @@ class ShakeituiNode(Node):
         self.get_logger().info("Closing down")
         self.window.close_application()
         return super().destroy_node()
-    
-    def hallo(self):
-        print("hallo world!")
 
 def main(args=None):
     rclpy.init(args=args)

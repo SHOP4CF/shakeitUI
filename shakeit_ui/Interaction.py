@@ -2,8 +2,8 @@ from PyQt5.QtWidgets import QWidget, QDialog
 from shakeit_ui.InteractionUI import Ui_Interaction
 from shakeit_ui.ExitDialog import ExitDialogWindow
 
+import subprocess
 from shakeit_ui import shakeitui_node
-
 
 class InteractionWindow:
 
@@ -27,8 +27,8 @@ class InteractionWindow:
 
         # connecting buttons for anyfeeder
         self.ui.buttonforward.clicked.connect(self.trainforward)
-        #self.ui.buttonFlip.clicked.connect(self.trainflip)
-        #self.ui.buttonback.clicked.connect(self.trainbackward)
+        self.ui.buttonFlip.clicked.connect(self.trainflip)
+        self.ui.buttonback.clicked.connect(self.trainbackward)
 
     def getWidget(self):
         return self.interaction
@@ -57,4 +57,16 @@ class InteractionWindow:
         self.mainWindow.endInteraction()
 
     def trainforward(self):
-        
+        #ros2 service call /anyfeeder_node/init anyfeeder_interfaces/srv/StandardInput "{parameters: {repetitions: 0, speed: 0}}"
+        fw_3_8 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 2, speed: 6}}"""], stdout=subprocess.PIPE)
+        output = fw_3_8.communicate()[0]
+
+    def trainflip(self):
+        #ros2 service call /anyfeeder_node/init anyfeeder_interfaces/srv/StandardInput "{parameters: {repetitions: 0, speed: 0}}"
+        fl_3_8 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 2, speed: 6}}"""], stdout=subprocess.PIPE)
+        output = fl_3_8.communicate()[0]
+
+    def trainbackward(self):
+        #ros2 service call /anyfeeder_node/init anyfeeder_interfaces/srv/StandardInput "{parameters: {repetitions: 0, speed: 0}}"
+        fb_3_8 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 2, speed: 6}}"""], stdout=subprocess.PIPE)
+        output = fb_3_8.communicate()[0]
