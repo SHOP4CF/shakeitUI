@@ -1674,7 +1674,7 @@ padding: 5px;</string>
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QPushButton" name="buttonEnd">
+           <widget class="QPushButton" name="pushButton_42">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1685,7 +1685,7 @@ padding: 5px;</string>
              <string notr="true">image: url(resources/s1r1.png);</string>
             </property>
             <property name="text">
-             <string>Continue</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
