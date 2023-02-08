@@ -32,7 +32,7 @@ class Ui_MainWindow(object):
         self.background = QtWidgets.QLabel(self.loginPage)
         self.background.setGeometry(QtCore.QRect(0, 0, 1921, 1091))
         self.background.setText("")
-        self.background.setPixmap(QtGui.QPixmap("resources/backgroundlogin.jpg"))
+        self.background.setPixmap(QtGui.QPixmap("src/shakeit_ui/resource/backgroundlogin.jpg"))
         self.background.setScaledContents(True)
         self.background.setObjectName("background")
         self.frame = QtWidgets.QFrame(self.loginPage)
@@ -1660,7 +1660,7 @@ class Ui_MainWindow(object):
 "    width:                  50px;\n"
 "    height:                 50px;\n"
 "    border-radius:          27px;\n"
-"    image: url(resources/aiicon.png);\n"
+"    image: url(src/shakeit_ui/resource/aiicon.png);\n"
 "}\n"
 "\n"
 "QRadioButton::indicator:checked {\n"
@@ -1684,7 +1684,7 @@ class Ui_MainWindow(object):
 "    width:                  50px;\n"
 "    height:                 50px;\n"
 "    border-radius:          27px;\n"
-"    image: url(resources/maunalicon.png);\n"
+"    image: url(src/shakeit_ui/resource/maunalicon.png);\n"
 "}\n"
 "\n"
 "QRadioButton::indicator:checked {\n"
@@ -1707,7 +1707,7 @@ class Ui_MainWindow(object):
 "    width:                  50px;\n"
 "    height:                 50px;\n"
 "    border-radius:          27px;\n"
-"    image: url(resources/vsicon.png);\n"
+"    image: url(src/shakeit_ui/resource/vsicon.png);\n"
 "}\n"
 "\n"
 "QRadioButton::indicator:checked {\n"
@@ -1769,7 +1769,7 @@ class Ui_MainWindow(object):
         self.sidebarBackground.setObjectName("sidebarBackground")
         self.label = QtWidgets.QLabel(self.mainPage)
         self.label.setGeometry(QtCore.QRect(80, 80, 151, 121))
-        self.label.setStyleSheet("image: url(resources/usericon.png);")
+        self.label.setStyleSheet("image: url(src/shakeit_ui/resource/usericon.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.sidebarBackground.raise_()

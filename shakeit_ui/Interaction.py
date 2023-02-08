@@ -57,7 +57,4 @@ class InteractionWindow:
         self.mainWindow.endInteraction()
 
     def trainforward(self):
-        # Make ros2 service call to shake forward
-        #self.control = control_node()
-        #self.control.init_anyfeeder()
-        shakeitui_node.hallo()
+        

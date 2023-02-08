@@ -129,7 +129,7 @@ class Ui_Interaction(object):
         self.shop4cflogo.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.shop4cflogo.setStyleSheet("")
         self.shop4cflogo.setText("")
-        self.shop4cflogo.setPixmap(QtGui.QPixmap("resources/shop4cfLogo.png"))
+        self.shop4cflogo.setPixmap(QtGui.QPixmap("src/shakeit_ui/resource/shop4cfLogo.png"))
         self.shop4cflogo.setScaledContents(True)
         self.shop4cflogo.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.shop4cflogo.setObjectName("shop4cflogo")
@@ -164,7 +164,7 @@ class Ui_Interaction(object):
         self.buttonExit_4.setMaximumSize(QtCore.QSize(100, 100))
         self.buttonExit_4.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
-"image: url(\"resources/exiticon.png\");")
+"image: url(\"src/shakeit_ui/resource/exiticon.png\");")
         self.buttonExit_4.setText("")
         self.buttonExit_4.setObjectName("buttonExit_4")
         self.stackedpages.addWidget(self.page1welcome)
@@ -234,7 +234,7 @@ class Ui_Interaction(object):
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.buttonforward = QtWidgets.QPushButton(self.horizontalLayoutWidget_4)
-        self.buttonforward.setStyleSheet("image: url(/ros_pkg_ws/src/shakeit_ui/resource/forwardicon.png);")
+        self.buttonforward.setStyleSheet("image: url(src/shakeit_ui/resource/forwardicon.png);")
         self.buttonforward.setText("")
         self.buttonforward.setObjectName("buttonforward")
         self.verticalLayout_5.addWidget(self.buttonforward)
@@ -252,8 +252,7 @@ class Ui_Interaction(object):
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.buttonFlip = QtWidgets.QPushButton(self.horizontalLayoutWidget_4)
         self.buttonFlip.setMinimumSize(QtCore.QSize(0, 0))
-        self.buttonFlip.setStyleSheet("image: url(resources/flipicon.png);\n"
-"")
+        self.buttonFlip.setStyleSheet("image: url(src/shakeit_ui/resource/flipicon.png);")
         self.buttonFlip.setText("")
         self.buttonFlip.setObjectName("buttonFlip")
         self.verticalLayout_4.addWidget(self.buttonFlip)
@@ -269,8 +268,7 @@ class Ui_Interaction(object):
         self.verticalLayout_3.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.buttonback = QtWidgets.QPushButton(self.horizontalLayoutWidget_4)
-        self.buttonback.setStyleSheet("image: url(resources/backicon.png);\n"
-"")
+        self.buttonback.setStyleSheet("image: url(src/shakeit_ui/resource/backicon.png);")
         self.buttonback.setText("")
         self.buttonback.setObjectName("buttonback")
         self.verticalLayout_3.addWidget(self.buttonback)
@@ -311,7 +309,7 @@ class Ui_Interaction(object):
         self.label_8 = QtWidgets.QLabel(self.frame_3)
         self.label_8.setGeometry(QtCore.QRect(0, 0, 121, 111))
         self.label_8.setText("")
-        self.label_8.setPixmap(QtGui.QPixmap("resources/speedicon.png"))
+        self.label_8.setPixmap(QtGui.QPixmap("src/shakeit_ui/resource/speedicon.png"))
         self.label_8.setScaledContents(True)
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.frame_3)
@@ -359,7 +357,7 @@ class Ui_Interaction(object):
         self.label_11 = QtWidgets.QLabel(self.frame_4)
         self.label_11.setGeometry(QtCore.QRect(0, 0, 121, 111))
         self.label_11.setText("")
-        self.label_11.setPixmap(QtGui.QPixmap("resources/repicon.png"))
+        self.label_11.setPixmap(QtGui.QPixmap("src/shakeit_ui/resource/repicon.png"))
         self.label_11.setScaledContents(True)
         self.label_11.setObjectName("label_11")
         self.label_12 = QtWidgets.QLabel(self.frame_4)
@@ -436,7 +434,7 @@ class Ui_Interaction(object):
         self.buttonExit_3.setMaximumSize(QtCore.QSize(100, 100))
         self.buttonExit_3.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
-"image: url(\"resources/exiticon.png\");")
+"image: url(\"src/shakeit_ui/resource/exiticon.png\");")
         self.buttonExit_3.setText("")
         self.buttonExit_3.setObjectName("buttonExit_3")
         self.label_18 = QtWidgets.QLabel(self.page2try)
@@ -506,7 +504,7 @@ class Ui_Interaction(object):
         self.label_17.setMinimumSize(QtCore.QSize(400, 110))
         self.label_17.setStyleSheet("background-color: rgb(77, 77, 77);\n"
 "border-radius: 15px;\n"
-"image: url(resources/forwardicon.png);")
+"image: url(src/shakeit_ui/resource/forwardicon.png);")
         self.label_17.setText("")
         self.label_17.setObjectName("label_17")
         self.verticalLayout_8.addWidget(self.label_17)
@@ -570,7 +568,7 @@ class Ui_Interaction(object):
         self.label_21.setMinimumSize(QtCore.QSize(400, 110))
         self.label_21.setStyleSheet("background-color: rgb(77, 77, 77);\n"
 "border-radius: 15px;\n"
-"image: url(resources/flipicon.png);")
+"image: url(src/shakeit_ui/resource/flipicon.png);")
         self.label_21.setText("")
         self.label_21.setObjectName("label_21")
         self.verticalLayout_9.addWidget(self.label_21)
@@ -634,7 +632,7 @@ class Ui_Interaction(object):
         self.label_23.setMinimumSize(QtCore.QSize(400, 110))
         self.label_23.setStyleSheet("background-color: rgb(77, 77, 77);\n"
 "border-radius: 15px;\n"
-"image: url(resources/backicon.png);")
+"image: url(src/shakeit_ui/resource/backicon.png);")
         self.label_23.setText("")
         self.label_23.setObjectName("label_23")
         self.verticalLayout_10.addWidget(self.label_23)
@@ -748,7 +746,7 @@ class Ui_Interaction(object):
         self.buttonExit_2.setMaximumSize(QtCore.QSize(100, 100))
         self.buttonExit_2.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
-"image: url(\"resources/exiticon.png\");")
+"image: url(\"src/shakeit_ui/resource/exiticon.png\");")
         self.buttonExit_2.setText("")
         self.buttonExit_2.setObjectName("buttonExit_2")
         self.stackedpages.addWidget(self.page3play)
@@ -1235,7 +1233,7 @@ class Ui_Interaction(object):
         self.buttonExit.setMaximumSize(QtCore.QSize(100, 100))
         self.buttonExit.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
-"image: url(\"resources/exiticon.png\");")
+"image: url(\"src/shakeit_ui/resource/exiticon.png\");")
         self.buttonExit.setText("")
         self.buttonExit.setObjectName("buttonExit")
         self.stackedpages.addWidget(self.page4board)

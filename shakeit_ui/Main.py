@@ -45,6 +45,8 @@ class MainWindow:
         self.ui.radioVS.toggled.connect(self.vs)
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
 
+        self.show()
+
     def startSHAKEIT(self):
         print("Launching SHAKEIT run_experiment!")
         self.launch_SHAKEIT = subprocess.Popen(["ros2", "launch", "shakeit_experiments", "run_experiment.launch.py"])
@@ -125,6 +127,10 @@ class MainWindow:
         self.ui.radioVS.toggle()
         self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
         self.ui.stackedPages.setCurrentWidget(self.ui.pageVS)
+
+    def close_application(self):
+        print("Closing the application")
+        sys.exit()
 
 
 # if __name__ == '__main__':
