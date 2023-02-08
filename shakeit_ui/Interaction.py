@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import QWidget, QDialog
-from InteractionUI import Ui_Interaction
-from ExitDialog import ExitDialogWindow
+from shakeit_ui.InteractionUI import Ui_Interaction
+from shakeit_ui.ExitDialog import ExitDialogWindow
+
+from shakeit_ui import shakeitui_node
 
 
 class InteractionWindow:
@@ -22,6 +24,11 @@ class InteractionWindow:
         self.ui.buttonExit_2.clicked.connect(self.exit)
         self.ui.buttonExit_3.clicked.connect(self.exit)
         self.ui.buttonExit_4.clicked.connect(self.exit)
+
+        # connecting buttons for anyfeeder
+        self.ui.buttonforward.clicked.connect(self.trainforward)
+        #self.ui.buttonFlip.clicked.connect(self.trainflip)
+        #self.ui.buttonback.clicked.connect(self.trainbackward)
 
     def getWidget(self):
         return self.interaction
@@ -48,3 +55,9 @@ class InteractionWindow:
     def done(self):
         # after interaction completed
         self.mainWindow.endInteraction()
+
+    def trainforward(self):
+        # Make ros2 service call to shake forward
+        #self.control = control_node()
+        #self.control.init_anyfeeder()
+        shakeitui_node.hallo()
