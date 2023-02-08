@@ -40,7 +40,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="page1welcome">
     <property name="styleSheet">
@@ -1178,24 +1178,23 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
    <widget class="QWidget" name="page3play">
     <property name="styleSheet">
      <string notr="true">.playbutton{
-	color: rgb(255, 255, 255);
-	font: bold 12pt &quot;Open Sans&quot;;
-	margin: 2px;
+	margin: 8px;
+	padding: 20px;
 
 	border-radius: 15px;
-	background-color:rgb(127, 127, 127);
-	border-top: 1.5px solid rgb(105, 105, 105);
-	border-left: 2.5px solid  rgb(105, 105, 105);
-	border-right: 2.5px solid rgb(105, 105, 105);
-	border-bottom: 4px solid rgb(105, 105, 105);
+	background-color:  rgb(56, 56, 56);
+	border-top: 1.5px solid rgb(30, 30, 30);
+	border-left: 2.5px solid rgb(30, 30, 30);
+	border-right: 2.5px solid rgb(30, 30, 30);
+	border-bottom: 4px solid rgb(30, 30, 30);
 }
 
 .playbutton:pressed{
-	background-color: rgb(100, 100, 100);
-	border-bottom:1.5px solid  rgb(80, 80, 80);
-	border-left: 3px solid   rgb(80, 80, 80);
-	border-right: 3px solid  rgb(80, 80, 80);
-	border-top: 4px solid rgb(80, 80, 80);
+	background-color: rgb(40, 40, 40);
+	border-bottom:1.5px solid  rgb(20, 20, 20);
+	border-left: 3px solid rgb(20, 20, 20);
+	border-right: 3px solid rgb(20, 20, 20);
+	border-top: 4px solid rgb(20, 20, 20);
 }</string>
     </property>
     <property name="class" stdset="0">
@@ -1258,7 +1257,8 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(77, 77, 77);
 border-radius: 15px;
-image: url(resources/forwardicon.png);</string>
+image: url(resources/forwardicon.png);
+padding: 5px;</string>
           </property>
           <property name="text">
            <string/>
@@ -1266,17 +1266,20 @@ image: url(resources/forwardicon.png);</string>
          </widget>
         </item>
         <item>
-         <layout class="QGridLayout" name="gridLayout">
+         <layout class="QGridLayout" name="gridLayout_6">
           <item row="3" column="0">
-           <widget class="QPushButton" name="pushButton_7">
+           <widget class="QPushButton" name="pushButton_43">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s4r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1284,15 +1287,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QPushButton" name="pushButton_5">
+           <widget class="QPushButton" name="pushButton_44">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s2r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1300,15 +1306,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="pushButton_45">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s2r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1316,15 +1325,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="pushButton_46">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s1r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1332,15 +1344,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="4" column="0">
-           <widget class="QPushButton" name="pushButton_8">
+           <widget class="QPushButton" name="pushButton_47">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s5r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1348,15 +1363,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_6">
+           <widget class="QPushButton" name="pushButton_48">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s3r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1364,15 +1382,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QPushButton" name="pushButton_11">
+           <widget class="QPushButton" name="pushButton_49">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s5r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1380,15 +1401,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QPushButton" name="pushButton_9">
+           <widget class="QPushButton" name="pushButton_50">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s3r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1396,15 +1420,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QPushButton" name="pushButton_10">
+           <widget class="QPushButton" name="pushButton_51">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s4r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1412,15 +1439,18 @@ image: url(resources/forwardicon.png);</string>
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="pushButton_52">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s1r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1462,7 +1492,8 @@ image: url(resources/forwardicon.png);</string>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(77, 77, 77);
 border-radius: 15px;
-image: url(resources/flipicon.png);</string>
+image: url(resources/flipicon.png);
+padding: 5px;</string>
           </property>
           <property name="text">
            <string/>
@@ -1470,17 +1501,20 @@ image: url(resources/flipicon.png);</string>
          </widget>
         </item>
         <item>
-         <layout class="QGridLayout" name="gridLayout_2">
+         <layout class="QGridLayout" name="gridLayout_5">
           <item row="3" column="0">
-           <widget class="QPushButton" name="pushButton_13">
+           <widget class="QPushButton" name="pushButton_33">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s4r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1488,15 +1522,18 @@ image: url(resources/flipicon.png);</string>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QPushButton" name="pushButton_14">
+           <widget class="QPushButton" name="pushButton_34">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s2r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1504,15 +1541,18 @@ image: url(resources/flipicon.png);</string>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton_15">
+           <widget class="QPushButton" name="pushButton_35">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s2r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1520,15 +1560,18 @@ image: url(resources/flipicon.png);</string>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton_16">
+           <widget class="QPushButton" name="pushButton_36">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s1r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1536,15 +1579,18 @@ image: url(resources/flipicon.png);</string>
            </widget>
           </item>
           <item row="4" column="0">
-           <widget class="QPushButton" name="pushButton_17">
+           <widget class="QPushButton" name="pushButton_37">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s5r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1552,15 +1598,18 @@ image: url(resources/flipicon.png);</string>
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_18">
+           <widget class="QPushButton" name="pushButton_38">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s3r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1568,15 +1617,18 @@ image: url(resources/flipicon.png);</string>
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QPushButton" name="pushButton_19">
+           <widget class="QPushButton" name="pushButton_39">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s5r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1584,15 +1636,18 @@ image: url(resources/flipicon.png);</string>
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QPushButton" name="pushButton_20">
+           <widget class="QPushButton" name="pushButton_40">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s3r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1600,15 +1655,18 @@ image: url(resources/flipicon.png);</string>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QPushButton" name="pushButton_21">
+           <widget class="QPushButton" name="pushButton_41">
             <property name="minimumSize">
              <size>
               <width>0</width>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s4r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1622,6 +1680,9 @@ image: url(resources/flipicon.png);</string>
               <width>0</width>
               <height>140</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s1r1.png);</string>
             </property>
             <property name="text">
              <string>Continue</string>
@@ -1666,7 +1727,8 @@ image: url(resources/flipicon.png);</string>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(77, 77, 77);
 border-radius: 15px;
-image: url(resources/backicon.png);</string>
+image: url(resources/backicon.png);
+padding: 5px;</string>
           </property>
           <property name="text">
            <string/>
@@ -1683,8 +1745,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s4r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1699,8 +1764,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s2r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1715,8 +1783,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s2r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1731,8 +1802,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s1r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1747,8 +1821,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s5r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1763,8 +1840,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s3r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1779,8 +1859,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s5r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1795,8 +1878,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s3r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1811,8 +1897,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s4r3.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1827,8 +1916,11 @@ image: url(resources/backicon.png);</string>
               <height>140</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">image: url(resources/s1r1.png);</string>
+            </property>
             <property name="text">
-             <string>PushButton</string>
+             <string/>
             </property>
             <property name="class" stdset="0">
              <string>playbutton</string>
@@ -1911,7 +2003,7 @@ border-radius: 15px;
       <rect>
        <x>150</x>
        <y>20</y>
-       <width>310</width>
+       <width>501</width>
        <height>100</height>
       </rect>
      </property>
@@ -1945,12 +2037,12 @@ border-radius: 15px;
        <rect>
         <x>20</x>
         <y>0</y>
-        <width>111</width>
+        <width>151</width>
         <height>101</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: bold 24pt &quot;Open Sans&quot;;</string>
+       <string notr="true">font: bold 34pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
        <string>Score:</string>
@@ -1959,14 +2051,14 @@ border-radius: 15px;
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>170</x>
         <y>0</y>
-        <width>171</width>
+        <width>271</width>
         <height>101</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 24pt &quot;Open Sans&quot;;</string>
+       <string notr="true">font: 34pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
        <string>No pickups</string>
