@@ -1,7 +1,9 @@
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import QTimer
+
 from InteractionUI import Ui_Interaction
 from ExitDialog import ExitDialogWindow
+from TimesUpDialog import TimesUpDialogWindow
 
 
 class InteractionWindow:
@@ -17,7 +19,6 @@ class InteractionWindow:
         # connecting buttons
         self.ui.buttonStart.clicked.connect(self.start)
         self.ui.buttonReady.clicked.connect(self.ready)
-        # self.ui.buttonEnd.clicked.connect(self.end)
 
         self.ui.buttonExit.clicked.connect(self.done)
         self.ui.buttonExit_2.clicked.connect(self.exit)
@@ -46,12 +47,14 @@ class InteractionWindow:
 
     def showTime(self):
         self.currentTime = self.currentTime - 1
+        self.ui.timer.display(self.currentTime)
 
         if self.currentTime == 0:
-            self.end()
             self.timer.stop()
 
-        self.ui.timer.display(self.currentTime)
+            result = TimesUpDialogWindow.launch(self.mainWindow.main_win, "1", "12")
+            if result == 0:
+                self.end()
 
     def end(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
