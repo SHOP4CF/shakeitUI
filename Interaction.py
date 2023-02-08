@@ -1,4 +1,5 @@
-from PyQt5.QtWidgets import QWidget, QDialog
+from PyQt5.QtWidgets import QWidget
+from PyQt5.QtCore import QTimer
 from InteractionUI import Ui_Interaction
 from ExitDialog import ExitDialogWindow
 
@@ -16,12 +17,18 @@ class InteractionWindow:
         # connecting buttons
         self.ui.buttonStart.clicked.connect(self.start)
         self.ui.buttonReady.clicked.connect(self.ready)
-        self.ui.buttonEnd.clicked.connect(self.end)
+        # self.ui.buttonEnd.clicked.connect(self.end)
 
         self.ui.buttonExit.clicked.connect(self.done)
         self.ui.buttonExit_2.clicked.connect(self.exit)
         self.ui.buttonExit_3.clicked.connect(self.exit)
         self.ui.buttonExit_4.clicked.connect(self.exit)
+
+        # timer
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.showTime)
+        self.currentTime = 60
+        self.ui.timer.display(self.currentTime)
 
     def getWidget(self):
         return self.interaction
@@ -35,6 +42,16 @@ class InteractionWindow:
 
     def ready(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
+        self.timer.start(1000)
+
+    def showTime(self):
+        self.currentTime = self.currentTime - 1
+
+        if self.currentTime == 0:
+            self.end()
+            self.timer.stop()
+
+        self.ui.timer.display(self.currentTime)
 
     def end(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
