@@ -121,42 +121,52 @@ class InteractionWindow:
     def fw_s2_r1(self):
         fw_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 2}}"""], stdout=subprocess.PIPE)
         output = fw_2_1.communicate()[0]
+        self.trigger_cam()
     
     def fw_s4_r1(self):
         fw_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 4}}"""], stdout=subprocess.PIPE)
         output = fw_4_1.communicate()[0]
+        self.trigger_cam()
 
     def fw_s6_r1(self):
         fw_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 6}}"""], stdout=subprocess.PIPE)
         output = fw_6_1.communicate()[0]
+        self.trigger_cam()
 
     def fw_s8_r1(self):
         fw_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 8}}"""], stdout=subprocess.PIPE)
         output = fw_8_1.communicate()[0]
+        self.trigger_cam()
 
     def fw_s10_r1(self):
         fw_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 10}}"""], stdout=subprocess.PIPE)
         output = fw_10_1.communicate()[0]
+        self.trigger_cam()
 
     def fw_s2_r3(self):
         fw_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 2}}"""], stdout=subprocess.PIPE)
         output = fw_2_1.communicate()[0]
+        self.trigger_cam()
     
     def fw_s4_r3(self):
         fw_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 4}}"""], stdout=subprocess.PIPE)
         output = fw_4_1.communicate()[0]
+        self.trigger_cam()
 
     def fw_s6_r3(self):
         fw_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 6}}"""], stdout=subprocess.PIPE)
         output = fw_6_1.communicate()[0]
+        self.trigger_cam()
 
     def fw_s8_r3(self):
         fw_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 8}}"""], stdout=subprocess.PIPE)
         output = fw_8_1.communicate()[0]
+        self.trigger_cam()
 
     def fw_s10_r3(self):
         fw_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 10}}"""], stdout=subprocess.PIPE)
         output = fw_10_1.communicate()[0]
+        self.trigger_cam()
 
     #
     # FLIP CMDs
@@ -165,42 +175,52 @@ class InteractionWindow:
     def flip_s2_r1(self):
         flip_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 2}}"""], stdout=subprocess.PIPE)
         output = flip_2_1.communicate()[0]
+        self.trigger_cam()
     
     def flip_s4_r1(self):
         flip_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 4}}"""], stdout=subprocess.PIPE)
         output = flip_4_1.communicate()[0]
+        self.trigger_cam()
 
     def flip_s6_r1(self):
         flip_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 6}}"""], stdout=subprocess.PIPE)
         output = flip_6_1.communicate()[0]
+        self.trigger_cam()
 
     def flip_s8_r1(self):
         flip_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 8}}"""], stdout=subprocess.PIPE)
         output = flip_8_1.communicate()[0]
+        self.trigger_cam()
 
     def flip_s10_r1(self):
         flip_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 10}}"""], stdout=subprocess.PIPE)
         output = flip_10_1.communicate()[0]
+        self.trigger_cam()
 
     def flip_s2_r3(self):
         flip_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 2}}"""], stdout=subprocess.PIPE)
         output = flip_2_1.communicate()[0]
+        self.trigger_cam()
     
     def flip_s4_r3(self):
         flip_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 4}}"""], stdout=subprocess.PIPE)
         output = flip_4_1.communicate()[0]
+        self.trigger_cam()
 
     def flip_s6_r3(self):
         flip_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 6}}"""], stdout=subprocess.PIPE)
         output = flip_6_1.communicate()[0]
+        self.trigger_cam()
 
     def flip_s8_r3(self):
         flip_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 8}}"""], stdout=subprocess.PIPE)
         output = flip_8_1.communicate()[0]
+        self.trigger_cam()
 
     def flip_s10_r3(self):
         flip_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 10}}"""], stdout=subprocess.PIPE)
         output = flip_10_1.communicate()[0]
+        self.trigger_cam()
 
     #
     # BACWARDS CMDs
@@ -209,39 +229,56 @@ class InteractionWindow:
     def bw_s2_r1(self):
         bw_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 2}}"""], stdout=subprocess.PIPE)
         output = bw_2_1.communicate()[0]
+        self.trigger_cam()
     
     def bw_s4_r1(self):
         bw_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 4}}"""], stdout=subprocess.PIPE)
         output = bw_4_1.communicate()[0]
+        self.trigger_cam()
 
     def bw_s6_r1(self):
         bw_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 6}}"""], stdout=subprocess.PIPE)
         output = bw_6_1.communicate()[0]
+        self.trigger_cam()
 
     def bw_s8_r1(self):
         bw_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 8}}"""], stdout=subprocess.PIPE)
         output = bw_8_1.communicate()[0]
+        self.trigger_cam()
 
     def bw_s10_r1(self):
         bw_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 10}}"""], stdout=subprocess.PIPE)
         output = bw_10_1.communicate()[0]
+        self.trigger_cam()
 
     def bw_s2_r3(self):
         bw_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 2}}"""], stdout=subprocess.PIPE)
         output = bw_2_1.communicate()[0]
+        self.trigger_cam()
     
     def bw_s4_r3(self):
         bw_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 4}}"""], stdout=subprocess.PIPE)
         output = bw_4_1.communicate()[0]
+        self.trigger_cam()
 
     def bw_s6_r3(self):
         bw_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 6}}"""], stdout=subprocess.PIPE)
         output = bw_6_1.communicate()[0]
+        self.trigger_cam()
 
     def bw_s8_r3(self):
         bw_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 8}}"""], stdout=subprocess.PIPE)
         output = bw_8_1.communicate()[0]
+        self.trigger_cam()
 
     def bw_s10_r3(self):
         bw_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 10}}"""], stdout=subprocess.PIPE)
         output = bw_10_1.communicate()[0]
+        self.trigger_cam()
+
+    def trigger_cam(self):
+        print("Trigger cam")
+        # ros2 action send_goal /robot_camera_test_node/test shakeit_interfaces/action/Trigger {}
+        trigger = subprocess.Popen(["ros2","action","send_goal","/robot_camera_test_node/test", "shakeit_interfaces/action/Trigger", """{}"""], stdout=subprocess.PIPE)
+        output = trigger.communicate()[0]
+        
