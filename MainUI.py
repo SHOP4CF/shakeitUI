@@ -112,12 +112,31 @@ class Ui_MainWindow(object):
         self.textPassword.raise_()
         self.stackedLogin.addWidget(self.loginPage)
         self.mainPage = QtWidgets.QWidget()
-        self.mainPage.setStyleSheet("")
+        self.mainPage.setStyleSheet("QRadioButton {\n"
+"    font: 18pt \"Open Sans\";\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QRadioButton::indicator {\n"
+"    width:                  70px;\n"
+"    height:                 70px;\n"
+"    border-radius:          37px;\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:checked {\n"
+"    background-color: rgb(25, 55, 103);\n"
+"    border: 2px solid rgb(34, 75, 141);\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:unchecked {\n"
+"    background-color: black;\n"
+"    border: 2px solid;\n"
+"}")
         self.mainPage.setObjectName("mainPage")
         self.stackedPages = QtWidgets.QStackedWidget(self.mainPage)
         self.stackedPages.setGeometry(QtCore.QRect(310, 0, 1611, 1081))
         self.stackedPages.setStyleSheet(".pagebackground{\n"
-"    background-color: #CE796B;\n"
+"    background-color: rgb(255, 255, 255)\n"
 "}")
         self.stackedPages.setObjectName("stackedPages")
         self.pageAI = QtWidgets.QWidget()
@@ -133,35 +152,18 @@ class Ui_MainWindow(object):
         self.buttonStart = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.buttonStart.setMaximumSize(QtCore.QSize(16777215, 200))
         self.buttonStart.setBaseSize(QtCore.QSize(0, 0))
-        self.buttonStart.setStyleSheet("background-color:  rgb(127, 178, 133);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 22pt \"Nirmala UI\";")
+        self.buttonStart.setStyleSheet("background-color: rgb(0, 176, 80);\n"
+"color: white;\n"
+"font: 22pt \"Open Sans\";")
         self.buttonStart.setObjectName("buttonStart")
         self.Layoutstartstop.addWidget(self.buttonStart)
         self.buttonStop = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.buttonStop.setMaximumSize(QtCore.QSize(16777215, 200))
-        self.buttonStop.setStyleSheet("background-color:rgb(199, 72, 72);\n"
+        self.buttonStop.setStyleSheet("background-color: rgb(237, 26, 59);\n"
 "color: white;\n"
-"font: 22pt \"Nirmala UI\";")
+"font: 22pt \"Open Sans\";")
         self.buttonStop.setObjectName("buttonStop")
         self.Layoutstartstop.addWidget(self.buttonStop)
-        self.Titel = QtWidgets.QLabel(self.pageAI)
-        self.Titel.setGeometry(QtCore.QRect(40, 30, 641, 61))
-        font = QtGui.QFont()
-        font.setFamily("Nirmala UI")
-        font.setPointSize(36)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.Titel.setFont(font)
-        self.Titel.setStyleSheet("font: 36pt \"Nirmala UI\";\n"
-"color: white;")
-        self.Titel.setObjectName("Titel")
-        self.line = QtWidgets.QFrame(self.pageAI)
-        self.line.setGeometry(QtCore.QRect(40, 100, 1541, 20))
-        self.line.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line.setObjectName("line")
         self.gridLayoutWidget = QtWidgets.QWidget(self.pageAI)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(510, 380, 1071, 641))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
@@ -182,18 +184,20 @@ class Ui_MainWindow(object):
         self.graphlayout.addWidget(self.graph2, 0, 1, 1, 1)
         self.statusBox = QtWidgets.QGroupBox(self.pageAI)
         self.statusBox.setGeometry(QtCore.QRect(40, 140, 861, 211))
-        self.statusBox.setStyleSheet("font: 18pt \"Nirmala UI\";\n"
-"color: white;")
+        self.statusBox.setStyleSheet("font: 18pt \"Open Sans\";\n"
+"color: black;")
+        self.statusBox.setFlat(False)
+        self.statusBox.setCheckable(False)
         self.statusBox.setObjectName("statusBox")
         self.settingsBox = QtWidgets.QGroupBox(self.pageAI)
         self.settingsBox.setGeometry(QtCore.QRect(40, 370, 431, 651))
-        self.settingsBox.setStyleSheet("font: 75 18pt \"Nirmala UI\";\n"
-"color: white;")
+        self.settingsBox.setStyleSheet("font: 18pt \"Open Sans\";\n"
+"color: black;")
         self.settingsBox.setObjectName("settingsBox")
         self.buttonSettings = QtWidgets.QPushButton(self.settingsBox)
         self.buttonSettings.setGeometry(QtCore.QRect(110, 580, 211, 41))
-        self.buttonSettings.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
-"background-color: rgb(93, 112, 131);\n"
+        self.buttonSettings.setStyleSheet("font: 14pt \"Open Sans\";\n"
+"background-color:rgb(40, 85, 162);\n"
 "color: white;")
         self.buttonSettings.setObjectName("buttonSettings")
         self.spinIterations = QtWidgets.QSpinBox(self.settingsBox)
@@ -206,1027 +210,336 @@ class Ui_MainWindow(object):
         self.labelIterations.setObjectName("labelIterations")
         self.aibackground = QtWidgets.QLabel(self.pageAI)
         self.aibackground.setGeometry(QtCore.QRect(0, 0, 1611, 1081))
-        self.aibackground.setStyleSheet("background-color: rgb(206, 121, 107);")
+        self.aibackground.setStyleSheet("background-color: white;")
         self.aibackground.setText("")
         self.aibackground.setObjectName("aibackground")
+        self.Titel_5 = QtWidgets.QLabel(self.pageAI)
+        self.Titel_5.setGeometry(QtCore.QRect(40, 50, 711, 61))
+        self.Titel_5.setStyleSheet("font: 48pt \"Open Sans\";\n"
+"color: black;")
+        self.Titel_5.setObjectName("Titel_5")
+        self.line_25 = QtWidgets.QFrame(self.pageAI)
+        self.line_25.setGeometry(QtCore.QRect(40, 120, 1511, 16))
+        self.line_25.setStyleSheet("")
+        self.line_25.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.line_25.setLineWidth(2)
+        self.line_25.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_25.setObjectName("line_25")
         self.aibackground.raise_()
         self.horizontalLayoutWidget.raise_()
-        self.Titel.raise_()
-        self.line.raise_()
         self.gridLayoutWidget.raise_()
         self.statusBox.raise_()
         self.settingsBox.raise_()
+        self.Titel_5.raise_()
+        self.line_25.raise_()
         self.stackedPages.addWidget(self.pageAI)
         self.pageManual = QtWidgets.QWidget()
-        self.pageManual.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 10pt \"MS Shell Dlg 2\";\n"
+        self.pageManual.setStyleSheet(".playbutton{\n"
+"    margin: 8px;\n"
+"    padding: 20px;\n"
+"\n"
+"    border-radius: 15px;\n"
+"    background-color:  rgb(56, 56, 56);\n"
+"    border-top: 1.5px solid rgb(30, 30, 30);\n"
+"    border-left: 2.5px solid rgb(30, 30, 30);\n"
+"    border-right: 2.5px solid rgb(30, 30, 30);\n"
+"    border-bottom: 4px solid rgb(30, 30, 30);\n"
 "}\n"
 "\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
+".playbutton:pressed{\n"
+"    background-color: rgb(40, 40, 40);\n"
+"    border-bottom:1.5px solid  rgb(20, 20, 20);\n"
+"    border-left: 3px solid rgb(20, 20, 20);\n"
+"    border-right: 3px solid rgb(20, 20, 20);\n"
+"    border-top: 4px solid rgb(20, 20, 20);\n"
 "}")
         self.pageManual.setObjectName("pageManual")
-        self.Titel_2 = QtWidgets.QLabel(self.pageManual)
-        self.Titel_2.setGeometry(QtCore.QRect(40, 30, 711, 61))
-        self.Titel_2.setStyleSheet("font: 36pt \"Nirmala UI\";\n"
-"color: white;")
-        self.Titel_2.setObjectName("Titel_2")
-        self.line_2 = QtWidgets.QFrame(self.pageManual)
-        self.line_2.setGeometry(QtCore.QRect(40, 100, 1541, 16))
+        self.Titel_4 = QtWidgets.QLabel(self.pageManual)
+        self.Titel_4.setGeometry(QtCore.QRect(40, 50, 711, 61))
+        self.Titel_4.setStyleSheet("font: 48pt \"Open Sans\";\n"
+"color: black;")
+        self.Titel_4.setObjectName("Titel_4")
+        self.line_24 = QtWidgets.QFrame(self.pageManual)
+        self.line_24.setGeometry(QtCore.QRect(40, 120, 1511, 16))
+        self.line_24.setStyleSheet("")
+        self.line_24.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.line_24.setLineWidth(2)
+        self.line_24.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_24.setObjectName("line_24")
+        self.layoutWidget_2 = QtWidgets.QWidget(self.pageManual)
+        self.layoutWidget_2.setGeometry(QtCore.QRect(40, 190, 1511, 791))
+        self.layoutWidget_2.setObjectName("layoutWidget_2")
+        self.horizontalLayout_buttons = QtWidgets.QHBoxLayout(self.layoutWidget_2)
+        self.horizontalLayout_buttons.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_buttons.setObjectName("horizontalLayout_buttons")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.label_2 = QtWidgets.QLabel(self.layoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Open Sans")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_8.addWidget(self.label_2)
+        self.line_2 = QtWidgets.QFrame(self.layoutWidget_2)
+        self.line_2.setStyleSheet("color: rgb(40, 85, 162);")
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.line_2.setLineWidth(2)
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
-        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.pageManual)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(40, 120, 1541, 901))
-        self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
-        self.layoutButtons = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
-        self.layoutButtons.setContentsMargins(0, 0, 0, 0)
-        self.layoutButtons.setObjectName("layoutButtons")
-        self.layoutForward = QtWidgets.QVBoxLayout()
-        self.layoutForward.setSpacing(0)
-        self.layoutForward.setObjectName("layoutForward")
-        self.labelForward = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
-        self.labelForward.setMinimumSize(QtCore.QSize(0, 30))
-        self.labelForward.setMaximumSize(QtCore.QSize(16777215, 20))
-        self.labelForward.setStyleSheet("font: bold 20pt \"Nirmala UI\";\n"
-"color: white;")
-        self.labelForward.setAlignment(QtCore.Qt.AlignCenter)
-        self.labelForward.setObjectName("labelForward")
-        self.layoutForward.addWidget(self.labelForward)
-        self.fw_r1s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r1s2.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r1s2.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r1s2.setObjectName("fw_r1s2")
-        self.layoutForward.addWidget(self.fw_r1s2)
-        self.fw_r3s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r3s2.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r3s2.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r3s2.setObjectName("fw_r3s2")
-        self.layoutForward.addWidget(self.fw_r3s2)
-        self.fw_r1s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r1s4.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r1s4.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r1s4.setObjectName("fw_r1s4")
-        self.layoutForward.addWidget(self.fw_r1s4)
-        self.fw_r3s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r3s4.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r3s4.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r3s4.setObjectName("fw_r3s4")
-        self.layoutForward.addWidget(self.fw_r3s4)
-        self.fw_r1s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r1s6.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r1s6.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r1s6.setObjectName("fw_r1s6")
-        self.layoutForward.addWidget(self.fw_r1s6)
-        self.fw_r3s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r3s6.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r3s6.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r3s6.setObjectName("fw_r3s6")
-        self.layoutForward.addWidget(self.fw_r3s6)
-        self.fw_r1s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r1s8.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r1s8.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r1s8.setObjectName("fw_r1s8")
-        self.layoutForward.addWidget(self.fw_r1s8)
-        self.fw_r3s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r3s8.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r3s8.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r3s8.setObjectName("fw_r3s8")
-        self.layoutForward.addWidget(self.fw_r3s8)
-        self.fw_r1s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r1s10.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r1s10.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r1s10.setObjectName("fw_r1s10")
-        self.layoutForward.addWidget(self.fw_r1s10)
-        self.fw_r3s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fw_r3s10.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fw_r3s10.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fw_r3s10.setObjectName("fw_r3s10")
-        self.layoutForward.addWidget(self.fw_r3s10)
-        self.layoutButtons.addLayout(self.layoutForward)
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.labelBackward = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
-        self.labelBackward.setMinimumSize(QtCore.QSize(0, 30))
-        self.labelBackward.setMaximumSize(QtCore.QSize(16777215, 20))
-        self.labelBackward.setStyleSheet("font: bold 20pt \"Nirmala UI\";\n"
-"color: white;")
-        self.labelBackward.setAlignment(QtCore.Qt.AlignCenter)
-        self.labelBackward.setObjectName("labelBackward")
-        self.verticalLayout_5.addWidget(self.labelBackward)
-        self.b_r1s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r1s2.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r1s2.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r1s2.setObjectName("b_r1s2")
-        self.verticalLayout_5.addWidget(self.b_r1s2)
-        self.b_r3s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r3s2.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r3s2.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r3s2.setObjectName("b_r3s2")
-        self.verticalLayout_5.addWidget(self.b_r3s2)
-        self.b_r1s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r1s4.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r1s4.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r1s4.setObjectName("b_r1s4")
-        self.verticalLayout_5.addWidget(self.b_r1s4)
-        self.b_r3s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r3s4.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r3s4.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r3s4.setObjectName("b_r3s4")
-        self.verticalLayout_5.addWidget(self.b_r3s4)
-        self.b_r1s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r1s6.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r1s6.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r1s6.setObjectName("b_r1s6")
-        self.verticalLayout_5.addWidget(self.b_r1s6)
-        self.b_r3s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r3s6.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r3s6.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r3s6.setObjectName("b_r3s6")
-        self.verticalLayout_5.addWidget(self.b_r3s6)
-        self.b_r1s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r1s8.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r1s8.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r1s8.setObjectName("b_r1s8")
-        self.verticalLayout_5.addWidget(self.b_r1s8)
-        self.b_r3s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r3s8.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r3s8.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r3s8.setObjectName("b_r3s8")
-        self.verticalLayout_5.addWidget(self.b_r3s8)
-        self.b_r1s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r1s10.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r1s10.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r1s10.setObjectName("b_r1s10")
-        self.verticalLayout_5.addWidget(self.b_r1s10)
-        self.b_r3s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.b_r3s10.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.b_r3s10.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.b_r3s10.setObjectName("b_r3s10")
-        self.verticalLayout_5.addWidget(self.b_r3s10)
-        self.layoutButtons.addLayout(self.verticalLayout_5)
-        self.layoutFlip = QtWidgets.QVBoxLayout()
-        self.layoutFlip.setSpacing(0)
-        self.layoutFlip.setObjectName("layoutFlip")
-        self.labelFlip = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
-        self.labelFlip.setMinimumSize(QtCore.QSize(0, 30))
-        self.labelFlip.setMaximumSize(QtCore.QSize(16777215, 20))
-        self.labelFlip.setStyleSheet("font: bold 20pt \"Nirmala UI\";\n"
-"color: white;")
-        self.labelFlip.setAlignment(QtCore.Qt.AlignCenter)
-        self.labelFlip.setObjectName("labelFlip")
-        self.layoutFlip.addWidget(self.labelFlip)
-        self.fp_r1s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r1s2.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r1s2.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r1s2.setObjectName("fp_r1s2")
-        self.layoutFlip.addWidget(self.fp_r1s2)
-        self.fp_r3s2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r3s2.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r3s2.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r3s2.setObjectName("fp_r3s2")
-        self.layoutFlip.addWidget(self.fp_r3s2)
-        self.fp_r1s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r1s4.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r1s4.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r1s4.setObjectName("fp_r1s4")
-        self.layoutFlip.addWidget(self.fp_r1s4)
-        self.fp_r3s4 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r3s4.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r3s4.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r3s4.setObjectName("fp_r3s4")
-        self.layoutFlip.addWidget(self.fp_r3s4)
-        self.fp_r1s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r1s6.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r1s6.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r1s6.setObjectName("fp_r1s6")
-        self.layoutFlip.addWidget(self.fp_r1s6)
-        self.fp_r3s6 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r3s6.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r3s6.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r3s6.setObjectName("fp_r3s6")
-        self.layoutFlip.addWidget(self.fp_r3s6)
-        self.fp_r1s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r1s8.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r1s8.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r1s8.setObjectName("fp_r1s8")
-        self.layoutFlip.addWidget(self.fp_r1s8)
-        self.fp_r3s8 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r3s8.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r3s8.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r3s8.setObjectName("fp_r3s8")
-        self.layoutFlip.addWidget(self.fp_r3s8)
-        self.fp_r1s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r1s10.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r1s10.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r1s10.setObjectName("fp_r1s10")
-        self.layoutFlip.addWidget(self.fp_r1s10)
-        self.fp_r3s10 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.fp_r3s10.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.fp_r3s10.setStyleSheet("QPushButton {\n"
-"    min-height: 60 px;\n"
-"    background-color: rgb(93, 112, 131);\n"
-"    border: none;\n"
-"    padding-top: 5px;\n"
-"    color: rgb(226, 234, 216);\n"
-"    border-left: 1px sold  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"    font: 14pt \"MS Shell Dlg 2\";\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:rgb(112, 133, 153);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-bottom: 3px solid  rgb(73, 88, 103);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(76, 92, 107);\n"
-"    border-left: 1px solid  rgb(73, 88, 103);\n"
-"    border-right: 1px solid  rgb(73, 88, 103);\n"
-"    border-top: 3px solid  rgb(73, 88, 103);\n"
-"    padding-top: -5px;\n"
-"    border-bottom: none;\n"
-"}")
-        self.fp_r3s10.setObjectName("fp_r3s10")
-        self.layoutFlip.addWidget(self.fp_r3s10)
-        self.layoutButtons.addLayout(self.layoutFlip)
+        self.verticalLayout_8.addWidget(self.line_2)
+        self.gridLayout_6 = QtWidgets.QGridLayout()
+        self.gridLayout_6.setObjectName("gridLayout_6")
+        self.pushButton_49 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_49.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_49.setStyleSheet("image: url(resources/s5r3.png);")
+        self.pushButton_49.setText("")
+        self.pushButton_49.setObjectName("pushButton_49")
+        self.gridLayout_6.addWidget(self.pushButton_49, 4, 1, 1, 1)
+        self.pushButton_45 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_45.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_45.setStyleSheet("image: url(resources/s2r1.png);")
+        self.pushButton_45.setText("")
+        self.pushButton_45.setObjectName("pushButton_45")
+        self.gridLayout_6.addWidget(self.pushButton_45, 1, 0, 1, 1)
+        self.pushButton_47 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_47.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_47.setStyleSheet("image: url(resources/s5r1.png);")
+        self.pushButton_47.setText("")
+        self.pushButton_47.setObjectName("pushButton_47")
+        self.gridLayout_6.addWidget(self.pushButton_47, 4, 0, 1, 1)
+        self.pushButton_52 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_52.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_52.setStyleSheet("image: url(resources/s1r1.png);")
+        self.pushButton_52.setText("")
+        self.pushButton_52.setObjectName("pushButton_52")
+        self.gridLayout_6.addWidget(self.pushButton_52, 0, 0, 1, 1)
+        self.pushButton_44 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_44.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_44.setStyleSheet("image: url(resources/s2r3.png);")
+        self.pushButton_44.setText("")
+        self.pushButton_44.setObjectName("pushButton_44")
+        self.gridLayout_6.addWidget(self.pushButton_44, 1, 1, 1, 1)
+        self.pushButton_51 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_51.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_51.setStyleSheet("image: url(resources/s4r3.png);")
+        self.pushButton_51.setText("")
+        self.pushButton_51.setObjectName("pushButton_51")
+        self.gridLayout_6.addWidget(self.pushButton_51, 3, 1, 1, 1)
+        self.pushButton_48 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_48.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_48.setStyleSheet("image: url(resources/s3r1.png);")
+        self.pushButton_48.setText("")
+        self.pushButton_48.setObjectName("pushButton_48")
+        self.gridLayout_6.addWidget(self.pushButton_48, 2, 0, 1, 1)
+        self.pushButton_46 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_46.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_46.setStyleSheet("image: url(resources/s1r3.png);")
+        self.pushButton_46.setText("")
+        self.pushButton_46.setObjectName("pushButton_46")
+        self.gridLayout_6.addWidget(self.pushButton_46, 0, 1, 1, 1)
+        self.pushButton_50 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_50.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_50.setStyleSheet("image: url(resources/s3r3.png);")
+        self.pushButton_50.setText("")
+        self.pushButton_50.setObjectName("pushButton_50")
+        self.gridLayout_6.addWidget(self.pushButton_50, 2, 1, 1, 1)
+        self.pushButton_43 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_43.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_43.setStyleSheet("image: url(resources/s4r1.png);")
+        self.pushButton_43.setText("")
+        self.pushButton_43.setObjectName("pushButton_43")
+        self.gridLayout_6.addWidget(self.pushButton_43, 3, 0, 1, 1)
+        self.verticalLayout_8.addLayout(self.gridLayout_6)
+        self.horizontalLayout_buttons.addLayout(self.verticalLayout_8)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_buttons.addItem(spacerItem)
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.label_20 = QtWidgets.QLabel(self.layoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
+        self.label_20.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Open Sans")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_20.setFont(font)
+        self.label_20.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_20.setObjectName("label_20")
+        self.verticalLayout_9.addWidget(self.label_20)
+        self.line_3 = QtWidgets.QFrame(self.layoutWidget_2)
+        self.line_3.setStyleSheet("color: rgb(40, 85, 162);")
+        self.line_3.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.line_3.setLineWidth(2)
+        self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_3.setObjectName("line_3")
+        self.verticalLayout_9.addWidget(self.line_3)
+        self.gridLayout_5 = QtWidgets.QGridLayout()
+        self.gridLayout_5.setObjectName("gridLayout_5")
+        self.pushButton_36 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_36.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_36.setStyleSheet("image: url(resources/s1r3.png);")
+        self.pushButton_36.setText("")
+        self.pushButton_36.setObjectName("pushButton_36")
+        self.gridLayout_5.addWidget(self.pushButton_36, 0, 1, 1, 1)
+        self.pushButton_40 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_40.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_40.setStyleSheet("image: url(resources/s3r3.png);")
+        self.pushButton_40.setText("")
+        self.pushButton_40.setObjectName("pushButton_40")
+        self.gridLayout_5.addWidget(self.pushButton_40, 2, 1, 1, 1)
+        self.pushButton_42 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_42.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_42.setStyleSheet("image: url(resources/s1r1.png);")
+        self.pushButton_42.setText("")
+        self.pushButton_42.setObjectName("pushButton_42")
+        self.gridLayout_5.addWidget(self.pushButton_42, 0, 0, 1, 1)
+        self.pushButton_35 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_35.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_35.setStyleSheet("image: url(resources/s2r1.png);")
+        self.pushButton_35.setText("")
+        self.pushButton_35.setObjectName("pushButton_35")
+        self.gridLayout_5.addWidget(self.pushButton_35, 1, 0, 1, 1)
+        self.pushButton_41 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_41.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_41.setStyleSheet("image: url(resources/s4r3.png);")
+        self.pushButton_41.setText("")
+        self.pushButton_41.setObjectName("pushButton_41")
+        self.gridLayout_5.addWidget(self.pushButton_41, 3, 1, 1, 1)
+        self.pushButton_33 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_33.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_33.setStyleSheet("image: url(resources/s4r1.png);")
+        self.pushButton_33.setText("")
+        self.pushButton_33.setObjectName("pushButton_33")
+        self.gridLayout_5.addWidget(self.pushButton_33, 3, 0, 1, 1)
+        self.pushButton_38 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_38.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_38.setStyleSheet("image: url(resources/s3r1.png);")
+        self.pushButton_38.setText("")
+        self.pushButton_38.setObjectName("pushButton_38")
+        self.gridLayout_5.addWidget(self.pushButton_38, 2, 0, 1, 1)
+        self.pushButton_34 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_34.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_34.setStyleSheet("image: url(resources/s2r3.png);")
+        self.pushButton_34.setText("")
+        self.pushButton_34.setObjectName("pushButton_34")
+        self.gridLayout_5.addWidget(self.pushButton_34, 1, 1, 1, 1)
+        self.pushButton_39 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_39.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_39.setStyleSheet("image: url(resources/s5r3.png);")
+        self.pushButton_39.setText("")
+        self.pushButton_39.setObjectName("pushButton_39")
+        self.gridLayout_5.addWidget(self.pushButton_39, 4, 1, 1, 1)
+        self.pushButton_37 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_37.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_37.setStyleSheet("image: url(resources/s5r1.png);")
+        self.pushButton_37.setText("")
+        self.pushButton_37.setObjectName("pushButton_37")
+        self.gridLayout_5.addWidget(self.pushButton_37, 4, 0, 1, 1)
+        self.verticalLayout_9.addLayout(self.gridLayout_5)
+        self.horizontalLayout_buttons.addLayout(self.verticalLayout_9)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_buttons.addItem(spacerItem1)
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.label_22 = QtWidgets.QLabel(self.layoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_22.sizePolicy().hasHeightForWidth())
+        self.label_22.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Open Sans")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_22.setFont(font)
+        self.label_22.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_22.setObjectName("label_22")
+        self.verticalLayout_10.addWidget(self.label_22)
+        self.line_4 = QtWidgets.QFrame(self.layoutWidget_2)
+        self.line_4.setStyleSheet("color: rgb(40, 85, 162);")
+        self.line_4.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.line_4.setLineWidth(2)
+        self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_4.setObjectName("line_4")
+        self.verticalLayout_10.addWidget(self.line_4)
+        self.gridLayout_3 = QtWidgets.QGridLayout()
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.pushButton_23 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_23.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_23.setStyleSheet("image: url(resources/s4r1.png);")
+        self.pushButton_23.setText("")
+        self.pushButton_23.setObjectName("pushButton_23")
+        self.gridLayout_3.addWidget(self.pushButton_23, 3, 0, 1, 1)
+        self.pushButton_24 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_24.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_24.setStyleSheet("image: url(resources/s2r3.png);")
+        self.pushButton_24.setText("")
+        self.pushButton_24.setObjectName("pushButton_24")
+        self.gridLayout_3.addWidget(self.pushButton_24, 1, 1, 1, 1)
+        self.pushButton_25 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_25.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_25.setStyleSheet("image: url(resources/s2r1.png);")
+        self.pushButton_25.setText("")
+        self.pushButton_25.setObjectName("pushButton_25")
+        self.gridLayout_3.addWidget(self.pushButton_25, 1, 0, 1, 1)
+        self.pushButton_26 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_26.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_26.setStyleSheet("image: url(resources/s1r3.png);")
+        self.pushButton_26.setText("")
+        self.pushButton_26.setObjectName("pushButton_26")
+        self.gridLayout_3.addWidget(self.pushButton_26, 0, 1, 1, 1)
+        self.pushButton_27 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_27.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_27.setStyleSheet("image: url(resources/s5r1.png);")
+        self.pushButton_27.setText("")
+        self.pushButton_27.setObjectName("pushButton_27")
+        self.gridLayout_3.addWidget(self.pushButton_27, 4, 0, 1, 1)
+        self.pushButton_28 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_28.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_28.setStyleSheet("image: url(resources/s3r1.png);")
+        self.pushButton_28.setText("")
+        self.pushButton_28.setObjectName("pushButton_28")
+        self.gridLayout_3.addWidget(self.pushButton_28, 2, 0, 1, 1)
+        self.pushButton_29 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_29.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_29.setStyleSheet("image: url(resources/s5r3.png);")
+        self.pushButton_29.setText("")
+        self.pushButton_29.setObjectName("pushButton_29")
+        self.gridLayout_3.addWidget(self.pushButton_29, 4, 1, 1, 1)
+        self.pushButton_30 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_30.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_30.setStyleSheet("image: url(resources/s3r3.png);")
+        self.pushButton_30.setText("")
+        self.pushButton_30.setObjectName("pushButton_30")
+        self.gridLayout_3.addWidget(self.pushButton_30, 2, 1, 1, 1)
+        self.pushButton_31 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_31.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_31.setStyleSheet("image: url(resources/s4r3.png);")
+        self.pushButton_31.setText("")
+        self.pushButton_31.setObjectName("pushButton_31")
+        self.gridLayout_3.addWidget(self.pushButton_31, 3, 1, 1, 1)
+        self.pushButton_32 = QtWidgets.QPushButton(self.layoutWidget_2)
+        self.pushButton_32.setMinimumSize(QtCore.QSize(0, 140))
+        self.pushButton_32.setStyleSheet("image: url(resources/s1r1.png);")
+        self.pushButton_32.setText("")
+        self.pushButton_32.setObjectName("pushButton_32")
+        self.gridLayout_3.addWidget(self.pushButton_32, 0, 0, 1, 1)
+        self.verticalLayout_10.addLayout(self.gridLayout_3)
+        self.horizontalLayout_buttons.addLayout(self.verticalLayout_10)
         self.stackedPages.addWidget(self.pageManual)
         self.pageBoard = QtWidgets.QWidget()
         self.pageBoard.setStyleSheet(".board_num{\n"
@@ -1243,18 +556,22 @@ class Ui_MainWindow(object):
 "\n"
 "QLabel{\n"
 "    font: 22pt \"Open Sans\";\n"
-"    color: rgb(255, 255, 255);\n"
-"}")
+"    color: black;\n"
+"}\n"
+"\n"
+"")
         self.pageBoard.setObjectName("pageBoard")
         self.Titel_3 = QtWidgets.QLabel(self.pageBoard)
-        self.Titel_3.setGeometry(QtCore.QRect(40, 30, 711, 61))
-        self.Titel_3.setStyleSheet("font: 36pt \"Nirmala UI\";\n"
-"color: white;")
+        self.Titel_3.setGeometry(QtCore.QRect(40, 50, 711, 61))
+        self.Titel_3.setStyleSheet("font: 48pt \"Open Sans\";\n"
+"color: black;")
         self.Titel_3.setObjectName("Titel_3")
         self.line_23 = QtWidgets.QFrame(self.pageBoard)
-        self.line_23.setGeometry(QtCore.QRect(40, 100, 1541, 16))
+        self.line_23.setGeometry(QtCore.QRect(40, 120, 1511, 16))
+        self.line_23.setStyleSheet("")
+        self.line_23.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.line_23.setLineWidth(2)
         self.line_23.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_23.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_23.setObjectName("line_23")
         self.layoutWidget = QtWidgets.QWidget(self.pageBoard)
         self.layoutWidget.setGeometry(QtCore.QRect(210, 160, 1201, 821))
@@ -1262,8 +579,8 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QtWidgets.QGridLayout(self.layoutWidget)
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_4.setObjectName("gridLayout_4")
-        spacerItem = QtWidgets.QSpacerItem(120, 20, QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem, 0, 1, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(120, 20, QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem2, 0, 1, 1, 1)
         self.horizontalLayout7 = QtWidgets.QHBoxLayout()
         self.horizontalLayout7.setObjectName("horizontalLayout7")
         self.num7 = QtWidgets.QLabel(self.layoutWidget)
@@ -1658,132 +975,89 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addLayout(self.horizontalLayout4, 3, 0, 1, 1)
         self.stackedPages.addWidget(self.pageBoard)
         self.buttonLogout = QtWidgets.QPushButton(self.mainPage)
-        self.buttonLogout.setGeometry(QtCore.QRect(70, 960, 161, 61))
+        self.buttonLogout.setGeometry(QtCore.QRect(30, 950, 241, 71))
         font = QtGui.QFont()
-        font.setFamily("Nirmala UI")
-        font.setPointSize(12)
+        font.setFamily("Open Sans")
+        font.setPointSize(16)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.buttonLogout.setFont(font)
-        self.buttonLogout.setStyleSheet("")
+        self.buttonLogout.setStyleSheet("QPushButton{\n"
+"    font: 16pt \"Open Sans\";\n"
+"    color: white;\n"
+"\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(237, 26, 59);\n"
+"    border-top: 1px solid  rgb(191, 21, 49);\n"
+"    border-left: 2px solid  rgb(191, 21, 49);\n"
+"    border-right: 2px solid  rgb(191, 21, 49);\n"
+"    border-bottom: 3px solid  rgb(191, 21, 49);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(237, 52, 83);\n"
+"}")
         self.buttonLogout.setObjectName("buttonLogout")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.mainPage)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(40, 340, 222, 411))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(23, 340, 254, 411))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.buttonsLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.buttonsLayout.setContentsMargins(0, 0, 0, 0)
         self.buttonsLayout.setObjectName("buttonsLayout")
         self.radioAI = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
-        self.radioAI.setStyleSheet("QRadioButton {\n"
-"    font: 16pt \"Nirmala UI\";\n"
-"}\n"
-"\n"
-"QRadioButton::indicator {\n"
-"    width:                  50px;\n"
-"    height:                 50px;\n"
-"    border-radius:          27px;\n"
+        self.radioAI.setStyleSheet("QRadioButton::indicator {\n"
 "    image: url(resources/aiicon.png);\n"
 "}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: rgb(206, 121, 107);\n"
-"    border: 2px solid rgb(206, 121, 107);\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked {\n"
-"    background-color: black;\n"
-"    border: 2px solid;\n"
-"}")
+"")
         self.radioAI.setObjectName("radioAI")
         self.buttonsLayout.addWidget(self.radioAI)
         self.radioManual = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
-        self.radioManual.setStyleSheet("QRadioButton {\n"
-"    font: 16pt \"Nirmala UI\";\n"
-"}\n"
-"\n"
-"\n"
+        self.radioManual.setStyleSheet("\n"
 "QRadioButton::indicator {\n"
-"    width:                  50px;\n"
-"    height:                 50px;\n"
-"    border-radius:          27px;\n"
 "    image: url(resources/maunalicon.png);\n"
 "}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: rgb(206, 121, 107);\n"
-"    border: 2px solid rgb(206, 121, 107);\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked {\n"
-"    background-color: black;\n"
-"    border: 2px solid;\n"
-"}")
+"")
         self.radioManual.setObjectName("radioManual")
         self.buttonsLayout.addWidget(self.radioManual)
         self.radioBoard = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
-        self.radioBoard.setStyleSheet("QRadioButton {\n"
-"    font: 16pt \"Nirmala UI\";\n"
-"}\n"
-"\n"
+        self.radioBoard.setStyleSheet("\n"
 "QRadioButton::indicator {\n"
-"    width:                  50px;\n"
-"    height:                 50px;\n"
-"    border-radius:          27px;\n"
-"    image: url(resources/vsicon.png);\n"
+"    image: url(resources/boardicon.png);\n"
 "}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: rgb(206, 121, 107);\n"
-"    border: 2px solid rgb(206, 121, 107);\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked {\n"
-"    background-color: black;\n"
-"    border: 2px solid;\n"
-"}")
+"")
         self.radioBoard.setObjectName("radioBoard")
         self.buttonsLayout.addWidget(self.radioBoard)
         self.radioInteraction = QtWidgets.QRadioButton(self.verticalLayoutWidget_2)
-        self.radioInteraction.setStyleSheet("QRadioButton {\n"
-"    font: 16pt \"Nirmala UI\";\n"
-"}\n"
-"\n"
+        self.radioInteraction.setStyleSheet("\n"
 "QRadioButton::indicator {\n"
-"    width:                  50px;\n"
-"    height:                 50px;\n"
-"    border-radius:          27px;\n"
+"    image: url(resources/intericon.png)\n"
 "}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: rgb(206, 121, 107);\n"
-"    border: 2px solid rgb(206, 121, 107);\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked {\n"
-"    background-color: black;\n"
-"    border: 2px solid;\n"
-"}")
+"")
         self.radioInteraction.setObjectName("radioInteraction")
         self.buttonsLayout.addWidget(self.radioInteraction)
         self.verticalLayoutWidget = QtWidgets.QWidget(self.mainPage)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 220, 221, 59))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 220, 221, 78))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.userInfoLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.userInfoLayout.setContentsMargins(0, 0, 0, 0)
         self.userInfoLayout.setSpacing(0)
         self.userInfoLayout.setObjectName("userInfoLayout")
         self.labelRole = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelRole.setStyleSheet("font: 14pt \"Nirmala UI\";\n"
-"color: rgb(93, 93, 93);")
+        self.labelRole.setStyleSheet("font: 18pt \"Open Sans\";\n"
+"color: rgb(190, 190, 190)")
         self.labelRole.setAlignment(QtCore.Qt.AlignCenter)
         self.labelRole.setObjectName("labelRole")
         self.userInfoLayout.addWidget(self.labelRole)
         self.labelUsername_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.labelUsername_2.setStyleSheet("font: 18pt \"Nirmala UI\";")
+        self.labelUsername_2.setStyleSheet("font: 24pt \"Open Sans\";\n"
+"color: white;")
         self.labelUsername_2.setAlignment(QtCore.Qt.AlignCenter)
         self.labelUsername_2.setObjectName("labelUsername_2")
         self.userInfoLayout.addWidget(self.labelUsername_2)
         self.sidebarBackground = QtWidgets.QLabel(self.mainPage)
         self.sidebarBackground.setGeometry(QtCore.QRect(0, 0, 311, 1081))
-        self.sidebarBackground.setStyleSheet("background-color: #E7AD99;")
+        self.sidebarBackground.setStyleSheet("background-color: rgb(86, 133, 199);")
         self.sidebarBackground.setText("")
         self.sidebarBackground.setScaledContents(False)
         self.sidebarBackground.setObjectName("sidebarBackground")
@@ -1819,46 +1093,46 @@ class Ui_MainWindow(object):
         self.pageAI.setProperty("class", _translate("MainWindow", "pagebackground"))
         self.buttonStart.setText(_translate("MainWindow", "Start"))
         self.buttonStop.setText(_translate("MainWindow", "Stop"))
-        self.Titel.setText(_translate("MainWindow", "Shakeit AI Control Panel"))
         self.statusBox.setTitle(_translate("MainWindow", "Status"))
         self.settingsBox.setTitle(_translate("MainWindow", "Setttings"))
         self.buttonSettings.setText(_translate("MainWindow", "Change settings"))
         self.labelIterations.setText(_translate("MainWindow", "Iterations:"))
+        self.Titel_5.setText(_translate("MainWindow", "AI Control"))
         self.pageManual.setProperty("class", _translate("MainWindow", "pagebackground"))
-        self.Titel_2.setText(_translate("MainWindow", "Shakeit Manual Control Panel"))
-        self.labelForward.setText(_translate("MainWindow", "Forward"))
-        self.fw_r1s2.setText(_translate("MainWindow", "Repetitions:1, Speed: 2"))
-        self.fw_r3s2.setText(_translate("MainWindow", "Repetitions:3, Speed: 2"))
-        self.fw_r1s4.setText(_translate("MainWindow", "Repetitions:1, Speed: 4"))
-        self.fw_r3s4.setText(_translate("MainWindow", "Repetitions:3, Speed: 4"))
-        self.fw_r1s6.setText(_translate("MainWindow", "Repetitions:1, Speed: 6"))
-        self.fw_r3s6.setText(_translate("MainWindow", "Repetitions:3, Speed: 6"))
-        self.fw_r1s8.setText(_translate("MainWindow", "Repetitions:1, Speed: 8"))
-        self.fw_r3s8.setText(_translate("MainWindow", "Repetitions:3, Speed: 8"))
-        self.fw_r1s10.setText(_translate("MainWindow", "Repetitions:1, Speed: 10"))
-        self.fw_r3s10.setText(_translate("MainWindow", "Repetitions:3, Speed: 10"))
-        self.labelBackward.setText(_translate("MainWindow", "Backward"))
-        self.b_r1s2.setText(_translate("MainWindow", "Repetitions:1, Speed: 2"))
-        self.b_r3s2.setText(_translate("MainWindow", "Repetitions:3, Speed: 2"))
-        self.b_r1s4.setText(_translate("MainWindow", "Repetitions:1, Speed: 4"))
-        self.b_r3s4.setText(_translate("MainWindow", "Repetitions:3, Speed: 4"))
-        self.b_r1s6.setText(_translate("MainWindow", "Repetitions:1, Speed: 6"))
-        self.b_r3s6.setText(_translate("MainWindow", "Repetitions:3, Speed: 6"))
-        self.b_r1s8.setText(_translate("MainWindow", "Repetitions:1, Speed: 8"))
-        self.b_r3s8.setText(_translate("MainWindow", "Repetitions:3, Speed: 8"))
-        self.b_r1s10.setText(_translate("MainWindow", "Repetitions:1, Speed: 10"))
-        self.b_r3s10.setText(_translate("MainWindow", "Repetitions:3, Speed: 10"))
-        self.labelFlip.setText(_translate("MainWindow", "Flip"))
-        self.fp_r1s2.setText(_translate("MainWindow", "Repetitions:1, Speed: 2"))
-        self.fp_r3s2.setText(_translate("MainWindow", "Repetitions:3, Speed: 2"))
-        self.fp_r1s4.setText(_translate("MainWindow", "Repetitions:1, Speed: 4"))
-        self.fp_r3s4.setText(_translate("MainWindow", "Repetitions:3, Speed: 4"))
-        self.fp_r1s6.setText(_translate("MainWindow", "Repetitions:1, Speed: 6"))
-        self.fp_r3s6.setText(_translate("MainWindow", "Repetitions:3, Speed: 6"))
-        self.fp_r1s8.setText(_translate("MainWindow", "Repetitions:1, Speed: 8"))
-        self.fp_r3s8.setText(_translate("MainWindow", "Repetitions:3, Speed: 8"))
-        self.fp_r1s10.setText(_translate("MainWindow", "Repetitions:1, Speed: 10"))
-        self.fp_r3s10.setText(_translate("MainWindow", "Repetitions:3, Speed: 10"))
+        self.Titel_4.setText(_translate("MainWindow", "Manual Control"))
+        self.label_2.setText(_translate("MainWindow", "Shake Forward"))
+        self.pushButton_49.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_45.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_47.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_52.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_44.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_51.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_48.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_46.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_50.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_43.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.label_20.setText(_translate("MainWindow", "Flip"))
+        self.pushButton_36.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_40.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_42.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_35.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_41.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_33.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_38.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_34.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_39.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_37.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.label_22.setText(_translate("MainWindow", "Shake Backward"))
+        self.pushButton_23.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_24.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_25.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_26.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_27.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_28.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_29.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_30.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_31.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.pushButton_32.setProperty("class", _translate("MainWindow", "playbutton"))
         self.pageBoard.setProperty("class", _translate("MainWindow", "pagebackground"))
         self.Titel_3.setText(_translate("MainWindow", "Leaderboard"))
         self.num7.setText(_translate("MainWindow", "7"))
@@ -1883,9 +1157,13 @@ class Ui_MainWindow(object):
         self.num4.setProperty("class", _translate("MainWindow", "board_num"))
         self.buttonLogout.setText(_translate("MainWindow", "Log out"))
         self.radioAI.setText(_translate("MainWindow", " AI Control"))
+        self.radioAI.setProperty("class", _translate("MainWindow", "pageChanger"))
         self.radioManual.setText(_translate("MainWindow", "Manual Control"))
+        self.radioManual.setProperty("class", _translate("MainWindow", "pageChanger"))
         self.radioBoard.setText(_translate("MainWindow", "Leaderboard"))
+        self.radioBoard.setProperty("class", _translate("MainWindow", "pageChanger"))
         self.radioInteraction.setText(_translate("MainWindow", "Interaction"))
+        self.radioInteraction.setProperty("class", _translate("MainWindow", "pageChanger"))
         self.labelRole.setText(_translate("MainWindow", "Role"))
         self.labelUsername_2.setText(_translate("MainWindow", "Username"))
 
