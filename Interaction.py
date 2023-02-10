@@ -82,16 +82,11 @@ class InteractionWindow:
         # Adding player score til list of all players #
 
         score = self.player["score"]
+        place = None
 
         if len(self.players) == 0:  # no other players
             self.players.append(self.player)
-
-        elif len(self.players) == 1:
-            if self.players[0]["score"] >= score:  # one other player
-                self.players.append(self.player)
-            else:
-                self.players.insert(0, self.player)
-
+            place = 0
         else:
             if self.players[-1]["score"] >= score:  # smaller than the lowest number
                 self.players.append(self.player)
@@ -109,12 +104,15 @@ class InteractionWindow:
         print(self.players)
 
         # Updating leaderboard #
-
         for i, p in enumerate(self.players):
             if i > 9:
                 break
             exec("self.ui.name{}.setText(p['name'])".format(i+1))
             exec("self.ui.pickups{}.setText('{} pickups')".format(i+1, p['score']))
+
+        self.ui.playernum.setText(str(self.players.index(self.player)+1))
+        self.ui.playername.setText(self.player["name"])
+        self.ui.playerpickups.setText("{} pickups".format(self.player["score"]))
 
         self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
 

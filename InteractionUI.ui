@@ -3002,7 +3002,7 @@ font: bold 55pt &quot;Open Sans&quot;;
            <x>0</x>
            <y>510</y>
            <width>601</width>
-           <height>31</height>
+           <height>51</height>
           </rect>
          </property>
          <property name="text">
@@ -3016,9 +3016,9 @@ font: bold 55pt &quot;Open Sans&quot;;
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>550</y>
+           <y>570</y>
            <width>601</width>
-           <height>31</height>
+           <height>51</height>
           </rect>
          </property>
          <property name="text">
