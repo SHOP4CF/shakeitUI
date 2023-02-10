@@ -17,7 +17,9 @@ class InteractionWindow:
         self.ui.setupUi(self.interaction)
 
         # connecting buttons
+        self.ui.textName.textChanged.connect(self.onTextChanged)
         self.ui.buttonStart.clicked.connect(self.tryShakeIt)
+        self.ui.buttonStart.setEnabled(False)
         self.ui.buttonReady.clicked.connect(self.play)
 
         self.ui.buttonExit_1.clicked.connect(self.exit)
@@ -32,14 +34,19 @@ class InteractionWindow:
         self.ui.timer.display(self.currentTime)
 
         # Initialize attributes #
-        self.playerName = ""
-        self.playerScore = 0
+        self.player = {
+            "name": "",
+            "score": 0
+        }
 
     def getWidget(self):
         return self.interaction
 
     def startup(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page1welcome)
+
+    def onTextChanged(self):
+        self.ui.buttonStart.setEnabled(bool(self.ui.textName.text()))
 
     def tryShakeIt(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page2try)
@@ -70,6 +77,12 @@ class InteractionWindow:
         result = ExitDialogWindow.launch(self.mainWindow.main_win)
         if result == 1:
             self.mainWindow.endInteraction()
+
+            # deleting info on player
+            self.player = {
+                "name": "",
+                "score": 0
+            }
 
     def done(self):
         # after interaction completed
