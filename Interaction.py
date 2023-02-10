@@ -52,7 +52,6 @@ class InteractionWindow:
     def tryShakeIt(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page2try)
         self.player["name"] = self.ui.textName.text()
-        self.ui.textName.clear()
 
     def play(self):
         # setting timer and score to initial
@@ -118,6 +117,7 @@ class InteractionWindow:
         result = ExitDialogWindow.launch(self.mainWindow.main_win)
         if result == 1:
             self.mainWindow.endInteraction()
+            self.ui.textName.clear()
 
             # deleting info on player
             self.player = {
@@ -128,6 +128,7 @@ class InteractionWindow:
     def done(self):
         # after interaction completed
         self.mainWindow.endInteraction()
+        self.ui.textName.clear()
 
         # deleting info on player
         self.player = {

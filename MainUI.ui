@@ -292,7 +292,7 @@ QRadioButton::indicator:unchecked {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -329,9 +329,25 @@ QRadioButton::indicator:unchecked {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 176, 80);
-color: white;
-font: 22pt &quot;Open Sans&quot;;</string>
+            <string notr="true">QPushButton{
+	background-color: rgb(0, 176, 80);
+	color: white;
+	font: 22pt &quot;Open Sans&quot;;
+
+	border-radius: 10px;
+	border-top: 1.5px solid rgb(0, 150, 67);
+	border-left: 3px solid   rgb(0, 150, 67);
+	border-right: 3px solid   rgb(0, 150, 67);
+	border-bottom: 4px solid   rgb(0, 150, 67);
+}
+
+QPushButton:pressed{
+	background-color: rgb(0, 156, 70);
+	border-bottom:1.5px solid  rgb(0, 103, 46);
+	border-left: 3px solid   rgb(0, 103, 46);
+	border-right: 3px solid   rgb(0, 103, 46);
+	border-top: 4px solid  rgb(0, 103, 46);
+ }</string>
            </property>
            <property name="text">
             <string>Start</string>
@@ -347,9 +363,25 @@ font: 22pt &quot;Open Sans&quot;;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(237, 26, 59);
-color: white;
-font: 22pt &quot;Open Sans&quot;;</string>
+            <string notr="true">QPushButton{
+	background-color: rgb(237, 26, 59);
+	color: white;
+	font: 22pt &quot;Open Sans&quot;;
+
+	border-radius: 10px;
+	border-top: 1.5px solid rgb(203, 22, 52);
+	border-left: 3px solid   rgb(203, 22, 52);
+	border-right: 3px solid  rgb(203, 22, 52);
+	border-bottom: 4px solid rgb(203, 22, 52);
+}
+
+QPushButton:pressed{
+	background-color: rgb(207, 22, 53);
+	border-bottom:1.5px solid  rgb(177, 19, 45);
+	border-left: 3px solid  rgb(177, 19, 45);
+	border-right: 3px solid  rgb(177, 19, 45);
+	border-top: 4px solid rgb(177, 19, 45);
+ }</string>
            </property>
            <property name="text">
             <string>Stop</string>
@@ -431,9 +463,25 @@ color: black;</string>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 14pt &quot;Open Sans&quot;;
-background-color:rgb(40, 85, 162);
-color: white;</string>
+          <string notr="true">QPushButton{
+	background-color: rgb(40, 85, 162);
+	color: white;
+	font: 14pt &quot;Open Sans&quot;;
+
+	border-radius: 5px;
+	border-top: 1px solid rgb(33, 72, 135);
+	border-left: 1.5px solid  rgb(33, 72, 135);
+	border-right: 1.5px solid  rgb(33, 72, 135);
+	border-bottom: 2px solid rgb(33, 72, 135);
+}
+
+QPushButton:pressed{
+	background-color:rgb(33, 72, 135);
+	border-top: 1px solid rgb(27, 59, 111);
+	border-left: 1.5px solid  rgb(27, 59, 111);
+	border-right: 1.5px solid  rgb(27, 59, 111);
+	border-bottom: 2px solid rgb(27, 59, 111);
+ }</string>
          </property>
          <property name="text">
           <string>Change settings</string>

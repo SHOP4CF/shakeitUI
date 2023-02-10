@@ -152,16 +152,48 @@ class Ui_MainWindow(object):
         self.buttonStart = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.buttonStart.setMaximumSize(QtCore.QSize(16777215, 200))
         self.buttonStart.setBaseSize(QtCore.QSize(0, 0))
-        self.buttonStart.setStyleSheet("background-color: rgb(0, 176, 80);\n"
-"color: white;\n"
-"font: 22pt \"Open Sans\";")
+        self.buttonStart.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(0, 176, 80);\n"
+"    color: white;\n"
+"    font: 22pt \"Open Sans\";\n"
+"\n"
+"    border-radius: 10px;\n"
+"    border-top: 1.5px solid rgb(0, 150, 67);\n"
+"    border-left: 3px solid   rgb(0, 150, 67);\n"
+"    border-right: 3px solid   rgb(0, 150, 67);\n"
+"    border-bottom: 4px solid   rgb(0, 150, 67);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(0, 156, 70);\n"
+"    border-bottom:1.5px solid  rgb(0, 103, 46);\n"
+"    border-left: 3px solid   rgb(0, 103, 46);\n"
+"    border-right: 3px solid   rgb(0, 103, 46);\n"
+"    border-top: 4px solid  rgb(0, 103, 46);\n"
+" }")
         self.buttonStart.setObjectName("buttonStart")
         self.Layoutstartstop.addWidget(self.buttonStart)
         self.buttonStop = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.buttonStop.setMaximumSize(QtCore.QSize(16777215, 200))
-        self.buttonStop.setStyleSheet("background-color: rgb(237, 26, 59);\n"
-"color: white;\n"
-"font: 22pt \"Open Sans\";")
+        self.buttonStop.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(237, 26, 59);\n"
+"    color: white;\n"
+"    font: 22pt \"Open Sans\";\n"
+"\n"
+"    border-radius: 10px;\n"
+"    border-top: 1.5px solid rgb(203, 22, 52);\n"
+"    border-left: 3px solid   rgb(203, 22, 52);\n"
+"    border-right: 3px solid  rgb(203, 22, 52);\n"
+"    border-bottom: 4px solid rgb(203, 22, 52);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(207, 22, 53);\n"
+"    border-bottom:1.5px solid  rgb(177, 19, 45);\n"
+"    border-left: 3px solid  rgb(177, 19, 45);\n"
+"    border-right: 3px solid  rgb(177, 19, 45);\n"
+"    border-top: 4px solid rgb(177, 19, 45);\n"
+" }")
         self.buttonStop.setObjectName("buttonStop")
         self.Layoutstartstop.addWidget(self.buttonStop)
         self.gridLayoutWidget = QtWidgets.QWidget(self.pageAI)
@@ -196,9 +228,25 @@ class Ui_MainWindow(object):
         self.settingsBox.setObjectName("settingsBox")
         self.buttonSettings = QtWidgets.QPushButton(self.settingsBox)
         self.buttonSettings.setGeometry(QtCore.QRect(110, 580, 211, 41))
-        self.buttonSettings.setStyleSheet("font: 14pt \"Open Sans\";\n"
-"background-color:rgb(40, 85, 162);\n"
-"color: white;")
+        self.buttonSettings.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(40, 85, 162);\n"
+"    color: white;\n"
+"    font: 14pt \"Open Sans\";\n"
+"\n"
+"    border-radius: 5px;\n"
+"    border-top: 1px solid rgb(33, 72, 135);\n"
+"    border-left: 1.5px solid  rgb(33, 72, 135);\n"
+"    border-right: 1.5px solid  rgb(33, 72, 135);\n"
+"    border-bottom: 2px solid rgb(33, 72, 135);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color:rgb(33, 72, 135);\n"
+"    border-top: 1px solid rgb(27, 59, 111);\n"
+"    border-left: 1.5px solid  rgb(27, 59, 111);\n"
+"    border-right: 1.5px solid  rgb(27, 59, 111);\n"
+"    border-bottom: 2px solid rgb(27, 59, 111);\n"
+" }")
         self.buttonSettings.setObjectName("buttonSettings")
         self.spinIterations = QtWidgets.QSpinBox(self.settingsBox)
         self.spinIterations.setGeometry(QtCore.QRect(190, 60, 41, 31))
@@ -1077,7 +1125,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.stackedLogin.setCurrentIndex(1)
-        self.stackedPages.setCurrentIndex(2)
+        self.stackedPages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textUsername, self.textPassword)
         MainWindow.setTabOrder(self.textPassword, self.buttonLogin)
