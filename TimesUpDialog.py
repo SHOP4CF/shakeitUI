@@ -10,7 +10,7 @@ class TimesUpDialogWindow:
         ui = Ui_TimesUpDialog()
         ui.setupUi(dialog)
 
-        ui.yourScore.setText(player + " pickups")
-        ui.aiScore.setText(ai + " pickups")
+        ui.yourScore.setText("{} pickups".format(player))
+        ui.aiScore.setText("{} pickups".format(ai))
 
         return dialog.exec_()
