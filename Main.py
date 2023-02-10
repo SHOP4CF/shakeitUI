@@ -45,6 +45,10 @@ class MainWindow:
         self.main_win.show()
 
     def login(self):
+        self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
+        self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
+        self.ui.radioAI.toggle()
+        '''
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
@@ -72,7 +76,7 @@ class MainWindow:
             except:
                 self.ui.labelRole.setText("")
 
-            self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username'])
+            self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username']) 
 
             # change to mainPage
             self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
@@ -88,7 +92,7 @@ class MainWindow:
             # failure
             self.ui.labelLoginError.show()
             self.ui.textPassword.clear()
-            self.ui.textUsername.clear()
+            self.ui.textUsername.clear()'''
 
     def logout(self):
         self.ui.stackedLogin.setCurrentWidget(self.ui.loginPage)

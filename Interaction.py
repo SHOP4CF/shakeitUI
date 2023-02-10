@@ -21,6 +21,7 @@ class InteractionWindow:
         self.ui.buttonStart.clicked.connect(self.tryShakeIt)
         self.ui.buttonStart.setEnabled(False)
         self.ui.buttonReady.clicked.connect(self.play)
+        self.ui.pushButton_52.clicked.connect(self.pickupSuccess)
 
         self.ui.buttonExit_1.clicked.connect(self.exit)
         self.ui.buttonExit_2.clicked.connect(self.exit)
@@ -30,10 +31,12 @@ class InteractionWindow:
         # setting up timer
         self.timer = QTimer()
         self.timer.timeout.connect(self.showTime)
-        self.currentTime = 60
+        self.timerTime = 3
+        self.currentTime = self.timerTime
         self.ui.timer.display(self.currentTime)
 
         # Initialize attributes #
+        self.players = []
         self.player = {
             "name": "",
             "score": 0
@@ -50,11 +53,16 @@ class InteractionWindow:
 
     def tryShakeIt(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page2try)
+        self.player["name"] = self.ui.textName.text()
         self.ui.textName.clear()
 
     def play(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
         self.timer.start(1000)
+
+    def pickupSuccess(self):
+        self.player["score"] += 1
+        self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
 
     def showTime(self):
         self.currentTime = self.currentTime - 1
@@ -63,14 +71,48 @@ class InteractionWindow:
         if self.currentTime == 0:
             self.timer.stop()
 
-            result = TimesUpDialogWindow.launch(self.mainWindow.main_win, "1", "12")
+            result = TimesUpDialogWindow.launch(self.mainWindow.main_win, self.player["score"], "12")
             if result == 0:
                 self.timeOut()
 
     def timeOut(self):
+        score = self.player["score"]
+
+        if len(self.players) == 0:  # no other players
+            self.players.append(self.player)
+
+        elif len(self.players) == 1:
+            if self.players[0]["score"] >= score:  # one other player
+                self.players.append(self.player)
+            else:
+                self.players.insert(0, self.player)
+
+        else:
+            if self.players[-1]["score"] >= score:  # smaller than the lowest number
+                self.players.append(self.player)
+            elif score >= self.players[0]["score"]:  # larger than the highest number
+                self.players.insert(0, self.player)
+            else:
+                i = 0
+                while i < len(self.players):
+                    if self.players[i]["score"] > score >= self.players[i+1]["score"]:
+                        self.players.insert(i+1, self.player)
+                        break
+
+                    i = i + 1
+
+        print(self.players)
+
         self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
-        self.currentTime = 60
+
+        # changing timer and score back to initial
+        self.currentTime = self.timerTime
         self.ui.timer.display(self.currentTime)
+        self.player = {
+            "name": "",
+            "score": 0
+        }
+        self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
 
     def exit(self):
         # before interaction completed

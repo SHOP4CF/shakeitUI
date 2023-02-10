@@ -40,7 +40,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="page1welcome">
     <property name="styleSheet">
@@ -2048,7 +2048,7 @@ border-radius: 15px;
        <string>Score:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="pickupDisplay">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -2061,7 +2061,7 @@ border-radius: 15px;
        <string notr="true">font: 34pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
-       <string>No pickups</string>
+       <string>0 pickups</string>
       </property>
      </widget>
     </widget>

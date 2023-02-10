@@ -781,10 +781,10 @@ class Ui_Interaction(object):
         self.label_6.setGeometry(QtCore.QRect(20, 0, 151, 101))
         self.label_6.setStyleSheet("font: bold 34pt \"Open Sans\";")
         self.label_6.setObjectName("label_6")
-        self.label_7 = QtWidgets.QLabel(self.frame_2)
-        self.label_7.setGeometry(QtCore.QRect(170, 0, 271, 101))
-        self.label_7.setStyleSheet("font: 34pt \"Open Sans\";")
-        self.label_7.setObjectName("label_7")
+        self.pickupDisplay = QtWidgets.QLabel(self.frame_2)
+        self.pickupDisplay.setGeometry(QtCore.QRect(170, 0, 271, 101))
+        self.pickupDisplay.setStyleSheet("font: 34pt \"Open Sans\";")
+        self.pickupDisplay.setObjectName("pickupDisplay")
         self.label_3 = QtWidgets.QLabel(self.page3play)
         self.label_3.setGeometry(QtCore.QRect(790, 0, 334, 69))
         font = QtGui.QFont()
@@ -1303,7 +1303,7 @@ class Ui_Interaction(object):
         self.stackedpages.addWidget(self.page4board)
 
         self.retranslateUi(Interaction)
-        self.stackedpages.setCurrentIndex(3)
+        self.stackedpages.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(Interaction)
 
     def retranslateUi(self, Interaction):
@@ -1366,7 +1366,7 @@ class Ui_Interaction(object):
         self.pushButton_31.setProperty("class", _translate("Interaction", "playbutton"))
         self.pushButton_32.setProperty("class", _translate("Interaction", "playbutton"))
         self.label_6.setText(_translate("Interaction", "Score:"))
-        self.label_7.setText(_translate("Interaction", "No pickups"))
+        self.pickupDisplay.setText(_translate("Interaction", "0 pickups"))
         self.label_3.setText(_translate("Interaction", "ShakeIt"))
         self.page4board.setProperty("class", _translate("Interaction", "background"))
         self.label_33.setText(_translate("Interaction", "2"))
