@@ -7,6 +7,7 @@ from TimesUpDialog import TimesUpDialogWindow
 
 
 class InteractionWindow:
+    players = []
 
     def __init__(self, mainWindow):
         self.mainWindow = mainWindow
@@ -34,7 +35,6 @@ class InteractionWindow:
         self.currentTime = self.timerTime
 
         # Initialize attributes #
-        self.players = []
         self.player = {
             "name": "",
             "score": 0
@@ -80,37 +80,34 @@ class InteractionWindow:
 
     def timeOut(self):
         # Adding player score til list of all players #
-
         score = self.player["score"]
-        place = None
 
-        if len(self.players) == 0:  # no other players
-            self.players.append(self.player)
-            place = 0
+        if len(InteractionWindow.players) == 0:  # no other players
+            InteractionWindow.players.append(self.player)
         else:
-            if self.players[-1]["score"] >= score:  # smaller than the lowest number
-                self.players.append(self.player)
-            elif score >= self.players[0]["score"]:  # larger than the highest number
-                self.players.insert(0, self.player)
+            if InteractionWindow.players[-1]["score"] >= score:  # smaller than the lowest number
+                InteractionWindow.players.append(self.player)
+            elif score >= InteractionWindow.players[0]["score"]:  # larger than the highest number
+                InteractionWindow.players.insert(0, self.player)
+
             else:
                 i = 0
-                while i < len(self.players):
-                    if self.players[i]["score"] > score >= self.players[i+1]["score"]:
-                        self.players.insert(i+1, self.player)
+                while i < len(InteractionWindow.players):
+                    if InteractionWindow.players[i]["score"] > score >= InteractionWindow.players[i+1]["score"]:
+                        InteractionWindow.players.insert(i+1, self.player)
                         break
-
                     i = i + 1
 
-        print(self.players)
+        print(InteractionWindow.players)
 
         # Updating leaderboard #
-        for i, p in enumerate(self.players):
+        for i, p in enumerate(InteractionWindow.players):
             if i > 9:
                 break
             exec("self.ui.name{}.setText(p['name'])".format(i+1))
             exec("self.ui.pickups{}.setText('{} pickups')".format(i+1, p['score']))
 
-        self.ui.playernum.setText(str(self.players.index(self.player)+1))
+        self.ui.playernum.setText(str(InteractionWindow.players.index(self.player)+1))
         self.ui.playername.setText(self.player["name"])
         self.ui.playerpickups.setText("{} pickups".format(self.player["score"]))
 

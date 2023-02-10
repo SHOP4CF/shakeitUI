@@ -38,11 +38,8 @@ class MainWindow:
         # connecting radiobuttons
         self.ui.radioAI.toggled.connect(self.ai)
         self.ui.radioManual.toggled.connect(self.manual)
-        self.ui.radioVS.toggled.connect(self.vs)
+        self.ui.radioBoard.toggled.connect(self.leaderboard)
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
-
-    def show(self):
-        self.main_win.show()
 
     def login(self):
         self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
@@ -103,17 +100,26 @@ class MainWindow:
     def manual(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageManual)
 
-    def vs(self):
-        self.ui.stackedPages.setCurrentWidget(self.ui.pageVS)
+    def leaderboard(self):
+        for i, p in enumerate(InteractionWindow.players):
+            if i > 9:
+                break
+            exec("self.ui.name{}.setText(p['name'])".format(i+1))
+            exec("self.ui.pickups{}.setText('{} pickups')".format(i+1, p['score']))
+
+        self.ui.stackedPages.setCurrentWidget(self.ui.pageBoard)
 
     def startInteraction(self):
         self.ui.stackedLogin.setCurrentWidget(self.interactionui.getWidget())
         self.interactionui.startup()
 
     def endInteraction(self):
-        self.ui.radioVS.toggle()
+        self.ui.radioBoard.toggle()
         self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
-        self.ui.stackedPages.setCurrentWidget(self.ui.pageVS)
+        self.leaderboard()
+
+    def show(self):
+        self.main_win.show()
 
 
 if __name__ == '__main__':
