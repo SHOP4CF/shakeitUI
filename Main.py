@@ -45,7 +45,7 @@ class MainWindow:
         self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
         self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
         self.ui.radioAI.toggle()
-        '''
+
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
@@ -89,7 +89,7 @@ class MainWindow:
             # failure
             self.ui.labelLoginError.show()
             self.ui.textPassword.clear()
-            self.ui.textUsername.clear()'''
+            self.ui.textUsername.clear()
 
     def logout(self):
         self.ui.stackedLogin.setCurrentWidget(self.ui.loginPage)

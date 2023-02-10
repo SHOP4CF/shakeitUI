@@ -31,7 +31,7 @@ class InteractionWindow:
         # setting up timer
         self.timer = QTimer()
         self.timer.timeout.connect(self.showTime)
-        self.timerTime = 3
+        self.timerTime = 60
         self.currentTime = self.timerTime
 
         # Initialize attributes #
