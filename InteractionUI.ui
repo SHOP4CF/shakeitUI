@@ -40,7 +40,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page1welcome">
     <property name="styleSheet">
@@ -451,7 +451,7 @@ QPushButton:hover{
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonExit_4">
+    <widget class="QPushButton" name="buttonExit_1">
      <property name="geometry">
       <rect>
        <x>1780</x>
@@ -1108,7 +1108,7 @@ QPushButton:pressed{
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="buttonExit_3">
+    <widget class="QPushButton" name="buttonExit_2">
      <property name="geometry">
       <rect>
        <x>1780</x>
@@ -2098,7 +2098,7 @@ border-radius: 15px;
       <string>ShakeIt</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonExit_2">
+    <widget class="QPushButton" name="buttonExit_3">
      <property name="geometry">
       <rect>
        <x>1780</x>
@@ -3129,7 +3129,7 @@ font: bold 55pt &quot;Open Sans&quot;;
       <string>Leaderboard</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonExit">
+    <widget class="QPushButton" name="buttonExit_4">
      <property name="geometry">
       <rect>
        <x>1780</x>

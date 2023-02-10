@@ -17,19 +17,23 @@ class InteractionWindow:
         self.ui.setupUi(self.interaction)
 
         # connecting buttons
-        self.ui.buttonStart.clicked.connect(self.start)
-        self.ui.buttonReady.clicked.connect(self.ready)
+        self.ui.buttonStart.clicked.connect(self.tryShakeIt)
+        self.ui.buttonReady.clicked.connect(self.play)
 
-        self.ui.buttonExit.clicked.connect(self.done)
+        self.ui.buttonExit_1.clicked.connect(self.exit)
         self.ui.buttonExit_2.clicked.connect(self.exit)
         self.ui.buttonExit_3.clicked.connect(self.exit)
-        self.ui.buttonExit_4.clicked.connect(self.exit)
+        self.ui.buttonExit_4.clicked.connect(self.done)
 
-        # timer
+        # setting up timer
         self.timer = QTimer()
         self.timer.timeout.connect(self.showTime)
         self.currentTime = 60
         self.ui.timer.display(self.currentTime)
+
+        # Initialize attributes #
+        self.playerName = ""
+        self.playerScore = 0
 
     def getWidget(self):
         return self.interaction
@@ -37,11 +41,11 @@ class InteractionWindow:
     def startup(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page1welcome)
 
-    def start(self):
+    def tryShakeIt(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page2try)
         self.ui.textName.clear()
 
-    def ready(self):
+    def play(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
         self.timer.start(1000)
 
@@ -54,10 +58,12 @@ class InteractionWindow:
 
             result = TimesUpDialogWindow.launch(self.mainWindow.main_win, "1", "12")
             if result == 0:
-                self.end()
+                self.timeOut()
 
-    def end(self):
+    def timeOut(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
+        self.currentTime = 60
+        self.ui.timer.display(self.currentTime)
 
     def exit(self):
         # before interaction completed

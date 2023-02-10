@@ -158,15 +158,15 @@ class Ui_Interaction(object):
 "}")
         self.label_27.setAlignment(QtCore.Qt.AlignCenter)
         self.label_27.setObjectName("label_27")
-        self.buttonExit_4 = QtWidgets.QPushButton(self.page1welcome)
-        self.buttonExit_4.setGeometry(QtCore.QRect(1780, 20, 100, 100))
-        self.buttonExit_4.setMinimumSize(QtCore.QSize(100, 100))
-        self.buttonExit_4.setMaximumSize(QtCore.QSize(100, 100))
-        self.buttonExit_4.setStyleSheet("background-color: rgb(102, 102, 102);\n"
+        self.buttonExit_1 = QtWidgets.QPushButton(self.page1welcome)
+        self.buttonExit_1.setGeometry(QtCore.QRect(1780, 20, 100, 100))
+        self.buttonExit_1.setMinimumSize(QtCore.QSize(100, 100))
+        self.buttonExit_1.setMaximumSize(QtCore.QSize(100, 100))
+        self.buttonExit_1.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
 "image: url(\"resources/exiticon.png\");")
-        self.buttonExit_4.setText("")
-        self.buttonExit_4.setObjectName("buttonExit_4")
+        self.buttonExit_1.setText("")
+        self.buttonExit_1.setObjectName("buttonExit_1")
         self.stackedpages.addWidget(self.page1welcome)
         self.page2try = QtWidgets.QWidget()
         self.page2try.setStyleSheet(".testbutton{\n"
@@ -430,15 +430,15 @@ class Ui_Interaction(object):
         spacerItem22 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.verticalLayout_11.addItem(spacerItem22)
         self.horizontalLayout_8.addLayout(self.verticalLayout_11)
-        self.buttonExit_3 = QtWidgets.QPushButton(self.page2try)
-        self.buttonExit_3.setGeometry(QtCore.QRect(1780, 20, 100, 100))
-        self.buttonExit_3.setMinimumSize(QtCore.QSize(100, 100))
-        self.buttonExit_3.setMaximumSize(QtCore.QSize(100, 100))
-        self.buttonExit_3.setStyleSheet("background-color: rgb(102, 102, 102);\n"
+        self.buttonExit_2 = QtWidgets.QPushButton(self.page2try)
+        self.buttonExit_2.setGeometry(QtCore.QRect(1780, 20, 100, 100))
+        self.buttonExit_2.setMinimumSize(QtCore.QSize(100, 100))
+        self.buttonExit_2.setMaximumSize(QtCore.QSize(100, 100))
+        self.buttonExit_2.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
 "image: url(\"resources/exiticon.png\");")
-        self.buttonExit_3.setText("")
-        self.buttonExit_3.setObjectName("buttonExit_3")
+        self.buttonExit_2.setText("")
+        self.buttonExit_2.setObjectName("buttonExit_2")
         self.label_18 = QtWidgets.QLabel(self.page2try)
         self.label_18.setGeometry(QtCore.QRect(790, 0, 334, 69))
         font = QtGui.QFont()
@@ -804,15 +804,15 @@ class Ui_Interaction(object):
 "    padding-bottom: 10px;\n"
 "}")
         self.label_3.setObjectName("label_3")
-        self.buttonExit_2 = QtWidgets.QPushButton(self.page3play)
-        self.buttonExit_2.setGeometry(QtCore.QRect(1780, 20, 100, 100))
-        self.buttonExit_2.setMinimumSize(QtCore.QSize(100, 100))
-        self.buttonExit_2.setMaximumSize(QtCore.QSize(100, 100))
-        self.buttonExit_2.setStyleSheet("background-color: rgb(102, 102, 102);\n"
+        self.buttonExit_3 = QtWidgets.QPushButton(self.page3play)
+        self.buttonExit_3.setGeometry(QtCore.QRect(1780, 20, 100, 100))
+        self.buttonExit_3.setMinimumSize(QtCore.QSize(100, 100))
+        self.buttonExit_3.setMaximumSize(QtCore.QSize(100, 100))
+        self.buttonExit_3.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
 "image: url(\"resources/exiticon.png\");")
-        self.buttonExit_2.setText("")
-        self.buttonExit_2.setObjectName("buttonExit_2")
+        self.buttonExit_3.setText("")
+        self.buttonExit_3.setObjectName("buttonExit_3")
         self.stackedpages.addWidget(self.page3play)
         self.page4board = QtWidgets.QWidget()
         self.page4board.setStyleSheet(".board_num{\n"
@@ -1291,19 +1291,19 @@ class Ui_Interaction(object):
 "    padding-bottom: 10px;\n"
 "}")
         self.label_4.setObjectName("label_4")
-        self.buttonExit = QtWidgets.QPushButton(self.page4board)
-        self.buttonExit.setGeometry(QtCore.QRect(1780, 20, 100, 100))
-        self.buttonExit.setMinimumSize(QtCore.QSize(100, 100))
-        self.buttonExit.setMaximumSize(QtCore.QSize(100, 100))
-        self.buttonExit.setStyleSheet("background-color: rgb(102, 102, 102);\n"
+        self.buttonExit_4 = QtWidgets.QPushButton(self.page4board)
+        self.buttonExit_4.setGeometry(QtCore.QRect(1780, 20, 100, 100))
+        self.buttonExit_4.setMinimumSize(QtCore.QSize(100, 100))
+        self.buttonExit_4.setMaximumSize(QtCore.QSize(100, 100))
+        self.buttonExit_4.setStyleSheet("background-color: rgb(102, 102, 102);\n"
 "border-radius: 15px;\n"
 "image: url(\"resources/exiticon.png\");")
-        self.buttonExit.setText("")
-        self.buttonExit.setObjectName("buttonExit")
+        self.buttonExit_4.setText("")
+        self.buttonExit_4.setObjectName("buttonExit_4")
         self.stackedpages.addWidget(self.page4board)
 
         self.retranslateUi(Interaction)
-        self.stackedpages.setCurrentIndex(2)
+        self.stackedpages.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(Interaction)
 
     def retranslateUi(self, Interaction):
