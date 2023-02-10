@@ -25,15 +25,13 @@ class InteractionWindow:
 
         self.ui.buttonExit_1.clicked.connect(self.exit)
         self.ui.buttonExit_2.clicked.connect(self.exit)
-        self.ui.buttonExit_3.clicked.connect(self.exit)
-        self.ui.buttonExit_4.clicked.connect(self.done)
+        self.ui.buttonExit_3.clicked.connect(self.done)
 
         # setting up timer
         self.timer = QTimer()
         self.timer.timeout.connect(self.showTime)
         self.timerTime = 3
         self.currentTime = self.timerTime
-        self.ui.timer.display(self.currentTime)
 
         # Initialize attributes #
         self.players = []
@@ -57,6 +55,11 @@ class InteractionWindow:
         self.ui.textName.clear()
 
     def play(self):
+        # setting timer and score to initial
+        self.currentTime = self.timerTime
+        self.ui.timer.display(self.currentTime)
+        self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
+
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
         self.timer.start(1000)
 
@@ -76,6 +79,8 @@ class InteractionWindow:
                 self.timeOut()
 
     def timeOut(self):
+        # Adding player score til list of all players #
+
         score = self.player["score"]
 
         if len(self.players) == 0:  # no other players
@@ -103,16 +108,15 @@ class InteractionWindow:
 
         print(self.players)
 
-        self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
+        # Updating leaderboard #
 
-        # changing timer and score back to initial
-        self.currentTime = self.timerTime
-        self.ui.timer.display(self.currentTime)
-        self.player = {
-            "name": "",
-            "score": 0
-        }
-        self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
+        for i, p in enumerate(self.players):
+            if i > 9:
+                break
+            exec("self.ui.name{}.setText(p['name'])".format(i+1))
+            exec("self.ui.pickups{}.setText('{} pickups')".format(i+1, p['score']))
+
+        self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
 
     def exit(self):
         # before interaction completed
@@ -129,3 +133,9 @@ class InteractionWindow:
     def done(self):
         # after interaction completed
         self.mainWindow.endInteraction()
+
+        # deleting info on player
+        self.player = {
+            "name": "",
+            "score": 0
+        }

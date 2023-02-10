@@ -2098,36 +2098,6 @@ border-radius: 15px;
       <string>ShakeIt</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonExit_3">
-     <property name="geometry">
-      <rect>
-       <x>1780</x>
-       <y>20</y>
-       <width>100</width>
-       <height>100</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(102, 102, 102);
-border-radius: 15px;
-image: url(&quot;resources/exiticon.png&quot;);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
    </widget>
    <widget class="QWidget" name="page4board">
     <property name="styleSheet">
@@ -2221,7 +2191,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="pickup2">
+             <widget class="QLabel" name="pickups2">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -3116,7 +3086,7 @@ font: bold 55pt &quot;Open Sans&quot;;
       <string>Leaderboard</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonExit_4">
+    <widget class="QPushButton" name="buttonExit_3">
      <property name="geometry">
       <rect>
        <x>1780</x>
