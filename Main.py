@@ -42,10 +42,6 @@ class MainWindow:
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
 
     def login(self):
-        self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
-        self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
-        self.ui.radioAI.toggle()
-
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
