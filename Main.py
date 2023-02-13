@@ -10,13 +10,24 @@ import json
 
 class MainWindow:
     def __init__(self):
-        application = json.loads(open('applicationInfo.json').read())
+        self.application = json.loads(open('applicationInfo.json').read())
 
         # Base 64 encoding client info
-        clientInfo = application["clientID"] + ":" + application["clientSecret"]
+        clientInfo = self.application["clientID"] + ":" + self.application["clientSecret"]
         clientInfoBytes = clientInfo.encode("ascii")
         clientInfoBytesBase64 = base64.b64encode(clientInfoBytes)
         self.clientInfoBase64 = clientInfoBytesBase64.decode("ascii")
+
+        # List of Authorized users
+        url = "https://localhost:443/v1/applications/{}/users".format(self.application["clientID"])
+        h = {'x-Auth-token': self.application["subjectToken"]}
+        rUsers = requests.get(url, headers=h, verify=False)
+
+        users = json.loads(rUsers.content)['role_user_assignments']
+
+        self.userIDs = []
+        for user in users:
+            self.userIDs.append(user['user_id'])
 
         # setting up UI #
         self.main_win = QMainWindow()
@@ -64,22 +75,29 @@ class MainWindow:
             url = "https://localhost:443/user?access_token=" + aToken
             rUserInfo = requests.get(url, verify=False)
 
-            try:
-                self.ui.labelRole.setText(json.loads(rUserInfo.text)['roles'][0]['name'])
-            except:
-                self.ui.labelRole.setText("")
+            if json.loads(rUserInfo.text)['id'] in self.userIDs:
+                try:
+                    self.ui.labelRole.setText(json.loads(rUserInfo.text)['roles'][0]['name'])
+                except:
+                    self.ui.labelRole.setText("")
 
-            self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username']) 
+                self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username'])
 
-            # change to mainPage
-            self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
-            self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
-            self.ui.radioAI.toggle()
+                # change to mainPage
+                self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
+                self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
+                self.ui.radioAI.toggle()
 
-            # clear the login page
-            self.ui.textPassword.clear()
-            self.ui.textUsername.clear()
-            self.ui.labelLoginError.hide()
+                # clear the login page
+                self.ui.textPassword.clear()
+                self.ui.textUsername.clear()
+                self.ui.labelLoginError.hide()
+
+            else:
+                # failure
+                self.ui.labelLoginError.show()
+                self.ui.textPassword.clear()
+                self.ui.textUsername.clear()
 
         elif rAuth.status_code == 400:
             # failure

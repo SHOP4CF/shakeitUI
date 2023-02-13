@@ -41,6 +41,7 @@ response = requests.request("POST", url, headers=headers, data=payload, verify=F
 # Save application id and secret
 application["clientID"] = response.json()['application']['id']
 application["clientSecret"] = response.json()['application']['secret']
+application["subjectToken"] = subjectToken
 
 # Save changed info to json file
 json.dump(application, open("applicationInfo.json", "w"))
