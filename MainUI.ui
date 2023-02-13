@@ -400,17 +400,49 @@ QPushButton:pressed{
          </rect>
         </property>
         <layout class="QGridLayout" name="graphlayout">
-         <item row="1" column="1">
-          <widget class="QGraphicsView" name="graph4"/>
-         </item>
          <item row="0" column="0">
-          <widget class="QGraphicsView" name="graph1"/>
+          <widget class="QLabel" name="label_3">
+           <property name="styleSheet">
+            <string notr="true">image: url(resources/shakegraph1.png);
+margin: 5px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QGraphicsView" name="graph3"/>
+          <widget class="QLabel" name="label_5">
+           <property name="styleSheet">
+            <string notr="true">image: url(resources/shakegraph3.png);
+margin: 5px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_6">
+           <property name="styleSheet">
+            <string notr="true">image: url(resources/shakegraph4.png);
+margin: 5px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QGraphicsView" name="graph2"/>
+          <widget class="QLabel" name="label_4">
+           <property name="styleSheet">
+            <string notr="true">image: url(resources/shakegraph2.png);
+margin: 5px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
