@@ -44,7 +44,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="loginPage">
      <property name="styleSheet">
@@ -79,7 +79,10 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">QFrame{
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+}</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -98,14 +101,14 @@
        </property>
        <property name="font">
         <font>
-         <family>MS Shell Dlg 2</family>
+         <family>Open Sans</family>
          <pointsize>12</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 170, 127);
+        <string notr="true">background-color: rgb(40, 85, 162);
 border-radius: 10px;
 color: white</string>
        </property>
@@ -151,7 +154,7 @@ color: white</string>
        </property>
        <property name="font">
         <font>
-         <family>Nirmala UI</family>
+         <family>Open Sans</family>
          <pointsize>16</pointsize>
         </font>
        </property>
@@ -188,7 +191,7 @@ color: white</string>
        </property>
        <property name="font">
         <font>
-         <family>Nirmala UI</family>
+         <family>Open Sans</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -213,7 +216,7 @@ color: white</string>
        </property>
        <property name="font">
         <font>
-         <family>Nirmala UI</family>
+         <family>Open Sans</family>
          <pointsize>16</pointsize>
         </font>
        </property>
@@ -232,14 +235,14 @@ color: white</string>
        </property>
        <property name="font">
         <font>
-         <family>Nirmala UI</family>
+         <family>Open Sans</family>
          <pointsize>36</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 170, 127)</string>
+        <string notr="true">color: rgb(40, 85, 162)</string>
        </property>
        <property name="text">
         <string>Log in</string>
