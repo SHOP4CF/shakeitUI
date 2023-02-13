@@ -26,7 +26,7 @@
 ## About The Project
 <p align="middle">
   <img src="https://user-images.githubusercontent.com/113982478/218409653-ab1c46cc-d6f0-4066-910a-ad5d91cfc9d2.png" width="32%" />
-  <img src="https://user-images.githubusercontent.com/113982478/218114021-fe127810-5e3b-4396-a786-b7635e4b44f1.png" width="32%" /> 
+  <img src="https://user-images.githubusercontent.com/113982478/218411478-72474d9e-1359-478e-9d44-8ab82a57ef01.png" width="32%" /> 
   <img src="https://user-images.githubusercontent.com/113982478/218114114-edf41504-54c4-4b60-b389-5789b919fc4a.png" width="32%" />
 </p>
 
