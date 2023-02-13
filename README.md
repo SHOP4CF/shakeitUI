@@ -25,11 +25,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <p align="middle">
-  <img src="https://user-images.githubusercontent.com/113982478/212876926-aca6b8bf-9550-4c45-84e0-7fec7657ed7c.png" width="32%" />
+  <img src="https://user-images.githubusercontent.com/113982478/218409653-ab1c46cc-d6f0-4066-910a-ad5d91cfc9d2.png" width="32%" />
   <img src="https://user-images.githubusercontent.com/113982478/218114021-fe127810-5e3b-4396-a786-b7635e4b44f1.png" width="32%" /> 
   <img src="https://user-images.githubusercontent.com/113982478/218114114-edf41504-54c4-4b60-b389-5789b919fc4a.png" width="32%" />
 </p>
-
 
 
 This project contains the UI for the [shakeit component](https://github.com/SHOP4CF/shakeit). It uses KeyRock for authentication of users.
@@ -174,4 +173,13 @@ The file ```MainUI.ui``` in this project is a qt file, and can be opened in QtDe
 python -m PyQt5.uic.pyuic -x MainUI.ui -o MainUI.py
 ```
 
-This command overwrites the old ```MainUI.py```, so as a general rule changes should never be made to ```MainUI.py```. Instead visual changes should be made by QtDesigner and functunality should be in ```Main.py```.
+This command overwrites the old ```MainUI.py```, so as a general rule changes should **not** be made to ```MainUI.py```. Instead visual changes should be made by QtDesigner and functunality should be in ```Main.py```.
+
+
+This rule also counts for the other ```.ui``` files. The same commands also works for them:
+
+```sh
+python -m PyQt5.uic.pyuic -x InteractionUI.ui -o InteractionUI.py
+python -m PyQt5.uic.pyuic -x ExitDialogUI.ui -o ExitDialogUI.py
+python -m PyQt5.uic.pyuic -x TimesUpDialogUI.ui -o TimesUpDialogUI.py
+```
