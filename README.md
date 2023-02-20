@@ -4,7 +4,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#about-the-project">About The Project<a/></li>
+    <li><a href="#about-the-project">About the Project<a/></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -16,14 +16,16 @@
     <li>
       <a href="usage-notes">Usage Notes</a>
       <ul>
-        <li> <a href="#using-qtdesigner">Using QtDesigner</a> </li>
+        <li><a href="#overview-of-class-relations">Overview of Class Relations</a></li>
+        <li><a href="#using-qtdesigner">Using QtDesigner</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About the Project
 <p align="middle">
   <img src="https://user-images.githubusercontent.com/113982478/218409653-ab1c46cc-d6f0-4066-910a-ad5d91cfc9d2.png" width="32%" />
   <img src="https://user-images.githubusercontent.com/113982478/218411478-72474d9e-1359-478e-9d44-8ab82a57ef01.png" width="32%" /> 
@@ -158,6 +160,12 @@ Password: ```1234```
 
 <!-- USAGE NOTES -->
 ## Usage Notes
+
+### Overview of Class Relations
+<p align="middle">
+  <img src="https://user-images.githubusercontent.com/113982478/220060162-39a3514f-b1f9-4028-9adc-28e1ea2013d3.png"/>
+</p>
+UI files are excluded from this diagram. The UI files is only used by the matching python file, fx: Interation.py -> InteractionUI.py
 
 ### Using QtDesigner
 The projects visual component is designed and set up using QtDesigner. If it is desired to make changes to the visual of the UI, it is recommended to use QtDesigner. QtDesigner comes with most installtions of pyqt5.
