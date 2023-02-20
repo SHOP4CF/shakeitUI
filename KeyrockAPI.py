@@ -46,9 +46,9 @@ class KeyrockAPI:
              'Authorization': 'Basic ' + self.clientInfoBase64,
              'Content-Type': 'application/x-www-form-urlencoded'}
         rAuth = requests.post(url, data=d, headers=h, verify=False)
-        accessToken = json.loads(rAuth.text)['access_token']
 
         if rAuth.status_code == 200:
+            accessToken = json.loads(rAuth.text)['access_token']
             # check if user is authorized in application
             if self.getUserInfo(accessToken)['id'] in self.getAuthorizedUsers():
                 return True, accessToken
