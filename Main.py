@@ -3,20 +3,13 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
 from MainUI import Ui_MainWindow
 from Interaction import InteractionWindow
-import requests
-import base64
-import json
+from KeyrockAPI import KeyrockAPI
 
 
 class MainWindow:
     def __init__(self):
-        application = json.loads(open('applicationInfo.json').read())
-
-        # Base 64 encoding client info
-        clientInfo = application["clientID"] + ":" + application["clientSecret"]
-        clientInfoBytes = clientInfo.encode("ascii")
-        clientInfoBytesBase64 = base64.b64encode(clientInfoBytes)
-        self.clientInfoBase64 = clientInfoBytesBase64.decode("ascii")
+        # setting up keyrock #
+        self.keyrockAPI = KeyrockAPI()
 
         # setting up UI #
         self.main_win = QMainWindow()
@@ -45,31 +38,19 @@ class MainWindow:
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
-        # Use KeyRock to authenticate user
-        url = "https://localhost:443/oauth2/token"
-        d = {'username': username,
-             'password': password,
-             'grant_type': 'password'}
-        h = {'Accept': 'application/json',
-             'Authorization': 'Basic ' + self.clientInfoBase64,
-             'Content-Type': 'application/x-www-form-urlencoded'}
-        rAuth = requests.post(url, data=d, headers=h, verify=False)
+        # authenticate user using keyrock
+        result, accessToken = self.keyrockAPI.authenticateUser(username, password)
 
-        if rAuth.status_code == 200:
+        if result:
             # success
-            aToken = json.loads(rAuth.text)['access_token']
-            print("access token: " + aToken)
-
-            # get userinfo from access token
-            url = "https://localhost:443/user?access_token=" + aToken
-            rUserInfo = requests.get(url, verify=False)
+            userInfo = self.keyrockAPI.getUserInfo(accessToken)
 
             try:
-                self.ui.labelRole.setText(json.loads(rUserInfo.text)['roles'][0]['name'])
+                self.ui.labelRole.setText(userInfo['roles'][0]['name'])
             except:
                 self.ui.labelRole.setText("")
 
-            self.ui.labelUsername_2.setText(json.loads(rUserInfo.text)['username']) 
+            self.ui.labelUsername_2.setText(userInfo['username'])
 
             # change to mainPage
             self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
@@ -81,7 +62,7 @@ class MainWindow:
             self.ui.textUsername.clear()
             self.ui.labelLoginError.hide()
 
-        elif rAuth.status_code == 400:
+        else:
             # failure
             self.ui.labelLoginError.show()
             self.ui.textPassword.clear()
