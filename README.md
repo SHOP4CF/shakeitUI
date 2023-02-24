@@ -163,7 +163,7 @@ Password: ```1234```
 
 ### Overview of Class Relations
 <p align="middle">
-  <img src="https://user-images.githubusercontent.com/113982478/220060162-39a3514f-b1f9-4028-9adc-28e1ea2013d3.png"/>
+  <img src="https://user-images.githubusercontent.com/113982478/221198515-c45ab625-046e-44d8-aa05-f7e9fa2fd95e.png"/>
 </p>
 UI files are excluded from this diagram. The UI files is only used by the matching python file, fx: Interation.py -> InteractionUI.py
 
