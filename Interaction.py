@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import QTimer
+import json
 
 from InteractionUI import Ui_Interaction
 from ExitDialog import ExitDialogWindow
@@ -7,7 +8,6 @@ from TimesUpDialog import TimesUpDialogWindow
 
 
 class InteractionWindow:
-    players = []
 
     def __init__(self, mainWindow):
         self.mainWindow = mainWindow
@@ -31,7 +31,7 @@ class InteractionWindow:
         # setting up timer
         self.timer = QTimer()
         self.timer.timeout.connect(self.showTime)
-        self.timerTime = 60
+        self.timerTime = 6
         self.currentTime = self.timerTime
 
         # Initialize attributes #
@@ -39,6 +39,8 @@ class InteractionWindow:
             "name": "",
             "score": 0
         }
+        self.players = json.loads(open('leaderboard.json').read())
+        self.mainWindow.updateLeaderboard(self.players)
 
     def getWidget(self):
         return self.interaction
@@ -81,34 +83,36 @@ class InteractionWindow:
         # Adding player score til list of all players #
         score = self.player["score"]
 
-        if len(InteractionWindow.players) == 0:  # no other players
-            InteractionWindow.players.append(self.player)
+        if len(self.players) == 0:  # no other players
+            self.players.append(self.player)
         else:
-            if InteractionWindow.players[-1]["score"] >= score:  # smaller than the lowest number
-                InteractionWindow.players.append(self.player)
-            elif score >= InteractionWindow.players[0]["score"]:  # larger than the highest number
-                InteractionWindow.players.insert(0, self.player)
+            if self.players[-1]["score"] >= score:  # smaller than the lowest number
+                self.players.append(self.player)
+            elif score >= self.players[0]["score"]:  # larger than the highest number
+                self.players.insert(0, self.player)
 
             else:
                 i = 0
-                while i < len(InteractionWindow.players):
-                    if InteractionWindow.players[i]["score"] > score >= InteractionWindow.players[i+1]["score"]:
-                        InteractionWindow.players.insert(i+1, self.player)
+                while i < len(self.players):
+                    if self.players[i]["score"] > score >= self.players[i+1]["score"]:
+                        self.players.insert(i+1, self.player)
                         break
                     i = i + 1
 
-        print(InteractionWindow.players)
+        json.dump(self.players, open('leaderboard.json', 'w'))
 
         # Updating leaderboard #
-        for i, p in enumerate(InteractionWindow.players):
+        for i, p in enumerate(self.players):
             if i > 9:
                 break
             exec("self.ui.name{}.setText(p['name'])".format(i+1))
             exec("self.ui.pickups{}.setText('{} pickups')".format(i+1, p['score']))
 
-        self.ui.playernum.setText(str(InteractionWindow.players.index(self.player)+1))
+        self.ui.playernum.setText(str(self.players.index(self.player)+1))
         self.ui.playername.setText(self.player["name"])
         self.ui.playerpickups.setText("{} pickups".format(self.player["score"]))
+
+        self.mainWindow.updateLeaderboard(self.players)
 
         self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
 
