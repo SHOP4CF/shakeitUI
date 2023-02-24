@@ -78,13 +78,14 @@ class MainWindow:
         self.ui.stackedPages.setCurrentWidget(self.ui.pageManual)
 
     def leaderboard(self):
-        for i, p in enumerate(InteractionWindow.players):
+        self.ui.stackedPages.setCurrentWidget(self.ui.pageBoard)
+
+    def updateLeaderboard(self, players):
+        for i, p in enumerate(players):
             if i > 9:
                 break
             exec("self.ui.name{}.setText(p['name'])".format(i+1))
             exec("self.ui.pickups{}.setText('{} pickups')".format(i+1, p['score']))
-
-        self.ui.stackedPages.setCurrentWidget(self.ui.pageBoard)
 
     def startInteraction(self):
         self.ui.stackedLogin.setCurrentWidget(self.interactionui.getWidget())
