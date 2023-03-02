@@ -63,7 +63,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../resources/backgroundlogin.jpg</pixmap>
+       <pixmap>resources/backgroundlogin.jpg</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -295,7 +295,7 @@ QRadioButton::indicator:unchecked {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -681,249 +681,269 @@ color: black;</string>
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>190</y>
+          <y>150</y>
           <width>1511</width>
-          <height>791</height>
+          <height>871</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_buttons">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_8">
-           <item>
-            <widget class="QLabel" name="label_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>22</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Shake Forward</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="Line" name="line_2">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(40, 85, 162);</string>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Plain</enum>
-             </property>
-             <property name="lineWidth">
-              <number>2</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="gridLayout_6">
-             <item row="4" column="1">
-              <widget class="QPushButton" name="pushButton_49">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s5r3.png);</string>
+          <widget class="QFrame" name="frame_7">
+           <property name="styleSheet">
+            <string notr="true">QFrame{
+background-color: rgb(183, 180, 180);
+border-radius: 15px;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget_6">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>481</width>
+              <height>861</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_8">
+             <item>
+              <widget class="QLabel" name="label_22">
+               <property name="font">
+                <font>
+                 <family>Open Sans</family>
+                 <pointsize>22</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
-                <string/>
+                <string>Shake Forward</string>
                </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="1" column="0">
-              <widget class="QPushButton" name="pushButton_45">
+             <item>
+              <widget class="QLabel" name="label_17">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>140</height>
+                 <width>400</width>
+                 <height>110</height>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">image: url(resources/s2r1.png);</string>
+                <string notr="true">
+image: url(resources/forwardiconB.png);
+padding: 5px;</string>
                </property>
                <property name="text">
                 <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
                </property>
               </widget>
              </item>
-             <item row="4" column="0">
-              <widget class="QPushButton" name="pushButton_47">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s5r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QPushButton" name="pushButton_52">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s1r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QPushButton" name="pushButton_44">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s2r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="1">
-              <widget class="QPushButton" name="pushButton_51">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s4r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QPushButton" name="pushButton_48">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s3r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="pushButton_46">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s1r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="1">
-              <widget class="QPushButton" name="pushButton_50">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s3r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QPushButton" name="pushButton_43">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s4r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
+             <item>
+              <layout class="QGridLayout" name="gridLayout_6">
+               <item row="3" column="0">
+                <widget class="QPushButton" name="pushButton_43">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s4r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="pushButton_44">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s2r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="pushButton_45">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s2r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="pushButton_46">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s1r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QPushButton" name="pushButton_47">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s5r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="pushButton_48">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s3r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QPushButton" name="pushButton_49">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s5r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QPushButton" name="pushButton_50">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s3r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QPushButton" name="pushButton_51">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s4r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushButton_52">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s1r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
             </layout>
-           </item>
-          </layout>
+           </widget>
+          </widget>
          </item>
          <item>
           <spacer name="horizontalSpacer">
@@ -935,249 +955,269 @@ color: black;</string>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>40</width>
+             <width>20</width>
              <height>20</height>
             </size>
            </property>
           </spacer>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_9">
-           <item>
-            <widget class="QLabel" name="label_20">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>22</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Flip</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="Line" name="line_3">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(40, 85, 162);</string>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Plain</enum>
-             </property>
-             <property name="lineWidth">
-              <number>2</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="gridLayout_5">
-             <item row="0" column="1">
-              <widget class="QPushButton" name="pushButton_36">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s1r3.png);</string>
+          <widget class="QFrame" name="frame_6">
+           <property name="styleSheet">
+            <string notr="true">QFrame{
+background-color: rgb(183, 180, 180);
+border-radius: 15px;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget_5">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>481</width>
+              <height>861</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <widget class="QLabel" name="label_20">
+               <property name="font">
+                <font>
+                 <family>Open Sans</family>
+                 <pointsize>22</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
-                <string/>
+                <string>Flip</string>
                </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="2" column="1">
-              <widget class="QPushButton" name="pushButton_40">
+             <item>
+              <widget class="QLabel" name="label_21">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>140</height>
+                 <width>400</width>
+                 <height>110</height>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">image: url(resources/s3r3.png);</string>
+                <string notr="true">
+image: url(resources/flipiconB.png);
+padding: 5px;</string>
                </property>
                <property name="text">
                 <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="0">
-              <widget class="QPushButton" name="pushButton_42">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s1r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QPushButton" name="pushButton_35">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s2r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="1">
-              <widget class="QPushButton" name="pushButton_41">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s4r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QPushButton" name="pushButton_33">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s4r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QPushButton" name="pushButton_38">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s3r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QPushButton" name="pushButton_34">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s2r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="1">
-              <widget class="QPushButton" name="pushButton_39">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s5r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QPushButton" name="pushButton_37">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s5r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
+             <item>
+              <layout class="QGridLayout" name="gridLayout_5">
+               <item row="3" column="0">
+                <widget class="QPushButton" name="pushButton_33">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s4r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QPushButton" name="pushButton_34">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s2r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="pushButton_35">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s2r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="pushButton_36">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s1r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QPushButton" name="pushButton_37">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s5r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="pushButton_38">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s3r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QPushButton" name="pushButton_39">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s5r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QPushButton" name="pushButton_40">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s3r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QPushButton" name="pushButton_41">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s4r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushButton_42">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s1r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
             </layout>
-           </item>
-          </layout>
+           </widget>
+          </widget>
          </item>
          <item>
           <spacer name="horizontalSpacer_2">
@@ -1189,249 +1229,269 @@ color: black;</string>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>40</width>
+             <width>20</width>
              <height>20</height>
             </size>
            </property>
           </spacer>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_10">
-           <item>
-            <widget class="QLabel" name="label_22">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>22</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Shake Backward</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="Line" name="line_4">
-             <property name="styleSheet">
-              <string notr="true">color: rgb(40, 85, 162);</string>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Plain</enum>
-             </property>
-             <property name="lineWidth">
-              <number>2</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="gridLayout_3">
-             <item row="3" column="0">
-              <widget class="QPushButton" name="pushButton_23">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s4r1.png);</string>
+          <widget class="QFrame" name="frame_5">
+           <property name="styleSheet">
+            <string notr="true">QFrame{
+background-color: rgb(183, 180, 180);
+border-radius: 15px;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QWidget" name="verticalLayoutWidget_3">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>481</width>
+              <height>861</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_12">
+             <item>
+              <widget class="QLabel" name="label_31">
+               <property name="font">
+                <font>
+                 <family>Open Sans</family>
+                 <pointsize>22</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
-                <string/>
+                <string>Shake Backward</string>
                </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
-             <item row="1" column="1">
-              <widget class="QPushButton" name="pushButton_24">
+             <item>
+              <widget class="QLabel" name="label_32">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>140</height>
+                 <width>400</width>
+                 <height>110</height>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">image: url(resources/s2r3.png);</string>
+                <string notr="true">
+image: url(resources/backiconB.png);
+padding: 5px;</string>
                </property>
                <property name="text">
                 <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
                </property>
               </widget>
              </item>
-             <item row="1" column="0">
-              <widget class="QPushButton" name="pushButton_25">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s2r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="pushButton_26">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s1r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <widget class="QPushButton" name="pushButton_27">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s5r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QPushButton" name="pushButton_28">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s3r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="1">
-              <widget class="QPushButton" name="pushButton_29">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s5r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="1">
-              <widget class="QPushButton" name="pushButton_30">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s3r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="1">
-              <widget class="QPushButton" name="pushButton_31">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s4r3.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QPushButton" name="pushButton_32">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>140</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">image: url(resources/s1r1.png);</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="class" stdset="0">
-                <string>playbutton</string>
-               </property>
-              </widget>
+             <item>
+              <layout class="QGridLayout" name="gridLayout_9">
+               <item row="1" column="1">
+                <widget class="QPushButton" name="pushButton_73">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s1r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QPushButton" name="pushButton_74">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s3r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QPushButton" name="pushButton_75">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s5r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QPushButton" name="pushButton_76">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s1r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QPushButton" name="pushButton_77">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s3r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QPushButton" name="pushButton_78">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s2r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QPushButton" name="pushButton_79">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s2r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QPushButton" name="pushButton_80">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s4r3.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QPushButton" name="pushButton_81">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s4r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QPushButton" name="pushButton_82">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>140</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">image: url(resources/s5r1.png);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>playbutton</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
             </layout>
-           </item>
-          </layout>
+           </widget>
+          </widget>
          </item>
         </layout>
        </widget>
