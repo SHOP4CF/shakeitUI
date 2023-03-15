@@ -451,7 +451,7 @@ QPushButton:hover{
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonExit_4">
+    <widget class="QPushButton" name="buttonExit_1">
      <property name="geometry">
       <rect>
        <x>1780</x>
@@ -1108,7 +1108,7 @@ QPushButton:pressed{
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="buttonExit_3">
+    <widget class="QPushButton" name="buttonExit_2">
      <property name="geometry">
       <rect>
        <x>1780</x>
@@ -1227,709 +1227,778 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
        </spacer>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_8">
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="font">
-           <font>
-            <family>Open Sans</family>
-            <pointsize>22</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Shake Forward</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_17">
-          <property name="minimumSize">
-           <size>
-            <width>400</width>
-            <height>110</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(77, 77, 77);
+       <widget class="QFrame" name="frame_7">
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+background-color: rgb(183, 180, 180);
 border-radius: 15px;
-image: url(resources/forwardicon.png);
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>551</width>
+           <height>891</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_22">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>22</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Shake Forward</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_17">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>110</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+image: url(resources/forwardiconB.png);
 padding: 5px;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="3" column="0">
-           <widget class="QPushButton" name="pushButton_43">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s4r1.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QPushButton" name="pushButton_44">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s2r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton_45">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s2r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton_46">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s1r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QPushButton" name="pushButton_47">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s5r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_48">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s3r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QPushButton" name="pushButton_49">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s5r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QPushButton" name="pushButton_50">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s3r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QPushButton" name="pushButton_51">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s4r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_52">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s1r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="3" column="0">
+             <widget class="QPushButton" name="pushButton_43">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s4r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="pushButton_44">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s2r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="pushButton_45">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s2r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="pushButton_46">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s1r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QPushButton" name="pushButton_47">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s5r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QPushButton" name="pushButton_48">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s3r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QPushButton" name="pushButton_49">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s5r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QPushButton" name="pushButton_50">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s3r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="pushButton_51">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s4r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="pushButton_52">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s1r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
-        </item>
-       </layout>
+        </widget>
+       </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_9">
-        <item>
-         <widget class="QLabel" name="label_20">
-          <property name="font">
-           <font>
-            <family>Open Sans</family>
-            <pointsize>22</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Flip</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_21">
-          <property name="minimumSize">
-           <size>
-            <width>400</width>
-            <height>110</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(77, 77, 77);
+       <widget class="QFrame" name="frame_6">
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+background-color: rgb(183, 180, 180);
 border-radius: 15px;
-image: url(resources/flipicon.png);
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>551</width>
+           <height>891</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_20">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>22</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Flip</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_21">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>110</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+image: url(resources/flipiconB.png);
 padding: 5px;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="3" column="0">
-           <widget class="QPushButton" name="pushButton_33">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s4r1.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QPushButton" name="pushButton_34">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s2r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton_35">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s2r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton_36">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s1r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QPushButton" name="pushButton_37">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s5r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_38">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s3r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QPushButton" name="pushButton_39">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s5r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QPushButton" name="pushButton_40">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s3r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QPushButton" name="pushButton_41">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s4r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="buttonEnd">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s1r1.png);</string>
-            </property>
-            <property name="text">
-             <string>Continue</string>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="3" column="0">
+             <widget class="QPushButton" name="pushButton_33">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s4r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="pushButton_34">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s2r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="pushButton_35">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s2r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="pushButton_36">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s1r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QPushButton" name="pushButton_37">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s5r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QPushButton" name="pushButton_38">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s3r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QPushButton" name="pushButton_39">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s5r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QPushButton" name="pushButton_40">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s3r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="pushButton_41">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s4r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="pushButton_42">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s1r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
-        </item>
-       </layout>
+        </widget>
+       </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_10">
-        <item>
-         <widget class="QLabel" name="label_22">
-          <property name="font">
-           <font>
-            <family>Open Sans</family>
-            <pointsize>22</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Shake Backward</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_23">
-          <property name="minimumSize">
-           <size>
-            <width>400</width>
-            <height>110</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(77, 77, 77);
+       <widget class="QFrame" name="frame_5">
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+background-color: rgb(183, 180, 180);
 border-radius: 15px;
-image: url(resources/backicon.png);
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>551</width>
+           <height>889</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QLabel" name="label_31">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>22</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Shake Backward</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_32">
+            <property name="minimumSize">
+             <size>
+              <width>400</width>
+              <height>110</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+image: url(resources/backiconB.png);
 padding: 5px;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QGridLayout" name="gridLayout_3">
-          <item row="3" column="0">
-           <widget class="QPushButton" name="pushButton_23">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s4r1.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QPushButton" name="pushButton_24">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s2r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton_25">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s2r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton_26">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s1r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QPushButton" name="pushButton_27">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s5r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_28">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s3r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QPushButton" name="pushButton_29">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s5r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QPushButton" name="pushButton_30">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s3r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QPushButton" name="pushButton_31">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s4r3.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_32">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>140</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(resources/s1r1.png);</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="class" stdset="0">
-             <string>playbutton</string>
-            </property>
-           </widget>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="1" column="1">
+             <widget class="QPushButton" name="pushButton_73">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s1r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="pushButton_74">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s3r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QPushButton" name="pushButton_75">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s5r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="pushButton_76">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s1r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="pushButton_77">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s3r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QPushButton" name="pushButton_78">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s2r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QPushButton" name="pushButton_79">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s2r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QPushButton" name="pushButton_80">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s4r3.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QPushButton" name="pushButton_81">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s4r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QPushButton" name="pushButton_82">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>140</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(resources/s5r1.png);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="class" stdset="0">
+               <string>playbutton</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
-        </item>
-       </layout>
+        </widget>
+       </widget>
       </item>
       <item>
        <spacer name="horizontalSpacer_19">
@@ -2001,9 +2070,9 @@ border-radius: 15px;
     <widget class="QFrame" name="frame_2">
      <property name="geometry">
       <rect>
-       <x>150</x>
+       <x>130</x>
        <y>20</y>
-       <width>501</width>
+       <width>551</width>
        <height>100</height>
       </rect>
      </property>
@@ -2048,7 +2117,7 @@ border-radius: 15px;
        <string>Score:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="pickupDisplay">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -2061,72 +2130,9 @@ border-radius: 15px;
        <string notr="true">font: 34pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
-       <string>No pickups</string>
+       <string>0 pickups</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>790</x>
-       <y>0</y>
-       <width>334</width>
-       <height>69</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Open Sans</family>
-       <pointsize>22</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	background-color: rgb(183, 180, 180);
-	color: rgb(255, 255, 255);
-	border-width: 5px;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-
-	padding-left: 110px;
-	padding-right: 110px;
-	padding-top: 20 px;
-	padding-bottom: 10px;
-}</string>
-     </property>
-     <property name="text">
-      <string>ShakeIt</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="buttonExit_2">
-     <property name="geometry">
-      <rect>
-       <x>1780</x>
-       <y>20</y>
-       <width>100</width>
-       <height>100</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(102, 102, 102);
-border-radius: 15px;
-image: url(&quot;resources/exiticon.png&quot;);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="page4board">
@@ -2179,9 +2185,9 @@ QLabel{
       <item>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="1" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_18">
+         <layout class="QHBoxLayout" name="horizontalLayout2">
           <item>
-           <widget class="QLabel" name="label_33">
+           <widget class="QLabel" name="num2">
             <property name="styleSheet">
              <string notr="true">background-color: rgb(166, 166, 166);</string>
             </property>
@@ -2197,12 +2203,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_25">
+           <layout class="QVBoxLayout" name="verticalLayout2">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_62">
+             <widget class="QLabel" name="name2">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2213,7 +2219,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2221,7 +2227,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_63">
+             <widget class="QLabel" name="pickups2">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2232,7 +2238,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2240,7 +2246,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_13">
+             <widget class="Line" name="line2">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2251,7 +2257,7 @@ QLabel{
          </layout>
         </item>
         <item row="0" column="1">
-         <spacer name="horizontalSpacer_37">
+         <spacer name="horizontalSpacer_1">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -2267,9 +2273,9 @@ QLabel{
          </spacer>
         </item>
         <item row="2" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_20">
+         <layout class="QHBoxLayout" name="horizontalLayout3">
           <item>
-           <widget class="QLabel" name="label_39">
+           <widget class="QLabel" name="num3">
             <property name="styleSheet">
              <string notr="true">background-color: rgb(237, 125, 49);</string>
             </property>
@@ -2285,12 +2291,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_18">
+           <layout class="QVBoxLayout" name="verticalLayout3">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_37">
+             <widget class="QLabel" name="name3">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2301,7 +2307,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2309,7 +2315,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_38">
+             <widget class="QLabel" name="pickups3">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2320,7 +2326,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2328,7 +2334,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_6">
+             <widget class="Line" name="line3">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2339,9 +2345,9 @@ QLabel{
          </layout>
         </item>
         <item row="3" column="2">
-         <layout class="QHBoxLayout" name="horizontalLayout_23">
+         <layout class="QHBoxLayout" name="horizontalLayout9">
           <item>
-           <widget class="QLabel" name="label_48">
+           <widget class="QLabel" name="num9">
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -2362,7 +2368,7 @@ QLabel{
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_46">
+             <widget class="QLabel" name="name9">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2373,7 +2379,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2381,7 +2387,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_47">
+             <widget class="QLabel" name="pickups9">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2392,7 +2398,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2400,7 +2406,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_9">
+             <widget class="Line" name="line9">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2411,9 +2417,9 @@ QLabel{
          </layout>
         </item>
         <item row="4" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_24">
+         <layout class="QHBoxLayout" name="horizontalLayout5">
           <item>
-           <widget class="QLabel" name="label_51">
+           <widget class="QLabel" name="num5">
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -2429,12 +2435,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_22">
+           <layout class="QVBoxLayout" name="verticalLayout5">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_49">
+             <widget class="QLabel" name="name5">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2445,7 +2451,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2453,7 +2459,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_50">
+             <widget class="QLabel" name="pickups5">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2464,7 +2470,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2472,7 +2478,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_10">
+             <widget class="Line" name="line5">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2483,9 +2489,9 @@ QLabel{
          </layout>
         </item>
         <item row="3" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <layout class="QHBoxLayout" name="horizontalLayout4">
           <item>
-           <widget class="QLabel" name="label_45">
+           <widget class="QLabel" name="num4">
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -2501,12 +2507,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_20">
+           <layout class="QVBoxLayout" name="verticalLayout4">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_43">
+             <widget class="QLabel" name="name4">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2517,7 +2523,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2525,7 +2531,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_44">
+             <widget class="QLabel" name="pickups4">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2536,7 +2542,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2544,7 +2550,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_8">
+             <widget class="Line" name="line4">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2555,9 +2561,9 @@ QLabel{
          </layout>
         </item>
         <item row="4" column="2">
-         <layout class="QHBoxLayout" name="horizontalLayout_25">
+         <layout class="QHBoxLayout" name="horizontalLayout10">
           <item>
-           <widget class="QLabel" name="label_54">
+           <widget class="QLabel" name="num10">
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -2573,12 +2579,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_23">
+           <layout class="QVBoxLayout" name="verticalLayout10">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_52">
+             <widget class="QLabel" name="name10">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2589,7 +2595,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2597,7 +2603,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_53">
+             <widget class="QLabel" name="pickups10">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2608,7 +2614,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2616,7 +2622,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_11">
+             <widget class="Line" name="line10">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2627,9 +2633,9 @@ QLabel{
          </layout>
         </item>
         <item row="2" column="2">
-         <layout class="QHBoxLayout" name="horizontalLayout_21">
+         <layout class="QHBoxLayout" name="horizontalLayout8">
           <item>
-           <widget class="QLabel" name="label_42">
+           <widget class="QLabel" name="num8">
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -2645,12 +2651,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_19">
+           <layout class="QVBoxLayout" name="verticalLayout8">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_40">
+             <widget class="QLabel" name="name8">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2661,7 +2667,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2669,7 +2675,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_41">
+             <widget class="QLabel" name="pickups8">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2680,7 +2686,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2688,7 +2694,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_7">
+             <widget class="Line" name="line8">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2699,9 +2705,9 @@ QLabel{
          </layout>
         </item>
         <item row="0" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_15">
+         <layout class="QHBoxLayout" name="horizontalLayout1">
           <item>
-           <widget class="QLabel" name="label_24">
+           <widget class="QLabel" name="num1">
             <property name="styleSheet">
              <string notr="true">background-color: rgb(255, 192, 0);</string>
             </property>
@@ -2717,12 +2723,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_14">
+           <layout class="QVBoxLayout" name="verticalLayout1">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_26">
+             <widget class="QLabel" name="name1">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2733,7 +2739,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2741,7 +2747,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_25">
+             <widget class="QLabel" name="pickups1">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2752,7 +2758,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2760,7 +2766,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_2">
+             <widget class="Line" name="line1">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2771,9 +2777,9 @@ QLabel{
          </layout>
         </item>
         <item row="1" column="2">
-         <layout class="QHBoxLayout" name="horizontalLayout_19">
+         <layout class="QHBoxLayout" name="horizontalLayout7">
           <item>
-           <widget class="QLabel" name="label_36">
+           <widget class="QLabel" name="num7">
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -2789,12 +2795,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_17">
+           <layout class="QVBoxLayout" name="verticalLayout7">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_34">
+             <widget class="QLabel" name="name7">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2805,7 +2811,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2813,7 +2819,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_35">
+             <widget class="QLabel" name="pickups7">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2824,7 +2830,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2832,7 +2838,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_5">
+             <widget class="Line" name="line7">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2843,9 +2849,9 @@ QLabel{
          </layout>
         </item>
         <item row="0" column="2">
-         <layout class="QHBoxLayout" name="horizontalLayout_17">
+         <layout class="QHBoxLayout" name="horizontalLayout6">
           <item>
-           <widget class="QLabel" name="label_30">
+           <widget class="QLabel" name="num6">
             <property name="minimumSize">
              <size>
               <width>120</width>
@@ -2873,12 +2879,12 @@ QLabel{
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_16">
+           <layout class="QVBoxLayout" name="verticalLayout6">
             <property name="spacing">
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_31">
+             <widget class="QLabel" name="name6">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2889,7 +2895,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Name</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -2897,7 +2903,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_32">
+             <widget class="QLabel" name="pickups6">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
@@ -2908,7 +2914,7 @@ QLabel{
                <string notr="true"/>
               </property>
               <property name="text">
-               <string># pickups</string>
+               <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -2916,7 +2922,7 @@ QLabel{
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line_4">
+             <widget class="Line" name="line6">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -2927,7 +2933,7 @@ QLabel{
          </layout>
         </item>
         <item row="0" column="3">
-         <spacer name="horizontalSpacer_38">
+         <spacer name="horizontalSpacer_7">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -2970,7 +2976,7 @@ color: rgb(255, 255, 255);</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="label_57">
+        <widget class="QLabel" name="playernum">
          <property name="geometry">
           <rect>
            <x>200</x>
@@ -2989,23 +2995,10 @@ font: bold 55pt &quot;Open Sans&quot;;
 </string>
          </property>
          <property name="text">
-          <string>#</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_58">
-         <property name="geometry">
-          <rect>
-           <x>280</x>
-           <y>210</y>
-           <width>47</width>
-           <height>13</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
          </property>
         </widget>
         <widget class="QLabel" name="label_59">
@@ -3039,33 +3032,33 @@ font: bold 55pt &quot;Open Sans&quot;;
           <bool>true</bool>
          </property>
         </widget>
-        <widget class="QLabel" name="label_60">
+        <widget class="QLabel" name="playername">
          <property name="geometry">
           <rect>
            <x>0</x>
            <y>510</y>
            <width>601</width>
-           <height>31</height>
+           <height>51</height>
           </rect>
          </property>
          <property name="text">
-          <string>Your name</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="label_61">
+        <widget class="QLabel" name="playerpickups">
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>550</y>
+           <y>570</y>
            <width>601</width>
-           <height>31</height>
+           <height>51</height>
           </rect>
          </property>
          <property name="text">
-          <string>No pickups</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -3129,7 +3122,7 @@ font: bold 55pt &quot;Open Sans&quot;;
       <string>Leaderboard</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="buttonExit">
+    <widget class="QPushButton" name="buttonExit_3">
      <property name="geometry">
       <rect>
        <x>1780</x>
