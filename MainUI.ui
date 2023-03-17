@@ -44,7 +44,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="loginPage">
      <property name="styleSheet">
@@ -298,7 +298,7 @@ QRadioButton::indicator:unchecked {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -468,8 +468,10 @@ margin: 5px;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 18pt &quot;Open Sans&quot;;
-color: black;</string>
+         <string notr="true">QGroupBox{
+	font: 18pt &quot;Open Sans&quot;;
+	color: black;
+}</string>
         </property>
         <property name="title">
          <string>Status</string>
@@ -480,6 +482,152 @@ color: black;</string>
         <property name="checkable">
          <bool>false</bool>
         </property>
+        <widget class="QWidget" name="gridLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>30</y>
+           <width>821</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="4">
+           <widget class="QLabel" name="label_8">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>24</pointsize>
+              <weight>75</weight>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(74, 74, 74);</string>
+            </property>
+            <property name="text">
+             <string>Robot arm</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="statusArm">
+            <property name="font">
+             <font>
+              <pointsize>26</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 176, 80);</string>
+            </property>
+            <property name="text">
+             <string>OK</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignHCenter|Qt::AlignTop</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_7">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>24</pointsize>
+              <weight>75</weight>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(74, 74, 74);</string>
+            </property>
+            <property name="text">
+             <string>Anyfeeder</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="statusCam">
+            <property name="font">
+             <font>
+              <pointsize>26</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 176, 80);</string>
+            </property>
+            <property name="text">
+             <string>OK</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignHCenter|Qt::AlignTop</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>24</pointsize>
+              <weight>75</weight>
+              <italic>false</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(74, 74, 74);</string>
+            </property>
+            <property name="text">
+             <string>Camera</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="statusFeed">
+            <property name="font">
+             <font>
+              <pointsize>26</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 176, 80);</string>
+            </property>
+            <property name="text">
+             <string>OK</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignHCenter|Qt::AlignTop</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
        <widget class="QGroupBox" name="settingsBox">
         <property name="geometry">
@@ -491,8 +639,10 @@ color: black;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 18pt &quot;Open Sans&quot;;
-color: black;</string>
+         <string notr="true">QGroupBox{
+	font: 18pt &quot;Open Sans&quot;;
+	color: black;
+}</string>
         </property>
         <property name="title">
          <string>Setttings</string>
@@ -534,32 +684,113 @@ QPushButton:pressed{
           <string>Change settings</string>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinIterations">
+        <widget class="QWidget" name="gridLayoutWidget_3">
          <property name="geometry">
           <rect>
-           <x>190</x>
+           <x>20</x>
            <y>60</y>
-           <width>41</width>
-           <height>31</height>
+           <width>371</width>
+           <height>221</height>
           </rect>
          </property>
-         <property name="styleSheet">
-          <string notr="true">color: black;
-</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="labelIterations">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>60</y>
-           <width>131</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Iterations:</string>
-         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelIterations">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>22</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(88, 88, 88);</string>
+            </property>
+            <property name="text">
+             <string>Iterations:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="label_10">
+            <property name="font">
+             <font>
+              <pointsize>22</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelIterations_2">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>22</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(88, 88, 88);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_9">
+            <property name="font">
+             <font>
+              <pointsize>22</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelIterations_3">
+            <property name="font">
+             <font>
+              <family>Open Sans</family>
+              <pointsize>22</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(88, 88, 88);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </widget>
        <widget class="QLabel" name="aibackground">
@@ -723,7 +954,7 @@ border-radius: 15px;
               <x>0</x>
               <y>0</y>
               <width>481</width>
-              <height>871</height>
+              <height>889</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1027,7 +1258,7 @@ border-radius: 15px;
               <x>0</x>
               <y>0</y>
               <width>481</width>
-              <height>871</height>
+              <height>889</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -1331,7 +1562,7 @@ border-radius: 15px;
               <x>0</x>
               <y>0</y>
               <width>481</width>
-              <height>871</height>
+              <height>889</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -2646,51 +2877,24 @@ color: white;</string>
      <zorder>label</zorder>
     </widget>
    </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>1420</x>
+      <y>990</y>
+      <width>272</width>
+      <height>66</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>pushButton_52</tabstop>
-  <tabstop>pushButton_46</tabstop>
-  <tabstop>pushButton_42</tabstop>
-  <tabstop>pushButton_36</tabstop>
-  <tabstop>pushButton_76</tabstop>
-  <tabstop>buttonStop</tabstop>
-  <tabstop>pushButton_44</tabstop>
-  <tabstop>pushButton_43</tabstop>
-  <tabstop>pushButton_45</tabstop>
-  <tabstop>textPassword</tabstop>
-  <tabstop>spinIterations</tabstop>
-  <tabstop>pushButton_47</tabstop>
-  <tabstop>pushButton_48</tabstop>
-  <tabstop>pushButton_49</tabstop>
-  <tabstop>pushButton_50</tabstop>
-  <tabstop>pushButton_51</tabstop>
   <tabstop>textUsername</tabstop>
-  <tabstop>pushButton_33</tabstop>
-  <tabstop>pushButton_34</tabstop>
-  <tabstop>pushButton_35</tabstop>
-  <tabstop>buttonStart</tabstop>
-  <tabstop>pushButton_37</tabstop>
-  <tabstop>pushButton_38</tabstop>
-  <tabstop>pushButton_39</tabstop>
-  <tabstop>pushButton_40</tabstop>
-  <tabstop>pushButton_41</tabstop>
-  <tabstop>buttonLogin</tabstop>
-  <tabstop>pushButton_73</tabstop>
-  <tabstop>pushButton_74</tabstop>
-  <tabstop>pushButton_75</tabstop>
-  <tabstop>buttonSettings</tabstop>
-  <tabstop>pushButton_77</tabstop>
-  <tabstop>pushButton_78</tabstop>
-  <tabstop>pushButton_79</tabstop>
-  <tabstop>pushButton_80</tabstop>
-  <tabstop>pushButton_81</tabstop>
-  <tabstop>pushButton_82</tabstop>
-  <tabstop>buttonLogout</tabstop>
-  <tabstop>radioAI</tabstop>
-  <tabstop>radioManual</tabstop>
-  <tabstop>radioBoard</tabstop>
-  <tabstop>radioInteraction</tabstop>
+  <tabstop>textPassword</tabstop>
  </tabstops>
  <resources/>
  <connections/>
