@@ -34,6 +34,7 @@ class MainWindow:
         self.ui.radioBoard.toggled.connect(self.leaderboard)
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
 
+
     def login(self):
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
@@ -84,8 +85,8 @@ class MainWindow:
         for i, p in enumerate(players):
             if i > 9:
                 break
-            exec("self.ui.name{}.setText(p['name'])".format(i+1))
-            exec("self.ui.pickups{}.setText('{} pickups')".format(i+1, p['score']))
+            exec("self.ui.name{}.setText(p['name'])".format(i + 1))
+            exec("self.ui.pickups{}.setText('{} pickups')".format(i + 1, p['score']))
 
     def startInteraction(self):
         self.ui.stackedLogin.setCurrentWidget(self.interactionui.getWidget())
