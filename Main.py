@@ -34,7 +34,6 @@ class MainWindow:
         self.ui.radioBoard.toggled.connect(self.leaderboard)
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
 
-
     def login(self):
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
