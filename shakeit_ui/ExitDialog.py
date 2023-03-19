@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QDialog
-from ExitDialogUI import Ui_Exit
+from shakeit_ui.ExitDialogUI import Ui_Exit
 
 
 class ExitDialogWindow:

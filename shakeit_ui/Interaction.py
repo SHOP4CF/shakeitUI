@@ -2,9 +2,12 @@ from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import QTimer
 import json
 
-from InteractionUI import Ui_Interaction
-from ExitDialog import ExitDialogWindow
-from TimesUpDialog import TimesUpDialogWindow
+from shakeit_ui.InteractionUI import Ui_Interaction
+from shakeit_ui.ExitDialog import ExitDialogWindow
+from shakeit_ui.TimesUpDialog import TimesUpDialogWindow
+
+# Import anyfeeder
+from rclpy.node import Node
 
 
 class InteractionWindow:
@@ -183,184 +186,142 @@ class InteractionWindow:
         }
 
     def trainforward(self):
-        #ros2 service call /anyfeeder_node/init anyfeeder_interfaces/srv/StandardInput "{parameters: {repetitions: 0, speed: 0}}"
-        fw_3_8 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 2, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = fw_3_8.communicate()[0]
+        self.mainWindow.forward_objects(2, 6)
 
     def trainflip(self):
-        #ros2 service call /anyfeeder_node/init anyfeeder_interfaces/srv/StandardInput "{parameters: {repetitions: 0, speed: 0}}"
-        fl_3_8 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 2, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = fl_3_8.communicate()[0]
+        self.mainWindow.flip_objects(2, 6)
 
     def trainbackward(self):
-        #ros2 service call /anyfeeder_node/init anyfeeder_interfaces/srv/StandardInput "{parameters: {repetitions: 0, speed: 0}}"
-        fb_3_8 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 2, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = fb_3_8.communicate()[0]
+        self.mainWindow.backward_objects(2, 6)
 
     #
     # FORWARD CMDs
     #
 
     def fw_s2_r1(self):
-        fw_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 2}}"""], stdout=subprocess.PIPE)
-        output = fw_2_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(1, 2)
+        self.mainWindow.execute_callback()
     
     def fw_s4_r1(self):
-        fw_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 4}}"""], stdout=subprocess.PIPE)
-        output = fw_4_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(1, 4)
+        self.mainWindow.execute_callback()
 
     def fw_s6_r1(self):
-        fw_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = fw_6_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(1, 6)
+        self.mainWindow.execute_callback()
 
     def fw_s8_r1(self):
-        fw_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 8}}"""], stdout=subprocess.PIPE)
-        output = fw_8_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(1, 8)
+        self.mainWindow.execute_callback()
 
     def fw_s10_r1(self):
-        fw_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 10}}"""], stdout=subprocess.PIPE)
-        output = fw_10_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(1, 10)
+        self.mainWindow.execute_callback()
 
     def fw_s2_r3(self):
-        fw_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 2}}"""], stdout=subprocess.PIPE)
-        output = fw_2_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(3, 2)
+        self.mainWindow.execute_callback()
     
     def fw_s4_r3(self):
-        fw_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 4}}"""], stdout=subprocess.PIPE)
-        output = fw_4_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(3, 4)
+        self.mainWindow.execute_callback()
 
     def fw_s6_r3(self):
-        fw_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = fw_6_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(3, 6)
+        self.mainWindow.execute_callback()
 
     def fw_s8_r3(self):
-        fw_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 8}}"""], stdout=subprocess.PIPE)
-        output = fw_8_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(3, 8)
+        self.mainWindow.execute_callback()
 
     def fw_s10_r3(self):
-        fw_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_forward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 10}}"""], stdout=subprocess.PIPE)
-        output = fw_10_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.forward_objects(3, 10)
+        self.mainWindow.execute_callback()
 
     #
     # FLIP CMDs
     #     
 
     def flip_s2_r1(self):
-        flip_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 2}}"""], stdout=subprocess.PIPE)
-        output = flip_2_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(1, 2)
+        self.mainWindow.execute_callback()
     
     def flip_s4_r1(self):
-        flip_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 4}}"""], stdout=subprocess.PIPE)
-        output = flip_4_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(1, 4)
+        self.mainWindow.execute_callback()
 
     def flip_s6_r1(self):
-        flip_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = flip_6_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(1, 6)
+        self.mainWindow.execute_callback()
 
     def flip_s8_r1(self):
-        flip_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 8}}"""], stdout=subprocess.PIPE)
-        output = flip_8_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(1, 8)
+        self.mainWindow.execute_callback()
 
     def flip_s10_r1(self):
-        flip_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 10}}"""], stdout=subprocess.PIPE)
-        output = flip_10_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(1, 10)
+        self.mainWindow.execute_callback()
 
     def flip_s2_r3(self):
-        flip_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 2}}"""], stdout=subprocess.PIPE)
-        output = flip_2_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(3, 2)
+        self.mainWindow.execute_callback()
     
     def flip_s4_r3(self):
-        flip_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 4}}"""], stdout=subprocess.PIPE)
-        output = flip_4_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(3, 4)
+        self.mainWindow.execute_callback()
 
     def flip_s6_r3(self):
-        flip_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = flip_6_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(3, 6)
+        self.mainWindow.execute_callback()
 
     def flip_s8_r3(self):
-        flip_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 8}}"""], stdout=subprocess.PIPE)
-        output = flip_8_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(3, 8)
+        self.mainWindow.execute_callback()
 
     def flip_s10_r3(self):
-        flip_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/flip", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 10}}"""], stdout=subprocess.PIPE)
-        output = flip_10_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.flip_objects(3, 10)
+        self.mainWindow.execute_callback()
 
     #
     # BACWARDS CMDs
     #     
 
     def bw_s2_r1(self):
-        bw_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 2}}"""], stdout=subprocess.PIPE)
-        output = bw_2_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(1, 2)
+        self.mainWindow.execute_callback()
     
     def bw_s4_r1(self):
-        bw_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 4}}"""], stdout=subprocess.PIPE)
-        output = bw_4_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(1, 4)
+        self.mainWindow.execute_callback()
 
     def bw_s6_r1(self):
-        bw_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = bw_6_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(1, 6)
+        self.mainWindow.execute_callback()
 
     def bw_s8_r1(self):
-        bw_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 8}}"""], stdout=subprocess.PIPE)
-        output = bw_8_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(1, 8)
+        self.mainWindow.execute_callback()
 
     def bw_s10_r1(self):
-        bw_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 1, speed: 10}}"""], stdout=subprocess.PIPE)
-        output = bw_10_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(1, 10)
+        self.mainWindow.execute_callback()
 
     def bw_s2_r3(self):
-        bw_2_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 2}}"""], stdout=subprocess.PIPE)
-        output = bw_2_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(3, 2)
+        self.mainWindow.execute_callback()
     
     def bw_s4_r3(self):
-        bw_4_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 4}}"""], stdout=subprocess.PIPE)
-        output = bw_4_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(3, 4)
+        self.mainWindow.execute_callback()
 
     def bw_s6_r3(self):
-        bw_6_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 6}}"""], stdout=subprocess.PIPE)
-        output = bw_6_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(3, 6)
+        self.mainWindow.execute_callback()
 
     def bw_s8_r3(self):
-        bw_8_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 8}}"""], stdout=subprocess.PIPE)
-        output = bw_8_1.communicate()[0]
-        self.trigger_cam()
+        self.mainWindow.backward_objects(3, 8)
+        self.mainWindow.execute_callback()
 
     def bw_s10_r3(self):
-        bw_10_1 = subprocess.Popen(["ros2","service","call","/anyfeeder_node/feed_backward", "anyfeeder_interfaces/srv/StandardInput", """{parameters: {repetitions: 3, speed: 10}}"""], stdout=subprocess.PIPE)
-        output = bw_10_1.communicate()[0]
-        self.trigger_cam()
-
-    def trigger_cam(self):
-        print("Trigger cam")
-        # ros2 action send_goal /robot_camera_test_node/test shakeit_interfaces/action/Trigger {}
-        trigger = subprocess.Popen(["ros2","action","send_goal","/robot_camera_test_node/test", "shakeit_interfaces/action/Trigger", """{}"""], stdout=subprocess.PIPE)
-        output = trigger.communicate()[0]
+        self.mainWindow.backward_objects(3, 10)
+        self.mainWindow.execute_callback()

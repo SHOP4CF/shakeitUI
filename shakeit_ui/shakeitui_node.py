@@ -8,25 +8,13 @@ from shakeit_ui.Main import MainWindow
 import rclpy
 from rclpy.node import Node
 from rclpy.executors import MultiThreadedExecutor
-from anyfeeder_interfaces.srv import StandardInput
-from shakeit_core.util.shakeit_node import create_client_wait_for_service
 
 class ShakeituiNode(Node):
     def __init__(self):
         super().__init__('shakeit_ui_node')
         self.get_logger().info(f"Initializing {self.get_name()}...")
 
-        self.window = MainWindow()
-
-        self.init_feeder_client = create_client_wait_for_service(
-            self, StandardInput, 'anyfeeder_node/init')
-        
-        self.init_anyfeeder()
-        
-    def init_anyfeeder(self):
-        future = self.init_feeder_client.call_async(StandardInput.Request())
-        rclpy.spin_until_future_complete(self, future)
-        #self.get_logger().info("Anyfeeder initialized")
+        self.window = MainWindow(self)
 
     def destroy_node(self) -> bool:
         self.get_logger().info("Closing down")

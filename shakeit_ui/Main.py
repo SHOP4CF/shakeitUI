@@ -1,13 +1,44 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
-from MainUI import Ui_MainWindow
-from Interaction import InteractionWindow
-from KeyrockAPI import KeyrockAPI
+from shakeit_ui.MainUI import Ui_MainWindow
+from shakeit_ui.Interaction import InteractionWindow
+from shakeit_ui.KeyrockAPI import KeyrockAPI
+
+#ROS 2
+from rclpy.node import Node
+from rclpy.action.server import ServerGoalHandle
+from shakeit_interfaces.action import FreeObjects, Trigger
+from shakeit_interfaces.action import Pick
+from shakeit_core.util import create_action_client_wait_for_server, create_client_wait_for_service
+from action_msgs.msg import GoalStatus
+from anyfeeder_interfaces.srv import StandardInput
 
 
 class MainWindow:
-    def __init__(self):
+    def __init__(self, node: Node):
+        # setting up ros2 stuff #
+        self.node = node
+        # TODO: Maybe look into service names, remap names in launch file
+        # Se control_node remapping from shakeit_core
+        self.init_feeder_client = create_client_wait_for_service(
+            self.node, StandardInput, 'feeder/init')
+        self.add_objects_client = create_client_wait_for_service(
+            self.node, StandardInput, 'feeder/add')
+        self.purge_objects_client = create_client_wait_for_service(
+            self.node, StandardInput, 'feeder/purge')
+        self.flip_objects_client = create_client_wait_for_service(
+            self.node, StandardInput, 'feeder/flip')
+        self.forward_objects_client = create_client_wait_for_service(
+            self.node, StandardInput, 'feeder/forward')
+        self.backward_objects_client = create_client_wait_for_service(
+            self.node, StandardInput, 'feeder/backward')
+
+        self.pick_action_client = create_action_client_wait_for_server(
+            self.node, Pick, 'kuka_adapter/pick')
+        self.free_objects_client = create_action_client_wait_for_server(
+            self.node, FreeObjects, 'sensopart_adapter/free_objects')
+
         # setting up keyrock #
         self.keyrockAPI = KeyrockAPI()
 
@@ -99,6 +130,80 @@ class MainWindow:
     def show(self):
         self.main_win.show()
 
+    def init_anyfeeder(self):
+        future = self.init_feeder_client.call_async(StandardInput.Request())
+        self.rclpy.spin_until_future_complete(self, future)
+        self.get_logger().info("Anyfeeder initialized")
+
+    def add_objects(self):
+        request = StandardInput.Request()
+        request.parameters.repetitions = 5
+        request.parameters.speed = 6
+        future = self.add_objects_client.call_async(request)
+        self.rclpy.spin_until_future_complete(self, future)
+        self.get_logger().info("Objects added")
+
+    def forward_objects(self, repetitions, speed):
+        request = StandardInput.Request()
+        request.parameters.repetitions = repetitions
+        request.parameters.speed = speed
+        future = self.forward_objects_client.call_async(request)
+        self.rclpy.spin_until_future_complete(self, future)
+        self.get_logger().info("Objects feed forward")
+
+    def flip_objects(self, repetitions, speed):
+        request = StandardInput.Request()
+        request.parameters.repetitions = repetitions
+        request.parameters.speed = speed
+        future = self.flip_objects_client.call_async(request)
+        self.rclpy.spin_until_future_complete(self, future)
+        self.get_logger().info("Objects flipped")
+
+    def backward_objects(self, repetitions, speed):
+        request = StandardInput.Request()
+        request.parameters.repetitions = repetitions
+        request.parameters.speed = speed
+        future = self.backward_objects_client.call_async(request)
+        self.rclpy.spin_until_future_complete(self, future)
+        self.get_logger().info("Objects feed backward")
+
+    def purge_objects(self):
+        future = self.purge_objects_client.call_async(StandardInput.Request())
+        self.rclpy.spin_until_future_complete(self, future)
+        self.get_logger().info("Objects purged")
+
+    async def execute_callback(self):
+        self.get_logger().info(f"Executing goal...")
+        result = Trigger.Result()
+        result.success = False
+
+        res = self.free_objects_client.send_goal(FreeObjects.Goal())
+        if res.status != GoalStatus.STATUS_SUCCEEDED:
+            msg = f"[GET_FREE_OBJECTS] Response: {res}"
+            self.get_logger().error(msg)
+            result.message = msg
+            return result
+        free_objects: FreeObjects.Result = res.result
+        if free_objects.count == 0:
+            result.message = "No objects to pick!"
+            return result
+
+        pick_pose = free_objects.poses[0]
+        
+        goal = Pick.Goal()
+        goal.pose = pick_pose
+        res = self.pick_action_client.send_goal(goal, feedback_callback=self.feedback_callback)
+
+        # TODO: Call pickupSuccess from interaction see munal_node for if statement
+        response: Pick.Result = res.result
+        if res.status == GoalStatus.STATUS_SUCCEEDED:
+            self.interactionui.pickupSuccess()
+        result.success = response.success
+        result.message = response.message
+        return result
+
+    def feedback_callback(self, feedback):
+        self.get_logger().info(f"Received feedback: {feedback.feedback.message}")
 
 # if __name__ == '__main__':
 #     app = QApplication(sys.argv)

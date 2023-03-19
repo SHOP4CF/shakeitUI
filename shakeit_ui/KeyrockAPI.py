@@ -7,7 +7,7 @@ class KeyrockAPI:
 
     def __init__(self):
         # GET CLIENT INFO #
-        self.application = json.loads(open('/home/dti/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/applicationInfo.json').read())
+        self.application = json.loads(open('/home/jeda/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/applicationInfo.json').read())
 
         # Base 64 encoding client info
         clientInfo = self.application["clientID"] + ":" + self.application["clientSecret"]

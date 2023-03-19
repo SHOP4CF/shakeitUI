@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QDialog
-from TimesUpDialogUI import Ui_TimesUpDialog
+from shakeit_ui.TimesUpDialogUI import Ui_TimesUpDialog
 
 
 class TimesUpDialogWindow:
