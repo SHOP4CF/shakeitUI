@@ -36,28 +36,19 @@ class MainWindow:
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
 
         # logged in user info
-        self.currentUser = None
-
-    def setLoggedinUser(self, username, role, accessToken, refreshToken):
-        self.currentUser = LoggedInUser(username, role, accessToken, refreshToken)
+        self.currentUser = LoggedInUser()
 
     def login(self):
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
         # authenticate user using keyrock
-        result, accessToken = self.keyrockAPI.authenticateUser(username, password)
+        result, self.currentUser = self.keyrockAPI.authenticateUser(username, password, self.currentUser)
 
         if result:
             # success
-            userInfo = self.keyrockAPI.getUserInfo(accessToken)
-
-            try:
-                self.ui.labelRole.setText(userInfo['roles'][0]['name'])
-            except:
-                self.ui.labelRole.setText("")
-
-            self.ui.labelUsername_2.setText(userInfo['username'])
+            self.ui.labelRole.setText(self.currentUser.role)
+            self.ui.labelUsername_2.setText(self.currentUser.username)
 
             # change to mainPage
             self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
@@ -75,8 +66,11 @@ class MainWindow:
             self.ui.textPassword.clear()
             self.ui.textUsername.clear()
 
+            self.currentUser = LoggedInUser()
+
     def logout(self):
         self.ui.stackedLogin.setCurrentWidget(self.ui.loginPage)
+        self.currentUser = LoggedInUser()
 
     def ai(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)

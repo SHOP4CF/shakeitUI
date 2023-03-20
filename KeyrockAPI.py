@@ -50,26 +50,33 @@ class KeyrockAPI:
         if rAuth.status_code == 200:
             i = json.loads(rAuth.text)
             # check if user is authorized in application
-            if self.getUserInfo(i['access_token'])['id'] in self.getAuthorizedUsers():
-                user.updateAccess(i['access_token'], i['refresh_token'])
+            user.updateAccess(i['access_token'], json.loads(rAuth.text)['refresh_token'])
+            user = self.getUserInfo(user)
+            if user.id in self.getAuthorizedUsers():
                 return True, user
+            else:
+                return False, user
         return False, user
 
     def getUserInfo(self, user):
         url = "https://localhost:443/user?access_token=" + user.accessToken
         rUserInfo = requests.get(url, verify=False)
         i = json.loads(rUserInfo.text)
-        user.updateInfo(i['username', i['roles'][0]['name']])
+        try:
+            user.updateInfo(i['username'], i['roles'][0]['name'], i['id'])
+        except:
+            user.updateInfo(i['username'], " ", i['id'])
         return user
 
-    def refreshToken(self, rToken):
+    def refreshToken(self, user):
         url = "https://localhost:443/oauth2/token"
-        d = {'refresh_token': rToken,
+        d = {'refresh_token': user.refreshToken,
              'grant_type': 'password'}
         h = {'Accept': 'application/json',
              'Authorization': 'Basic ' + self.clientInfoBase64,
              'Content-Type': 'application/x-www-form-urlencoded'}
         rRefreshToken = requests.post(url, data=d, headers=h, verify=False)
-        newAccessToken = json.loads(rRefreshToken.text)['access_token']
-        newRefreshToken = json.loads(rRefreshToken.text)['refresh_token']
-        return newAccessToken, newRefreshToken
+
+        i = json.loads(rRefreshToken.text)
+        user.updateAccess(i['access_token'], i['refresh_token'])
+        return user
