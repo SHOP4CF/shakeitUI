@@ -1,11 +1,15 @@
 
 class LoggedInUser:
 
-    def __init__(self, u, r, at, rt):
-        self.username = u
-        self.role = r
-        self.accessToken = at
-        self.refreshToken = rt
+    def __init__(self):
+        self.username = None
+        self.role = None
+        self.accessToken = None
+        self.refreshToken = None
+
+    def updateInfo(self, username, role):
+        self.username = username
+        self.role = role
 
     def updateAccess(self, newAccess, newRefresh):
         self.accessToken = newAccess

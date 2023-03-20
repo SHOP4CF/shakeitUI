@@ -37,7 +37,7 @@ class KeyrockAPI:
 
         return userIDs
 
-    def authenticateUser(self, username, password):
+    def authenticateUser(self, username, password, user):
         url = "https://localhost:443/oauth2/token"
         d = {'username': username,
              'password': password,
@@ -48,16 +48,28 @@ class KeyrockAPI:
         rAuth = requests.post(url, data=d, headers=h, verify=False)
 
         if rAuth.status_code == 200:
-            accessToken = json.loads(rAuth.text)['access_token']
+            i = json.loads(rAuth.text)
             # check if user is authorized in application
-            if self.getUserInfo(accessToken)['id'] in self.getAuthorizedUsers():
-                return True, accessToken
-            else:
-                return False, None
-        else:
-            return False, None
+            if self.getUserInfo(i['access_token'])['id'] in self.getAuthorizedUsers():
+                user.updateAccess(i['access_token'], i['refresh_token'])
+                return True, user
+        return False, user
 
-    def getUserInfo(self, aToken):
-        url = "https://localhost:443/user?access_token=" + aToken
+    def getUserInfo(self, user):
+        url = "https://localhost:443/user?access_token=" + user.accessToken
         rUserInfo = requests.get(url, verify=False)
-        return json.loads(rUserInfo.text)
+        i = json.loads(rUserInfo.text)
+        user.updateInfo(i['username', i['roles'][0]['name']])
+        return user
+
+    def refreshToken(self, rToken):
+        url = "https://localhost:443/oauth2/token"
+        d = {'refresh_token': rToken,
+             'grant_type': 'password'}
+        h = {'Accept': 'application/json',
+             'Authorization': 'Basic ' + self.clientInfoBase64,
+             'Content-Type': 'application/x-www-form-urlencoded'}
+        rRefreshToken = requests.post(url, data=d, headers=h, verify=False)
+        newAccessToken = json.loads(rRefreshToken.text)['access_token']
+        newRefreshToken = json.loads(rRefreshToken.text)['refresh_token']
+        return newAccessToken, newRefreshToken
