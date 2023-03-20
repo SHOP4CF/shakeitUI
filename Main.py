@@ -4,11 +4,12 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
 from MainUI import Ui_MainWindow
 from Interaction import InteractionWindow
 from KeyrockAPI import KeyrockAPI
+from User import LoggedInUser
 
 
 class MainWindow:
     def __init__(self):
-        # setting up keyrock #
+        # setting up keyrock
         self.keyrockAPI = KeyrockAPI()
 
         # setting up UI #
@@ -33,6 +34,12 @@ class MainWindow:
         self.ui.radioManual.toggled.connect(self.manual)
         self.ui.radioBoard.toggled.connect(self.leaderboard)
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
+
+        # logged in user info
+        self.currentUser = None
+
+    def setLoggedinUser(self, username, role, accessToken, refreshToken):
+        self.currentUser = LoggedInUser(username, role, accessToken, refreshToken)
 
     def login(self):
         username = self.ui.textUsername.text()
