@@ -28,10 +28,9 @@
 ## About the Project
 <p align="middle">
   <img src="https://user-images.githubusercontent.com/113982478/218409653-ab1c46cc-d6f0-4066-910a-ad5d91cfc9d2.png" width="32%" />
-  <img src="https://user-images.githubusercontent.com/113982478/218411478-72474d9e-1359-478e-9d44-8ab82a57ef01.png" width="32%" /> 
+  <img src="https://user-images.githubusercontent.com/113982478/226293911-ef513eab-1340-4048-8342-c3b3aff39422.png" width="32%" /> 
   <img src="https://user-images.githubusercontent.com/113982478/218114114-edf41504-54c4-4b60-b389-5789b919fc4a.png" width="32%" />
 </p>
-
 
 This project contains the UI for the [shakeit component](https://github.com/SHOP4CF/shakeit). It uses KeyRock for authentication of users.
 
@@ -149,7 +148,7 @@ You should now have 2 repositories set up: "fiware-idm" and "shakeitUI".
 
 3. Run ```Main.py``` (in the shakeitUI)
    ```sh
-   python main.py
+   python Main.py
    ```
    
 To login to the application use the following credentials:
@@ -184,10 +183,16 @@ python -m PyQt5.uic.pyuic -x MainUI.ui -o MainUI.py
 This command overwrites the old ```MainUI.py```, so as a general rule changes should **not** be made to ```MainUI.py```. Instead visual changes should be made by QtDesigner and functunality should be in ```Main.py```.
 
 
-This rule also counts for the other ```.ui``` files. The same commands also works for them:
+This rule also counts for the other ```.ui``` files. The same command also works for them:
 
 ```sh
 python -m PyQt5.uic.pyuic -x InteractionUI.ui -o InteractionUI.py
+```
+
+```sh
 python -m PyQt5.uic.pyuic -x ExitDialogUI.ui -o ExitDialogUI.py
+```
+
+```sh
 python -m PyQt5.uic.pyuic -x TimesUpDialogUI.ui -o TimesUpDialogUI.py
 ```
