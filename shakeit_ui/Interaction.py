@@ -50,7 +50,7 @@ class InteractionWindow:
         self.ui.pushButton_49.clicked.connect(self.fw_s10_r3)
 
         # btn shake flip
-        self.ui.buttonEnd.clicked.connect(self.flip_s2_r1)
+        self.ui.pushButton_42.clicked.connect(self.flip_s2_r1)
         self.ui.pushButton_35.clicked.connect(self.flip_s4_r1)
         self.ui.pushButton_38.clicked.connect(self.flip_s6_r1)
         self.ui.pushButton_33.clicked.connect(self.flip_s8_r1)
@@ -62,16 +62,16 @@ class InteractionWindow:
         self.ui.pushButton_39.clicked.connect(self.flip_s10_r3)
 
         # btn shake backward
-        self.ui.pushButton_32.clicked.connect(self.bw_s2_r1)
-        self.ui.pushButton_25.clicked.connect(self.bw_s4_r1)
-        self.ui.pushButton_28.clicked.connect(self.bw_s6_r1)
-        self.ui.pushButton_23.clicked.connect(self.bw_s8_r1)
-        self.ui.pushButton_27.clicked.connect(self.bw_s10_r1)
-        self.ui.pushButton_26.clicked.connect(self.bw_s2_r3)
-        self.ui.pushButton_24.clicked.connect(self.bw_s4_r3)
-        self.ui.pushButton_30.clicked.connect(self.bw_s6_r3)
-        self.ui.pushButton_31.clicked.connect(self.bw_s8_r3)
-        self.ui.pushButton_29.clicked.connect(self.bw_s10_r3)
+        self.ui.pushButton_82.clicked.connect(self.bw_s2_r1)
+        self.ui.pushButton_75.clicked.connect(self.bw_s4_r1)
+        self.ui.pushButton_78.clicked.connect(self.bw_s6_r1)
+        self.ui.pushButton_73.clicked.connect(self.bw_s8_r1)
+        self.ui.pushButton_77.clicked.connect(self.bw_s10_r1)
+        self.ui.pushButton_76.clicked.connect(self.bw_s2_r3)
+        self.ui.pushButton_74.clicked.connect(self.bw_s4_r3)
+        self.ui.pushButton_80.clicked.connect(self.bw_s6_r3)
+        self.ui.pushButton_81.clicked.connect(self.bw_s8_r3)
+        self.ui.pushButton_79.clicked.connect(self.bw_s10_r3)
 
         # setting up timer
         self.timer = QTimer()
@@ -84,7 +84,7 @@ class InteractionWindow:
             "name": "",
             "score": 0
         }
-        self.players = json.loads(open('leaderboard.json').read())
+        self.players = json.loads(open('/home/dti/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/leaderboard.json').read())
         self.mainWindow.updateLeaderboard(self.players)
 
     def getWidget(self):

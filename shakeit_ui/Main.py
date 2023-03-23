@@ -6,6 +6,8 @@ from shakeit_ui.Interaction import InteractionWindow
 from shakeit_ui.KeyrockAPI import KeyrockAPI
 
 #ROS 2
+import rclpy
+from rclpy import Future
 from rclpy.node import Node
 from rclpy.action.server import ServerGoalHandle
 from shakeit_interfaces.action import FreeObjects, Trigger
@@ -64,6 +66,10 @@ class MainWindow:
         self.ui.radioManual.toggled.connect(self.manual)
         self.ui.radioBoard.toggled.connect(self.leaderboard)
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
+
+        self.init_anyfeeder()
+
+        self.show()
 
     def login(self):
         username = self.ui.textUsername.text()
@@ -132,55 +138,58 @@ class MainWindow:
 
     def init_anyfeeder(self):
         future = self.init_feeder_client.call_async(StandardInput.Request())
-        self.rclpy.spin_until_future_complete(self, future)
-        self.get_logger().info("Anyfeeder initialized")
+        rclpy.spin_until_future_complete(self.node, future)
+        self.node.get_logger().info("Anyfeeder initialized")
 
     def add_objects(self):
         request = StandardInput.Request()
         request.parameters.repetitions = 5
         request.parameters.speed = 6
         future = self.add_objects_client.call_async(request)
-        self.rclpy.spin_until_future_complete(self, future)
-        self.get_logger().info("Objects added")
+        rclpy.spin_until_future_complete(self.node, future)
+        self.node.get_logger().info("Objects added")
 
     def forward_objects(self, repetitions, speed):
         request = StandardInput.Request()
         request.parameters.repetitions = repetitions
         request.parameters.speed = speed
         future = self.forward_objects_client.call_async(request)
-        self.rclpy.spin_until_future_complete(self, future)
-        self.get_logger().info("Objects feed forward")
+        rclpy.spin_until_future_complete(self.node, future)
+        self.node.get_logger().info("Objects feed forward")
 
     def flip_objects(self, repetitions, speed):
         request = StandardInput.Request()
         request.parameters.repetitions = repetitions
         request.parameters.speed = speed
         future = self.flip_objects_client.call_async(request)
-        self.rclpy.spin_until_future_complete(self, future)
-        self.get_logger().info("Objects flipped")
+        rclpy.spin_until_future_complete(self.node, future)
+        self.node.get_logger().info("Objects flipped")
 
     def backward_objects(self, repetitions, speed):
         request = StandardInput.Request()
         request.parameters.repetitions = repetitions
         request.parameters.speed = speed
         future = self.backward_objects_client.call_async(request)
-        self.rclpy.spin_until_future_complete(self, future)
-        self.get_logger().info("Objects feed backward")
+        rclpy.spin_until_future_complete(self.node, future)
+        self.node.get_logger().info("Objects feed backward")
 
     def purge_objects(self):
         future = self.purge_objects_client.call_async(StandardInput.Request())
-        self.rclpy.spin_until_future_complete(self, future)
-        self.get_logger().info("Objects purged")
+        rclpy.spin_until_future_complete(self.node, future)
+        self.node.get_logger().info("Objects purged")
 
-    async def execute_callback(self):
-        self.get_logger().info(f"Executing goal...")
+    def execute_callback(self):
+        self.node.get_logger().info(f"Executing goal...")
         result = Trigger.Result()
         result.success = False
 
+        print("Line 186")
+
         res = self.free_objects_client.send_goal(FreeObjects.Goal())
+        print("line 189")
         if res.status != GoalStatus.STATUS_SUCCEEDED:
             msg = f"[GET_FREE_OBJECTS] Response: {res}"
-            self.get_logger().error(msg)
+            self.node.get_logger().error(msg)
             result.message = msg
             return result
         free_objects: FreeObjects.Result = res.result
@@ -203,7 +212,7 @@ class MainWindow:
         return result
 
     def feedback_callback(self, feedback):
-        self.get_logger().info(f"Received feedback: {feedback.feedback.message}")
+        self.node.get_logger().info(f"Received feedback: {feedback.feedback.message}")
 
 # if __name__ == '__main__':
 #     app = QApplication(sys.argv)
