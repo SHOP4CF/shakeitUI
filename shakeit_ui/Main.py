@@ -9,9 +9,7 @@ from shakeit_ui.KeyrockAPI import KeyrockAPI
 import rclpy
 from rclpy import Future
 from rclpy.node import Node
-from rclpy.action.server import ServerGoalHandle
 from shakeit_interfaces.action import FreeObjects, Trigger
-from shakeit_interfaces.action import Pick
 from shakeit_core.util import create_action_client_wait_for_server, create_client_wait_for_service
 from action_msgs.msg import GoalStatus
 from anyfeeder_interfaces.srv import StandardInput
@@ -36,10 +34,8 @@ class MainWindow:
         self.backward_objects_client = create_client_wait_for_service(
             self.node, StandardInput, 'feeder/backward')
 
-        self.pick_action_client = create_action_client_wait_for_server(
-            self.node, Pick, 'kuka_adapter/pick')
-        self.free_objects_client = create_action_client_wait_for_server(
-            self.node, FreeObjects, 'sensopart_adapter/free_objects')
+        self.trigger_action_client = create_action_client_wait_for_server(
+            self.node, Trigger, 'robot_camera_test_node/test')
 
         # setting up keyrock #
         self.keyrockAPI = KeyrockAPI()
@@ -136,6 +132,22 @@ class MainWindow:
     def show(self):
         self.main_win.show()
 
+    def trigger_sensopart_camera(self):
+        res = self.trigger_action_client.send_goal(Trigger.Goal())
+
+        # TODO: Test if success is set True when robot pick-up an object
+        # Looks like that in code in robot_camera_test_node
+        if res.success != True:
+            self.node.get_logger().info("Nothing picked-up!")
+            self.node.get_logger().info(f"Received feedback: {res.message}")
+            self.node.get_logger().info(f"Received feedback: {res.feedback}")
+        else:
+            self.node.get_logger().info("Picked-up an object!")
+            self.node.get_logger().info(f"Received feedback: {res.message}")
+            self.node.get_logger().info(f"Received feedback: {res.feedback}")
+            self.interactionui.pickupSuccess()
+
+
     def init_anyfeeder(self):
         future = self.init_feeder_client.call_async(StandardInput.Request())
         rclpy.spin_until_future_complete(self.node, future)
@@ -177,42 +189,6 @@ class MainWindow:
         future = self.purge_objects_client.call_async(StandardInput.Request())
         rclpy.spin_until_future_complete(self.node, future)
         self.node.get_logger().info("Objects purged")
-
-    def execute_callback(self):
-        self.node.get_logger().info(f"Executing goal...")
-        result = Trigger.Result()
-        result.success = False
-
-        print("Line 186")
-
-        res = self.free_objects_client.send_goal(FreeObjects.Goal())
-        print("line 189")
-        if res.status != GoalStatus.STATUS_SUCCEEDED:
-            msg = f"[GET_FREE_OBJECTS] Response: {res}"
-            self.node.get_logger().error(msg)
-            result.message = msg
-            return result
-        free_objects: FreeObjects.Result = res.result
-        if free_objects.count == 0:
-            result.message = "No objects to pick!"
-            return result
-
-        pick_pose = free_objects.poses[0]
-        
-        goal = Pick.Goal()
-        goal.pose = pick_pose
-        res = self.pick_action_client.send_goal(goal, feedback_callback=self.feedback_callback)
-
-        # TODO: Call pickupSuccess from interaction see munal_node for if statement
-        response: Pick.Result = res.result
-        if res.status == GoalStatus.STATUS_SUCCEEDED:
-            self.interactionui.pickupSuccess()
-        result.success = response.success
-        result.message = response.message
-        return result
-
-    def feedback_callback(self, feedback):
-        self.node.get_logger().info(f"Received feedback: {feedback.feedback.message}")
 
 # if __name__ == '__main__':
 #     app = QApplication(sys.argv)

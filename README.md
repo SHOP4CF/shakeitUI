@@ -173,3 +173,10 @@ python -m PyQt5.uic.pyuic -x MainUI.ui -o MainUI.py
 ```
 
 This command overwrites the old ```MainUI.py```, so as a general rule changes should never be made to ```MainUI.py```. Instead visual changes should be made by QtDesigner and functunality should be in ```Main.py```.
+
+### Using with ROS2 package
+Edit the paths to the images by doing a simple find and replace
+Find: ```resources```
+Replace: ```src/shakeit_ui/resource```
+
+Do this in the ```InteractionUI.py``` and ```MainUI.py``` file

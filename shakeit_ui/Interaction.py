@@ -200,43 +200,43 @@ class InteractionWindow:
 
     def fw_s2_r1(self):
         self.mainWindow.forward_objects(1, 2)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
     
     def fw_s4_r1(self):
         self.mainWindow.forward_objects(1, 4)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def fw_s6_r1(self):
         self.mainWindow.forward_objects(1, 6)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def fw_s8_r1(self):
         self.mainWindow.forward_objects(1, 8)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def fw_s10_r1(self):
         self.mainWindow.forward_objects(1, 10)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def fw_s2_r3(self):
         self.mainWindow.forward_objects(3, 2)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
     
     def fw_s4_r3(self):
         self.mainWindow.forward_objects(3, 4)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def fw_s6_r3(self):
         self.mainWindow.forward_objects(3, 6)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def fw_s8_r3(self):
         self.mainWindow.forward_objects(3, 8)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def fw_s10_r3(self):
         self.mainWindow.forward_objects(3, 10)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     #
     # FLIP CMDs
@@ -244,43 +244,43 @@ class InteractionWindow:
 
     def flip_s2_r1(self):
         self.mainWindow.flip_objects(1, 2)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
     
     def flip_s4_r1(self):
         self.mainWindow.flip_objects(1, 4)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def flip_s6_r1(self):
         self.mainWindow.flip_objects(1, 6)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def flip_s8_r1(self):
         self.mainWindow.flip_objects(1, 8)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def flip_s10_r1(self):
         self.mainWindow.flip_objects(1, 10)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def flip_s2_r3(self):
         self.mainWindow.flip_objects(3, 2)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
     
     def flip_s4_r3(self):
         self.mainWindow.flip_objects(3, 4)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def flip_s6_r3(self):
         self.mainWindow.flip_objects(3, 6)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def flip_s8_r3(self):
         self.mainWindow.flip_objects(3, 8)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def flip_s10_r3(self):
         self.mainWindow.flip_objects(3, 10)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     #
     # BACWARDS CMDs
@@ -288,40 +288,40 @@ class InteractionWindow:
 
     def bw_s2_r1(self):
         self.mainWindow.backward_objects(1, 2)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
     
     def bw_s4_r1(self):
         self.mainWindow.backward_objects(1, 4)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def bw_s6_r1(self):
         self.mainWindow.backward_objects(1, 6)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def bw_s8_r1(self):
         self.mainWindow.backward_objects(1, 8)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def bw_s10_r1(self):
         self.mainWindow.backward_objects(1, 10)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def bw_s2_r3(self):
         self.mainWindow.backward_objects(3, 2)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
     
     def bw_s4_r3(self):
         self.mainWindow.backward_objects(3, 4)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def bw_s6_r3(self):
         self.mainWindow.backward_objects(3, 6)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def bw_s8_r3(self):
         self.mainWindow.backward_objects(3, 8)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
 
     def bw_s10_r3(self):
         self.mainWindow.backward_objects(3, 10)
-        self.mainWindow.execute_callback()
+        self.mainWindow.trigger_sensopart_camera()
