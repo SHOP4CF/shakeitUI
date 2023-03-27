@@ -132,21 +132,41 @@ class MainWindow:
     def show(self):
         self.main_win.show()
 
-    def trigger_sensopart_camera(self):
-        res = self.trigger_action_client.send_goal(Trigger.Goal())
+    def close_application(self):
+        # TODO: Close application correctly
+        self.node.get_logger().info('application closing!')
 
+    def trigger_sensopart_camera(self):
+        self.trigger_action_future = self.trigger_action_client.send_goal_async(Trigger.Goal(), feedback_callback=self.feedback_callback)
+        self.trigger_action_future.add_done_callback(self.trigger_response_callback)
+    
+    def trigger_response_callback(self, future):
+        trigger_handle = future.result()
+        if not trigger_handle.accepted:
+            self.node.get_logger().info('Goal rejected :(')
+            return
+
+        self.node.get_logger().info('Goal accepted :)')
+
+        self._get_result_future = trigger_handle.get_result_async()
+        self._get_result_future.add_done_callback(self.get_result_callback)
+
+    def get_result_callback(self, future):
+        result = future.result().result
+        self.node.get_logger().info('Result: {0}'.format(result.message))
         # TODO: Test if success is set True when robot pick-up an object
         # Looks like that in code in robot_camera_test_node
-        if res.success != True:
-            self.node.get_logger().info("Nothing picked-up!")
-            self.node.get_logger().info(f"Received feedback: {res.message}")
-            self.node.get_logger().info(f"Received feedback: {res.feedback}")
-        else:
+        if result.success == True:
             self.node.get_logger().info("Picked-up an object!")
-            self.node.get_logger().info(f"Received feedback: {res.message}")
-            self.node.get_logger().info(f"Received feedback: {res.feedback}")
+            self.node.get_logger().info(f"Received feedback: {result.message}")
             self.interactionui.pickupSuccess()
+        else:
+            self.node.get_logger().info("Nothing picked-up!")
+            self.node.get_logger().info(f"Received feedback: {result.message}")            
 
+    def feedback_callback(self, feedback_msg):
+        feedback = feedback_msg.feedback
+        self.node.get_logger().info('Received feedback: {0}'.format(feedback.feedback))
 
     def init_anyfeeder(self):
         future = self.init_feeder_client.call_async(StandardInput.Request())

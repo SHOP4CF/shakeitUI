@@ -62,16 +62,16 @@ class InteractionWindow:
         self.ui.pushButton_39.clicked.connect(self.flip_s10_r3)
 
         # btn shake backward
-        self.ui.pushButton_82.clicked.connect(self.bw_s2_r1)
-        self.ui.pushButton_75.clicked.connect(self.bw_s4_r1)
-        self.ui.pushButton_78.clicked.connect(self.bw_s6_r1)
-        self.ui.pushButton_73.clicked.connect(self.bw_s8_r1)
-        self.ui.pushButton_77.clicked.connect(self.bw_s10_r1)
-        self.ui.pushButton_76.clicked.connect(self.bw_s2_r3)
-        self.ui.pushButton_74.clicked.connect(self.bw_s4_r3)
-        self.ui.pushButton_80.clicked.connect(self.bw_s6_r3)
-        self.ui.pushButton_81.clicked.connect(self.bw_s8_r3)
-        self.ui.pushButton_79.clicked.connect(self.bw_s10_r3)
+        self.ui.pushButton_76.clicked.connect(self.bw_s2_r1)
+        self.ui.pushButton_78.clicked.connect(self.bw_s4_r1)
+        self.ui.pushButton_74.clicked.connect(self.bw_s6_r1)
+        self.ui.pushButton_81.clicked.connect(self.bw_s8_r1)
+        self.ui.pushButton_82.clicked.connect(self.bw_s10_r1)
+        self.ui.pushButton_73.clicked.connect(self.bw_s2_r3)
+        self.ui.pushButton_79.clicked.connect(self.bw_s4_r3)
+        self.ui.pushButton_77.clicked.connect(self.bw_s6_r3)
+        self.ui.pushButton_80.clicked.connect(self.bw_s8_r3)
+        self.ui.pushButton_75.clicked.connect(self.bw_s10_r3)
 
         # setting up timer
         self.timer = QTimer()
@@ -144,7 +144,7 @@ class InteractionWindow:
                         break
                     i = i + 1
 
-        json.dump(self.players, open('leaderboard.json', 'w'))
+        json.dump(self.players, open('/home/dti/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/leaderboard.json', 'w'))
 
         # Updating leaderboard #
         for i, p in enumerate(self.players):
@@ -185,6 +185,13 @@ class InteractionWindow:
             "score": 0
         }
 
+    #
+    # Training + dispense
+    #
+
+    def dispense(self):
+        self.mainWindow.add_objects()
+
     def trainforward(self):
         self.mainWindow.forward_objects(2, 6)
 
@@ -199,7 +206,8 @@ class InteractionWindow:
     #
 
     def fw_s2_r1(self):
-        self.mainWindow.forward_objects(1, 2)
+        self.dispense()
+        #self.mainWindow.forward_objects(1, 2)
         self.mainWindow.trigger_sensopart_camera()
     
     def fw_s4_r1(self):
