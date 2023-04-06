@@ -1,14 +1,23 @@
 import sys
+from threading import Timer
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
 from MainUI import Ui_MainWindow
 from Interaction import InteractionWindow
 from KeyrockAPI import KeyrockAPI
+from User import LoggedInUser
+
+
+def endAccessTime(api, user, mainwin):
+    newUser = api.refreshToken(user)
+    mainwin.setUser(newUser)
+    print("new access token gotten")
+    mainwin.newAccessTimer()
 
 
 class MainWindow:
     def __init__(self):
-        # setting up keyrock #
+        # setting up keyrock
         self.keyrockAPI = KeyrockAPI()
 
         # setting up UI #
@@ -34,23 +43,28 @@ class MainWindow:
         self.ui.radioBoard.toggled.connect(self.leaderboard)
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
 
+        # logged in user info
+        self.currentUser = LoggedInUser()
+        self.accessTimer = None
+
+    def setUser(self, user):
+        self.currentUser = user
+
+    def newAccessTimer(self):
+        self.accessTimer = Timer(3500, endAccessTime, args=(self.keyrockAPI, self.currentUser, self))
+        self.accessTimer.start()
+
     def login(self):
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
         # authenticate user using keyrock
-        result, accessToken = self.keyrockAPI.authenticateUser(username, password)
+        result, self.currentUser = self.keyrockAPI.authenticateUser(username, password, self.currentUser)
 
         if result:
             # success
-            userInfo = self.keyrockAPI.getUserInfo(accessToken)
-
-            try:
-                self.ui.labelRole.setText(userInfo['roles'][0]['name'])
-            except:
-                self.ui.labelRole.setText("")
-
-            self.ui.labelUsername_2.setText(userInfo['username'])
+            self.ui.labelRole.setText(self.currentUser.role)
+            self.ui.labelUsername_2.setText(self.currentUser.username)
 
             # change to mainPage
             self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
@@ -62,14 +76,20 @@ class MainWindow:
             self.ui.textUsername.clear()
             self.ui.labelLoginError.hide()
 
+            self.newAccessTimer()
+
         else:
             # failure
             self.ui.labelLoginError.show()
             self.ui.textPassword.clear()
             self.ui.textUsername.clear()
 
+            self.currentUser = LoggedInUser()
+
     def logout(self):
         self.ui.stackedLogin.setCurrentWidget(self.ui.loginPage)
+        self.currentUser = LoggedInUser()
+        self.accessTimer.cancel()
 
     def ai(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)

@@ -37,7 +37,7 @@ class KeyrockAPI:
 
         return userIDs
 
-    def authenticateUser(self, username, password):
+    def authenticateUser(self, username, password, user):
         url = "https://localhost:443/oauth2/token"
         d = {'username': username,
              'password': password,
@@ -48,16 +48,35 @@ class KeyrockAPI:
         rAuth = requests.post(url, data=d, headers=h, verify=False)
 
         if rAuth.status_code == 200:
-            accessToken = json.loads(rAuth.text)['access_token']
+            i = json.loads(rAuth.text)
             # check if user is authorized in application
-            if self.getUserInfo(accessToken)['id'] in self.getAuthorizedUsers():
-                return True, accessToken
+            user.updateAccess(i['access_token'], json.loads(rAuth.text)['refresh_token'])
+            user = self.getUserInfo(user)
+            if user.id in self.getAuthorizedUsers():
+                return True, user
             else:
-                return False, None
-        else:
-            return False, None
+                return False, user
+        return False, user
 
-    def getUserInfo(self, aToken):
-        url = "https://localhost:443/user?access_token=" + aToken
+    def getUserInfo(self, user):
+        url = "https://localhost:443/user?access_token=" + user.accessToken
         rUserInfo = requests.get(url, verify=False)
-        return json.loads(rUserInfo.text)
+        i = json.loads(rUserInfo.text)
+        try:
+            user.updateInfo(i['username'], i['roles'][0]['name'], i['id'])
+        except:
+            user.updateInfo(i['username'], " ", i['id'])
+        return user
+
+    def refreshToken(self, user):
+        url = "https://localhost:443/oauth2/token"
+        d = {'refresh_token': user.refreshToken,
+             'grant_type': 'refresh_token'}
+        h = {'Accept': 'application/json',
+             'Authorization': 'Basic ' + self.clientInfoBase64,
+             'Content-Type': 'application/x-www-form-urlencoded'}
+        rRefreshToken = requests.post(url, data=d, headers=h, verify=False)
+
+        i = json.loads(rRefreshToken.text)
+        user.updateAccess(i['access_token'], i['refresh_token'])
+        return user
