@@ -1,10 +1,18 @@
 import sys
+from threading import Timer
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
 from MainUI import Ui_MainWindow
 from Interaction import InteractionWindow
 from KeyrockAPI import KeyrockAPI
 from User import LoggedInUser
+
+
+def endAccessTime(api, user, mainwin):
+    newUser = api.refreshToken(user)
+    mainwin.setUser(newUser)
+    print("new access token gotten")
+    mainwin.newAccessTimer()
 
 
 class MainWindow:
@@ -37,6 +45,14 @@ class MainWindow:
 
         # logged in user info
         self.currentUser = LoggedInUser()
+        self.accessTimer = None
+
+    def setUser(self, user):
+        self.currentUser = user
+
+    def newAccessTimer(self):
+        self.accessTimer = Timer(3500, endAccessTime, args=(self.keyrockAPI, self.currentUser, self))
+        self.accessTimer.start()
 
     def login(self):
         username = self.ui.textUsername.text()
@@ -60,6 +76,8 @@ class MainWindow:
             self.ui.textUsername.clear()
             self.ui.labelLoginError.hide()
 
+            self.newAccessTimer()
+
         else:
             # failure
             self.ui.labelLoginError.show()
@@ -71,6 +89,7 @@ class MainWindow:
     def logout(self):
         self.ui.stackedLogin.setCurrentWidget(self.ui.loginPage)
         self.currentUser = LoggedInUser()
+        self.accessTimer.cancel()
 
     def ai(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)

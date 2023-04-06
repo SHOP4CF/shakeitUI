@@ -71,7 +71,7 @@ class KeyrockAPI:
     def refreshToken(self, user):
         url = "https://localhost:443/oauth2/token"
         d = {'refresh_token': user.refreshToken,
-             'grant_type': 'password'}
+             'grant_type': 'refresh_token'}
         h = {'Accept': 'application/json',
              'Authorization': 'Basic ' + self.clientInfoBase64,
              'Content-Type': 'application/x-www-form-urlencoded'}
