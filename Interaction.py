@@ -62,10 +62,15 @@ class InteractionWindow:
 
     def makeCountDownThread(self):
         self.thread = QThread()
-        self.countdown = CountdownThread(60, self)
+        self.countdown = CountdownThread(3, self)
         self.countdown.moveToThread(self.thread)
+
         self.thread.started.connect(self.countdown.run)
         self.countdown.finished.connect(self.timeOut)
+        self.countdown.finished.connect(self.thread.quit)
+        self.countdown.finished.connect(self.countdown.deleteLater)
+        self.thread.finished.connect(self.thread.deleteLater)
+
         self.thread.start()
 
     def startup(self):
