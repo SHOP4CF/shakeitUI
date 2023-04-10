@@ -104,7 +104,12 @@ class Ui_Interaction(object):
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-color:rgb(237, 52, 83)\n"
+"    background-color:rgb(237, 52, 83);\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"    background-color: rgb(156, 156, 156);\n"
+"    border: 1px solid rgb(156, 156, 156);\n"
 "}")
         self.buttonStart.setObjectName("buttonStart")
         self.horizontalLayout_2.addWidget(self.buttonStart)
@@ -1365,7 +1370,7 @@ class Ui_Interaction(object):
         self.stackedpages.addWidget(self.page4board)
 
         self.retranslateUi(Interaction)
-        self.stackedpages.setCurrentIndex(3)
+        self.stackedpages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Interaction)
 
     def retranslateUi(self, Interaction):

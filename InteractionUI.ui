@@ -40,7 +40,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page1welcome">
     <property name="styleSheet">
@@ -286,7 +286,12 @@ padding: 20px;</string>
 }
 
 QPushButton:hover{
-	background-color:rgb(237, 52, 83)
+	background-color:rgb(237, 52, 83);
+}
+
+QPushButton:disabled{
+	background-color: rgb(156, 156, 156);
+	border: 1px solid rgb(156, 156, 156);
 }</string>
             </property>
             <property name="text">
