@@ -36,6 +36,7 @@ class MainWindow:
         # connecting buttons
         self.ui.buttonLogin.clicked.connect(self.login)
         self.ui.buttonLogout.clicked.connect(self.logout)
+        self.ui.buttonSettings.clicked.connect(self.aisettings)
 
         # connecting radiobuttons
         self.ui.radioAI.toggled.connect(self.ai)
@@ -93,6 +94,12 @@ class MainWindow:
 
     def authorize(self, action, resource):
         return self.keyrockAPI.authorizeUser(self.currentUser, action, resource)
+
+    def aisettings(self):
+        if self.authorize("POST", "/ai"):
+            print("you may change the settings")
+        else:
+            print("you may not change the settings")
 
     def ai(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
