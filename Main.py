@@ -91,6 +91,9 @@ class MainWindow:
         self.currentUser = LoggedInUser()
         self.accessTimer.cancel()
 
+    def authorize(self, action, resource):
+        return self.keyrockAPI.authorizeUser(self.currentUser, action, resource)
+
     def ai(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
 
