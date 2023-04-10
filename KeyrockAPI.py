@@ -58,6 +58,39 @@ class KeyrockAPI:
                 return False, user
         return False, user
 
+    def authorizeUser(self, user, action, resource):
+        subtoken = self.createSubjectToken()
+
+        # List of users and their roles
+        url = "https://localhost:443/v1/applications/{}/users".format(self.application["clientID"])
+        h = {'x-Auth-token': subtoken}
+        rUsers = requests.get(url, headers=h, verify=False)
+        users = json.loads(rUsers.content)['role_user_assignments']
+
+        # Find the roles of the user
+        roles = []
+        for u in users:
+            if u['user_id'] == user.id:
+                roles.append(u['role_id'])
+
+        # Find permissions of each role
+        allowedAccess = []
+        for role in roles:
+            url2 = "https://localhost:443/v1/applications/{}/roles/{}/permissions".format(self.application["clientID"], role)
+            h2 = {'x-Auth-token': subtoken}
+            rPermission = requests.get(url2, headers=h2, verify=False)
+            permissions = json.loads(rPermission.content)["role_permission_assignments"]
+
+            for permission in permissions:
+                if permission['action'] is not None and permission['resource'] is not None:
+                    allowedAccess.append({'action': permission['action'], 'resource': permission['resource']})
+
+        # Check if user has permission to do action on resource
+        for a in allowedAccess:
+            if a['action'] == action and a['resource'] == resource:
+                return True
+        return False
+
     def getUserInfo(self, user):
         url = "https://localhost:443/user?access_token=" + user.accessToken
         rUserInfo = requests.get(url, verify=False)
