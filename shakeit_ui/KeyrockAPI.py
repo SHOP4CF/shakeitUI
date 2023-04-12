@@ -7,7 +7,7 @@ class KeyrockAPI:
 
     def __init__(self):
         # GET CLIENT INFO #
-        self.application = json.loads(open('/home/dti/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/applicationInfo.json').read())
+        self.application = json.loads(open('/home/jeda/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/applicationInfo.json').read())
 
         # Base 64 encoding client info
         clientInfo = self.application["clientID"] + ":" + self.application["clientSecret"]
@@ -37,7 +37,7 @@ class KeyrockAPI:
 
         return userIDs
 
-    def authenticateUser(self, username, password):
+    def authenticateUser(self, username, password, user):
         url = "https://localhost:443/oauth2/token"
         d = {'username': username,
              'password': password,
@@ -48,16 +48,68 @@ class KeyrockAPI:
         rAuth = requests.post(url, data=d, headers=h, verify=False)
 
         if rAuth.status_code == 200:
-            accessToken = json.loads(rAuth.text)['access_token']
+            i = json.loads(rAuth.text)
             # check if user is authorized in application
-            if self.getUserInfo(accessToken)['id'] in self.getAuthorizedUsers():
-                return True, accessToken
+            user.updateAccess(i['access_token'], json.loads(rAuth.text)['refresh_token'])
+            user = self.getUserInfo(user)
+            if user.id in self.getAuthorizedUsers():
+                return True, user
             else:
-                return False, None
-        else:
-            return False, None
+                return False, user
+        return False, user
 
-    def getUserInfo(self, aToken):
-        url = "https://localhost:443/user?access_token=" + aToken
+    def authorizeUser(self, user, action, resource):
+        subtoken = self.createSubjectToken()
+
+        # List of users and their roles
+        url = "https://localhost:443/v1/applications/{}/users".format(self.application["clientID"])
+        h = {'x-Auth-token': subtoken}
+        rUsers = requests.get(url, headers=h, verify=False)
+        users = json.loads(rUsers.content)['role_user_assignments']
+
+        # Find the roles of the user
+        roles = []
+        for u in users:
+            if u['user_id'] == user.id:
+                roles.append(u['role_id'])
+
+        # Find permissions of each role
+        allowedAccess = []
+        for role in roles:
+            url2 = "https://localhost:443/v1/applications/{}/roles/{}/permissions".format(self.application["clientID"], role)
+            h2 = {'x-Auth-token': subtoken}
+            rPermission = requests.get(url2, headers=h2, verify=False)
+            permissions = json.loads(rPermission.content)["role_permission_assignments"]
+
+            for permission in permissions:
+                if permission['action'] is not None and permission['resource'] is not None:
+                    allowedAccess.append({'action': permission['action'], 'resource': permission['resource']})
+
+        # Check if user has permission to do action on resource
+        for a in allowedAccess:
+            if a['action'] == action and a['resource'] == resource:
+                return True
+        return False
+
+    def getUserInfo(self, user):
+        url = "https://localhost:443/user?access_token=" + user.accessToken
         rUserInfo = requests.get(url, verify=False)
-        return json.loads(rUserInfo.text)
+        i = json.loads(rUserInfo.text)
+        try:
+            user.updateInfo(i['username'], i['roles'][0]['name'], i['id'])
+        except:
+            user.updateInfo(i['username'], " ", i['id'])
+        return user
+
+    def refreshToken(self, user):
+        url = "https://localhost:443/oauth2/token"
+        d = {'refresh_token': user.refreshToken,
+             'grant_type': 'refresh_token'}
+        h = {'Accept': 'application/json',
+             'Authorization': 'Basic ' + self.clientInfoBase64,
+             'Content-Type': 'application/x-www-form-urlencoded'}
+        rRefreshToken = requests.post(url, data=d, headers=h, verify=False)
+
+        i = json.loads(rRefreshToken.text)
+        user.updateAccess(i['access_token'], i['refresh_token'])
+        return user

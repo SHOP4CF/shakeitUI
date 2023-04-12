@@ -1,22 +1,33 @@
 import sys
+from threading import Timer, Thread
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
 from shakeit_ui.MainUI import Ui_MainWindow
 from shakeit_ui.Interaction import InteractionWindow
 from shakeit_ui.KeyrockAPI import KeyrockAPI
+from shakeit_ui.User import LoggedInUser
 
 #ROS 2
 import rclpy
 from rclpy import Future
 from rclpy.node import Node
+from rclpy.action import ActionClient
 from shakeit_interfaces.action import FreeObjects, Trigger
 from shakeit_core.util import create_action_client_wait_for_server, create_client_wait_for_service
 from action_msgs.msg import GoalStatus
 from anyfeeder_interfaces.srv import StandardInput
 
+from action_tutorials_interfaces.action import Fibonacci
+
+def endAccessTime(api, user, mainwin):
+    newUser = api.refreshToken(user)
+    mainwin.setUser(newUser)
+    print("new access token gotten")
+    mainwin.newAccessTimer()
 
 class MainWindow:
     def __init__(self, node: Node):
+        super().__init__()
         # setting up ros2 stuff #
         self.node = node
         # TODO: Maybe look into service names, remap names in launch file
@@ -36,9 +47,10 @@ class MainWindow:
 
         self.trigger_action_client = create_action_client_wait_for_server(
             self.node, Trigger, 'robot_camera_test_node/test')
+        self._action_client = ActionClient(self.node, Fibonacci, 'fibonacci')
 
         # setting up keyrock #
-        self.keyrockAPI = KeyrockAPI()
+        # self.keyrockAPI = KeyrockAPI()
 
         # setting up UI #
         self.main_win = QMainWindow()
@@ -56,6 +68,7 @@ class MainWindow:
         # connecting buttons
         self.ui.buttonLogin.clicked.connect(self.login)
         self.ui.buttonLogout.clicked.connect(self.logout)
+        self.ui.buttonSettings.clicked.connect(self.aisettings)
 
         # connecting radiobuttons
         self.ui.radioAI.toggled.connect(self.ai)
@@ -63,37 +76,44 @@ class MainWindow:
         self.ui.radioBoard.toggled.connect(self.leaderboard)
         self.ui.radioInteraction.toggled.connect(self.startInteraction)
 
+        # logged in user info
+        self.currentUser = LoggedInUser()
+        self.accessTimer = None
+
         self.init_anyfeeder()
 
         self.show()
+
+    def setUser(self, user):
+        self.currentUser = user
+
+    # def newAccessTimer(self):
+    #     self.accessTimer = Timer(3500, endAccessTime, args=(self.keyrockAPI, self.currentUser, self))
+    #     self.accessTimer.start()
 
     def login(self):
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
-        # # authenticate user using keyrock
-        # result, accessToken = self.keyrockAPI.authenticateUser(username, password)
+        # authenticate user using keyrock
+        # result, self.currentUser = self.keyrockAPI.authenticateUser(username, password, self.currentUser)
 
         # if result:
         #     # success
-        #     userInfo = self.keyrockAPI.getUserInfo(accessToken)
-
-        #     try:
-        #         self.ui.labelRole.setText(userInfo['roles'][0]['name'])
-        #     except:
-        #         self.ui.labelRole.setText("")
-
-        #     self.ui.labelUsername_2.setText(userInfo['username'])
+        #     self.ui.labelRole.setText(self.currentUser.role)
+        #     self.ui.labelUsername_2.setText(self.currentUser.username)
 
         # change to mainPage
         self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
         self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
         self.ui.radioAI.toggle()
 
-        #     # clear the login page
-        #     self.ui.textPassword.clear()
-        #     self.ui.textUsername.clear()
-        #     self.ui.labelLoginError.hide()
+        # clear the login page
+        self.ui.textPassword.clear()
+        self.ui.textUsername.clear()
+        self.ui.labelLoginError.hide()
+
+        #     self.newAccessTimer()
 
         # else:
         #     # failure
@@ -101,8 +121,21 @@ class MainWindow:
         #     self.ui.textPassword.clear()
         #     self.ui.textUsername.clear()
 
+        #     self.currentUser = LoggedInUser()
+
     def logout(self):
         self.ui.stackedLogin.setCurrentWidget(self.ui.loginPage)
+        self.currentUser = LoggedInUser()
+        self.accessTimer.cancel()
+
+    def authorize(self, action, resource):
+        return self.keyrockAPI.authorizeUser(self.currentUser, action, resource)
+
+    def aisettings(self):
+        if self.authorize("POST", "/ai"):
+            print("you may change the settings")
+        else:
+            print("you may not change the settings")
 
     def ai(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageAI)
@@ -117,8 +150,8 @@ class MainWindow:
         for i, p in enumerate(players):
             if i > 9:
                 break
-            exec("self.ui.name{}.setText(p['name'])".format(i+1))
-            exec("self.ui.pickups{}.setText('{} pickups')".format(i+1, p['score']))
+            exec("self.ui.name{}.setText(p['name'])".format(i + 1))
+            exec("self.ui.pickups{}.setText('{} pickups')".format(i + 1, p['score']))
 
     def startInteraction(self):
         self.ui.stackedLogin.setCurrentWidget(self.interactionui.getWidget())
@@ -136,11 +169,16 @@ class MainWindow:
         # TODO: Close application correctly
         self.node.get_logger().info('application closing!')
 
+    def trigger_cam(self):
+        # TODO: set a bool to enable thread call only if not called before
+        # set bool end of triggger camera callback
+        thread = Thread(target=self.trigger_sensopart_camera)
+        thread.start()
+        thread.join()
+
     def trigger_sensopart_camera(self):
-        self.trigger_action_future = self.trigger_action_client.send_goal_async(Trigger.Goal(), feedback_callback=self.feedback_callback)
-        self.trigger_action_future.add_done_callback(self.trigger_response_callback)
-    
-    def trigger_response_callback(self, future):
+        future = self.trigger_action_client.send_goal_async(Trigger.Goal(), feedback_callback=self.feedback_callback)
+        rclpy.spin_until_future_complete(self.node, future)
         trigger_handle = future.result()
         if not trigger_handle.accepted:
             self.node.get_logger().info('Goal rejected :(')
@@ -148,11 +186,9 @@ class MainWindow:
 
         self.node.get_logger().info('Goal accepted :)')
 
-        self._get_result_future = trigger_handle.get_result_async()
-        self._get_result_future.add_done_callback(self.get_result_callback)
-
-    def get_result_callback(self, future):
-        result = future.result().result
+        result_future = trigger_handle.get_result_async()
+        rclpy.spin_until_future_complete(self.node, result_future)
+        result: Trigger.Result() = result_future.result().result
         self.node.get_logger().info('Result: {0}'.format(result.message))
         # TODO: Test if success is set True when robot pick-up an object
         # Looks like that in code in robot_camera_test_node
@@ -162,7 +198,9 @@ class MainWindow:
             self.interactionui.pickupSuccess()
         else:
             self.node.get_logger().info("Nothing picked-up!")
-            self.node.get_logger().info(f"Received feedback: {result.message}")            
+            self.node.get_logger().info(f"Received feedback: {result.message}")
+
+        # self.interactionui.set_enable_all_buttons(True)         
 
     def feedback_callback(self, feedback_msg):
         feedback = feedback_msg.feedback

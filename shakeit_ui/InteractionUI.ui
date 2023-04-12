@@ -40,7 +40,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page1welcome">
     <property name="styleSheet">
@@ -269,6 +269,9 @@ padding: 20px;</string>
               <height>16777215</height>
              </size>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 	font: 42pt &quot;Calibri&quot;;
@@ -283,7 +286,12 @@ padding: 20px;</string>
 }
 
 QPushButton:hover{
-	background-color:rgb(237, 52, 83)
+	background-color:rgb(237, 52, 83);
+}
+
+QPushButton:disabled{
+	background-color: rgb(156, 156, 156);
+	border: 1px solid rgb(156, 156, 156);
 }</string>
             </property>
             <property name="text">
@@ -472,6 +480,9 @@ QPushButton:hover{
        <height>100</height>
       </size>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(102, 102, 102);
 border-radius: 15px;
@@ -608,6 +619,9 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
            <layout class="QVBoxLayout" name="verticalLayout_5">
             <item>
              <widget class="QPushButton" name="buttonforward">
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/forwardicon.png);</string>
               </property>
@@ -664,6 +678,9 @@ qproperty-alignment: AlignCenter;</string>
                 <height>0</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/flipicon.png);
 </string>
@@ -709,6 +726,9 @@ qproperty-alignment: AlignCenter;</string>
             </property>
             <item>
              <widget class="QPushButton" name="buttonback">
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/backicon.png);
 </string>
@@ -1044,6 +1064,9 @@ qproperty-alignment: AlignCenter;</string>
               <pointsize>36</pointsize>
              </font>
             </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 	margin: 70 px;
@@ -1128,6 +1151,9 @@ QPushButton:pressed{
        <width>100</width>
        <height>100</height>
       </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(102, 102, 102);
@@ -1296,6 +1322,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s4r1.png);</string>
               </property>
@@ -1314,6 +1343,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s2r3.png);</string>
@@ -1334,6 +1366,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s2r1.png);</string>
               </property>
@@ -1352,6 +1387,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s1r3.png);</string>
@@ -1372,6 +1410,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s5r1.png);</string>
               </property>
@@ -1390,6 +1431,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s3r1.png);</string>
@@ -1410,6 +1454,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s5r3.png);</string>
               </property>
@@ -1428,6 +1475,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s3r3.png);</string>
@@ -1448,6 +1498,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s4r3.png);</string>
               </property>
@@ -1466,6 +1519,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s1r1.png);</string>
@@ -1554,6 +1610,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s4r1.png);</string>
               </property>
@@ -1572,6 +1631,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s2r3.png);</string>
@@ -1592,6 +1654,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s2r1.png);</string>
               </property>
@@ -1610,6 +1675,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s1r3.png);</string>
@@ -1630,6 +1698,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s5r1.png);</string>
               </property>
@@ -1648,6 +1719,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s3r1.png);</string>
@@ -1668,6 +1742,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s5r3.png);</string>
               </property>
@@ -1686,6 +1763,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s3r3.png);</string>
@@ -1706,6 +1786,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s4r3.png);</string>
               </property>
@@ -1724,6 +1807,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s1r1.png);</string>
@@ -1812,6 +1898,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s1r3.png);</string>
               </property>
@@ -1830,6 +1919,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s3r1.png);</string>
@@ -1850,6 +1942,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s5r3.png);</string>
               </property>
@@ -1868,6 +1963,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s1r1.png);</string>
@@ -1888,6 +1986,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s3r3.png);</string>
               </property>
@@ -1906,6 +2007,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s2r1.png);</string>
@@ -1926,6 +2030,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s2r3.png);</string>
               </property>
@@ -1944,6 +2051,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s4r3.png);</string>
@@ -1964,6 +2074,9 @@ padding: 5px;</string>
                 <height>140</height>
                </size>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s4r1.png);</string>
               </property>
@@ -1982,6 +2095,9 @@ padding: 5px;</string>
                 <width>0</width>
                 <height>140</height>
                </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
               </property>
               <property name="styleSheet">
                <string notr="true">image: url(resources/s5r1.png);</string>
@@ -3142,6 +3258,9 @@ font: bold 55pt &quot;Open Sans&quot;;
        <width>100</width>
        <height>100</height>
       </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(102, 102, 102);
