@@ -1,5 +1,6 @@
 import time
 import json
+import os
 from threading import Thread
 from PyQt5.QtCore import pyqtSignal, QThread
 from PyQt5.QtWidgets import QWidget
@@ -99,7 +100,7 @@ class InteractionWindow:
             "name": "",
             "score": 0
         }
-        self.players = json.loads(open('/home/jeda/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/leaderboard.json').read())
+        self.players = json.loads(open('/home/dti/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/leaderboard.json').read())
         self.mainWindow.updateLeaderboard(self.players)
 
     def getWidget(self):
@@ -107,7 +108,7 @@ class InteractionWindow:
 
     def makeCountDownThread(self):
         self.thread = QThread()
-        self.countdown = CountdownThread(60, self)
+        self.countdown = CountdownThread(90, self)
         self.countdown.moveToThread(self.thread)
 
         self.thread.started.connect(self.countdown.run)
@@ -201,7 +202,7 @@ class InteractionWindow:
                             break
                         i = i + 1
 
-            json.dump(self.players, open('leaderboard.json', 'w'))
+            json.dump(self.players, open('/home/dti/wspace/shakeit/ros_pkg_ws/src/shakeit_ui/resource/leaderboard.json', 'w'))
 
             # Updating leaderboard #
             for i, p in enumerate(self.players):
@@ -263,51 +264,61 @@ class InteractionWindow:
     #
 
     def fw_s2_r1(self):
+        # os.system("xinput disable 16")
         self.dispense()
         #self.mainWindow.forward_objects(1, 2)
         self.mainWindow.trigger_cam()
     
     def fw_s4_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(1, 4)
         self.mainWindow.trigger_cam()
 
     def fw_s6_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(1, 6)
         self.mainWindow.trigger_cam()
 
     def fw_s8_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(1, 8)
         self.mainWindow.trigger_cam()
 
     def fw_s10_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(1, 10)
         self.mainWindow.trigger_cam()
 
     def fw_s2_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(3, 2)
         self.mainWindow.trigger_cam()
     
     def fw_s4_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(3, 4)
         self.mainWindow.trigger_cam()
 
     def fw_s6_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(3, 6)
         self.mainWindow.trigger_cam()
 
     def fw_s8_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(3, 8)
         self.mainWindow.trigger_cam()
 
     def fw_s10_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.forward_objects(3, 10)
         self.mainWindow.trigger_cam()
@@ -317,53 +328,63 @@ class InteractionWindow:
     #     
 
     def flip_s2_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.flip_objects(1, 2)
         self.mainWindow.trigger_cam()
     
     def flip_s4_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.flip_objects(1, 4)
         self.mainWindow.trigger_cam()
 
     def flip_s6_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.flip_objects(1, 6)
         self.mainWindow.trigger_cam()
 
     def flip_s8_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.flip_objects(1, 8)
         self.mainWindow.trigger_cam()
 
     def flip_s10_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.flip_objects(1, 10)
         self.mainWindow.trigger_cam()
 
     def flip_s2_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
-        self.mainWindow.flip_objects(3, 2)
+        self.mainWindow.flip_objects(4, 2)
         self.mainWindow.trigger_cam()
     
     def flip_s4_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
-        self.mainWindow.flip_objects(3, 4)
+        self.mainWindow.flip_objects(4, 4)
         self.mainWindow.trigger_cam()
 
     def flip_s6_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
-        self.mainWindow.flip_objects(3, 6)
+        self.mainWindow.flip_objects(4, 6)
         self.mainWindow.trigger_cam()
 
     def flip_s8_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
-        self.mainWindow.flip_objects(3, 8)
+        self.mainWindow.flip_objects(4, 8)
         self.mainWindow.trigger_cam()
 
     def flip_s10_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
-        self.mainWindow.flip_objects(3, 10)
+        self.mainWindow.flip_objects(4, 10)
         self.mainWindow.trigger_cam()
 
     #
@@ -371,51 +392,61 @@ class InteractionWindow:
     #     
 
     def bw_s2_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(1, 2)
         self.mainWindow.trigger_cam()
     
     def bw_s4_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(1, 4)
         self.mainWindow.trigger_cam()
 
     def bw_s6_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(1, 6)
         self.mainWindow.trigger_cam()
 
     def bw_s8_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(1, 8)
         self.mainWindow.trigger_cam()
 
     def bw_s10_r1(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(1, 10)
         self.mainWindow.trigger_cam()
 
     def bw_s2_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(3, 2)
         self.mainWindow.trigger_cam()
     
     def bw_s4_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(3, 4)
         self.mainWindow.trigger_cam()
 
     def bw_s6_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(3, 6)
         self.mainWindow.trigger_cam()
 
     def bw_s8_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(3, 8)
         self.mainWindow.trigger_cam()
 
     def bw_s10_r3(self):
+        # os.system("xinput disable 16")
         # self.set_enable_all_buttons(False)
         self.mainWindow.backward_objects(3, 10)
         self.mainWindow.trigger_cam()

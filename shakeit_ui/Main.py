@@ -1,4 +1,5 @@
 import sys
+import os
 from threading import Timer, Thread
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
@@ -30,8 +31,6 @@ class MainWindow:
         super().__init__()
         # setting up ros2 stuff #
         self.node = node
-        # TODO: Maybe look into service names, remap names in launch file
-        # Se control_node remapping from shakeit_core
         self.init_feeder_client = create_client_wait_for_service(
             self.node, StandardInput, 'feeder/init')
         self.add_objects_client = create_client_wait_for_service(
@@ -79,6 +78,43 @@ class MainWindow:
         # logged in user info
         self.currentUser = LoggedInUser()
         self.accessTimer = None
+
+        # connecting buttons for anyfeeder
+        # btn shake forward
+        self.ui.pushButton_52.clicked.connect(self.fw_s2_r1)
+        self.ui.pushButton_45.clicked.connect(self.fw_s4_r1)
+        self.ui.pushButton_48.clicked.connect(self.fw_s6_r1)
+        self.ui.pushButton_43.clicked.connect(self.fw_s8_r1)
+        self.ui.pushButton_47.clicked.connect(self.fw_s10_r1)
+        self.ui.pushButton_46.clicked.connect(self.fw_s2_r3)
+        self.ui.pushButton_44.clicked.connect(self.fw_s4_r3)
+        self.ui.pushButton_50.clicked.connect(self.fw_s6_r3)
+        self.ui.pushButton_51.clicked.connect(self.fw_s8_r3)
+        self.ui.pushButton_49.clicked.connect(self.fw_s10_r3)
+
+        # btn shake flip
+        self.ui.pushButton_42.clicked.connect(self.flip_s2_r1)
+        self.ui.pushButton_35.clicked.connect(self.flip_s4_r1)
+        self.ui.pushButton_38.clicked.connect(self.flip_s6_r1)
+        self.ui.pushButton_33.clicked.connect(self.flip_s8_r1)
+        self.ui.pushButton_37.clicked.connect(self.flip_s10_r1)
+        self.ui.pushButton_36.clicked.connect(self.flip_s2_r3)
+        self.ui.pushButton_34.clicked.connect(self.flip_s4_r3)
+        self.ui.pushButton_40.clicked.connect(self.flip_s6_r3)
+        self.ui.pushButton_41.clicked.connect(self.flip_s8_r3)
+        self.ui.pushButton_39.clicked.connect(self.flip_s10_r3)
+
+        # btn shake backward
+        self.ui.pushButton_76.clicked.connect(self.bw_s2_r1)
+        self.ui.pushButton_78.clicked.connect(self.bw_s4_r1)
+        self.ui.pushButton_74.clicked.connect(self.bw_s6_r1)
+        self.ui.pushButton_81.clicked.connect(self.bw_s8_r1)
+        self.ui.pushButton_82.clicked.connect(self.bw_s10_r1)
+        self.ui.pushButton_73.clicked.connect(self.bw_s2_r3)
+        self.ui.pushButton_79.clicked.connect(self.bw_s4_r3)
+        self.ui.pushButton_77.clicked.connect(self.bw_s6_r3)
+        self.ui.pushButton_80.clicked.connect(self.bw_s8_r3)
+        self.ui.pushButton_75.clicked.connect(self.bw_s10_r3)
 
         self.init_anyfeeder()
 
@@ -172,9 +208,13 @@ class MainWindow:
     def trigger_cam(self):
         # TODO: set a bool to enable thread call only if not called before
         # set bool end of triggger camera callback
+        # os.system("xinput disable 16")
+        self.interactionui.set_enable_all_buttons(False)
         thread = Thread(target=self.trigger_sensopart_camera)
         thread.start()
-        thread.join()
+        # thread.join()
+        # os.system("xinput enable 16")
+        # self.interactionui.set_enable_all_buttons(True)
 
     def trigger_sensopart_camera(self):
         future = self.trigger_action_client.send_goal_async(Trigger.Goal(), feedback_callback=self.feedback_callback)
@@ -200,7 +240,7 @@ class MainWindow:
             self.node.get_logger().info("Nothing picked-up!")
             self.node.get_logger().info(f"Received feedback: {result.message}")
 
-        # self.interactionui.set_enable_all_buttons(True)         
+        self.interactionui.set_enable_all_buttons(True)         
 
     def feedback_callback(self, feedback_msg):
         feedback = feedback_msg.feedback
@@ -247,6 +287,111 @@ class MainWindow:
         future = self.purge_objects_client.call_async(StandardInput.Request())
         rclpy.spin_until_future_complete(self.node, future)
         self.node.get_logger().info("Objects purged")
+
+        #
+    # FORWARD CMDs
+    #
+
+    def fw_s2_r1(self):
+        self.add_objects()
+        
+    def fw_s4_r1(self):
+        self.forward_objects(1, 4)
+    
+    def fw_s6_r1(self):
+        self.forward_objects(1, 6)
+        
+    def fw_s8_r1(self):
+        self.forward_objects(1, 8)
+        
+    def fw_s10_r1(self):
+        self.forward_objects(1, 10)
+        
+    def fw_s2_r3(self):
+        self.forward_objects(3, 2)
+          
+    def fw_s4_r3(self):
+        self.forward_objects(3, 4)
+        
+    def fw_s6_r3(self):
+        self.forward_objects(3, 6)
+        
+    def fw_s8_r3(self):
+        self.forward_objects(3, 8)
+        
+    def fw_s10_r3(self):
+        self.forward_objects(3, 10)
+        
+
+    #
+    # FLIP CMDs
+    #     
+
+    def flip_s2_r1(self):
+        self.flip_objects(1, 2)
+          
+    def flip_s4_r1(self):
+        self.flip_objects(1, 4)
+        
+    def flip_s6_r1(self):
+        self.flip_objects(1, 6)
+        
+    def flip_s8_r1(self):
+        self.flip_objects(1, 8)
+        
+    def flip_s10_r1(self):
+        self.flip_objects(1, 10)
+    
+    def flip_s2_r3(self):
+        self.flip_objects(4, 2)
+        
+    def flip_s4_r3(self):
+        self.flip_objects(4, 4)
+        
+    def flip_s6_r3(self):
+        self.flip_objects(4, 6)
+        
+    def flip_s8_r3(self):
+        self.flip_objects(4, 8)
+        
+    def flip_s10_r3(self):
+        self.flip_objects(4, 10)
+        
+
+    #
+    # BACWARDS CMDs
+    #     
+
+    def bw_s2_r1(self):
+        self.backward_objects(1, 2)
+            
+    def bw_s4_r1(self):
+        self.backward_objects(1, 4)
+        
+    def bw_s6_r1(self):
+        self.backward_objects(1, 6)
+        
+    def bw_s8_r1(self):
+        self.backward_objects(1, 8)
+        
+    def bw_s10_r1(self):
+        self.backward_objects(1, 10)
+        
+    def bw_s2_r3(self):
+        self.backward_objects(3, 2)
+           
+    def bw_s4_r3(self):
+        self.backward_objects(3, 4)
+        
+    def bw_s6_r3(self):
+        self.backward_objects(3, 6)
+        
+    def bw_s8_r3(self):
+        self.backward_objects(3, 8)
+        
+    def bw_s10_r3(self):
+        self.backward_objects(3, 10)
+        
 
 # if __name__ == '__main__':
 #     app = QApplication(sys.argv)
