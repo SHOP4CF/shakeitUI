@@ -162,8 +162,9 @@ Password: ```1234```
 
 ### Overview of Class Relations
 <p align="middle">
-  <img src="https://user-images.githubusercontent.com/113982478/221198515-c45ab625-046e-44d8-aa05-f7e9fa2fd95e.png"/>
+  <img src="https://user-images.githubusercontent.com/113982478/231374396-71187e20-5bb7-4fa6-848f-6c62a3a662dc.png"/>
 </p>
+
 UI files are excluded from this diagram. The UI files is only used by the matching python file, fx: Interation.py -> InteractionUI.py
 
 ### Using QtDesigner
