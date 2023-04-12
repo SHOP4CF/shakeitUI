@@ -55,6 +55,8 @@ class InteractionWindow:
             "score": 0
         }
         self.players = json.loads(open('leaderboard.json').read())
+        print(self.players)
+        print(type(self.players))
         self.mainWindow.updateLeaderboard(self.players)
 
     def getWidget(self):
@@ -101,20 +103,19 @@ class InteractionWindow:
         if result == 0:
 
             # Adding player score til list of all players #
-            score = self.player["score"]
 
             if len(self.players) == 0:  # no other players
                 self.players.append(self.player)
             else:
-                if self.players[-1]["score"] >= score:  # smaller than the lowest number
+                if self.players[-1]["score"] >= self.player["score"]:  # smaller than the lowest number
                     self.players.append(self.player)
-                elif score >= self.players[0]["score"]:  # larger than the highest number
+                elif self.player["score"] >= self.players[0]["score"]:  # larger than the highest number
                     self.players.insert(0, self.player)
 
                 else:
                     i = 0
                     while i < len(self.players):
-                        if self.players[i]["score"] > score >= self.players[i + 1]["score"]:
+                        if self.players[i]["score"] > self.player["score"] >= self.players[i + 1]["score"]:
                             self.players.insert(i + 1, self.player)
                             break
                         i = i + 1
