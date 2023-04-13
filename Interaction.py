@@ -1,6 +1,6 @@
 import time
 import json
-from PyQt5.QtCore import pyqtSignal, QThread
+from PyQt5.QtCore import pyqtSignal, QThread, QMutex, QWaitCondition
 from PyQt5.QtWidgets import QWidget
 
 from InteractionUI import Ui_Interaction
@@ -11,9 +11,13 @@ from TimesUpDialog import TimesUpDialogWindow
 class CountdownThread(QThread):
     finished = pyqtSignal()
 
-    def __init__(self, startTime, mainwin, parent=None):
-        super(QThread, self).__init__()
+    def __init__(self, startTime, mainwin):
+        super().__init__()
         self.currentTime = startTime
+
+        self.mutex = QMutex()
+        self.condition = QWaitCondition()
+        self.is_paused = False
         self.window = mainwin
 
     def run(self):
@@ -21,7 +25,28 @@ class CountdownThread(QThread):
             self.window.ui.timer.display(self.currentTime)
             self.currentTime -= 1
             time.sleep(1)
+
+            self.mutex.lock()
+            while self.is_paused:
+                self.condition.wait(self.mutex)
+            self.mutex.unlock()
+
         self.finished.emit()
+
+    def pause(self):
+        self.mutex.lock()
+        self.is_paused = True
+        self.mutex.unlock()
+
+        print("paused")
+
+    def resume(self):
+        self.mutex.lock()
+        self.is_paused = False
+        self.condition.wakeAll()
+        self.mutex.unlock()
+
+        print("resumed")
 
 
 class InteractionWindow:
@@ -55,8 +80,6 @@ class InteractionWindow:
             "score": 0
         }
         self.players = json.loads(open('leaderboard.json').read())
-        print(self.players)
-        print(type(self.players))
         self.mainWindow.updateLeaderboard(self.players)
 
     def getWidget(self):
