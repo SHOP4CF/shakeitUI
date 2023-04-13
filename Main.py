@@ -111,7 +111,7 @@ class MainWindow:
         self.ui.stackedPages.setCurrentWidget(self.ui.pageBoard)
 
     def updateLeaderboard(self, players):
-        if not bool(players):
+        if bool(players):
             for i, p in enumerate(players):
                 if i > 9:
                     break

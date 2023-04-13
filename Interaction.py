@@ -1,6 +1,6 @@
 import time
 import json
-from PyQt5.QtCore import pyqtSignal, QThread
+from PyQt5.QtCore import pyqtSignal, QThread, QMutex, QWaitCondition
 from PyQt5.QtWidgets import QWidget
 
 from InteractionUI import Ui_Interaction
@@ -11,9 +11,13 @@ from TimesUpDialog import TimesUpDialogWindow
 class CountdownThread(QThread):
     finished = pyqtSignal()
 
-    def __init__(self, startTime, mainwin, parent=None):
-        super(QThread, self).__init__()
+    def __init__(self, startTime, mainwin):
+        super().__init__()
         self.currentTime = startTime
+
+        self.mutex = QMutex()
+        self.condition = QWaitCondition()
+        self.is_paused = False
         self.window = mainwin
 
     def run(self):
@@ -21,7 +25,31 @@ class CountdownThread(QThread):
             self.window.ui.timer.display(self.currentTime)
             self.currentTime -= 1
             time.sleep(1)
+
+            self.mutex.lock()
+            while self.is_paused:
+                self.condition.wait(self.mutex)
+            self.mutex.unlock()
+
         self.finished.emit()
+
+    def pause(self):
+        if self.is_paused:
+            self.resume()
+        else:
+            self.mutex.lock()
+            self.is_paused = True
+            self.mutex.unlock()
+
+            print("paused")
+
+    def resume(self):
+        self.mutex.lock()
+        self.is_paused = False
+        self.condition.wakeAll()
+        self.mutex.unlock()
+
+        print("resumed")
 
 
 class InteractionWindow:
@@ -34,20 +62,21 @@ class InteractionWindow:
         self.ui = Ui_Interaction()
         self.ui.setupUi(self.interaction)
 
+        # set up countdown thread
+        self.thread = None
+        self.countdown = None
+
         # connecting buttons
         self.ui.textName.textChanged.connect(self.onTextChanged)
         self.ui.buttonStart.clicked.connect(self.tryShakeIt)
         self.ui.buttonStart.setEnabled(False)
         self.ui.buttonReady.clicked.connect(self.play)
+
         self.ui.pushButton_52.clicked.connect(self.pickupSuccess)
 
         self.ui.buttonExit_1.clicked.connect(self.exit)
         self.ui.buttonExit_2.clicked.connect(self.exit)
         self.ui.buttonExit_3.clicked.connect(self.done)
-
-        # set up countdown thread
-        self.thread = None
-        self.countdown = None
 
         # Initialize attributes #
         self.player = {
@@ -55,8 +84,6 @@ class InteractionWindow:
             "score": 0
         }
         self.players = json.loads(open('leaderboard.json').read())
-        print(self.players)
-        print(type(self.players))
         self.mainWindow.updateLeaderboard(self.players)
 
     def getWidget(self):
@@ -64,14 +91,16 @@ class InteractionWindow:
 
     def makeCountDownThread(self):
         self.thread = QThread()
-        self.countdown = CountdownThread(60, self)
+        self.countdown = CountdownThread(10, self)
         self.countdown.moveToThread(self.thread)
 
-        self.thread.started.connect(self.countdown.run)
+        self.thread.started.connect(self.countdown.start)
         self.countdown.finished.connect(self.timeOut)
         self.countdown.finished.connect(self.thread.quit)
         self.countdown.finished.connect(self.countdown.deleteLater)
         self.thread.finished.connect(self.thread.deleteLater)
+
+        self.ui.pushButton_46.clicked.connect(self.countdown.pause)
 
         self.thread.start()
 
