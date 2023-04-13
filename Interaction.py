@@ -127,6 +127,7 @@ class InteractionWindow:
 
     def timeOut(self):
         result = TimesUpDialogWindow.launch(self.mainWindow.main_win, self.player["score"], "12")
+        print(result)
 
         # wait for pop up to be closed
         if result == 0:

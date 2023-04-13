@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QDialog
 from TimesUpDialogUI import Ui_TimesUpDialog
+import time
 
 
 class TimesUpDialogWindow:
@@ -13,4 +14,6 @@ class TimesUpDialogWindow:
         ui.yourScore.setText("{} pickups".format(player))
         ui.aiScore.setText("{} pickups".format(ai))
 
-        return dialog.exec_()
+        dialog.open()
+
+        return dialog.result()
