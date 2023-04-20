@@ -87,6 +87,8 @@ class InteractionWindow:
         self.players = json.loads(open('leaderboard.json').read())
         self.mainWindow.updateLeaderboard(self.players)
 
+        self.ai_score = "12"
+
     def getWidget(self):
         return self.interaction
 
@@ -116,7 +118,7 @@ class InteractionWindow:
         self.player["name"] = self.ui.textName.text()
 
     def play(self):
-        result = InfoDialogWindow.launch(self.mainWindow.main_win, "12")
+        result = InfoDialogWindow.launch(self.mainWindow.main_win, self.ai_score)
         if result == 1:  # yes
             self.start()
 
@@ -132,7 +134,7 @@ class InteractionWindow:
         self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
 
     def timeOut(self):
-        dialog = TimesUpDialog(self.player["score"], "12")
+        dialog = TimesUpDialog(self.player["score"], self.ai_score)
         result = dialog.exec()
 
         # wait for pop up to be closed
