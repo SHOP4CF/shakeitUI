@@ -203,7 +203,7 @@ class Ui_MainWindow(object):
         self.buttonStop.setObjectName("buttonStop")
         self.Layoutstartstop.addWidget(self.buttonStop)
         self.gridLayoutWidget = QtWidgets.QWidget(self.pageAI)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(510, 380, 1071, 641))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(510, 380, 1071, 621))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.graphlayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.graphlayout.setContentsMargins(0, 0, 0, 0)
@@ -318,14 +318,14 @@ class Ui_MainWindow(object):
         self.line_2.setObjectName("line_2")
         self.gridLayout.addWidget(self.line_2, 1, 3, 1, 1)
         self.settingsBox = QtWidgets.QGroupBox(self.pageAI)
-        self.settingsBox.setGeometry(QtCore.QRect(40, 370, 431, 651))
+        self.settingsBox.setGeometry(QtCore.QRect(40, 370, 431, 631))
         self.settingsBox.setStyleSheet("QGroupBox{\n"
 "    font: 18pt \"Open Sans\";\n"
 "    color: black;\n"
 "}")
         self.settingsBox.setObjectName("settingsBox")
         self.buttonSettings = QtWidgets.QPushButton(self.settingsBox)
-        self.buttonSettings.setGeometry(QtCore.QRect(110, 580, 211, 41))
+        self.buttonSettings.setGeometry(QtCore.QRect(110, 550, 211, 41))
         self.buttonSettings.setFocusPolicy(QtCore.Qt.NoFocus)
         self.buttonSettings.setStyleSheet("QPushButton{\n"
 "    background-color: rgb(40, 85, 162);\n"
@@ -483,7 +483,7 @@ class Ui_MainWindow(object):
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
         self.verticalLayoutWidget_6 = QtWidgets.QWidget(self.frame_7)
-        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(0, 0, 481, 889))
+        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(0, 0, 481, 869))
         self.verticalLayoutWidget_6.setObjectName("verticalLayoutWidget_6")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_6)
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -499,7 +499,7 @@ class Ui_MainWindow(object):
         self.label_22.setObjectName("label_22")
         self.verticalLayout_8.addWidget(self.label_22)
         self.label_17 = QtWidgets.QLabel(self.verticalLayoutWidget_6)
-        self.label_17.setMinimumSize(QtCore.QSize(400, 110))
+        self.label_17.setMinimumSize(QtCore.QSize(400, 90))
         self.label_17.setStyleSheet("\n"
 "image: url(resources/forwardiconB.png);\n"
 "padding: 5px;")
@@ -591,7 +591,7 @@ class Ui_MainWindow(object):
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
         self.verticalLayoutWidget_5 = QtWidgets.QWidget(self.frame_6)
-        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(0, 0, 481, 889))
+        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(0, 0, 481, 869))
         self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -607,7 +607,7 @@ class Ui_MainWindow(object):
         self.label_20.setObjectName("label_20")
         self.verticalLayout_9.addWidget(self.label_20)
         self.label_21 = QtWidgets.QLabel(self.verticalLayoutWidget_5)
-        self.label_21.setMinimumSize(QtCore.QSize(400, 110))
+        self.label_21.setMinimumSize(QtCore.QSize(400, 90))
         self.label_21.setStyleSheet("\n"
 "image: url(resources/flipiconB.png);\n"
 "padding: 5px;")
@@ -699,7 +699,7 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(self.frame_5)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(0, 0, 481, 889))
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(0, 0, 481, 869))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
@@ -715,7 +715,8 @@ class Ui_MainWindow(object):
         self.label_31.setObjectName("label_31")
         self.verticalLayout_12.addWidget(self.label_31)
         self.label_32 = QtWidgets.QLabel(self.verticalLayoutWidget_3)
-        self.label_32.setMinimumSize(QtCore.QSize(400, 110))
+        self.label_32.setMinimumSize(QtCore.QSize(400, 90))
+        self.label_32.setBaseSize(QtCore.QSize(400, 90))
         self.label_32.setStyleSheet("\n"
 "image: url(resources/backiconB.png);\n"
 "padding: 5px;")
@@ -1231,7 +1232,7 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addLayout(self.horizontalLayout4, 3, 0, 1, 1)
         self.stackedPages.addWidget(self.pageBoard)
         self.buttonLogout = QtWidgets.QPushButton(self.mainPage)
-        self.buttonLogout.setGeometry(QtCore.QRect(30, 950, 241, 71))
+        self.buttonLogout.setGeometry(QtCore.QRect(30, 930, 241, 71))
         font = QtGui.QFont()
         font.setFamily("Open Sans")
         font.setPointSize(16)
@@ -1257,7 +1258,7 @@ class Ui_MainWindow(object):
 "}")
         self.buttonLogout.setObjectName("buttonLogout")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.mainPage)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(23, 340, 254, 411))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(13, 340, 281, 411))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.buttonsLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.buttonsLayout.setContentsMargins(0, 0, 0, 0)
@@ -1334,14 +1335,11 @@ class Ui_MainWindow(object):
         self.verticalLayoutWidget.raise_()
         self.label.raise_()
         self.stackedLogin.addWidget(self.mainPage)
-        self.label_11 = QtWidgets.QLabel(self.centralwidget)
-        self.label_11.setGeometry(QtCore.QRect(1420, 990, 272, 66))
-        self.label_11.setObjectName("label_11")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         self.stackedLogin.setCurrentIndex(1)
-        self.stackedPages.setCurrentIndex(0)
+        self.stackedPages.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textUsername, self.textPassword)
 
@@ -1432,11 +1430,10 @@ class Ui_MainWindow(object):
         self.radioManual.setProperty("class", _translate("MainWindow", "pageChanger"))
         self.radioBoard.setText(_translate("MainWindow", "Leaderboard"))
         self.radioBoard.setProperty("class", _translate("MainWindow", "pageChanger"))
-        self.radioInteraction.setText(_translate("MainWindow", "Interaction"))
+        self.radioInteraction.setText(_translate("MainWindow", "Start Interaction"))
         self.radioInteraction.setProperty("class", _translate("MainWindow", "pageChanger"))
         self.labelRole.setText(_translate("MainWindow", "Role"))
         self.labelUsername_2.setText(_translate("MainWindow", "Username"))
-        self.label_11.setText(_translate("MainWindow", "OK"))
 
 
 if __name__ == "__main__":

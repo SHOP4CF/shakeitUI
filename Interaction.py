@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QWidget
 from InteractionUI import Ui_Interaction
 from ExitDialog import ExitDialogWindow
 from TimesUpDialog import TimesUpDialog
+from InfoDialog import InfoDialogWindow
 
 
 class CountdownThread(QThread):
@@ -91,7 +92,7 @@ class InteractionWindow:
 
     def makeCountDownThread(self):
         self.thread = QThread()
-        self.countdown = CountdownThread(60, self)
+        self.countdown = CountdownThread(10, self)
         self.countdown.moveToThread(self.thread)
 
         self.thread.started.connect(self.countdown.start)
@@ -115,6 +116,11 @@ class InteractionWindow:
         self.player["name"] = self.ui.textName.text()
 
     def play(self):
+        result = InfoDialogWindow.launch(self.mainWindow.main_win, "12")
+        if result == 1:  # yes
+            self.start()
+
+    def start(self):
         self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
 
