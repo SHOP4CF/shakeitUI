@@ -62,8 +62,7 @@ class MainWindow:
         # authenticate user using keyrock
         result, self.currentUser = self.keyrockAPI.authenticateUser(username, password, self.currentUser)
 
-        if result:
-            # success
+        if result:  # success
             self.ui.labelRole.setText(self.currentUser.role)
             self.ui.labelUsername_2.setText(self.currentUser.username)
 
@@ -79,12 +78,11 @@ class MainWindow:
 
             self.newAccessTimer()
 
-        else:
-            # failure
+        else:  # failure
+            # clear the login page
             self.ui.labelLoginError.show()
             self.ui.textPassword.clear()
             self.ui.textUsername.clear()
-
             self.currentUser = LoggedInUser()
 
     def logout(self):

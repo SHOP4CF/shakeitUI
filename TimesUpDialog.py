@@ -14,7 +14,7 @@ class TimesUpDialog(QDialog):
         self.ui.aiScore.setText("{} pickups".format(ai))
 
         self.timer = QTimer(self)
-        self.timer.setInterval(20000)  # closes after 20 seconds
+        self.timer.setInterval(10000)  # closes after 10 seconds
         self.timer.timeout.connect(self.timeout)
         self.timer.start()
 

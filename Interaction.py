@@ -1,11 +1,12 @@
 import time
 import json
-from PyQt5.QtCore import pyqtSignal, QThread, QMutex, QWaitCondition
+from PyQt5.QtCore import pyqtSignal, QThread, QMutex, QWaitCondition, QTimer
 from PyQt5.QtWidgets import QWidget
 
 from InteractionUI import Ui_Interaction
 from ExitDialog import ExitDialogWindow
 from TimesUpDialog import TimesUpDialog
+from InfoDialog import InfoDialogWindow
 
 
 class CountdownThread(QThread):
@@ -65,6 +66,7 @@ class InteractionWindow:
         # set up countdown thread
         self.thread = None
         self.countdown = None
+        self.timer = None
 
         # connecting buttons
         self.ui.textName.textChanged.connect(self.onTextChanged)
@@ -79,6 +81,7 @@ class InteractionWindow:
         self.ui.buttonExit_3.clicked.connect(self.done)
 
         # Initialize attributes #
+        self.ai_score = "12"
         self.player = {
             "name": "",
             "score": 0
@@ -108,14 +111,19 @@ class InteractionWindow:
         self.ui.stackedpages.setCurrentWidget(self.ui.page1welcome)
 
     def onTextChanged(self):
-        self.ui.buttonStart.setEnabled(bool(self.ui.textName.text()))
+        self.ui.buttonStart.setEnabled(bool(self.ui.textName.text()))  # enable button if there is text
 
     def tryShakeIt(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page2try)
         self.player["name"] = self.ui.textName.text()
 
     def play(self):
-        self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
+        result = InfoDialogWindow.launch(self.mainWindow.main_win, self.ai_score)
+        if result == 1:  # yes
+            self.start()
+
+    def start(self):
+        self.ui.pickupDisplay.setText("0 pickups")
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
 
         # Start countdown
@@ -126,14 +134,13 @@ class InteractionWindow:
         self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
 
     def timeOut(self):
-        dialog = TimesUpDialog(self.player["score"], "12")
+        dialog = TimesUpDialog(self.player["score"], self.ai_score)
         result = dialog.exec()
 
         # wait for pop up to be closed
         if result == 0:
 
             # Adding player score til list of all players #
-
             if len(self.players) == 0:  # no other players
                 self.players.append(self.player)
             else:
@@ -167,26 +174,33 @@ class InteractionWindow:
 
             self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
 
-    def exit(self):
-        # before interaction completed
-        result = ExitDialogWindow.launch(self.mainWindow.main_win)
-        if result == 1:
-            self.mainWindow.endInteraction()
-            self.ui.textName.clear()
+            # switch back to welcome screen after inaction
+            self.timer = QTimer(self.mainWindow.main_win)
+            self.timer.setInterval(25000)  # waits 25 seconds
+            self.timer.timeout.connect(self.restart)
+            self.timer.start()
 
-            # deleting info on player
-            self.player = {
-                "name": "",
-                "score": 0
-            }
+    def restart(self):
+        self.timer.stop()
+        self.clearPlayerInfo()
+        self.startup()  # Back to welcome screen
+
+    def exit(self):
+        # exit before interaction completed
+        result = ExitDialogWindow.launch(self.mainWindow.main_win)
+        if result == 1:  # yes
+            self.clearPlayerInfo()
+            self.mainWindow.endInteraction()  # Back to main screen
 
     def done(self):
-        # after interaction completed
-        self.mainWindow.endInteraction()
-        self.ui.textName.clear()
+        # exit after interaction completed
+        self.timer.stop()
+        self.clearPlayerInfo()
+        self.mainWindow.endInteraction()  # Back to main screen
 
-        # deleting info on player
+    def clearPlayerInfo(self):
         self.player = {
             "name": "",
             "score": 0
         }
+        self.ui.textName.clear()

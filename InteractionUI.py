@@ -27,7 +27,7 @@ class Ui_Interaction(object):
         self.page1welcome.setStyleSheet("")
         self.page1welcome.setObjectName("page1welcome")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.page1welcome)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 90, 1921, 941))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(0, 90, 1921, 931))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -853,11 +853,11 @@ class Ui_Interaction(object):
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.label_6 = QtWidgets.QLabel(self.frame_2)
-        self.label_6.setGeometry(QtCore.QRect(20, 0, 151, 101))
+        self.label_6.setGeometry(QtCore.QRect(20, 0, 161, 101))
         self.label_6.setStyleSheet("font: bold 34pt \"Open Sans\";")
         self.label_6.setObjectName("label_6")
         self.pickupDisplay = QtWidgets.QLabel(self.frame_2)
-        self.pickupDisplay.setGeometry(QtCore.QRect(170, 0, 271, 101))
+        self.pickupDisplay.setGeometry(QtCore.QRect(190, 0, 271, 101))
         self.pickupDisplay.setStyleSheet("font: 34pt \"Open Sans\";")
         self.pickupDisplay.setObjectName("pickupDisplay")
         self.stackedpages.addWidget(self.page3play)
@@ -1370,7 +1370,7 @@ class Ui_Interaction(object):
         self.stackedpages.addWidget(self.page4board)
 
         self.retranslateUi(Interaction)
-        self.stackedpages.setCurrentIndex(0)
+        self.stackedpages.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(Interaction)
 
     def retranslateUi(self, Interaction):
