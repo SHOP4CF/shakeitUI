@@ -86,7 +86,7 @@ border-radius: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: bold 34pt &quot;Open Sans&quot;;</string>
+        <string notr="true">font: bold 30pt &quot;Open Sans&quot;;</string>
        </property>
        <property name="text">
         <string>Your score:</string>
@@ -97,12 +97,12 @@ border-radius: 15px;
         <rect>
          <x>290</x>
          <y>0</y>
-         <width>251</width>
+         <width>231</width>
          <height>101</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 34pt &quot;Open Sans&quot;;</string>
+        <string notr="true">font: 30pt &quot;Open Sans&quot;;</string>
        </property>
        <property name="text">
         <string># pickups</string>
@@ -172,7 +172,7 @@ border-radius: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: bold 34pt &quot;Open Sans&quot;;</string>
+        <string notr="true">font: bold 30pt &quot;Open Sans&quot;;</string>
        </property>
        <property name="text">
         <string>AI score:</string>
@@ -183,12 +183,12 @@ border-radius: 15px;
         <rect>
          <x>230</x>
          <y>0</y>
-         <width>311</width>
+         <width>281</width>
          <height>101</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 34pt &quot;Open Sans&quot;;</string>
+        <string notr="true">font: 30pt &quot;Open Sans&quot;;</string>
        </property>
        <property name="text">
         <string># pickups</string>

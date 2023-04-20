@@ -183,11 +183,12 @@ class MainWindow:
         self.ui.stackedPages.setCurrentWidget(self.ui.pageBoard)
 
     def updateLeaderboard(self, players):
-        for i, p in enumerate(players):
-            if i > 9:
-                break
-            exec("self.ui.name{}.setText(p['name'])".format(i + 1))
-            exec("self.ui.pickups{}.setText('{} pickups')".format(i + 1, p['score']))
+        if bool(players):
+            for i, p in enumerate(players):
+                if i > 9:
+                    break
+                exec("self.ui.name{}.setText(p['name'])".format(i + 1))
+                exec("self.ui.pickups{}.setText('{} pickups')".format(i + 1, p['score']))
 
     def startInteraction(self):
         self.ui.stackedLogin.setCurrentWidget(self.interactionui.getWidget())
@@ -210,6 +211,7 @@ class MainWindow:
         # set bool end of triggger camera callback
         # os.system("xinput disable 16")
         self.interactionui.set_enable_all_buttons(False)
+        self.interactionui.countdown.pause()
         thread = Thread(target=self.trigger_sensopart_camera)
         thread.start()
         # thread.join()
@@ -240,7 +242,8 @@ class MainWindow:
             self.node.get_logger().info("Nothing picked-up!")
             self.node.get_logger().info(f"Received feedback: {result.message}")
 
-        self.interactionui.set_enable_all_buttons(True)         
+        self.interactionui.set_enable_all_buttons(True)   
+        self.interactionui.countdown.resume()      
 
     def feedback_callback(self, feedback_msg):
         feedback = feedback_msg.feedback

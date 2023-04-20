@@ -2,7 +2,7 @@ import time
 import json
 import os
 from threading import Thread
-from PyQt5.QtCore import pyqtSignal, QThread
+from PyQt5.QtCore import pyqtSignal, QThread, QMutex, QWaitCondition
 from PyQt5.QtWidgets import QWidget
 
 from shakeit_ui.InteractionUI import Ui_Interaction
@@ -15,9 +15,13 @@ from rclpy.node import Node
 class CountdownThread(QThread):
     finished = pyqtSignal()
 
-    def __init__(self, startTime, mainwin, parent=None):
-        super(QThread, self).__init__()
+    def __init__(self, startTime, mainwin):
+        super().__init__()
         self.currentTime = startTime
+
+        self.mutex = QMutex()
+        self.condition = QWaitCondition()
+        self.is_paused = False
         self.window = mainwin
 
     def run(self):
@@ -25,7 +29,31 @@ class CountdownThread(QThread):
             self.window.ui.timer.display(self.currentTime)
             self.currentTime -= 1
             time.sleep(1)
+
+            self.mutex.lock()
+            while self.is_paused:
+                self.condition.wait(self.mutex)
+            self.mutex.unlock()
+
         self.finished.emit()
+
+    def pause(self):
+        if self.is_paused:
+            self.resume()
+        else:
+            self.mutex.lock()
+            self.is_paused = True
+            self.mutex.unlock()
+
+            print("paused")
+
+    def resume(self):
+        self.mutex.lock()
+        self.is_paused = False
+        self.condition.wakeAll()
+        self.mutex.unlock()
+
+        print("resumed")
 
 
 class InteractionWindow:
@@ -38,6 +66,10 @@ class InteractionWindow:
         self.ui = Ui_Interaction()
         self.ui.setupUi(self.interaction)
 
+        # set up countdown thread
+        self.thread = None
+        self.countdown = None
+
         # connecting buttons
         self.ui.textName.textChanged.connect(self.onTextChanged)
         self.ui.buttonStart.clicked.connect(self.tryShakeIt)
@@ -48,10 +80,6 @@ class InteractionWindow:
         self.ui.buttonExit_1.clicked.connect(self.exit)
         self.ui.buttonExit_2.clicked.connect(self.exit)
         self.ui.buttonExit_3.clicked.connect(self.done)
-
-        # set up countdown thread
-        self.thread = None
-        self.countdown = None
 
         # connecting training buttons for anyfeeder
         self.ui.buttonforward.clicked.connect(self.trainforward)
@@ -108,14 +136,16 @@ class InteractionWindow:
 
     def makeCountDownThread(self):
         self.thread = QThread()
-        self.countdown = CountdownThread(90, self)
+        self.countdown = CountdownThread(60, self)
         self.countdown.moveToThread(self.thread)
 
-        self.thread.started.connect(self.countdown.run)
+        self.thread.started.connect(self.countdown.start)
         self.countdown.finished.connect(self.timeOut)
         self.countdown.finished.connect(self.thread.quit)
         self.countdown.finished.connect(self.countdown.deleteLater)
         self.thread.finished.connect(self.thread.deleteLater)
+
+        # self.ui.pushButton_46.clicked.connect(self.countdown.pause)
 
         self.thread.start()
 
@@ -184,20 +214,20 @@ class InteractionWindow:
         if result == 0:
 
             # Adding player score til list of all players #
-            score = self.player["score"]
+            # score = self.player["score"]
 
             if len(self.players) == 0:  # no other players
                 self.players.append(self.player)
             else:
-                if self.players[-1]["score"] >= score:  # smaller than the lowest number
+                if self.players[-1]["score"] >= self.player["score"]:  # smaller than the lowest number
                     self.players.append(self.player)
-                elif score >= self.players[0]["score"]:  # larger than the highest number
+                elif self.player["score"] >= self.players[0]["score"]:  # larger than the highest number
                     self.players.insert(0, self.player)
 
                 else:
                     i = 0
                     while i < len(self.players):
-                        if self.players[i]["score"] > score >= self.players[i + 1]["score"]:
+                        if self.players[i]["score"] > self.player["score"] >= self.players[i + 1]["score"]:
                             self.players.insert(i + 1, self.player)
                             break
                         i = i + 1
@@ -266,8 +296,8 @@ class InteractionWindow:
     def fw_s2_r1(self):
         # os.system("xinput disable 16")
         self.dispense()
-        #self.mainWindow.forward_objects(1, 2)
-        self.mainWindow.trigger_cam()
+        # self.mainWindow.forward_objects(1, 2)
+        # self.mainWindow.trigger_cam()
     
     def fw_s4_r1(self):
         # os.system("xinput disable 16")

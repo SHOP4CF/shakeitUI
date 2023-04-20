@@ -298,7 +298,7 @@ QRadioButton::indicator:unchecked {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -408,7 +408,7 @@ QPushButton:pressed{
           <x>510</x>
           <y>380</y>
           <width>1071</width>
-          <height>641</height>
+          <height>621</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="graphlayout">
@@ -635,7 +635,7 @@ margin: 5px;</string>
           <x>40</x>
           <y>370</y>
           <width>431</width>
-          <height>651</height>
+          <height>631</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -651,7 +651,7 @@ margin: 5px;</string>
          <property name="geometry">
           <rect>
            <x>110</x>
-           <y>580</y>
+           <y>550</y>
            <width>211</width>
            <height>41</height>
           </rect>
@@ -954,7 +954,7 @@ border-radius: 15px;
               <x>0</x>
               <y>0</y>
               <width>481</width>
-              <height>889</height>
+              <height>864</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -981,7 +981,7 @@ border-radius: 15px;
                <property name="minimumSize">
                 <size>
                  <width>400</width>
-                 <height>110</height>
+                 <height>90</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -1258,7 +1258,7 @@ border-radius: 15px;
               <x>0</x>
               <y>0</y>
               <width>481</width>
-              <height>889</height>
+              <height>864</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -1285,7 +1285,7 @@ border-radius: 15px;
                <property name="minimumSize">
                 <size>
                  <width>400</width>
-                 <height>110</height>
+                 <height>90</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -1562,7 +1562,7 @@ border-radius: 15px;
               <x>0</x>
               <y>0</y>
               <width>481</width>
-              <height>889</height>
+              <height>861</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -1589,7 +1589,13 @@ border-radius: 15px;
                <property name="minimumSize">
                 <size>
                  <width>400</width>
-                 <height>110</height>
+                 <height>90</height>
+                </size>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>400</width>
+                 <height>90</height>
                 </size>
                </property>
                <property name="styleSheet">
@@ -2662,7 +2668,7 @@ color: black;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>950</y>
+        <y>930</y>
         <width>241</width>
         <height>71</height>
        </rect>
@@ -2705,7 +2711,7 @@ QPushButton:hover{
        <rect>
         <x>23</x>
         <y>340</y>
-        <width>254</width>
+        <width>271</width>
         <height>411</height>
        </rect>
       </property>
@@ -2876,19 +2882,6 @@ color: white;</string>
      <zorder>verticalLayoutWidget</zorder>
      <zorder>label</zorder>
     </widget>
-   </widget>
-   <widget class="QLabel" name="label_11">
-    <property name="geometry">
-     <rect>
-      <x>1420</x>
-      <y>990</y>
-      <width>272</width>
-      <height>66</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>OK</string>
-    </property>
    </widget>
   </widget>
  </widget>
