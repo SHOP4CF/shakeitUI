@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QWidget
 
 from InteractionUI import Ui_Interaction
 from ExitDialog import ExitDialogWindow
-from TimesUpDialog import TimesUpDialogWindow
+from TimesUpDialog import TimesUpDialog
 
 
 class CountdownThread(QThread):
@@ -91,7 +91,7 @@ class InteractionWindow:
 
     def makeCountDownThread(self):
         self.thread = QThread()
-        self.countdown = CountdownThread(10, self)
+        self.countdown = CountdownThread(5, self)
         self.countdown.moveToThread(self.thread)
 
         self.thread.started.connect(self.countdown.start)
@@ -126,7 +126,8 @@ class InteractionWindow:
         self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
 
     def timeOut(self):
-        result = TimesUpDialogWindow.launch(self.mainWindow.main_win, self.player["score"], "12")
+        dialog = TimesUpDialog(self.player["score"], "12")
+        result = dialog.exec()
 
         # wait for pop up to be closed
         if result == 0:
