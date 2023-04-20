@@ -81,14 +81,13 @@ class InteractionWindow:
         self.ui.buttonExit_3.clicked.connect(self.done)
 
         # Initialize attributes #
+        self.ai_score = "12"
         self.player = {
             "name": "",
             "score": 0
         }
         self.players = json.loads(open('leaderboard.json').read())
         self.mainWindow.updateLeaderboard(self.players)
-
-        self.ai_score = "12"
 
     def getWidget(self):
         return self.interaction
@@ -112,7 +111,7 @@ class InteractionWindow:
         self.ui.stackedpages.setCurrentWidget(self.ui.page1welcome)
 
     def onTextChanged(self):
-        self.ui.buttonStart.setEnabled(bool(self.ui.textName.text()))
+        self.ui.buttonStart.setEnabled(bool(self.ui.textName.text()))  # enable button if there is text
 
     def tryShakeIt(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page2try)
@@ -124,7 +123,7 @@ class InteractionWindow:
             self.start()
 
     def start(self):
-        self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
+        self.ui.pickupDisplay.setText("0 pickups")
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
 
         # Start countdown
@@ -175,6 +174,7 @@ class InteractionWindow:
 
             self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
 
+            # switch back to welcome screen after inaction
             self.timer = QTimer(self.mainWindow.main_win)
             self.timer.setInterval(25000)  # waits 25 seconds
             self.timer.timeout.connect(self.restart)
