@@ -1,6 +1,6 @@
 import time
 import json
-from PyQt5.QtCore import pyqtSignal, QThread, QMutex, QWaitCondition
+from PyQt5.QtCore import pyqtSignal, QThread, QMutex, QWaitCondition, QTimer
 from PyQt5.QtWidgets import QWidget
 
 from InteractionUI import Ui_Interaction
@@ -66,6 +66,7 @@ class InteractionWindow:
         # set up countdown thread
         self.thread = None
         self.countdown = None
+        self.timer = None
 
         # connecting buttons
         self.ui.textName.textChanged.connect(self.onTextChanged)
@@ -94,7 +95,7 @@ class InteractionWindow:
 
     def makeCountDownThread(self):
         self.thread = QThread()
-        self.countdown = CountdownThread(10, self)
+        self.countdown = CountdownThread(60, self)
         self.countdown.moveToThread(self.thread)
 
         self.thread.started.connect(self.countdown.start)
@@ -141,7 +142,6 @@ class InteractionWindow:
         if result == 0:
 
             # Adding player score til list of all players #
-
             if len(self.players) == 0:  # no other players
                 self.players.append(self.player)
             else:
@@ -175,26 +175,32 @@ class InteractionWindow:
 
             self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
 
-    def exit(self):
-        # before interaction completed
-        result = ExitDialogWindow.launch(self.mainWindow.main_win)
-        if result == 1:
-            self.mainWindow.endInteraction()
-            self.ui.textName.clear()
+            self.timer = QTimer(self.mainWindow.main_win)
+            self.timer.setInterval(25000)  # waits 25 seconds
+            self.timer.timeout.connect(self.restart)
+            self.timer.start()
 
-            # deleting info on player
-            self.player = {
-                "name": "",
-                "score": 0
-            }
+    def restart(self):
+        self.timer.stop()
+        self.clearPlayerInfo()
+        self.startup()  # Back to welcome screen
+
+    def exit(self):
+        # exit before interaction completed
+        result = ExitDialogWindow.launch(self.mainWindow.main_win)
+        if result == 1:  # yes
+            self.clearPlayerInfo()
+            self.mainWindow.endInteraction()  # Back to main screen
 
     def done(self):
-        # after interaction completed
-        self.mainWindow.endInteraction()
-        self.ui.textName.clear()
+        # exit after interaction completed
+        self.timer.stop()
+        self.clearPlayerInfo()
+        self.mainWindow.endInteraction()  # Back to main screen
 
-        # deleting info on player
+    def clearPlayerInfo(self):
         self.player = {
             "name": "",
             "score": 0
         }
+        self.ui.textName.clear()
