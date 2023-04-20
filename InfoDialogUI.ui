@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1026</width>
+    <height>496</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background-color: rgb(72, 110, 176);
+}
+
+QLabel{
+	font: 20pt &quot;Open Sans&quot;;
+	color: rgb(255, 255, 255);
+}
+
+QPushButton{
+	background-color: rgb(36, 55, 88);
+	color: white;
+	font: 20pt &quot;Open Sans&quot;;
+	min-height: 80px;
+	min-width: 200px;
+
+	border-radius: 15px;
+	border-top: 1px solid rgb(18, 28, 44);
+	border-left: 1.5px solid  rgb(18, 28, 44);
+	border-right: 1.5px solid  rgb(18, 28, 44);
+	border-bottom: 2px solid rgb(18, 28, 44);
+}
+
+QPushButton:pressed{
+	background-color: rgb(18, 28, 44);
+	border-top: 1px solid rgb(0, 0, 0);
+	border-left: 1.5px solid  rgb(0,0,0);
+	border-right: 1.5px solid  rgb(0,0,0);
+	border-bottom: 2px solid rgb(0,0,0);
+ }</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>10</y>
+     <width>919</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>8</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">font: bold 28pt &quot;Open Sans&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Try to pick up more elements than the AI!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>The elements will be automatically picked up by the robot when they are laying flat with no other elements near it.
+Use the different shakes to get the elements into the correct position.
+You have 60 seconds to pickup as many elements as you can. 
+Try beating the AI, the AI has a score of {} pickups.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>21</pointsize>
+        <weight>50</weight>
+        <italic>true</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: italic 21pt &quot;Open Sans&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Are you ready?</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>125</x>
+     <y>380</y>
+     <width>781</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">margin-left: 60px;
+margin-right: 60px;</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::No|QDialogButtonBox::Yes</set>
+   </property>
+   <property name="centerButtons">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
