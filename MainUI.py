@@ -1345,7 +1345,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Shakeit"))
         self.buttonLogin.setText(_translate("MainWindow", "Log in"))
         self.labelPassword.setText(_translate("MainWindow", "Password"))
         self.labelLoginError.setText(_translate("MainWindow", "Invalid username or password"))

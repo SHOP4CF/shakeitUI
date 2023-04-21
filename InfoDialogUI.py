@@ -88,7 +88,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Interaction Information"))
         self.label.setText(_translate("Dialog", "Try to pick up more elements than the AI!"))
         self.label_2.setText(_translate("Dialog", "The elements will be automatically picked up by the robot when they are laying flat with no other elements near it.\n"
 "Use the different shakes to get the elements into the correct position.\n"

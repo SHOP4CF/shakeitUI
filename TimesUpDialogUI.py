@@ -91,7 +91,7 @@ class Ui_TimesUpDialog(object):
 
     def retranslateUi(self, TimesUpDialog):
         _translate = QtCore.QCoreApplication.translate
-        TimesUpDialog.setWindowTitle(_translate("TimesUpDialog", "Dialog"))
+        TimesUpDialog.setWindowTitle(_translate("TimesUpDialog", "Times up"))
         self.label_2.setText(_translate("TimesUpDialog", "Times up!"))
         self.label1.setText(_translate("TimesUpDialog", "Your score:"))
         self.yourScore.setText(_translate("TimesUpDialog", "# pickups"))

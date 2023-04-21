@@ -1370,12 +1370,12 @@ class Ui_Interaction(object):
         self.stackedpages.addWidget(self.page4board)
 
         self.retranslateUi(Interaction)
-        self.stackedpages.setCurrentIndex(3)
+        self.stackedpages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Interaction)
 
     def retranslateUi(self, Interaction):
         _translate = QtCore.QCoreApplication.translate
-        Interaction.setWindowTitle(_translate("Interaction", "Form"))
+        Interaction.setWindowTitle(_translate("Interaction", "Shakeit Interaction"))
         self.page1welcome.setProperty("class", _translate("Interaction", "background"))
         self.label_5.setText(_translate("Interaction", "Welcome to ShakeIt"))
         self.textName.setPlaceholderText(_translate("Interaction", "Enter your name here..."))
