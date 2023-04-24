@@ -64,7 +64,7 @@ QPushButton:pressed{
        <string notr="true">font: bold 32pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
-       <string>Try to pick up more elements than the AI!</string>
+       <string>Pickup more components than the AI! </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -74,10 +74,8 @@ QPushButton:pressed{
     <item>
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>The elements will be automatically picked up by the robot when they are laying flat with no other elements near it.
-Use the different shakes to get the elements into the correct position.
-You have 60 seconds to pickup as many elements as you can. 
-Try beating the AI, the AI has a score of {} pickups.</string>
+       <string>You have 60 seconds to receive as many pickups as possible. To obtain a pickup, the component must be flipped correctly and then the robot will automatically collect it.  
+Use different shakes to get the components into the correct position. </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -102,7 +100,7 @@ Try beating the AI, the AI has a score of {} pickups.</string>
        <string notr="true">font: italic 27pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
-       <string>Are you ready?</string>
+       <string>Ready to beat the AI’s score of 12 pickups?  </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

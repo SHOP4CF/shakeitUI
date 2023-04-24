@@ -89,12 +89,10 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Interaction Information"))
-        self.label.setText(_translate("Dialog", "Try to pick up more elements than the AI!"))
-        self.label_2.setText(_translate("Dialog", "The elements will be automatically picked up by the robot when they are laying flat with no other elements near it.\n"
-"Use the different shakes to get the elements into the correct position.\n"
-"You have 60 seconds to pickup as many elements as you can. \n"
-"Try beating the AI, the AI has a score of {} pickups."))
-        self.label_3.setText(_translate("Dialog", "Are you ready?"))
+        self.label.setText(_translate("Dialog", "Pickup more components than the AI! "))
+        self.label_2.setText(_translate("Dialog", "You have 60 seconds to receive as many pickups as possible. To obtain a pickup, the component must be flipped correctly and then the robot will automatically collect it.  \n"
+"Use different shakes to get the components into the correct position. "))
+        self.label_3.setText(_translate("Dialog", "Ready to beat the AI’s score of 12 pickups?  "))
 
 
 if __name__ == "__main__":
