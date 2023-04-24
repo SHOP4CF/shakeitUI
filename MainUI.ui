@@ -268,9 +268,9 @@ color: white</string>
 }
 
 QRadioButton::indicator {
-    width:                  70px;
-    height:                 70px;
-    border-radius:          37px;
+    width: 70px;
+    height: 70px;
+    border-radius: 37px;
 }
 
 QRadioButton::indicator:checked {
@@ -298,7 +298,7 @@ QRadioButton::indicator:unchecked {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -1837,6 +1837,43 @@ padding: 5px;</string>
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QPushButton" name="buttonDispense">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>30</y>
+          <width>371</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color: white;	
+	font: bold 22pt &quot;Open Sans&quot;;
+
+	border-radius: 15px;
+	background-color: rgb(108, 198, 186);
+	border-top: 1.5px solid rgb(90, 166, 156);
+	border-left: 2px solid rgb(90, 166, 156);
+	border-right: 2px solid rgb(90, 166, 156);
+	border-bottom: 3px solid rgb(90, 166, 156);
+}
+
+QPushButton:pressed{
+	background-color: rgb(90, 166, 156);
+	border-bottom:1.5px solid rgb(73, 134, 126);
+	border-left: 2px solid rgb(73, 134, 126);
+	border-right: 2px solid rgb(73, 134, 126);
+	border-top: 3px solid rgb(73, 134, 126);
+}</string>
+        </property>
+        <property name="text">
+         <string>Dispense</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="pageBoard">

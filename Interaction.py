@@ -75,6 +75,7 @@ class InteractionWindow:
         self.ui.buttonReady.clicked.connect(self.play)
 
         self.ui.pushButton_52.clicked.connect(self.pickup_success)
+        self.ui.buttonDispense.clicked.connect(self.dispense_elements)
 
         self.ui.buttonExit_1.clicked.connect(self.exit)
         self.ui.buttonExit_2.clicked.connect(self.exit)
@@ -132,6 +133,9 @@ class InteractionWindow:
     def pickup_success(self):
         self.player["score"] += 1
         self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
+
+    def dispense_elements(self):
+        print("elements dispensed")
 
     def time_out(self):
         dialog = TimesUpDialog(self.player["score"], self.ai_score)

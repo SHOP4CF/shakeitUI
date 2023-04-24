@@ -857,9 +857,32 @@ class Ui_Interaction(object):
         self.label_6.setStyleSheet("font: bold 34pt \"Open Sans\";")
         self.label_6.setObjectName("label_6")
         self.pickupDisplay = QtWidgets.QLabel(self.frame_2)
-        self.pickupDisplay.setGeometry(QtCore.QRect(190, 0, 271, 101))
+        self.pickupDisplay.setGeometry(QtCore.QRect(180, 0, 271, 101))
         self.pickupDisplay.setStyleSheet("font: 34pt \"Open Sans\";")
         self.pickupDisplay.setObjectName("pickupDisplay")
+        self.buttonDispense = QtWidgets.QPushButton(self.page3play)
+        self.buttonDispense.setGeometry(QtCore.QRect(760, 30, 371, 81))
+        self.buttonDispense.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.buttonDispense.setStyleSheet("QPushButton{\n"
+"    color: white;    \n"
+"    font: bold 22pt \"Open Sans\";\n"
+"\n"
+"    border-radius: 15px;\n"
+"    background-color: rgb(108, 198, 186);\n"
+"    border-top: 1.5px solid rgb(90, 166, 156);\n"
+"    border-left: 2px solid rgb(90, 166, 156);\n"
+"    border-right: 2px solid rgb(90, 166, 156);\n"
+"    border-bottom: 3px solid rgb(90, 166, 156);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(90, 166, 156);\n"
+"    border-bottom:1.5px solid rgb(73, 134, 126);\n"
+"    border-left: 2px solid rgb(73, 134, 126);\n"
+"    border-right: 2px solid rgb(73, 134, 126);\n"
+"    border-top: 3px solid rgb(73, 134, 126);\n"
+"}")
+        self.buttonDispense.setObjectName("buttonDispense")
         self.stackedpages.addWidget(self.page3play)
         self.page4board = QtWidgets.QWidget()
         self.page4board.setStyleSheet(".board_num{\n"
@@ -1370,7 +1393,7 @@ class Ui_Interaction(object):
         self.stackedpages.addWidget(self.page4board)
 
         self.retranslateUi(Interaction)
-        self.stackedpages.setCurrentIndex(0)
+        self.stackedpages.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(Interaction)
 
     def retranslateUi(self, Interaction):
@@ -1434,6 +1457,7 @@ class Ui_Interaction(object):
         self.pushButton_82.setProperty("class", _translate("Interaction", "playbutton"))
         self.label_6.setText(_translate("Interaction", "Score:"))
         self.pickupDisplay.setText(_translate("Interaction", "0 pickups"))
+        self.buttonDispense.setText(_translate("Interaction", "Dispense"))
         self.page4board.setProperty("class", _translate("Interaction", "background"))
         self.num2.setText(_translate("Interaction", "2"))
         self.num2.setProperty("class", _translate("Interaction", "board_num"))

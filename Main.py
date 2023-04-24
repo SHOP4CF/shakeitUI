@@ -30,6 +30,7 @@ class MainWindow:
         self.ui.buttonLogin.clicked.connect(self.login)
         self.ui.buttonLogout.clicked.connect(self.logout)
         self.ui.buttonSettings.clicked.connect(self.ai_settings)
+        self.ui.buttonDispense.clicked.connect(self.dispense_elements)
 
         # connecting radiobuttons
         self.ui.radioAI.toggled.connect(self.ai)
@@ -98,6 +99,9 @@ class MainWindow:
 
     def manual(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageManual)
+
+    def dispense_elements(self):
+        print("elements dispensed")
 
     def leaderboard(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageBoard)
