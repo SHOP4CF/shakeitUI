@@ -55,8 +55,8 @@ class CountdownThread(QThread):
 
 class InteractionWindow:
 
-    def __init__(self, mainWindow):
-        self.mainWindow = mainWindow
+    def __init__(self, main_window):
+        self.main_window = main_window
 
         # setting up UI #
         self.interaction = QWidget()
@@ -69,12 +69,12 @@ class InteractionWindow:
         self.timer = None
 
         # connecting buttons
-        self.ui.textName.textChanged.connect(self.onTextChanged)
-        self.ui.buttonStart.clicked.connect(self.tryShakeIt)
+        self.ui.textName.textChanged.connect(self.on_text_changed)
+        self.ui.buttonStart.clicked.connect(self.try_shakeit)
         self.ui.buttonStart.setEnabled(False)
         self.ui.buttonReady.clicked.connect(self.play)
 
-        self.ui.pushButton_52.clicked.connect(self.pickupSuccess)
+        self.ui.pushButton_52.clicked.connect(self.pickup_success)
 
         self.ui.buttonExit_1.clicked.connect(self.exit)
         self.ui.buttonExit_2.clicked.connect(self.exit)
@@ -87,18 +87,18 @@ class InteractionWindow:
             "score": 0
         }
         self.players = json.loads(open('leaderboard.json').read())
-        self.mainWindow.updateLeaderboard(self.players)
+        self.main_window.update_leaderboard(self.players)
 
-    def getWidget(self):
+    def get_widget(self):
         return self.interaction
 
-    def makeCountDownThread(self):
+    def make_countdown_thread(self):
         self.thread = QThread()
         self.countdown = CountdownThread(60, self)
         self.countdown.moveToThread(self.thread)
 
         self.thread.started.connect(self.countdown.start)
-        self.countdown.finished.connect(self.timeOut)
+        self.countdown.finished.connect(self.time_out)
         self.countdown.finished.connect(self.thread.quit)
         self.countdown.finished.connect(self.countdown.deleteLater)
         self.thread.finished.connect(self.thread.deleteLater)
@@ -110,15 +110,15 @@ class InteractionWindow:
     def startup(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page1welcome)
 
-    def onTextChanged(self):
+    def on_text_changed(self):
         self.ui.buttonStart.setEnabled(bool(self.ui.textName.text()))  # enable button if there is text
 
-    def tryShakeIt(self):
+    def try_shakeit(self):
         self.ui.stackedpages.setCurrentWidget(self.ui.page2try)
         self.player["name"] = self.ui.textName.text()
 
     def play(self):
-        result = InfoDialogWindow.launch(self.mainWindow.main_win, self.ai_score)
+        result = InfoDialogWindow.launch(self.main_window.main_win, self.ai_score)
         if result == 1:  # yes
             self.start()
 
@@ -127,13 +127,13 @@ class InteractionWindow:
         self.ui.stackedpages.setCurrentWidget(self.ui.page3play)
 
         # Start countdown
-        self.makeCountDownThread()
+        self.make_countdown_thread()
 
-    def pickupSuccess(self):
+    def pickup_success(self):
         self.player["score"] += 1
         self.ui.pickupDisplay.setText("{} pickups".format(self.player["score"]))
 
-    def timeOut(self):
+    def time_out(self):
         dialog = TimesUpDialog(self.player["score"], self.ai_score)
         result = dialog.exec()
 
@@ -141,64 +141,67 @@ class InteractionWindow:
         if result == 0:
 
             # Adding player score til list of all players #
-            if len(self.players) == 0:  # no other players
+            player_score = self.player["score"]
+            if not self.players:
+                # no other players
                 self.players.append(self.player)
+            elif player_score <= self.players[-1]["score"]:
+                # smaller than the lowest number
+                self.players.append(self.player)
+            elif player_score >= self.players[0]["score"]:
+                # larger than the highest number
+                self.players.insert(0, self.player)
             else:
-                if self.players[-1]["score"] >= self.player["score"]:  # smaller than the lowest number
-                    self.players.append(self.player)
-                elif self.player["score"] >= self.players[0]["score"]:  # larger than the highest number
-                    self.players.insert(0, self.player)
-
-                else:
-                    i = 0
-                    while i < len(self.players):
-                        if self.players[i]["score"] > self.player["score"] >= self.players[i + 1]["score"]:
-                            self.players.insert(i + 1, self.player)
-                            break
-                        i = i + 1
+                i = 0
+                while i < len(self.players):
+                    if self.players[i]["score"] > self.player["score"] >= self.players[i + 1]["score"]:
+                        self.players.insert(i + 1, self.player)
+                        break
+                    i = i + 1
 
             json.dump(self.players, open('leaderboard.json', 'w'))
 
             # Updating leaderboard #
-            for i, p in enumerate(self.players):
-                if i > 9:
-                    break
-                exec("self.ui.name{}.setText(p['name'])".format(i + 1))
-                exec("self.ui.pickups{}.setText('{} pickups')".format(i + 1, p['score']))
+            name_labels = [getattr(self.ui, f"name{i}") for i in range(1, 11)]
+            pickup_labels = [getattr(self.ui, f"pickups{i}") for i in range(1, 11)]
+
+            for i, p in enumerate(self.players[:10]):
+                name_labels[i].setText(p['name'])
+                pickup_labels[i].setText(f"{p['score']} pickups")
 
             self.ui.playernum.setText(str(self.players.index(self.player) + 1))
             self.ui.playername.setText(self.player["name"])
             self.ui.playerpickups.setText("{} pickups".format(self.player["score"]))
 
-            self.mainWindow.updateLeaderboard(self.players)
+            self.main_window.update_leaderboard(self.players)
 
             self.ui.stackedpages.setCurrentWidget(self.ui.page4board)
 
             # switch back to welcome screen after inaction
-            self.timer = QTimer(self.mainWindow.main_win)
+            self.timer = QTimer(self.main_window.main_win)
             self.timer.setInterval(25000)  # waits 25 seconds
             self.timer.timeout.connect(self.restart)
             self.timer.start()
 
     def restart(self):
         self.timer.stop()
-        self.clearPlayerInfo()
+        self.clear_player_info()
         self.startup()  # Back to welcome screen
 
     def exit(self):
         # exit before interaction completed
-        result = ExitDialogWindow.launch(self.mainWindow.main_win)
+        result = ExitDialogWindow.launch(self.main_window.main_win)
         if result == 1:  # yes
-            self.clearPlayerInfo()
-            self.mainWindow.endInteraction()  # Back to main screen
+            self.clear_player_info()
+            self.main_window.end_interaction()  # Back to main screen
 
     def done(self):
         # exit after interaction completed
         self.timer.stop()
-        self.clearPlayerInfo()
-        self.mainWindow.endInteraction()  # Back to main screen
+        self.clear_player_info()
+        self.main_window.end_interaction()  # Back to main screen
 
-    def clearPlayerInfo(self):
+    def clear_player_info(self):
         self.player = {
             "name": "",
             "score": 0

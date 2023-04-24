@@ -8,13 +8,6 @@ from KeyrockAPI import KeyrockAPI
 from User import LoggedInUser
 
 
-def endAccessTime(api, user, mainwin):
-    newUser = api.refreshToken(user)
-    mainwin.setUser(newUser)
-    print("new access token gotten")
-    mainwin.newAccessTimer()
-
-
 class MainWindow:
     def __init__(self):
         # setting up keyrock
@@ -31,40 +24,41 @@ class MainWindow:
 
         # set up UI for interaction component
         self.interactionui = InteractionWindow(self)
-        self.ui.stackedLogin.addWidget(self.interactionui.getWidget())
+        self.ui.stackedLogin.addWidget(self.interactionui.get_widget())
 
         # connecting buttons
         self.ui.buttonLogin.clicked.connect(self.login)
         self.ui.buttonLogout.clicked.connect(self.logout)
-        self.ui.buttonSettings.clicked.connect(self.aisettings)
+        self.ui.buttonSettings.clicked.connect(self.ai_settings)
 
         # connecting radiobuttons
         self.ui.radioAI.toggled.connect(self.ai)
         self.ui.radioManual.toggled.connect(self.manual)
         self.ui.radioBoard.toggled.connect(self.leaderboard)
-        self.ui.radioInteraction.toggled.connect(self.startInteraction)
+        self.ui.radioInteraction.toggled.connect(self.start_interaction)
 
         # logged in user info
-        self.currentUser = LoggedInUser()
-        self.accessTimer = None
+        self.current_user = LoggedInUser()
 
-    def setUser(self, user):
-        self.currentUser = user
+    def new_access_timer(self):
+        accessTimer = Timer(3500, self.refresh_access_token)
+        accessTimer.start()
 
-    def newAccessTimer(self):
-        self.accessTimer = Timer(3500, endAccessTime, args=(self.keyrockAPI, self.currentUser, self))
-        self.accessTimer.start()
+    def refresh_access_token(self):
+        self.current_user = self.keyrockAPI.refresh_token(self.current_user)
+        print("new access token gotten")
+        self.new_access_timer()
 
     def login(self):
         username = self.ui.textUsername.text()
         password = self.ui.textPassword.text()
 
         # authenticate user using keyrock
-        result, self.currentUser = self.keyrockAPI.authenticateUser(username, password, self.currentUser)
+        result, self.current_user = self.keyrockAPI.authenticate_user(username, password, self.current_user)
 
         if result:  # success
-            self.ui.labelRole.setText(self.currentUser.role)
-            self.ui.labelUsername_2.setText(self.currentUser.username)
+            self.ui.labelRole.setText(self.current_user.role)
+            self.ui.labelUsername_2.setText(self.current_user.username)
 
             # change to mainPage
             self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
@@ -76,24 +70,24 @@ class MainWindow:
             self.ui.textUsername.clear()
             self.ui.labelLoginError.hide()
 
-            self.newAccessTimer()
+            self.new_access_timer()
 
         else:  # failure
             # clear the login page
             self.ui.labelLoginError.show()
             self.ui.textPassword.clear()
             self.ui.textUsername.clear()
-            self.currentUser = LoggedInUser()
+            self.current_user = LoggedInUser()
 
     def logout(self):
         self.ui.stackedLogin.setCurrentWidget(self.ui.loginPage)
-        self.currentUser = LoggedInUser()
+        self.current_user = LoggedInUser()
         self.accessTimer.cancel()
 
     def authorize(self, action, resource):
-        return self.keyrockAPI.authorizeUser(self.currentUser, action, resource)
+        return self.keyrockAPI.authorize_user(self.current_user, action, resource)
 
-    def aisettings(self):
+    def ai_settings(self):
         if self.authorize("POST", "/ai"):
             print("you may change the settings")
         else:
@@ -108,19 +102,20 @@ class MainWindow:
     def leaderboard(self):
         self.ui.stackedPages.setCurrentWidget(self.ui.pageBoard)
 
-    def updateLeaderboard(self, players):
-        if bool(players):
-            for i, p in enumerate(players):
-                if i > 9:
-                    break
-                exec("self.ui.name{}.setText(p['name'])".format(i + 1))
-                exec("self.ui.pickups{}.setText('{} pickups')".format(i + 1, p['score']))
+    def update_leaderboard(self, players):
+        if players:
+            name_labels = [getattr(self.ui, f"name{i}") for i in range(1, 11)]
+            pickup_labels = [getattr(self.ui, f"pickups{i}") for i in range(1, 11)]
 
-    def startInteraction(self):
-        self.ui.stackedLogin.setCurrentWidget(self.interactionui.getWidget())
+            for i, p in enumerate(players[:10]):
+                name_labels[i].setText(p['name'])
+                pickup_labels[i].setText(f"{p['score']} pickups")
+
+    def start_interaction(self):
+        self.ui.stackedLogin.setCurrentWidget(self.interactionui.get_widget())
         self.interactionui.startup()
 
-    def endInteraction(self):
+    def end_interaction(self):
         self.ui.radioBoard.toggle()
         self.ui.stackedLogin.setCurrentWidget(self.ui.mainPage)
         self.leaderboard()

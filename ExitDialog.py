@@ -5,9 +5,9 @@ from ExitDialogUI import Ui_Exit
 class ExitDialogWindow:
 
     @staticmethod
-    def launch(mainWindow):
+    def launch(main_window):
         # setting up UI #
-        dialog = QDialog(mainWindow)
+        dialog = QDialog(main_window)
         ui = Ui_Exit()
         ui.setupUi(dialog)
 

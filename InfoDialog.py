@@ -5,9 +5,9 @@ from InfoDialogUI import Ui_Dialog
 class InfoDialogWindow:
 
     @staticmethod
-    def launch(mainWindow, ai):
+    def launch(main_window, ai):
         # setting up UI #
-        dialog = QDialog(mainWindow)
+        dialog = QDialog(main_window)
         ui = Ui_Dialog()
         ui.setupUi(dialog)
 
