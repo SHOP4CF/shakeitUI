@@ -197,3 +197,7 @@ python -m PyQt5.uic.pyuic -x ExitDialogUI.ui -o ExitDialogUI.py
 ```sh
 python -m PyQt5.uic.pyuic -x TimesUpDialogUI.ui -o TimesUpDialogUI.py
 ```
+
+```sh
+python -m PyQt5.uic.pyuic -x InfoDialogUI.ui -o InfoDialogUI.py
+```

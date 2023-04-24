@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1026</width>
-    <height>496</height>
+    <width>1108</width>
+    <height>618</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Interaction Information</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog{
@@ -19,18 +19,18 @@
 }
 
 QLabel{
-	font: 20pt &quot;Open Sans&quot;;
+	font: 24pt &quot;Open Sans&quot;;
 	color: rgb(255, 255, 255);
 }
 
 QPushButton{
 	background-color: rgb(36, 55, 88);
 	color: white;
-	font: 20pt &quot;Open Sans&quot;;
-	min-height: 80px;
-	min-width: 200px;
+	font: 24pt &quot;Open Sans&quot;;
+	min-height: 100px;
+	min-width: 220px;
 
-	border-radius: 15px;
+	border-radius: 35px;
 	border-top: 1px solid rgb(18, 28, 44);
 	border-left: 1.5px solid  rgb(18, 28, 44);
 	border-right: 1.5px solid  rgb(18, 28, 44);
@@ -48,10 +48,10 @@ QPushButton:pressed{
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>10</y>
-     <width>919</width>
-     <height>371</height>
+     <x>40</x>
+     <y>30</y>
+     <width>1041</width>
+     <height>431</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -61,10 +61,10 @@ QPushButton:pressed{
     <item>
      <widget class="QLabel" name="label">
       <property name="styleSheet">
-       <string notr="true">font: bold 28pt &quot;Open Sans&quot;;</string>
+       <string notr="true">font: bold 32pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
-       <string>Try to pick up more elements than the AI!</string>
+       <string>Pickup more components than the AI! </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -74,10 +74,8 @@ QPushButton:pressed{
     <item>
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>The elements will be automatically picked up by the robot when they are laying flat with no other elements near it.
-Use the different shakes to get the elements into the correct position.
-You have 60 seconds to pickup as many elements as you can. 
-Try beating the AI, the AI has a score of {} pickups.</string>
+       <string>You have 60 seconds to receive as many pickups as possible. To obtain a pickup, the component must be flipped correctly and then the robot will automatically collect it.  
+Use different shakes to get the components into the correct position. </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -92,17 +90,17 @@ Try beating the AI, the AI has a score of {} pickups.</string>
       <property name="font">
        <font>
         <family>Open Sans</family>
-        <pointsize>21</pointsize>
+        <pointsize>27</pointsize>
         <weight>50</weight>
         <italic>true</italic>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: italic 21pt &quot;Open Sans&quot;;</string>
+       <string notr="true">font: italic 27pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
-       <string>Are you ready?</string>
+       <string>Ready to beat the AI’s score of 12 pickups?  </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -114,10 +112,10 @@ Try beating the AI, the AI has a score of {} pickups.</string>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>125</x>
-     <y>380</y>
-     <width>781</width>
-     <height>101</height>
+     <x>0</x>
+     <y>450</y>
+     <width>1111</width>
+     <height>141</height>
     </rect>
    </property>
    <property name="styleSheet">

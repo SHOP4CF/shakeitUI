@@ -14,24 +14,24 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(1026, 496)
+        Dialog.resize(1108, 618)
         Dialog.setStyleSheet("QDialog{\n"
 "    background-color: rgb(72, 110, 176);\n"
 "}\n"
 "\n"
 "QLabel{\n"
-"    font: 20pt \"Open Sans\";\n"
+"    font: 24pt \"Open Sans\";\n"
 "    color: rgb(255, 255, 255);\n"
 "}\n"
 "\n"
 "QPushButton{\n"
 "    background-color: rgb(36, 55, 88);\n"
 "    color: white;\n"
-"    font: 20pt \"Open Sans\";\n"
-"    min-height: 80px;\n"
-"    min-width: 200px;\n"
+"    font: 24pt \"Open Sans\";\n"
+"    min-height: 100px;\n"
+"    min-width: 220px;\n"
 "\n"
-"    border-radius: 15px;\n"
+"    border-radius: 35px;\n"
 "    border-top: 1px solid rgb(18, 28, 44);\n"
 "    border-left: 1.5px solid  rgb(18, 28, 44);\n"
 "    border-right: 1.5px solid  rgb(18, 28, 44);\n"
@@ -46,14 +46,14 @@ class Ui_Dialog(object):
 "    border-bottom: 2px solid rgb(0,0,0);\n"
 " }")
         self.verticalLayoutWidget = QtWidgets.QWidget(Dialog)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(50, 10, 919, 371))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(40, 30, 1041, 431))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(8)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.label.setStyleSheet("font: bold 28pt \"Open Sans\";")
+        self.label.setStyleSheet("font: bold 32pt \"Open Sans\";")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
@@ -65,17 +65,17 @@ class Ui_Dialog(object):
         self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Open Sans")
-        font.setPointSize(21)
+        font.setPointSize(27)
         font.setBold(False)
         font.setItalic(True)
         font.setWeight(50)
         self.label_3.setFont(font)
-        self.label_3.setStyleSheet("font: italic 21pt \"Open Sans\";")
+        self.label_3.setStyleSheet("font: italic 27pt \"Open Sans\";")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.verticalLayout.addWidget(self.label_3)
         self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
-        self.buttonBox.setGeometry(QtCore.QRect(125, 380, 781, 101))
+        self.buttonBox.setGeometry(QtCore.QRect(0, 450, 1111, 141))
         self.buttonBox.setStyleSheet("margin-left: 60px;\n"
 "margin-right: 60px;")
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
@@ -88,13 +88,11 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "Try to pick up more elements than the AI!"))
-        self.label_2.setText(_translate("Dialog", "The elements will be automatically picked up by the robot when they are laying flat with no other elements near it.\n"
-"Use the different shakes to get the elements into the correct position.\n"
-"You have 60 seconds to pickup as many elements as you can. \n"
-"Try beating the AI, the AI has a score of {} pickups."))
-        self.label_3.setText(_translate("Dialog", "Are you ready?"))
+        Dialog.setWindowTitle(_translate("Dialog", "Interaction Information"))
+        self.label.setText(_translate("Dialog", "Pickup more components than the AI! "))
+        self.label_2.setText(_translate("Dialog", "You have 60 seconds to receive as many pickups as possible. To obtain a pickup, the component must be flipped correctly and then the robot will automatically collect it.  \n"
+"Use different shakes to get the components into the correct position. "))
+        self.label_3.setText(_translate("Dialog", "Ready to beat the AI’s score of 12 pickups?  "))
 
 
 if __name__ == "__main__":

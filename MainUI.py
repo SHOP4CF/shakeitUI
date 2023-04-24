@@ -53,9 +53,25 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.buttonLogin.setFont(font)
         self.buttonLogin.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.buttonLogin.setStyleSheet("background-color: rgb(40, 85, 162);\n"
-"border-radius: 10px;\n"
-"color: white")
+        self.buttonLogin.setStyleSheet("QPushButton{\n"
+"    color: white;\n"
+"\n"
+"    background-color: rgb(40, 85, 162);\n"
+"    border-radius: 10px;\n"
+"    border-top: 1.5px solid rgb(31, 69, 129);\n"
+"    border-left: 2px solid rgb(31, 69, 129);\n"
+"    border-right: 2px solid rgb(31, 69, 129);\n"
+"    border-bottom: 3px solid rgb(31, 69, 129);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(31, 69, 129);\n"
+"\n"
+"    border-top: 3px solid rgb(22, 48, 90);\n"
+"    border-left: 2px solid rgb(22, 48, 90);\n"
+"    border-right: 2px solid rgb(22, 48, 90);\n"
+"    border-bottom: 1.5px solid rgb(22, 48, 90);\n"
+"}")
         self.buttonLogin.setObjectName("buttonLogin")
         self.textPassword = QtWidgets.QLineEdit(self.frame)
         self.textPassword.setGeometry(QtCore.QRect(50, 280, 431, 41))
@@ -122,14 +138,14 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QRadioButton::indicator {\n"
-"    width:                  70px;\n"
-"    height:                 70px;\n"
-"    border-radius:          37px;\n"
+"    width: 70px;\n"
+"    height: 70px;\n"
+"    border-radius: 37px;\n"
 "}\n"
 "\n"
 "QRadioButton::indicator:checked {\n"
 "    background-color: rgb(25, 55, 103);\n"
-"    border: 2px solid rgb(34, 75, 141);\n"
+"    border: 2px solid rgb(25, 55, 103);\n"
 "}\n"
 "\n"
 "QRadioButton::indicator:unchecked {\n"
@@ -797,6 +813,29 @@ class Ui_MainWindow(object):
         self.gridLayout_9.addWidget(self.pushButton_82, 5, 0, 1, 1)
         self.verticalLayout_12.addLayout(self.gridLayout_9)
         self.horizontalLayout_buttons.addWidget(self.frame_5)
+        self.buttonDispense = QtWidgets.QPushButton(self.pageManual)
+        self.buttonDispense.setGeometry(QtCore.QRect(1120, 30, 371, 81))
+        self.buttonDispense.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.buttonDispense.setStyleSheet("QPushButton{\n"
+"    color: white;    \n"
+"    font: bold 22pt \"Open Sans\";\n"
+"\n"
+"    border-radius: 15px;\n"
+"    background-color: rgb(108, 198, 186);\n"
+"    border-top: 1.5px solid rgb(90, 166, 156);\n"
+"    border-left: 2px solid rgb(90, 166, 156);\n"
+"    border-right: 2px solid rgb(90, 166, 156);\n"
+"    border-bottom: 3px solid rgb(90, 166, 156);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(90, 166, 156);\n"
+"    border-bottom:1.5px solid rgb(73, 134, 126);\n"
+"    border-left: 2px solid rgb(73, 134, 126);\n"
+"    border-right: 2px solid rgb(73, 134, 126);\n"
+"    border-top: 3px solid rgb(73, 134, 126);\n"
+"}")
+        self.buttonDispense.setObjectName("buttonDispense")
         self.stackedPages.addWidget(self.pageManual)
         self.pageBoard = QtWidgets.QWidget()
         self.pageBoard.setStyleSheet(".board_num{\n"
@@ -1338,14 +1377,14 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedLogin.setCurrentIndex(1)
-        self.stackedPages.setCurrentIndex(2)
+        self.stackedLogin.setCurrentIndex(0)
+        self.stackedPages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textUsername, self.textPassword)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Shakeit"))
         self.buttonLogin.setText(_translate("MainWindow", "Log in"))
         self.labelPassword.setText(_translate("MainWindow", "Password"))
         self.labelLoginError.setText(_translate("MainWindow", "Invalid username or password"))
@@ -1401,6 +1440,7 @@ class Ui_MainWindow(object):
         self.pushButton_80.setProperty("class", _translate("MainWindow", "playbutton"))
         self.pushButton_81.setProperty("class", _translate("MainWindow", "playbutton"))
         self.pushButton_82.setProperty("class", _translate("MainWindow", "playbutton"))
+        self.buttonDispense.setText(_translate("MainWindow", "Dispense"))
         self.pageBoard.setProperty("class", _translate("MainWindow", "pagebackground"))
         self.Titel_3.setText(_translate("MainWindow", "Leaderboard"))
         self.num7.setText(_translate("MainWindow", "7"))

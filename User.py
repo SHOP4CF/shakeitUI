@@ -6,13 +6,13 @@ class LoggedInUser:
         self.role = None
         self.id = None
         self.accessToken = None
-        self.refreshToken = None
+        self.refresh_token = None
 
-    def updateInfo(self, username, role, ID):
+    def update_info(self, username, role, ID):
         self.username = username
         self.role = role
         self.id = ID
 
-    def updateAccess(self, newAccess, newRefresh):
-        self.accessToken = newAccess
-        self.refreshToken = newRefresh
+    def update_access(self, new_access, new_refresh):
+        self.accessToken = new_access
+        self.refresh_token = new_refresh

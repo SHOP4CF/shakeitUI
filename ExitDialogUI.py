@@ -64,7 +64,7 @@ class Ui_Exit(object):
 
     def retranslateUi(self, Exit):
         _translate = QtCore.QCoreApplication.translate
-        Exit.setWindowTitle(_translate("Exit", "Dialog"))
+        Exit.setWindowTitle(_translate("Exit", "Exit Shakeit"))
         self.label.setText(_translate("Exit", "​Are you sure you want to quit ShakeIt?​"))
 
 

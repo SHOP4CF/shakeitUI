@@ -15,12 +15,12 @@ class TimesUpDialog(QDialog):
 
         self.timer = QTimer(self)
         self.timer.setInterval(10000)  # closes after 10 seconds
-        self.timer.timeout.connect(self.timeout)
+        self.timer.timeout.connect(self.time_out)
         self.timer.start()
 
     def closeEvent(self, event):
         self.timer.stop()
         self.close()
 
-    def timeout(self):
+    def time_out(self):
         self.close()

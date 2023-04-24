@@ -28,7 +28,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Shakeit</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedLogin">
@@ -44,7 +44,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="loginPage">
      <property name="styleSheet">
@@ -111,9 +111,25 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(40, 85, 162);
-border-radius: 10px;
-color: white</string>
+        <string notr="true">QPushButton{
+	color: white;
+
+	background-color: rgb(40, 85, 162);
+	border-radius: 10px;
+	border-top: 1.5px solid rgb(31, 69, 129);
+	border-left: 2px solid rgb(31, 69, 129);
+	border-right: 2px solid rgb(31, 69, 129);
+	border-bottom: 3px solid rgb(31, 69, 129);
+}
+
+QPushButton:pressed{
+	background-color: rgb(31, 69, 129);
+
+	border-top: 3px solid rgb(22, 48, 90);
+	border-left: 2px solid rgb(22, 48, 90);
+	border-right: 2px solid rgb(22, 48, 90);
+	border-bottom: 1.5px solid rgb(22, 48, 90);
+}</string>
        </property>
        <property name="text">
         <string>Log in</string>
@@ -268,14 +284,14 @@ color: white</string>
 }
 
 QRadioButton::indicator {
-    width:                  70px;
-    height:                 70px;
-    border-radius:          37px;
+    width: 70px;
+    height: 70px;
+    border-radius: 37px;
 }
 
 QRadioButton::indicator:checked {
     background-color: rgb(25, 55, 103);
-    border: 2px solid rgb(34, 75, 141);
+    border: 2px solid rgb(25, 55, 103);
 }
 
 QRadioButton::indicator:unchecked {
@@ -298,7 +314,7 @@ QRadioButton::indicator:unchecked {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageAI">
        <property name="styleSheet">
@@ -1837,6 +1853,43 @@ padding: 5px;</string>
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QPushButton" name="buttonDispense">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>30</y>
+          <width>371</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color: white;	
+	font: bold 22pt &quot;Open Sans&quot;;
+
+	border-radius: 15px;
+	background-color: rgb(108, 198, 186);
+	border-top: 1.5px solid rgb(90, 166, 156);
+	border-left: 2px solid rgb(90, 166, 156);
+	border-right: 2px solid rgb(90, 166, 156);
+	border-bottom: 3px solid rgb(90, 166, 156);
+}
+
+QPushButton:pressed{
+	background-color: rgb(90, 166, 156);
+	border-bottom:1.5px solid rgb(73, 134, 126);
+	border-left: 2px solid rgb(73, 134, 126);
+	border-right: 2px solid rgb(73, 134, 126);
+	border-top: 3px solid rgb(73, 134, 126);
+}</string>
+        </property>
+        <property name="text">
+         <string>Dispense</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="pageBoard">
