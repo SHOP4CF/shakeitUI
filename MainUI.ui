@@ -44,7 +44,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="loginPage">
      <property name="styleSheet">
@@ -111,9 +111,25 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(40, 85, 162);
-border-radius: 10px;
-color: white</string>
+        <string notr="true">QPushButton{
+	color: white;
+
+	background-color: rgb(40, 85, 162);
+	border-radius: 10px;
+	border-top: 1.5px solid rgb(31, 69, 129);
+	border-left: 2px solid rgb(31, 69, 129);
+	border-right: 2px solid rgb(31, 69, 129);
+	border-bottom: 3px solid rgb(31, 69, 129);
+}
+
+QPushButton:pressed{
+	background-color: rgb(31, 69, 129);
+
+	border-top: 3px solid rgb(22, 48, 90);
+	border-left: 2px solid rgb(22, 48, 90);
+	border-right: 2px solid rgb(22, 48, 90);
+	border-bottom: 1.5px solid rgb(22, 48, 90);
+}</string>
        </property>
        <property name="text">
         <string>Log in</string>
@@ -275,7 +291,7 @@ QRadioButton::indicator {
 
 QRadioButton::indicator:checked {
     background-color: rgb(25, 55, 103);
-    border: 2px solid rgb(34, 75, 141);
+    border: 2px solid rgb(25, 55, 103);
 }
 
 QRadioButton::indicator:unchecked {

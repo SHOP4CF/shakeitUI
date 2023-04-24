@@ -53,9 +53,25 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.buttonLogin.setFont(font)
         self.buttonLogin.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.buttonLogin.setStyleSheet("background-color: rgb(40, 85, 162);\n"
-"border-radius: 10px;\n"
-"color: white")
+        self.buttonLogin.setStyleSheet("QPushButton{\n"
+"    color: white;\n"
+"\n"
+"    background-color: rgb(40, 85, 162);\n"
+"    border-radius: 10px;\n"
+"    border-top: 1.5px solid rgb(31, 69, 129);\n"
+"    border-left: 2px solid rgb(31, 69, 129);\n"
+"    border-right: 2px solid rgb(31, 69, 129);\n"
+"    border-bottom: 3px solid rgb(31, 69, 129);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(31, 69, 129);\n"
+"\n"
+"    border-top: 3px solid rgb(22, 48, 90);\n"
+"    border-left: 2px solid rgb(22, 48, 90);\n"
+"    border-right: 2px solid rgb(22, 48, 90);\n"
+"    border-bottom: 1.5px solid rgb(22, 48, 90);\n"
+"}")
         self.buttonLogin.setObjectName("buttonLogin")
         self.textPassword = QtWidgets.QLineEdit(self.frame)
         self.textPassword.setGeometry(QtCore.QRect(50, 280, 431, 41))
@@ -129,7 +145,7 @@ class Ui_MainWindow(object):
 "\n"
 "QRadioButton::indicator:checked {\n"
 "    background-color: rgb(25, 55, 103);\n"
-"    border: 2px solid rgb(34, 75, 141);\n"
+"    border: 2px solid rgb(25, 55, 103);\n"
 "}\n"
 "\n"
 "QRadioButton::indicator:unchecked {\n"
@@ -1361,7 +1377,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedLogin.setCurrentIndex(1)
+        self.stackedLogin.setCurrentIndex(0)
         self.stackedPages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textUsername, self.textPassword)
