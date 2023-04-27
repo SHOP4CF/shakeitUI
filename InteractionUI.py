@@ -864,7 +864,7 @@ class Ui_Interaction(object):
         self.buttonDispense.setGeometry(QtCore.QRect(760, 30, 371, 81))
         self.buttonDispense.setFocusPolicy(QtCore.Qt.NoFocus)
         self.buttonDispense.setStyleSheet("QPushButton{\n"
-"    color: white;    \n"
+"    color: black;    \n"
 "    font: bold 22pt \"Open Sans\";\n"
 "\n"
 "    border-radius: 15px;\n"

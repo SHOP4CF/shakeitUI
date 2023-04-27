@@ -2264,7 +2264,7 @@ border-radius: 15px;
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	color: white;	
+	color: black;	
 	font: bold 22pt &quot;Open Sans&quot;;
 
 	border-radius: 15px;
