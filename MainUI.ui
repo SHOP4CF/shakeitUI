@@ -44,7 +44,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="loginPage">
      <property name="styleSheet">
@@ -1868,7 +1868,7 @@ padding: 5px;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
-	color: white;	
+	color: black;	
 	font: bold 22pt &quot;Open Sans&quot;;
 
 	border-radius: 15px;

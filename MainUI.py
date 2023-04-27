@@ -817,7 +817,7 @@ class Ui_MainWindow(object):
         self.buttonDispense.setGeometry(QtCore.QRect(1120, 30, 371, 81))
         self.buttonDispense.setFocusPolicy(QtCore.Qt.NoFocus)
         self.buttonDispense.setStyleSheet("QPushButton{\n"
-"    color: white;    \n"
+"    color: black;    \n"
 "    font: bold 22pt \"Open Sans\";\n"
 "\n"
 "    border-radius: 15px;\n"
@@ -1377,7 +1377,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedLogin.setCurrentIndex(0)
+        self.stackedLogin.setCurrentIndex(1)
         self.stackedPages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textUsername, self.textPassword)
