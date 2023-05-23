@@ -184,8 +184,8 @@ class Ui_Interaction(object):
 "    border-right: 3px solid  rgb(80, 80, 80);\n"
 "    border-bottom: 4px solid  rgb(80, 80, 80);\n"
 "\n"
-"    width: 125px;\n"
-"    height: 125px;\n"
+"    width: 190px;\n"
+"    height: 190px;\n"
 "    padding: 20px;\n"
 "}\n"
 "\n"
@@ -247,7 +247,7 @@ class Ui_Interaction(object):
         self.buttonforward.setObjectName("buttonforward")
         self.verticalLayout_5.addWidget(self.buttonforward)
         self.label_16 = QtWidgets.QLabel(self.horizontalLayoutWidget_4)
-        self.label_16.setMaximumSize(QtCore.QSize(165, 16777215))
+        self.label_16.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_16.setStyleSheet("font: bold 18pt \"Open Sans\";\n"
 "qproperty-alignment: AlignCenter;")
         self.label_16.setWordWrap(True)
@@ -285,7 +285,7 @@ class Ui_Interaction(object):
         self.buttonback.setObjectName("buttonback")
         self.verticalLayout_3.addWidget(self.buttonback)
         self.label_14 = QtWidgets.QLabel(self.horizontalLayoutWidget_4)
-        self.label_14.setMaximumSize(QtCore.QSize(165, 16777215))
+        self.label_14.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_14.setStyleSheet("font: bold 18pt \"Open Sans\";\n"
 "qproperty-alignment: AlignCenter;")
         self.label_14.setTextFormat(QtCore.Qt.AutoText)
@@ -298,106 +298,13 @@ class Ui_Interaction(object):
         spacerItem17 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_10.addItem(spacerItem17)
         self.verticalLayout_2.addLayout(self.horizontalLayout_10)
-        spacerItem18 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_2.addItem(spacerItem18)
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.frame_3 = QtWidgets.QFrame(self.horizontalLayoutWidget_4)
-        self.frame_3.setMinimumSize(QtCore.QSize(541, 109))
-        self.frame_3.setStyleSheet("QFrame{\n"
-"    background-color: rgb(172, 172, 172);\n"
-"    border-radius: 20px;\n"
-"}\n"
-"\n"
-".icons{\n"
-"    padding: 15px;\n"
-"    margin: 10px;\n"
-"    background-color: rgb(102, 102, 102);\n"
-"    border-radius: 15px;\n"
-"}")
-        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_3.setObjectName("frame_3")
-        self.label_8 = QtWidgets.QLabel(self.frame_3)
-        self.label_8.setGeometry(QtCore.QRect(0, 0, 121, 111))
-        self.label_8.setText("")
-        self.label_8.setPixmap(QtGui.QPixmap("resources/speedicon.png"))
-        self.label_8.setScaledContents(True)
-        self.label_8.setObjectName("label_8")
-        self.label_9 = QtWidgets.QLabel(self.frame_3)
-        self.label_9.setGeometry(QtCore.QRect(120, 10, 411, 31))
-        font = QtGui.QFont()
-        font.setFamily("Open Sans")
-        font.setPointSize(18)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_9.setFont(font)
-        self.label_9.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label_9.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_9.setObjectName("label_9")
-        self.label_10 = QtWidgets.QLabel(self.frame_3)
-        self.label_10.setGeometry(QtCore.QRect(120, 50, 411, 41))
-        font = QtGui.QFont()
-        font.setFamily("Open Sans")
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setUnderline(True)
-        font.setWeight(50)
-        self.label_10.setFont(font)
-        self.label_10.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label_10.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
-        self.label_10.setObjectName("label_10")
-        self.horizontalLayout_9.addWidget(self.frame_3)
-        spacerItem19 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem19)
-        self.frame_4 = QtWidgets.QFrame(self.horizontalLayoutWidget_4)
-        self.frame_4.setMinimumSize(QtCore.QSize(541, 109))
-        self.frame_4.setStyleSheet("QFrame{\n"
-"    background-color: rgb(172, 172, 172);\n"
-"    border-radius: 20px;\n"
-"}\n"
-"\n"
-".icons{\n"
-"    padding: 15px;\n"
-"    margin: 10px;\n"
-"    background-color: rgb(102, 102, 102);\n"
-"    border-radius: 15px;\n"
-"}")
-        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_4.setObjectName("frame_4")
-        self.label_11 = QtWidgets.QLabel(self.frame_4)
-        self.label_11.setGeometry(QtCore.QRect(0, 0, 121, 111))
-        self.label_11.setText("")
-        self.label_11.setPixmap(QtGui.QPixmap("resources/repicon.png"))
-        self.label_11.setScaledContents(True)
-        self.label_11.setObjectName("label_11")
-        self.label_12 = QtWidgets.QLabel(self.frame_4)
-        self.label_12.setGeometry(QtCore.QRect(120, 10, 411, 31))
-        font = QtGui.QFont()
-        font.setFamily("Open Sans")
-        font.setPointSize(18)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_12.setFont(font)
-        self.label_12.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label_12.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_12.setObjectName("label_12")
-        self.label_13 = QtWidgets.QLabel(self.frame_4)
-        self.label_13.setGeometry(QtCore.QRect(120, 50, 411, 41))
-        font = QtGui.QFont()
-        font.setFamily("Open Sans")
-        font.setPointSize(12)
-        font.setBold(False)
-        font.setUnderline(True)
-        font.setWeight(50)
-        self.label_13.setFont(font)
-        self.label_13.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label_13.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
-        self.label_13.setWordWrap(True)
-        self.label_13.setObjectName("label_13")
-        self.horizontalLayout_9.addWidget(self.frame_4)
+        spacerItem18 = QtWidgets.QSpacerItem(1300, 20, QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem18)
         self.verticalLayout_2.addLayout(self.horizontalLayout_9)
+        spacerItem19 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem19)
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         spacerItem20 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -1393,7 +1300,7 @@ class Ui_Interaction(object):
         self.stackedpages.addWidget(self.page4board)
 
         self.retranslateUi(Interaction)
-        self.stackedpages.setCurrentIndex(2)
+        self.stackedpages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(Interaction)
 
     def retranslateUi(self, Interaction):
@@ -1413,12 +1320,6 @@ class Ui_Interaction(object):
         self.label_15.setText(_translate("Interaction", "Flip"))
         self.buttonback.setProperty("class", _translate("Interaction", "testbutton"))
         self.label_14.setText(_translate("Interaction", "Shake Backward"))
-        self.label_8.setProperty("class", _translate("Interaction", "icons"))
-        self.label_9.setText(_translate("Interaction", "Speed"))
-        self.label_10.setText(_translate("Interaction", "Force applied to move the pieces"))
-        self.label_11.setProperty("class", _translate("Interaction", "icons"))
-        self.label_12.setText(_translate("Interaction", "Repetition"))
-        self.label_13.setText(_translate("Interaction", "The number of times the shake is repeated"))
         self.buttonReady.setText(_translate("Interaction", "Ready to shake"))
         self.label_18.setText(_translate("Interaction", "Training mode"))
         self.page3play.setProperty("class", _translate("Interaction", "background"))

@@ -40,7 +40,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page1welcome">
     <property name="styleSheet">
@@ -503,8 +503,8 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
 	border-right: 3px solid  rgb(80, 80, 80);
 	border-bottom: 4px solid  rgb(80, 80, 80);
 
-	width: 125px;
-	height: 125px;
+	width: 190px;
+	height: 190px;
 	padding: 20px;
 }
 
@@ -637,7 +637,7 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
              <widget class="QLabel" name="label_16">
               <property name="maximumSize">
                <size>
-                <width>165</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -745,7 +745,7 @@ qproperty-alignment: AlignCenter;</string>
              <widget class="QLabel" name="label_14">
               <property name="maximumSize">
                <size>
-                <width>165</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -791,7 +791,27 @@ qproperty-alignment: AlignCenter;</string>
          </layout>
         </item>
         <item>
-         <spacer name="verticalSpacer_5">
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <spacer name="horizontalSpacer_12">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Maximum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>1300</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -802,238 +822,6 @@ qproperty-alignment: AlignCenter;</string>
            </size>
           </property>
          </spacer>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_9">
-          <item>
-           <widget class="QFrame" name="frame_3">
-            <property name="minimumSize">
-             <size>
-              <width>541</width>
-              <height>109</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame{
-	background-color: rgb(172, 172, 172);
-	border-radius: 20px;
-}
-
-.icons{
-	padding: 15px;
-	margin: 10px;
-	background-color: rgb(102, 102, 102);
-	border-radius: 15px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <widget class="QLabel" name="label_8">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>121</width>
-               <height>111</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="pixmap">
-              <pixmap>resources/speedicon.png</pixmap>
-             </property>
-             <property name="scaledContents">
-              <bool>true</bool>
-             </property>
-             <property name="class" stdset="0">
-              <string>icons</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_9">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>10</y>
-               <width>411</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>18</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Speed</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_10">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>50</y>
-               <width>411</width>
-               <height>41</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>12</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-               <underline>true</underline>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Force applied to move the pieces</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignHCenter|Qt::AlignTop</set>
-             </property>
-            </widget>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_12">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame_4">
-            <property name="minimumSize">
-             <size>
-              <width>541</width>
-              <height>109</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame{
-	background-color: rgb(172, 172, 172);
-	border-radius: 20px;
-}
-
-.icons{
-	padding: 15px;
-	margin: 10px;
-	background-color: rgb(102, 102, 102);
-	border-radius: 15px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <widget class="QLabel" name="label_11">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>121</width>
-               <height>111</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="pixmap">
-              <pixmap>resources/repicon.png</pixmap>
-             </property>
-             <property name="scaledContents">
-              <bool>true</bool>
-             </property>
-             <property name="class" stdset="0">
-              <string>icons</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_12">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>10</y>
-               <width>411</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>18</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Repetition</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_13">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>50</y>
-               <width>411</width>
-               <height>41</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>12</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-               <underline>true</underline>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>The number of times the shake is repeated</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignHCenter|Qt::AlignTop</set>
-             </property>
-             <property name="wordWrap">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </widget>
-          </item>
-         </layout>
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
