@@ -40,7 +40,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="page1welcome">
     <property name="styleSheet">
@@ -995,6 +995,8 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
 	margin: 8px;
 	padding: 20px;
 
+	min-height: 60px;
+
 	border-radius: 15px;
 	background-color:  rgb(56, 56, 56);
 	border-top: 1.5px solid rgb(30, 30, 30);
@@ -1020,7 +1022,7 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
        <x>0</x>
        <y>140</y>
        <width>1921</width>
-       <height>891</height>
+       <height>781</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_buttons">
@@ -1034,7 +1036,7 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>120</width>
+          <width>150</width>
           <height>20</height>
          </size>
         </property>
@@ -1059,8 +1061,8 @@ border-radius: 15px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>551</width>
-           <height>891</height>
+           <width>531</width>
+           <height>771</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1087,7 +1089,7 @@ border-radius: 15px;
             <property name="minimumSize">
              <size>
               <width>400</width>
-              <height>110</height>
+              <height>90</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1107,7 +1109,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1129,7 +1131,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1151,7 +1153,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1173,7 +1175,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1195,7 +1197,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1217,7 +1219,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1239,7 +1241,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1261,7 +1263,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1283,7 +1285,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1305,7 +1307,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1347,8 +1349,8 @@ border-radius: 15px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>551</width>
-           <height>891</height>
+           <width>531</width>
+           <height>775</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -1375,7 +1377,7 @@ border-radius: 15px;
             <property name="minimumSize">
              <size>
               <width>400</width>
-              <height>110</height>
+              <height>90</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1395,7 +1397,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1417,7 +1419,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1439,7 +1441,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1461,7 +1463,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1483,7 +1485,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1505,7 +1507,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1527,7 +1529,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1549,7 +1551,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1571,7 +1573,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1593,7 +1595,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1635,8 +1637,8 @@ border-radius: 15px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>551</width>
-           <height>889</height>
+           <width>531</width>
+           <height>771</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -1663,7 +1665,7 @@ border-radius: 15px;
             <property name="minimumSize">
              <size>
               <width>400</width>
-              <height>110</height>
+              <height>90</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1683,7 +1685,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1705,7 +1707,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1727,7 +1729,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1749,7 +1751,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1771,7 +1773,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1793,7 +1795,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1815,7 +1817,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1837,7 +1839,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1859,7 +1861,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1881,7 +1883,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1914,7 +1916,7 @@ padding: 5px;</string>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>120</width>
+          <width>150</width>
           <height>20</height>
          </size>
         </property>
@@ -1925,7 +1927,7 @@ padding: 5px;</string>
     <widget class="QLCDNumber" name="timer">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>30</x>
        <y>20</y>
        <width>100</width>
        <height>100</height>
@@ -1974,9 +1976,9 @@ border-radius: 15px;
     <widget class="QFrame" name="frame_2">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>150</x>
        <y>20</y>
-       <width>551</width>
+       <width>541</width>
        <height>100</height>
       </rect>
      </property>
@@ -2041,10 +2043,10 @@ border-radius: 15px;
     <widget class="QPushButton" name="buttonDispense">
      <property name="geometry">
       <rect>
-       <x>760</x>
-       <y>30</y>
-       <width>371</width>
-       <height>81</height>
+       <x>430</x>
+       <y>940</y>
+       <width>1061</width>
+       <height>91</height>
       </rect>
      </property>
      <property name="focusPolicy">
@@ -2053,7 +2055,7 @@ border-radius: 15px;
      <property name="styleSheet">
       <string notr="true">QPushButton{
 	color: black;	
-	font: bold 22pt &quot;Open Sans&quot;;
+	font: bold 24pt &quot;Open Sans&quot;;
 
 	border-radius: 15px;
 	background-color: rgb(108, 198, 186);
@@ -2072,7 +2074,7 @@ QPushButton:pressed{
 }</string>
      </property>
      <property name="text">
-      <string>Dispense</string>
+      <string>Dispense more elements</string>
      </property>
     </widget>
    </widget>
