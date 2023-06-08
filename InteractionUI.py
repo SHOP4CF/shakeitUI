@@ -400,6 +400,14 @@ class Ui_Interaction(object):
 "    border-left: 3px solid rgb(20, 20, 20);\n"
 "    border-right: 3px solid rgb(20, 20, 20);\n"
 "    border-top: 4px solid rgb(20, 20, 20);\n"
+"}\n"
+"\n"
+".playbutton:disabled{\n"
+"    background-color: rgb(85, 85, 85);\n"
+"    border-top: 1.5px solid rgb(85, 85, 85);\n"
+"    border-left: 2.5px solid rgb(85, 85, 85);\n"
+"    border-right: 2.5px solid rgb(85, 85, 85);\n"
+"    border-bottom: 4px solid rgb(85, 85, 85);\n"
 "}")
         self.page3play.setObjectName("page3play")
         self.layoutWidget_2 = QtWidgets.QWidget(self.page3play)
@@ -419,7 +427,7 @@ class Ui_Interaction(object):
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
         self.verticalLayoutWidget_6 = QtWidgets.QWidget(self.frame_7)
-        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(0, 0, 531, 771))
+        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(0, 0, 531, 781))
         self.verticalLayoutWidget_6.setObjectName("verticalLayoutWidget_6")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_6)
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -525,7 +533,7 @@ class Ui_Interaction(object):
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
         self.verticalLayoutWidget_5 = QtWidgets.QWidget(self.frame_6)
-        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(0, 0, 531, 775))
+        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(0, 0, 531, 781))
         self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -631,7 +639,7 @@ class Ui_Interaction(object):
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(self.frame_5)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(0, 0, 531, 771))
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(0, 0, 531, 781))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)

@@ -1011,6 +1011,14 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
 	border-left: 3px solid rgb(20, 20, 20);
 	border-right: 3px solid rgb(20, 20, 20);
 	border-top: 4px solid rgb(20, 20, 20);
+}
+
+.playbutton:disabled{
+	background-color: rgb(85, 85, 85);
+	border-top: 1.5px solid rgb(85, 85, 85);
+	border-left: 2.5px solid rgb(85, 85, 85);
+	border-right: 2.5px solid rgb(85, 85, 85);
+	border-bottom: 4px solid rgb(85, 85, 85);
 }</string>
     </property>
     <property name="class" stdset="0">
@@ -1062,7 +1070,7 @@ border-radius: 15px;
            <x>0</x>
            <y>0</y>
            <width>531</width>
-           <height>771</height>
+           <height>781</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1350,7 +1358,7 @@ border-radius: 15px;
            <x>0</x>
            <y>0</y>
            <width>531</width>
-           <height>775</height>
+           <height>781</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -1638,7 +1646,7 @@ border-radius: 15px;
            <x>0</x>
            <y>0</y>
            <width>531</width>
-           <height>771</height>
+           <height>781</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_12">
