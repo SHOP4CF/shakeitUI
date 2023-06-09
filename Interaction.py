@@ -43,8 +43,6 @@ class CountdownThread(QThread):
             self.mutex.lock()
             self.is_paused = True
             self.mutex.unlock()
-
-            print("paused")
             self.paused.emit()
 
     def resume(self):
@@ -52,8 +50,6 @@ class CountdownThread(QThread):
         self.is_paused = False
         self.condition.wakeAll()
         self.mutex.unlock()
-
-        print("resumed")
         self.resumed.emit()
 
 
@@ -78,19 +74,23 @@ class InteractionWindow:
         self.ui.buttonStart.setEnabled(False)
         self.ui.buttonReady.clicked.connect(self.play)
 
-        self.ui.pushButton_52.clicked.connect(self.pickup_success)
+        self.ui.pushButton_52.clicked.connect(self.pickup_success)  # remove this to pick up differently
         self.ui.buttonDispense.clicked.connect(self.dispense_elements)
 
         self.ui.buttonExit_1.clicked.connect(self.exit)
         self.ui.buttonExit_2.clicked.connect(self.exit)
         self.ui.buttonExit_3.clicked.connect(self.done)
 
-        self.shakebuttons = [self.ui.pushButton_33, self.ui.pushButton_34, self.ui.pushButton_35, self.ui.pushButton_36, self.ui.pushButton_37,
-                             self.ui.pushButton_38, self.ui.pushButton_39, self.ui.pushButton_40, self.ui.pushButton_41, self.ui.pushButton_42,
-                             self.ui.pushButton_43, self.ui.pushButton_44, self.ui.pushButton_45, self.ui.pushButton_46, self.ui.pushButton_47,
-                             self.ui.pushButton_48, self.ui.pushButton_49, self.ui.pushButton_50, self.ui.pushButton_51, self.ui.pushButton_52,
-                             self.ui.pushButton_73, self.ui.pushButton_74, self.ui.pushButton_75, self.ui.pushButton_76, self.ui.pushButton_77,
-                             self.ui.pushButton_78, self.ui.pushButton_79, self.ui.pushButton_80, self.ui.pushButton_81, self.ui.pushButton_82]
+        self.shake_buttons = [self.ui.pushButton_33, self.ui.pushButton_34, self.ui.pushButton_35,
+                              self.ui.pushButton_36, self.ui.pushButton_37, self.ui.pushButton_38,
+                              self.ui.pushButton_39, self.ui.pushButton_40, self.ui.pushButton_41,
+                              self.ui.pushButton_42, self.ui.pushButton_43, self.ui.pushButton_44,
+                              self.ui.pushButton_45, self.ui.pushButton_46, self.ui.pushButton_47,
+                              self.ui.pushButton_48, self.ui.pushButton_49, self.ui.pushButton_50,
+                              self.ui.pushButton_51, self.ui.pushButton_52, self.ui.pushButton_73,
+                              self.ui.pushButton_74, self.ui.pushButton_75, self.ui.pushButton_76,
+                              self.ui.pushButton_77, self.ui.pushButton_78, self.ui.pushButton_79,
+                              self.ui.pushButton_80, self.ui.pushButton_81, self.ui.pushButton_82]
 
         # Initialize attributes #
         self.ai_score = "12"
@@ -117,7 +117,7 @@ class InteractionWindow:
         self.countdown.finished.connect(self.countdown.deleteLater)
         self.thread.finished.connect(self.thread.deleteLater)
 
-        self.ui.pushButton_46.clicked.connect(self.countdown.pause)
+        self.ui.pushButton_46.clicked.connect(self.countdown.pause)  # remove this to pause differently
 
         self.thread.start()
 
@@ -151,12 +151,12 @@ class InteractionWindow:
         print("elements dispensed")
 
     def picking_up_elements(self):
-        for button in self.shakebuttons:
-            button.setEnabled(False) 
+        for button in self.shake_buttons:
+            button.setEnabled(False)
 
     def done_picking_up_elements(self):
-        for button in self.shakebuttons:
-            button.setEnabled(True) 
+        for button in self.shake_buttons:
+            button.setEnabled(True)
 
     def time_out(self):
         dialog = TimesUpDialog(self.player["score"], self.ai_score)
