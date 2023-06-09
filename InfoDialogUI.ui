@@ -19,16 +19,16 @@
 }
 
 QLabel{
-	font: 24pt &quot;Open Sans&quot;;
+	font: 30pt &quot;Open Sans&quot;;
 	color: rgb(255, 255, 255);
 }
 
 QPushButton{
 	background-color: rgb(36, 55, 88);
 	color: white;
-	font: 24pt &quot;Open Sans&quot;;
-	min-height: 100px;
-	min-width: 220px;
+	font: 30pt &quot;Open Sans&quot;;
+	min-height: 120px;
+	min-width: 240px;
 
 	border-radius: 35px;
 	border-top: 1px solid rgb(18, 28, 44);
@@ -48,10 +48,10 @@ QPushButton:pressed{
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>30</y>
+     <x>30</x>
+     <y>70</y>
      <width>1041</width>
-     <height>431</height>
+     <height>331</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -59,23 +59,9 @@ QPushButton:pressed{
      <number>8</number>
     </property>
     <item>
-     <widget class="QLabel" name="label">
-      <property name="styleSheet">
-       <string notr="true">font: bold 32pt &quot;Open Sans&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Pickup more components than the AI! </string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>You have 60 seconds to receive as many pickups as possible. To obtain a pickup, the component must be flipped correctly and then the robot will automatically collect it.  
-Use different shakes to get the components into the correct position. </string>
+       <string>You have 60 seconds to receive as many pickups as possible. Use different shakes to get the components into the correct position for a pick up.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -90,14 +76,14 @@ Use different shakes to get the components into the correct position. </string>
       <property name="font">
        <font>
         <family>Open Sans</family>
-        <pointsize>27</pointsize>
+        <pointsize>32</pointsize>
         <weight>50</weight>
         <italic>true</italic>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: italic 27pt &quot;Open Sans&quot;;</string>
+       <string notr="true">font: italic 32pt &quot;Open Sans&quot;;</string>
       </property>
       <property name="text">
        <string>Ready to beat the AI’s score of 12 pickups?  </string>
@@ -113,9 +99,9 @@ Use different shakes to get the components into the correct position. </string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>450</y>
+     <y>420</y>
      <width>1111</width>
-     <height>141</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="styleSheet">

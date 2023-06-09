@@ -503,8 +503,8 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
 	border-right: 3px solid  rgb(80, 80, 80);
 	border-bottom: 4px solid  rgb(80, 80, 80);
 
-	width: 125px;
-	height: 125px;
+	width: 190px;
+	height: 190px;
 	padding: 20px;
 }
 
@@ -637,7 +637,7 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
              <widget class="QLabel" name="label_16">
               <property name="maximumSize">
                <size>
-                <width>165</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -745,7 +745,7 @@ qproperty-alignment: AlignCenter;</string>
              <widget class="QLabel" name="label_14">
               <property name="maximumSize">
                <size>
-                <width>165</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -791,7 +791,27 @@ qproperty-alignment: AlignCenter;</string>
          </layout>
         </item>
         <item>
-         <spacer name="verticalSpacer_5">
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <spacer name="horizontalSpacer_12">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Maximum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>1300</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -802,238 +822,6 @@ qproperty-alignment: AlignCenter;</string>
            </size>
           </property>
          </spacer>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_9">
-          <item>
-           <widget class="QFrame" name="frame_3">
-            <property name="minimumSize">
-             <size>
-              <width>541</width>
-              <height>109</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame{
-	background-color: rgb(172, 172, 172);
-	border-radius: 20px;
-}
-
-.icons{
-	padding: 15px;
-	margin: 10px;
-	background-color: rgb(102, 102, 102);
-	border-radius: 15px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <widget class="QLabel" name="label_8">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>121</width>
-               <height>111</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="pixmap">
-              <pixmap>resources/speedicon.png</pixmap>
-             </property>
-             <property name="scaledContents">
-              <bool>true</bool>
-             </property>
-             <property name="class" stdset="0">
-              <string>icons</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_9">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>10</y>
-               <width>411</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>18</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Speed</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_10">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>50</y>
-               <width>411</width>
-               <height>41</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>12</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-               <underline>true</underline>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Force applied to move the pieces</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignHCenter|Qt::AlignTop</set>
-             </property>
-            </widget>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_12">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame_4">
-            <property name="minimumSize">
-             <size>
-              <width>541</width>
-              <height>109</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame{
-	background-color: rgb(172, 172, 172);
-	border-radius: 20px;
-}
-
-.icons{
-	padding: 15px;
-	margin: 10px;
-	background-color: rgb(102, 102, 102);
-	border-radius: 15px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <widget class="QLabel" name="label_11">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>121</width>
-               <height>111</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="pixmap">
-              <pixmap>resources/repicon.png</pixmap>
-             </property>
-             <property name="scaledContents">
-              <bool>true</bool>
-             </property>
-             <property name="class" stdset="0">
-              <string>icons</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_12">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>10</y>
-               <width>411</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>18</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Repetition</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_13">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>50</y>
-               <width>411</width>
-               <height>41</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Open Sans</family>
-               <pointsize>12</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-               <underline>true</underline>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>The number of times the shake is repeated</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignHCenter|Qt::AlignTop</set>
-             </property>
-             <property name="wordWrap">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </widget>
-          </item>
-         </layout>
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -1207,6 +995,8 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
 	margin: 8px;
 	padding: 20px;
 
+	min-height: 60px;
+
 	border-radius: 15px;
 	background-color:  rgb(56, 56, 56);
 	border-top: 1.5px solid rgb(30, 30, 30);
@@ -1221,6 +1011,14 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
 	border-left: 3px solid rgb(20, 20, 20);
 	border-right: 3px solid rgb(20, 20, 20);
 	border-top: 4px solid rgb(20, 20, 20);
+}
+
+.playbutton:disabled{
+	background-color: rgb(85, 85, 85);
+	border-top: 1.5px solid rgb(85, 85, 85);
+	border-left: 2.5px solid rgb(85, 85, 85);
+	border-right: 2.5px solid rgb(85, 85, 85);
+	border-bottom: 4px solid rgb(85, 85, 85);
 }</string>
     </property>
     <property name="class" stdset="0">
@@ -1232,7 +1030,7 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
        <x>0</x>
        <y>140</y>
        <width>1921</width>
-       <height>891</height>
+       <height>781</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_buttons">
@@ -1246,7 +1044,7 @@ image: url(&quot;resources/exiticon.png&quot;);</string>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>120</width>
+          <width>150</width>
           <height>20</height>
          </size>
         </property>
@@ -1271,8 +1069,8 @@ border-radius: 15px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>551</width>
-           <height>891</height>
+           <width>531</width>
+           <height>781</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1299,7 +1097,7 @@ border-radius: 15px;
             <property name="minimumSize">
              <size>
               <width>400</width>
-              <height>110</height>
+              <height>90</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1319,7 +1117,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1341,7 +1139,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1363,7 +1161,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1385,7 +1183,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1407,7 +1205,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1429,7 +1227,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1451,7 +1249,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1473,7 +1271,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1495,7 +1293,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1517,7 +1315,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1559,8 +1357,8 @@ border-radius: 15px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>551</width>
-           <height>891</height>
+           <width>531</width>
+           <height>781</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -1587,7 +1385,7 @@ border-radius: 15px;
             <property name="minimumSize">
              <size>
               <width>400</width>
-              <height>110</height>
+              <height>90</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1607,7 +1405,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1629,7 +1427,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1651,7 +1449,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1673,7 +1471,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1695,7 +1493,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1717,7 +1515,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1739,7 +1537,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1761,7 +1559,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1783,7 +1581,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1805,7 +1603,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1847,8 +1645,8 @@ border-radius: 15px;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>551</width>
-           <height>889</height>
+           <width>531</width>
+           <height>781</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -1875,7 +1673,7 @@ border-radius: 15px;
             <property name="minimumSize">
              <size>
               <width>400</width>
-              <height>110</height>
+              <height>90</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1895,7 +1693,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1917,7 +1715,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1939,7 +1737,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1961,7 +1759,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -1983,7 +1781,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -2005,7 +1803,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -2027,7 +1825,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -2049,7 +1847,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -2071,7 +1869,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -2093,7 +1891,7 @@ padding: 5px;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>140</height>
+                <height>122</height>
                </size>
               </property>
               <property name="focusPolicy">
@@ -2126,7 +1924,7 @@ padding: 5px;</string>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>120</width>
+          <width>150</width>
           <height>20</height>
          </size>
         </property>
@@ -2137,7 +1935,7 @@ padding: 5px;</string>
     <widget class="QLCDNumber" name="timer">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>30</x>
        <y>20</y>
        <width>100</width>
        <height>100</height>
@@ -2186,9 +1984,9 @@ border-radius: 15px;
     <widget class="QFrame" name="frame_2">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>150</x>
        <y>20</y>
-       <width>551</width>
+       <width>541</width>
        <height>100</height>
       </rect>
      </property>
@@ -2253,10 +2051,10 @@ border-radius: 15px;
     <widget class="QPushButton" name="buttonDispense">
      <property name="geometry">
       <rect>
-       <x>760</x>
-       <y>30</y>
-       <width>371</width>
-       <height>81</height>
+       <x>430</x>
+       <y>940</y>
+       <width>1061</width>
+       <height>91</height>
       </rect>
      </property>
      <property name="focusPolicy">
@@ -2265,7 +2063,7 @@ border-radius: 15px;
      <property name="styleSheet">
       <string notr="true">QPushButton{
 	color: black;	
-	font: bold 22pt &quot;Open Sans&quot;;
+	font: bold 24pt &quot;Open Sans&quot;;
 
 	border-radius: 15px;
 	background-color: rgb(108, 198, 186);
@@ -2284,7 +2082,7 @@ QPushButton:pressed{
 }</string>
      </property>
      <property name="text">
-      <string>Dispense</string>
+      <string>Dispense more elements</string>
      </property>
     </widget>
    </widget>
