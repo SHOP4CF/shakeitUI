@@ -12,6 +12,7 @@ class MainWindow:
     def __init__(self):
         # setting up keyrock
         self.keyrockAPI = KeyrockAPI()
+        self.accessTimer = None
 
         # setting up UI #
         self.main_win = QMainWindow()
@@ -42,8 +43,8 @@ class MainWindow:
         self.current_user = LoggedInUser()
 
     def new_access_timer(self):
-        accessTimer = Timer(3500, self.refresh_access_token)
-        accessTimer.start()
+        self.accessTimer = Timer(3500, self.refresh_access_token)
+        self.accessTimer.start()
 
     def refresh_access_token(self):
         self.current_user = self.keyrockAPI.refresh_token(self.current_user)
