@@ -1,11 +1,14 @@
+import os
 import sys
 from threading import Timer
-
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit
+
 from MainUI import Ui_MainWindow
 from Interaction import InteractionWindow
 from KeyrockAPI import KeyrockAPI
 from User import LoggedInUser
+
+os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 
 
 class MainWindow:
