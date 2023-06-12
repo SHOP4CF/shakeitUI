@@ -60,6 +60,9 @@ To get a local copy up and running follow these steps.
     ```sh
     sudo apt install python3-pyqt5
     ```
+ * **qtvirtualkeyboard for pyqt5**
+   * follow the steps described in the answer here: https://stackoverflow.com/questions/62473386/pyqt5-show-virtual-keyboard 
+    
 * **Python requests**
   * Windows:
     ```sh
